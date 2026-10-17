@@ -41,7 +41,9 @@ class Test100PercentCombine(unittest.TestCase):
                         f"{path} at {base+22} should be 100% but is {rate}%")
                 base += size
 
-    def test_itemdata_emblem_entry_rates_are_100_percent(self):
+    def test_itemdata_entry_rates_are_100_percent(self):
+        # Per-recipe rate = byte at +6 of every 16-byte entry, ALL families
+        # (tier tables ship 25/40/30/10/5% for unique recipes like bows).
         from tools.patch_100_percent_combine import patch_itemdata_rates_100
         comp_sizes = [len(open(fp, "rb").read())
                       for fp in sorted(glob.glob("System/Apps/6RAH/comp*.dat"))]
@@ -51,12 +53,12 @@ class Test100PercentCombine(unittest.TestCase):
                 d = f.read()
             base = len(d) - sum(comp_sizes)
             for size in comp_sizes:
-                if d[base + 22] == 0 and size > 32:  # emblem-style table
-                    for off in range(32, size - 6, 16):
-                        rate = d[base + off + 6]
+                for off in range(32, size - 6, 16):
+                    rate = d[base + off + 6]
+                    if rate != 0:
                         self.assertEqual(
                             rate, 100,
-                            f"{path} entry at {base+off+6} should be 100% but is {rate}%")
+                            f"{path} entry rate at {base+off+6} should be 100% but is {rate}%")
                 base += size
 
 class TestItemdataPatchIdempotent(unittest.TestCase):

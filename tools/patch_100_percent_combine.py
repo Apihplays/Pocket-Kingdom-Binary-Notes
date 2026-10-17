@@ -49,9 +49,9 @@ def patch_itemdata_rates_100(app_dir: str = "System/Apps/6RAH"):
     tables (the standalone comp*.dat files are never opened bygame code -
     verified: no filename reference anywhere in 6RAH.APP). In-game rates come
     from this tail, so the rates must be patched here:
-    - Tier tables (comp00-comp86, comp92-comp96): success rate u16 at +22.
-    - Emblem tables (comp90-91, compa0-compa6; header rate byte == 0):
-      rate byte at +6 within each 16-byte entry starting at +32.
+    - Tier tables (comp00-comp86, comp92-comp96): header base rate u16 at +22.
+    - Per-recipe rates: byte at +6 inside every 16-byte entry from +32
+      (all families - tier tables ship 25/40/30/10/5% for unique recipes).
     Patched in both the base and english (localized) copies.
     """
     comp_files = sorted(glob.glob(os.path.join(app_dir, "comp*.dat")))
@@ -71,19 +71,16 @@ def patch_itemdata_rates_100(app_dir: str = "System/Apps/6RAH"):
         base = len(data) - blob_len
         changed = False
         for fpath, size in zip(comp_files, sizes):
-            # Family marker is stable across runs: emblem-style tables
-            # (comp90-91, compa0-6) have ff*6 at +16; tier tables have
-            # ff*4 + item ids. Never classify from the (mutated) rate byte.
-            emblem = data[base + 16:base + 22] == b"\xff" * 6
-            if emblem and size > 32:
-                # Emblem entries: rate is the byte at +6 of each 16-byte entry.
-                for off in range(32, size - 6, 16):
-                    entry_rate = data[base + off + 6]
-                    if 0 < entry_rate < 100:
-                        data[base + off + 6] = 100
-                        changed = True
-            elif 0 < data[base + 22] < 100:
-                # Tier table (comp00-86, comp92-96): header rate at +22.
+            # Per-recipe success rate confirmed in-game: the byte at +6 of
+            # every 16-byte entry (tier tables included - comp92-96 unique
+            # bow recipes showed 25/40/40/30%). Header base rate at +22 too.
+            for off in range(32, size - 6, 16):
+                entry_rate = data[base + off + 6]
+                if 0 < entry_rate < 100:
+                    data[base + off + 6] = 100
+                    changed = True
+            if 0 < data[base + 22] < 100:
+                # Table header base rate at +22.
                 data[base + 22] = 100
                 changed = True
             base += size

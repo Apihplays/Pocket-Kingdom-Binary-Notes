@@ -43,7 +43,10 @@ When reverse engineering, investigating file formats, decompiling, or inspecting
     **success rate = byte/u16 at +22** (vanilla 80,75,70,65,60,55,50 / 70..50)
   - Emblem tables (comp90-91, compa0-6, 32-240 bytes): header ff ff ff ff ff ff at +16..21, rate byte at +22 = 0;
     **success rate = byte at entry+6** of each 16-byte entry (vanilla 90/80/80/70/60/50/40+)
-  - Tier-table entry bytes at entry+6 (vanilla 30/20/10/5/15) have unknown semantics — persisted patches leave them UNTOUCHED.
+  - Trophy/unique recipes (comp92-96 = category 07 bow tables, 48-80 bytes).
+  - Per-recipe success rate = byte at +6 of every 16-byte entry in ALL table
+    families (confirmed in-game: unique bow recipes showed vanilla 25/40/30/10/5%).
+  - Table header byte at +22 = base/aggregate rate (also patched to 100).
 - Save files: `save.dat`, `options.dat` under `C:\system\apps\6rah\` in the emulator (see `6RAH.cfg`).
 
 ## Local Modding & Patching Tools
