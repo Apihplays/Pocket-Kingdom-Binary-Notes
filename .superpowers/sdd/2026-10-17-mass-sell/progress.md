@@ -6,3 +6,4 @@ Task 3: patch_binary -> Task 4 consumed
 
 Task 1: complete (tests: python3 -m unittest tests/test_code_cave.py -> 1/1 pass)
 Task 2: complete (tests: python3 -m unittest tests/test_assemble_hook.py -> 1/1 pass)
+Task 3: complete (tests: python3 -m unittest tests/test_patch_mass_sell.py -> 1/1 pass)
