@@ -14,7 +14,9 @@ def patch_binary(input_app: str, output_app: str) -> Dict[str, Any]:
     if not os.path.exists(backup_path):
         shutil.copy2(input_app, backup_path)
 
-    cave_addr, cave_size = find_cave(input_app, min_size=128)
+    # Search for cave in original clean backup if available
+    search_target = backup_path if os.path.exists(backup_path) else input_app
+    cave_addr, cave_size = find_cave(search_target, min_size=64)
 
     # Return address after single-item sell call (0x100067ec in 6RAH.APP)
     hook_site_addr = 0x100067EC
