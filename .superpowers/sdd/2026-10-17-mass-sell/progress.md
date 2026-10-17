@@ -8,3 +8,5 @@ Task 1: complete (tests: python3 -m unittest tests/test_code_cave.py -> 1/1 pass
 Task 2: complete (tests: python3 -m unittest tests/test_assemble_hook.py -> 1/1 pass)
 Task 3: complete (tests: python3 -m unittest tests/test_patch_mass_sell.py -> 1/1 pass)
 Task 4: complete (tests: PYTHONPATH=. python3 tools/verify_patch.py -> pass)
+Final review: self-review (no subagent tool)
+Final: clean, suite 3/3 green.
