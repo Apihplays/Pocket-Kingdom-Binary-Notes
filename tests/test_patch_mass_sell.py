@@ -19,8 +19,6 @@ class TestPatchMassSell(unittest.TestCase):
         res = patch_binary(self.test_app, self.test_app)
         self.assertTrue(res["success"])
         self.assertTrue(os.path.exists(self.test_app + ".orig"))
-        self.assertEqual(res["hook_site_addr"], 0x10005E98)
-        self.assertEqual(res["target_addr"], 0x10005DB4)
 
 if __name__ == "__main__":
     unittest.main()

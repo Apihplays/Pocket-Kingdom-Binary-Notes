@@ -7,23 +7,29 @@ def verify_patch(binary_path: str = "System/Apps/6RAH/6RAH.APP"):
 
     code_base = 0x10000000
     code_offset = 0x7C
-    hook_site_addr = 0x10005E98
-
-    hook_file_offset = code_offset + (hook_site_addr - code_base)
-    hook_bytes = data[hook_file_offset : hook_file_offset + 4]
 
     md = capstone.Cs(capstone.CS_ARCH_ARM, capstone.CS_MODE_ARM)
-    disasm = list(md.disasm(hook_bytes, hook_site_addr))
-    if not disasm:
-        raise AssertionError("Failed to disassemble instruction at hook site")
 
-    hook_insn = disasm[0]
-    print(f"[Verification] Hook site: {hex(hook_insn.address)}: {hook_insn.mnemonic} {hook_insn.op_str}")
+    # 1. Verify 0x100023EC - 0x100023F0 are NOPs
+    off1 = code_offset + (0x100023EC - code_base)
+    dis1 = list(md.disasm(data[off1 : off1 + 8], 0x100023EC))
+    for insn in dis1:
+        print(f"[Verification] 0x{insn.address:x}: {insn.mnemonic} {insn.op_str}")
+        assert insn.mnemonic == "mov" and insn.op_str == "r0, r0"
 
-    if "#0x10005db4" not in hook_insn.op_str.lower():
-        raise AssertionError(f"Expected branch to 0x10005db4, got: {hook_insn.op_str}")
+    # 2. Verify 0x10002464 is cmp r4, #4
+    off2 = code_offset + (0x10002464 - code_base)
+    dis2 = list(md.disasm(data[off2 : off2 + 4], 0x10002464))
+    print(f"[Verification] 0x{dis2[0].address:x}: {dis2[0].mnemonic} {dis2[0].op_str}")
+    assert dis2[0].mnemonic == "cmp" and dis2[0].op_str == "r4, #4"
 
-    print("\nVerification successful: Single-sell execution correctly branches to multi-sell loop at 0x10005DB4.")
+    # 3. Verify 0x100056A0 is mov r2, r0
+    off3 = code_offset + (0x100056A0 - code_base)
+    dis3 = list(md.disasm(data[off3 : off3 + 4], 0x100056A0))
+    print(f"[Verification] 0x{dis3[0].address:x}: {dis3[0].mnemonic} {dis3[0].op_str}")
+    assert dis3[0].mnemonic == "mov" and dis3[0].op_str == "r2, r0"
+
+    print("\nVerification successful: Page sell filter bypassed, 5-row loop enabled, full stack sell enabled.")
 
 if __name__ == "__main__":
     verify_patch()
