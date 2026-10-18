@@ -1,0 +1,21 @@
+# --- Tooling env ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- Game files: never commit these ---
+# (this repo is tools + notes only; supply your own game copy)
+*.APP
+*.MBM
+*.dat
+*.pcm
+*.bin
+!.gitignore
+
+# Backups created by the patchers
+*.orig
+*.bak
+
+# Agent/workflow scaffolding
+.superpowers/
