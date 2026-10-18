@@ -45,6 +45,15 @@ PYTHONPATH=. python3 -m unittest discover tests
 
 Both patchers are idempotent and back up any file before touching it.
 
+Tools default to `System/Apps/6RAH` relative to your working directory. Point
+them (and the tests) at your own install with:
+
+```bash
+export PK_GAME_DIR="/path/to/your/System/Apps/6RAH"
+```
+
+Tests skip themselves cleanly when no game install is found.
+
 ## Findings in one screen
 
 - The game **never opens `comp*.dat`** — those are editor exports. The live recipe
