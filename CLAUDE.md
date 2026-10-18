@@ -14,6 +14,26 @@ When reverse engineering, investigating file formats, decompiling, or inspecting
 - REA provides static and runtime analysis across native binaries, web bundles, bytecode, and application graphs.
 - RE analysis transcripts live in `docs/` (see `docs/comp_loader_points.md`, `docs/superpowers/plans/`).
 
+### REA on THIS target (important)
+- REA **cannot open `6RAH.APP` directly** — the Symbian E32Image is not a supported
+  container (`target_unavailable / unsupported binary format`), and headerless
+  `--target-format raw-binary` needs Ghidra (`GHIDRA_INSTALL_DIR`), which is not
+  configured here. Only Hopper (`/opt/hopper`) is available as a native provider.
+- Workaround: wrap the extracted text segment in an ELF32-ARM container, then REA
+  analyses it with Hopper and all addresses match the game binary
+  (`tools/wrap_raw_arm_elf.py 6rah_code.bin /tmp/6rah.elf` → 7 symbols →
+  ~1060 procedures discovered):
+  - `npx rea-agents analyze /tmp/6rah.elf --provider hopper`
+  - `npx rea-agents xrefs /tmp/6rah.elf 0x1008fe2c --provider hopper`
+  - `npx rea-agents decompile /tmp/6rah.elf --procedure merge_install --provider hopper`
+  - `npx rea-agents instructions /tmp/6rah.elf --procedure 0x10028954 --provider hopper`
+  - `npx rea-agents search /tmp/6rah.elf --kind strings --mode regex --pattern '.*' --provider hopper`
+- Without symbols Hopper only discovers the entry point and `decompile` fails with
+  "No procedure exists at the requested address" — pass function starts as symbols.
+- Do **not** trust linear (capstone) sweeps of the whole text for caller checks: data
+  islands desync the sweep and produced a wrong "0x1000cc40 has no callers" result.
+  Decode per 4-byte word (ARM is fixed-width) or use REA `xrefs`/raw BL decoding.
+
 ## Symbian / N-Gage Binary Architecture
 - **Main Executable:** `System/Apps/6RAH/6RAH.APP`
   - Format: Symbian E32Image (uncompressed EPOC binary, CPU: 0x2000 / ARMv4T)
@@ -22,16 +42,38 @@ When reverse engineering, investigating file formats, decompiling, or inspecting
     (offset 0 of `6rah_code.bin` = VA `0x10000000`)
   - MultiBitmap Assets: `POKEKIN.MBM` (contains 488 bitmap sprites/UI elements)
   - Data Files: `System/Apps/6RAH/*.dat` and `System/Apps/6RAH/english/*.dat` (english dir = localized text; tails of `itemdata.dat` are identical)
-- **Known subroutines (from RE):**
-  - `0x1000cc40` recipe-merge/install path; recipes resident at game-struct `M+0x480..0x4a4`, merge pointer `M+0x498` init at `0x10069900`
-  - `0x10031428` item-info lookup; `0x10031570-0x1003157c` `[M+0x498]` handling
-  - `0x10005E98` sell confirmation handler (mass-sell hook target)
+- **Known subroutines (from RE, confirmed with REA/Hopper:**
+  - `0x1000cc40` recipe-merge/install (`merge_install`); recipes resident at game-struct
+    `M+0x480..0x4a4`, merge pointer `M+0x498` init at `0x10069900`.
+    **5 direct BL callers**: `0x10028954`, `0x100289b4`, `0x10028c34`, `0x10028eac`,
+    `0x10028f04` (all inside sub_10028538, the combine/merge screen driver).
+    Signature: `merge_install(ctx, recipe_id, result_id, rate)` — 4th arg is the
+    success rate, stored to `[merge_struct + 0x498]`.
+  - `0x10035dac` combine-result text builder: reads the rate from
+    `*(ctx+0x17914) + 0x18` and formats it with `"%d%%"` (`0x1008fe2c`; other copies
+    at `0x100930a4`, `0x100aa070`). `*(ctx+0x17914)` == merge struct base (`M+0x480`),
+    so `+0x18` == `M+0x498` — display and writer agree.
+  - Combine screen state is slot-indexed with **52-byte stride**: recipe id at
+    `ctx+0x73a0 + 52*slot`, rate at `ctx+0x73b8 + 52*slot`.
+  - Resident recipe records at `ctx+0x19800+0x26c`, **196 bytes** each; the four
+    ingredient ids sit at record `+0x78/+0x7c/+0x80/+0x84`
+    (`0x2e4/0x2e8/0x2ec/0x2f0` with the 196-byte index math).
+  - `0x10031428` item-info lookup; `0x10005E98` sell confirmation handler (mass-sell hook target).
+- **Open question (not yet proven):** the exact loader step that turns the
+  `itemdata.dat` tail byte at `entry+6` into the runtime rate at `ctx+0x73b8+52*slot`.
+  The runtime value is a 32-bit slot field, so the file→runtime mapping still goes
+  through one un-traced copy; everything else in the chain above is verified.
 - **Testing Environment:** EKA2L1 Symbian Emulator on Windows host.
   - Windows share path: `\\wsl.localhost\archlinux\home\bossku\Pocket Kingdom\System\Apps\6RAH\6RAH.APP`
   - Local (non-WSL) patched copy kept in sync: `C:\Users\Administrator\Downloads\Pocket Kingdom\System\Apps\6RAH`
 
 ## CRITICAL Data-File Facts (verified)
-- The game **never opens `comp*.dat`** at runtime — no filename/byte reference of "comp" anywhere in `6RAH.APP`.
+- The game **never opens `comp*.dat`** at runtime — confirmed two ways: (a) no
+  filename/byte reference of "comp" anywhere in `6RAH.APP`, and (b) REA string
+  search over the analysed binary finds **zero** "comp" strings while
+  `itemdata.dat` appears as 5 localized UTF-16 paths
+  (`e:\System\Apps\6RAH\<lang>\itemdata.dat` for english/german/…, alongside
+  `product.dat`, `item.dat`, `shop.dat`, `unit.dat`, …).
   Standalone `comp*.dat` files are dev/editor exports mirroring data already shipped inside `itemdata.dat`.
 - The **live recipe tables are the 4704-byte TAIL of `itemdata.dat`** (and `english/itemdata.dat`):
   a byte-exact concatenation of the vanilla `comp*.dat` in sorted order
