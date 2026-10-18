@@ -1,11 +1,15 @@
 import unittest
 import os
+
+from tests import assets
 from tools.find_code_cave import find_cave
 
+
+@assets.needs_game
 class TestCodeCave(unittest.TestCase):
     def test_find_cave_returns_valid_address(self):
         # Use .orig if available to test cave discovery on clean binary
-        binary = "System/Apps/6RAH/6RAH.APP.orig" if os.path.exists("System/Apps/6RAH/6RAH.APP.orig") else "System/Apps/6RAH/6RAH.APP"
+        binary = assets.app_binary()
         self.assertTrue(os.path.exists(binary))
         addr, size = find_cave(binary, min_size=64)
         self.assertGreaterEqual(addr, 0x10000000)

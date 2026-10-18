@@ -1,13 +1,16 @@
 import unittest
 import os
 import shutil
+
+from tests import assets
 from tools.patch_mass_sell import patch_binary
 
+
+@assets.needs_game
 class TestPatchMassSell(unittest.TestCase):
     def setUp(self):
-        self.test_app = "System/Apps/6RAH/6RAH_test.APP"
-        src = "System/Apps/6RAH/6RAH.APP.orig" if os.path.exists("System/Apps/6RAH/6RAH.APP.orig") else "System/Apps/6RAH/6RAH.APP"
-        shutil.copy(src, self.test_app)
+        self.test_app = os.path.join(assets.GAME_DIR, "6RAH_test.APP")
+        shutil.copy(assets.app_binary(), self.test_app)
 
     def tearDown(self):
         if os.path.exists(self.test_app):
