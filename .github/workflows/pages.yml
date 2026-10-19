@@ -32,8 +32,7 @@ jobs:
           mkdir -p _site
           # The app is self-contained; serve it at the site root.
           cp unitdb/PocketKingdom-Units.html _site/index.html
-          cp unitdb/units.csv unitdb/emblems.csv _site/
-          cp unitdb/units.json unitdb/emblems.json _site/
+          cp unitdb/*.csv unitdb/*.json _site/
           cp unitdb/README.md _site/README.md
 
       - uses: actions/configure-pages@v5
