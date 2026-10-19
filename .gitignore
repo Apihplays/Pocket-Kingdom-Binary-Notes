@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 *.orig
 .superpowers/
+
+# cached third-party source pages (warcry.com markup); regenerate with
+#   python3 tools/build_unitdb.py --details --emblems
+unitdb/raw/

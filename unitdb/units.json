@@ -14,7 +14,55 @@
     "dex": 11,
     "wis": 11,
     "int": 9,
-    "hit": 26
+    "hit": 26,
+    "ability": "",
+    "advances": [
+      {
+        "id": 1,
+        "name": "Warrior",
+        "race": "Warrior",
+        "rank": 2,
+        "level": 1,
+        "vp": 10,
+        "emblem": "Warrior Emblem"
+      },
+      {
+        "id": 22,
+        "name": "Thief",
+        "race": "Thief",
+        "rank": 2,
+        "level": 1,
+        "vp": 10,
+        "emblem": "Hound Emblem"
+      },
+      {
+        "id": 26,
+        "name": "Archer",
+        "race": "Archer",
+        "rank": 2,
+        "level": 1,
+        "vp": 10,
+        "emblem": "Bone Emblem"
+      },
+      {
+        "id": 10,
+        "name": "Monk",
+        "race": "Monk",
+        "rank": 3,
+        "level": 2,
+        "vp": 40,
+        "emblem": "Jackal Emblem"
+      },
+      {
+        "id": 14,
+        "name": "Knight",
+        "race": "Knight",
+        "rank": 3,
+        "level": 2,
+        "vp": 40,
+        "emblem": "Hero Emblem"
+      }
+    ]
   },
   {
     "id": 1,
@@ -31,7 +79,28 @@
     "dex": 12,
     "wis": 12,
     "int": 12,
-    "hit": 30
+    "hit": 30,
+    "ability": "",
+    "advances": [
+      {
+        "id": 2,
+        "name": "Phalanx",
+        "race": "Warrior",
+        "rank": 4,
+        "level": 2,
+        "vp": 70,
+        "emblem": "Soldier Emblem"
+      },
+      {
+        "id": 7,
+        "name": "Swordman",
+        "race": "Swordman",
+        "rank": 5,
+        "level": 3,
+        "vp": 110,
+        "emblem": "Knight Emblem"
+      }
+    ]
   },
   {
     "id": 2,
@@ -48,7 +117,19 @@
     "dex": 16,
     "wis": 16,
     "int": 16,
-    "hit": 44
+    "hit": 44,
+    "ability": "",
+    "advances": [
+      {
+        "id": 5,
+        "name": "Ogre",
+        "race": "Orc",
+        "rank": 7,
+        "level": 3,
+        "vp": 200,
+        "emblem": "Shogun Emblem"
+      }
+    ]
   },
   {
     "id": 3,
@@ -65,7 +146,19 @@
     "dex": 13,
     "wis": 12,
     "int": 18,
-    "hit": 29
+    "hit": 29,
+    "ability": "",
+    "advances": [
+      {
+        "id": 4,
+        "name": "Orc Chief",
+        "race": "Orc",
+        "rank": 4,
+        "level": 2,
+        "vp": 70,
+        "emblem": "Soldier Emblem"
+      }
+    ]
   },
   {
     "id": 4,
@@ -82,7 +175,19 @@
     "dex": 19,
     "wis": 16,
     "int": 23,
-    "hit": 39
+    "hit": 39,
+    "ability": "",
+    "advances": [
+      {
+        "id": 5,
+        "name": "Ogre",
+        "race": "Orc",
+        "rank": 7,
+        "level": 3,
+        "vp": 200,
+        "emblem": "Shogun Emblem"
+      }
+    ]
   },
   {
     "id": 5,
@@ -99,7 +204,19 @@
     "dex": 23,
     "wis": 23,
     "int": 23,
-    "hit": 48
+    "hit": 48,
+    "ability": "",
+    "advances": [
+      {
+        "id": 6,
+        "name": "Khazad's Ghost",
+        "race": "Khazad's Ghost",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      }
+    ]
   },
   {
     "id": 6,
@@ -116,7 +233,9 @@
     "dex": 30,
     "wis": 29,
     "int": 29,
-    "hit": 55
+    "hit": 55,
+    "ability": "Counter",
+    "advances": []
   },
   {
     "id": 7,
@@ -133,7 +252,19 @@
     "dex": 23,
     "wis": 16,
     "int": 19,
-    "hit": 43
+    "hit": 43,
+    "ability": "Critical",
+    "advances": [
+      {
+        "id": 8,
+        "name": "Sword Master",
+        "race": "Swordman",
+        "rank": 8,
+        "level": 4,
+        "vp": 250,
+        "emblem": "Champion Emblem"
+      }
+    ]
   },
   {
     "id": 8,
@@ -150,7 +281,19 @@
     "dex": 35,
     "wis": 23,
     "int": 29,
-    "hit": 48
+    "hit": 48,
+    "ability": "Critical",
+    "advances": [
+      {
+        "id": 9,
+        "name": "Mikaduchi",
+        "race": "Mikaduchi",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      }
+    ]
   },
   {
     "id": 9,
@@ -167,7 +310,9 @@
     "dex": 40,
     "wis": 25,
     "int": 33,
-    "hit": 50
+    "hit": 50,
+    "ability": "Critical",
+    "advances": []
   },
   {
     "id": 10,
@@ -184,7 +329,19 @@
     "dex": 17,
     "wis": 14,
     "int": 13,
-    "hit": 36
+    "hit": 36,
+    "ability": "Evade",
+    "advances": [
+      {
+        "id": 11,
+        "name": "Expert Monk",
+        "race": "Monk",
+        "rank": 5,
+        "level": 3,
+        "vp": 150,
+        "emblem": "Victor Emblem"
+      }
+    ]
   },
   {
     "id": 11,
@@ -201,7 +358,28 @@
     "dex": 24,
     "wis": 18,
     "int": 16,
-    "hit": 46
+    "hit": 46,
+    "ability": "Evade",
+    "advances": [
+      {
+        "id": 12,
+        "name": "Master Monk",
+        "race": "Monk",
+        "rank": 8,
+        "level": 4,
+        "vp": 250,
+        "emblem": "Champion Emblem"
+      },
+      {
+        "id": 13,
+        "name": "Master Fist",
+        "race": "Monk",
+        "rank": 9,
+        "level": 5,
+        "vp": 350,
+        "emblem": "Origin Emblem"
+      }
+    ]
   },
   {
     "id": 12,
@@ -218,7 +396,9 @@
     "dex": 39,
     "wis": 26,
     "int": 23,
-    "hit": 53
+    "hit": 53,
+    "ability": "Evade",
+    "advances": []
   },
   {
     "id": 13,
@@ -235,7 +415,9 @@
     "dex": 44,
     "wis": 29,
     "int": 25,
-    "hit": 55
+    "hit": 55,
+    "ability": "Evade",
+    "advances": []
   },
   {
     "id": 14,
@@ -252,7 +434,28 @@
     "dex": 15,
     "wis": 14,
     "int": 14,
-    "hit": 38
+    "hit": 38,
+    "ability": "Bash",
+    "advances": [
+      {
+        "id": 19,
+        "name": "Undead Knight",
+        "race": "Vampire",
+        "rank": 4,
+        "level": 2,
+        "vp": 70,
+        "emblem": "Mist Emblem"
+      },
+      {
+        "id": 15,
+        "name": "Temple Knight",
+        "race": "Knight",
+        "rank": 5,
+        "level": 3,
+        "vp": 110,
+        "emblem": "Knight Emblem"
+      }
+    ]
   },
   {
     "id": 15,
@@ -269,7 +472,19 @@
     "dex": 21,
     "wis": 18,
     "int": 18,
-    "hit": 49
+    "hit": 49,
+    "ability": "Bash",
+    "advances": [
+      {
+        "id": 16,
+        "name": "Paladin",
+        "race": "Knight",
+        "rank": 7,
+        "level": 4,
+        "vp": 200,
+        "emblem": "Shogun Emblem"
+      }
+    ]
   },
   {
     "id": 16,
@@ -286,7 +501,28 @@
     "dex": 28,
     "wis": 23,
     "int": 23,
-    "hit": 55
+    "hit": 55,
+    "ability": "Bash",
+    "advances": [
+      {
+        "id": 17,
+        "name": "Lord Redrick",
+        "race": "Lord Redrick",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      },
+      {
+        "id": 18,
+        "name": "Durahan",
+        "race": "Durahan",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Immortal Emblem"
+      }
+    ]
   },
   {
     "id": 17,
@@ -303,7 +539,9 @@
     "dex": 36,
     "wis": 29,
     "int": 29,
-    "hit": 60
+    "hit": 60,
+    "ability": "Restore",
+    "advances": []
   },
   {
     "id": 18,
@@ -320,7 +558,9 @@
     "dex": 25,
     "wis": 33,
     "int": 29,
-    "hit": 48
+    "hit": 48,
+    "ability": "Death Touch",
+    "advances": []
   },
   {
     "id": 19,
@@ -337,7 +577,19 @@
     "dex": 19,
     "wis": 19,
     "int": 21,
-    "hit": 42
+    "hit": 42,
+    "ability": "HP Drain",
+    "advances": [
+      {
+        "id": 20,
+        "name": "Vampire",
+        "race": "Vampire",
+        "rank": 6,
+        "level": 3,
+        "vp": 150,
+        "emblem": "Chain Emblem"
+      }
+    ]
   },
   {
     "id": 20,
@@ -354,7 +606,19 @@
     "dex": 26,
     "wis": 26,
     "int": 31,
-    "hit": 45
+    "hit": 45,
+    "ability": "HP Drain",
+    "advances": [
+      {
+        "id": 21,
+        "name": "August",
+        "race": "August",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      }
+    ]
   },
   {
     "id": 21,
@@ -371,7 +635,9 @@
     "dex": 40,
     "wis": 40,
     "int": 48,
-    "hit": 50
+    "hit": 50,
+    "ability": "Spirit Banquet",
+    "advances": []
   },
   {
     "id": 22,
@@ -388,7 +654,19 @@
     "dex": 14,
     "wis": 13,
     "int": 12,
-    "hit": 35
+    "hit": 35,
+    "ability": "Back Stab",
+    "advances": [
+      {
+        "id": 23,
+        "name": "Rogue",
+        "race": "Thief",
+        "rank": 4,
+        "level": 2,
+        "vp": 70,
+        "emblem": "Soldier Emblem"
+      }
+    ]
   },
   {
     "id": 23,
@@ -405,7 +683,19 @@
     "dex": 20,
     "wis": 19,
     "int": 17,
-    "hit": 44
+    "hit": 44,
+    "ability": "Back Stab",
+    "advances": [
+      {
+        "id": 24,
+        "name": "Assassin",
+        "race": "Thief",
+        "rank": 7,
+        "level": 4,
+        "vp": 200,
+        "emblem": "Shogun Emblem"
+      }
+    ]
   },
   {
     "id": 24,
@@ -422,7 +712,19 @@
     "dex": 33,
     "wis": 31,
     "int": 26,
-    "hit": 51
+    "hit": 51,
+    "ability": "Back Stab",
+    "advances": [
+      {
+        "id": 25,
+        "name": "Genzoh",
+        "race": "Genzoh",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      }
+    ]
   },
   {
     "id": 25,
@@ -439,7 +741,9 @@
     "dex": 44,
     "wis": 40,
     "int": 33,
-    "hit": 55
+    "hit": 55,
+    "ability": "Flame Formation",
+    "advances": []
   },
   {
     "id": 26,
@@ -456,7 +760,19 @@
     "dex": 14,
     "wis": 14,
     "int": 12,
-    "hit": 36
+    "hit": 36,
+    "ability": "Antiaircraft",
+    "advances": [
+      {
+        "id": 27,
+        "name": "Hunter",
+        "race": "Archer",
+        "rank": 4,
+        "level": 2,
+        "vp": 70,
+        "emblem": "Soldier Emblem"
+      }
+    ]
   },
   {
     "id": 27,
@@ -473,7 +789,19 @@
     "dex": 21,
     "wis": 21,
     "int": 16,
-    "hit": 45
+    "hit": 45,
+    "ability": "Antiaircraft",
+    "advances": [
+      {
+        "id": 28,
+        "name": "Sniper",
+        "race": "Archer",
+        "rank": 7,
+        "level": 4,
+        "vp": 200,
+        "emblem": "Shogun Emblem"
+      }
+    ]
   },
   {
     "id": 28,
@@ -490,7 +818,19 @@
     "dex": 36,
     "wis": 36,
     "int": 23,
-    "hit": 53
+    "hit": 53,
+    "ability": "Antiaircraft",
+    "advances": [
+      {
+        "id": 29,
+        "name": "Hell Sniper",
+        "race": "Archer",
+        "rank": 9,
+        "level": 5,
+        "vp": 350,
+        "emblem": "Origin Emblem"
+      }
+    ]
   },
   {
     "id": 29,
@@ -507,7 +847,9 @@
     "dex": 48,
     "wis": 48,
     "int": 29,
-    "hit": 58
+    "hit": 58,
+    "ability": "Antiaircraft",
+    "advances": []
   },
   {
     "id": 30,
@@ -524,7 +866,37 @@
     "dex": 6,
     "wis": 22,
     "int": 22,
-    "hit": 20
+    "hit": 20,
+    "ability": "",
+    "advances": [
+      {
+        "id": 35,
+        "name": "Priest",
+        "race": "Priest",
+        "rank": 2,
+        "level": 1,
+        "vp": 10,
+        "emblem": "Bone Emblem"
+      },
+      {
+        "id": 31,
+        "name": "Theoricus",
+        "race": "Wizard",
+        "rank": 3,
+        "level": 2,
+        "vp": 40,
+        "emblem": "Hero Emblem"
+      },
+      {
+        "id": 39,
+        "name": "Necromancer",
+        "race": "Lich",
+        "rank": 3,
+        "level": 2,
+        "vp": 40,
+        "emblem": "Jackal Emblem"
+      }
+    ]
   },
   {
     "id": 31,
@@ -541,7 +913,19 @@
     "dex": 7,
     "wis": 35,
     "int": 32,
-    "hit": 25
+    "hit": 25,
+    "ability": "Hero's Setback",
+    "advances": [
+      {
+        "id": 32,
+        "name": "Philosophas",
+        "race": "Wizard",
+        "rank": 5,
+        "level": 3,
+        "vp": 110,
+        "emblem": "Knight Emblem"
+      }
+    ]
   },
   {
     "id": 32,
@@ -558,7 +942,19 @@
     "dex": 10,
     "wis": 51,
     "int": 45,
-    "hit": 32
+    "hit": 32,
+    "ability": "Hero's Setback",
+    "advances": [
+      {
+        "id": 33,
+        "name": "Adept",
+        "race": "Wizard",
+        "rank": 8,
+        "level": 4,
+        "vp": 250,
+        "emblem": "Champion Emblem"
+      }
+    ]
   },
   {
     "id": 33,
@@ -575,7 +971,19 @@
     "dex": 15,
     "wis": 83,
     "int": 71,
-    "hit": 39
+    "hit": 39,
+    "ability": "Hero's Setback",
+    "advances": [
+      {
+        "id": 34,
+        "name": "Mage Silion",
+        "race": "Mage Silion",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      }
+    ]
   },
   {
     "id": 34,
@@ -592,7 +1000,9 @@
     "dex": 16,
     "wis": 96,
     "int": 80,
-    "hit": 42
+    "hit": 42,
+    "ability": "Meteor Strike",
+    "advances": []
   },
   {
     "id": 35,
@@ -609,7 +1019,19 @@
     "dex": 7,
     "wis": 26,
     "int": 25,
-    "hit": 16
+    "hit": 16,
+    "ability": "Restore",
+    "advances": [
+      {
+        "id": 36,
+        "name": "High Priest",
+        "race": "Priest",
+        "rank": 5,
+        "level": 3,
+        "vp": 110,
+        "emblem": "Knight Emblem"
+      }
+    ]
   },
   {
     "id": 36,
@@ -626,7 +1048,19 @@
     "dex": 13,
     "wis": 45,
     "int": 39,
-    "hit": 28
+    "hit": 28,
+    "ability": "Restore",
+    "advances": [
+      {
+        "id": 37,
+        "name": "Bishop",
+        "race": "Priest",
+        "rank": 7,
+        "level": 4,
+        "vp": 200,
+        "emblem": "Shogun Emblem"
+      }
+    ]
   },
   {
     "id": 37,
@@ -643,7 +1077,19 @@
     "dex": 18,
     "wis": 61,
     "int": 51,
-    "hit": 34
+    "hit": 34,
+    "ability": "Restore",
+    "advances": [
+      {
+        "id": 38,
+        "name": "Savior",
+        "race": "Priest",
+        "rank": 9,
+        "level": 5,
+        "vp": 350,
+        "emblem": "Origin Emblem"
+      }
+    ]
   },
   {
     "id": 38,
@@ -660,7 +1106,9 @@
     "dex": 24,
     "wis": 80,
     "int": 65,
-    "hit": 45
+    "hit": 45,
+    "ability": "Restore",
+    "advances": []
   },
   {
     "id": 39,
@@ -677,7 +1125,19 @@
     "dex": 7,
     "wis": 32,
     "int": 35,
-    "hit": 26
+    "hit": 26,
+    "ability": "Eternal Rest",
+    "advances": [
+      {
+        "id": 40,
+        "name": "Lich",
+        "race": "Lich",
+        "rank": 5,
+        "level": 3,
+        "vp": 110,
+        "emblem": "Needle Emblem"
+      }
+    ]
   },
   {
     "id": 40,
@@ -694,7 +1154,19 @@
     "dex": 10,
     "wis": 45,
     "int": 51,
-    "hit": 33
+    "hit": 33,
+    "ability": "Eternal Rest",
+    "advances": [
+      {
+        "id": 41,
+        "name": "Lich Lord",
+        "race": "Lich",
+        "rank": 8,
+        "level": 4,
+        "vp": 250,
+        "emblem": "Moon Emblem"
+      }
+    ]
   },
   {
     "id": 41,
@@ -711,7 +1183,19 @@
     "dex": 15,
     "wis": 71,
     "int": 83,
-    "hit": 40
+    "hit": 40,
+    "ability": "Eternal Rest",
+    "advances": [
+      {
+        "id": 42,
+        "name": "Al Acid",
+        "race": "Al Acid",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Immortal Emblem"
+      }
+    ]
   },
   {
     "id": 42,
@@ -728,7 +1212,9 @@
     "dex": 16,
     "wis": 80,
     "int": 96,
-    "hit": 45
+    "hit": 45,
+    "ability": "Skull Summon",
+    "advances": []
   },
   {
     "id": 43,
@@ -745,7 +1231,19 @@
     "dex": 2,
     "wis": 11,
     "int": 6,
-    "hit": 25
+    "hit": 25,
+    "ability": "",
+    "advances": [
+      {
+        "id": 44,
+        "name": "Scale Runner",
+        "race": "Lizardfoot",
+        "rank": 2,
+        "level": 1,
+        "vp": 10,
+        "emblem": "Hound Emblem"
+      }
+    ]
   },
   {
     "id": 44,
@@ -762,7 +1260,19 @@
     "dex": 3,
     "wis": 14,
     "int": 7,
-    "hit": 27
+    "hit": 27,
+    "ability": "",
+    "advances": [
+      {
+        "id": 45,
+        "name": "Large Scale",
+        "race": "Lizardfoot",
+        "rank": 4,
+        "level": 2,
+        "vp": 70,
+        "emblem": "Bear Emblem"
+      }
+    ]
   },
   {
     "id": 45,
@@ -779,7 +1289,28 @@
     "dex": 4,
     "wis": 21,
     "int": 11,
-    "hit": 31
+    "hit": 31,
+    "ability": "",
+    "advances": [
+      {
+        "id": 49,
+        "name": "Dragon Runner",
+        "race": "Wyvern",
+        "rank": 5,
+        "level": 2,
+        "vp": 110,
+        "emblem": "Lion Emblem"
+      },
+      {
+        "id": 46,
+        "name": "Serpent",
+        "race": "Serpent",
+        "rank": 6,
+        "level": 3,
+        "vp": 150,
+        "emblem": "Chimera Emblem"
+      }
+    ]
   },
   {
     "id": 46,
@@ -796,7 +1327,19 @@
     "dex": 15,
     "wis": 31,
     "int": 15,
-    "hit": 33
+    "hit": 33,
+    "ability": "Tidal Wave",
+    "advances": [
+      {
+        "id": 47,
+        "name": "Naga",
+        "race": "Serpent",
+        "rank": 8,
+        "level": 4,
+        "vp": 250,
+        "emblem": "Beast Emblem"
+      }
+    ]
   },
   {
     "id": 47,
@@ -813,7 +1356,19 @@
     "dex": 18,
     "wis": 42,
     "int": 21,
-    "hit": 36
+    "hit": 36,
+    "ability": "Tidal Wave",
+    "advances": [
+      {
+        "id": 48,
+        "name": "Leviathan",
+        "race": "Leviathan",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      }
+    ]
   },
   {
     "id": 48,
@@ -830,7 +1385,9 @@
     "dex": 24,
     "wis": 48,
     "int": 24,
-    "hit": 38
+    "hit": 38,
+    "ability": "Dragon Breath",
+    "advances": []
   },
   {
     "id": 49,
@@ -847,7 +1404,28 @@
     "dex": 15,
     "wis": 19,
     "int": 9,
-    "hit": 33
+    "hit": 33,
+    "ability": "Collapse",
+    "advances": [
+      {
+        "id": 50,
+        "name": "Wyvern",
+        "race": "Wyvern",
+        "rank": 7,
+        "level": 3,
+        "vp": 200,
+        "emblem": "Griffon Emblem"
+      },
+      {
+        "id": 51,
+        "name": "Dragon",
+        "race": "Dragon",
+        "rank": 8,
+        "level": 4,
+        "vp": 250,
+        "emblem": "Beast Emblem"
+      }
+    ]
   },
   {
     "id": 50,
@@ -864,7 +1442,19 @@
     "dex": 17,
     "wis": 26,
     "int": 11,
-    "hit": 36
+    "hit": 36,
+    "ability": "Collapse",
+    "advances": [
+      {
+        "id": 52,
+        "name": "Tiamat",
+        "race": "Tiamat",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      }
+    ]
   },
   {
     "id": 51,
@@ -881,7 +1471,28 @@
     "dex": 9,
     "wis": 23,
     "int": 11,
-    "hit": 35
+    "hit": 35,
+    "ability": "Dragon Breath",
+    "advances": [
+      {
+        "id": 53,
+        "name": "Bardion",
+        "race": "Bardion",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Immortal Emblem"
+      },
+      {
+        "id": 54,
+        "name": "Thyrion",
+        "race": "Thyrion",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      }
+    ]
   },
   {
     "id": 52,
@@ -898,7 +1509,9 @@
     "dex": 10,
     "wis": 33,
     "int": 14,
-    "hit": 39
+    "hit": 39,
+    "ability": "Dragon Breath",
+    "advances": []
   },
   {
     "id": 53,
@@ -915,7 +1528,9 @@
     "dex": 15,
     "wis": 25,
     "int": 13,
-    "hit": 36
+    "hit": 36,
+    "ability": "Dragon Breath",
+    "advances": []
   },
   {
     "id": 54,
@@ -932,7 +1547,9 @@
     "dex": 15,
     "wis": 29,
     "int": 14,
-    "hit": 43
+    "hit": 43,
+    "ability": "Thunder Storm",
+    "advances": []
   },
   {
     "id": 55,
@@ -949,7 +1566,46 @@
     "dex": 14,
     "wis": 16,
     "int": 6,
-    "hit": 23
+    "hit": 23,
+    "ability": "",
+    "advances": [
+      {
+        "id": 59,
+        "name": "Wight",
+        "race": "Specter",
+        "rank": 2,
+        "level": 1,
+        "vp": 10,
+        "emblem": "Bone Emblem"
+      },
+      {
+        "id": 62,
+        "name": "Zombie",
+        "race": "Zombie",
+        "rank": 2,
+        "level": 1,
+        "vp": 10,
+        "emblem": "Warrior Emblem"
+      },
+      {
+        "id": 56,
+        "name": "Skeleton Knight",
+        "race": "Skeleton",
+        "rank": 3,
+        "level": 2,
+        "vp": 40,
+        "emblem": "Hero Emblem"
+      },
+      {
+        "id": 58,
+        "name": "Skull King",
+        "race": "Skeleton",
+        "rank": 9,
+        "level": 5,
+        "vp": 350,
+        "emblem": "Darkness Emblem"
+      }
+    ]
   },
   {
     "id": 56,
@@ -966,7 +1622,19 @@
     "dex": 21,
     "wis": 19,
     "int": 13,
-    "hit": 25
+    "hit": 25,
+    "ability": "",
+    "advances": [
+      {
+        "id": 57,
+        "name": "Skeleton Lord",
+        "race": "Skeleton",
+        "rank": 5,
+        "level": 3,
+        "vp": 110,
+        "emblem": "Needle Emblem"
+      }
+    ]
   },
   {
     "id": 57,
@@ -983,7 +1651,9 @@
     "dex": 31,
     "wis": 24,
     "int": 16,
-    "hit": 31
+    "hit": 31,
+    "ability": "",
+    "advances": []
   },
   {
     "id": 58,
@@ -1000,7 +1670,9 @@
     "dex": 57,
     "wis": 38,
     "int": 25,
-    "hit": 38
+    "hit": 38,
+    "ability": "",
+    "advances": []
   },
   {
     "id": 59,
@@ -1017,7 +1689,19 @@
     "dex": 16,
     "wis": 21,
     "int": 14,
-    "hit": 22
+    "hit": 22,
+    "ability": "Confusion",
+    "advances": [
+      {
+        "id": 60,
+        "name": "Wraith",
+        "race": "Specter",
+        "rank": 4,
+        "level": 2,
+        "vp": 70,
+        "emblem": "Mist Emblem"
+      }
+    ]
   },
   {
     "id": 60,
@@ -1034,7 +1718,19 @@
     "dex": 23,
     "wis": 32,
     "int": 21,
-    "hit": 28
+    "hit": 28,
+    "ability": "Confusion",
+    "advances": [
+      {
+        "id": 61,
+        "name": "Specter",
+        "race": "Specter",
+        "rank": 6,
+        "level": 4,
+        "vp": 150,
+        "emblem": "Chain Emblem"
+      }
+    ]
   },
   {
     "id": 61,
@@ -1051,7 +1747,19 @@
     "dex": 32,
     "wis": 46,
     "int": 31,
-    "hit": 30
+    "hit": 30,
+    "ability": "Confusion",
+    "advances": [
+      {
+        "id": 41,
+        "name": "Lich Lord",
+        "race": "Lich",
+        "rank": 8,
+        "level": 4,
+        "vp": 250,
+        "emblem": "Moon Emblem"
+      }
+    ]
   },
   {
     "id": 62,
@@ -1068,7 +1776,19 @@
     "dex": 14,
     "wis": 16,
     "int": 10,
-    "hit": 20
+    "hit": 20,
+    "ability": "",
+    "advances": [
+      {
+        "id": 63,
+        "name": "Living Dead",
+        "race": "Zombie",
+        "rank": 5,
+        "level": 2,
+        "vp": 110,
+        "emblem": "Needle Emblem"
+      }
+    ]
   },
   {
     "id": 63,
@@ -1085,7 +1805,19 @@
     "dex": 21,
     "wis": 17,
     "int": 12,
-    "hit": 30
+    "hit": 30,
+    "ability": "Lure of the Dead",
+    "advances": [
+      {
+        "id": 64,
+        "name": "Ghoul",
+        "race": "Zombie",
+        "rank": 6,
+        "level": 3,
+        "vp": 150,
+        "emblem": "Chain Emblem"
+      }
+    ]
   },
   {
     "id": 64,
@@ -1102,7 +1834,19 @@
     "dex": 24,
     "wis": 18,
     "int": 12,
-    "hit": 32
+    "hit": 32,
+    "ability": "Lure of the Dead",
+    "advances": [
+      {
+        "id": 65,
+        "name": "Nephilia",
+        "race": "Zombie",
+        "rank": 9,
+        "level": 5,
+        "vp": 350,
+        "emblem": "Darkness Emblem"
+      }
+    ]
   },
   {
     "id": 65,
@@ -1119,7 +1863,9 @@
     "dex": 35,
     "wis": 21,
     "int": 14,
-    "hit": 36
+    "hit": 36,
+    "ability": "Lure of the Dead",
+    "advances": []
   },
   {
     "id": 66,
@@ -1136,7 +1882,28 @@
     "dex": 16,
     "wis": 9,
     "int": 12,
-    "hit": 35
+    "hit": 35,
+    "ability": "",
+    "advances": [
+      {
+        "id": 67,
+        "name": "Harpy",
+        "race": "Harpy",
+        "rank": 2,
+        "level": 1,
+        "vp": 10,
+        "emblem": "Hound Emblem"
+      },
+      {
+        "id": 71,
+        "name": "Vulture",
+        "race": "Bird",
+        "rank": 3,
+        "level": 2,
+        "vp": 40,
+        "emblem": "Jackal Emblem"
+      }
+    ]
   },
   {
     "id": 67,
@@ -1153,7 +1920,19 @@
     "dex": 21,
     "wis": 8,
     "int": 17,
-    "hit": 32
+    "hit": 32,
+    "ability": "Turmoil",
+    "advances": [
+      {
+        "id": 68,
+        "name": "Sky Stalker",
+        "race": "Harpy",
+        "rank": 4,
+        "level": 2,
+        "vp": 70,
+        "emblem": "Soldier Emblem"
+      }
+    ]
   },
   {
     "id": 68,
@@ -1170,7 +1949,19 @@
     "dex": 32,
     "wis": 9,
     "int": 25,
-    "hit": 50
+    "hit": 50,
+    "ability": "Turmoil",
+    "advances": [
+      {
+        "id": 69,
+        "name": "Ladyhawke",
+        "race": "Harpy",
+        "rank": 7,
+        "level": 4,
+        "vp": 200,
+        "emblem": "Shogun Emblem"
+      }
+    ]
   },
   {
     "id": 69,
@@ -1187,7 +1978,19 @@
     "dex": 54,
     "wis": 10,
     "int": 43,
-    "hit": 70
+    "hit": 70,
+    "ability": "Turmoil",
+    "advances": [
+      {
+        "id": 70,
+        "name": "Lady Sky",
+        "race": "Harpy",
+        "rank": 9,
+        "level": 5,
+        "vp": 350,
+        "emblem": "Origin Emblem"
+      }
+    ]
   },
   {
     "id": 70,
@@ -1204,7 +2007,9 @@
     "dex": 72,
     "wis": 11,
     "int": 57,
-    "hit": 77
+    "hit": 77,
+    "ability": "Turmoil",
+    "advances": []
   },
   {
     "id": 71,
@@ -1221,7 +2026,19 @@
     "dex": 20,
     "wis": 14,
     "int": 13,
-    "hit": 38
+    "hit": 38,
+    "ability": "Angry Wind",
+    "advances": [
+      {
+        "id": 72,
+        "name": "Garuda",
+        "race": "Bird",
+        "rank": 6,
+        "level": 3,
+        "vp": 150,
+        "emblem": "Chimera Emblem"
+      }
+    ]
   },
   {
     "id": 72,
@@ -1238,7 +2055,19 @@
     "dex": 30,
     "wis": 24,
     "int": 14,
-    "hit": 58
+    "hit": 58,
+    "ability": "Angry Wind",
+    "advances": [
+      {
+        "id": 73,
+        "name": "Rock",
+        "race": "Bird",
+        "rank": 8,
+        "level": 4,
+        "vp": 250,
+        "emblem": "Beast Emblem"
+      }
+    ]
   },
   {
     "id": 73,
@@ -1255,7 +2084,19 @@
     "dex": 39,
     "wis": 33,
     "int": 16,
-    "hit": 62
+    "hit": 62,
+    "ability": "Angry Wind",
+    "advances": [
+      {
+        "id": 74,
+        "name": "Tempest",
+        "race": "Tempest",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      }
+    ]
   },
   {
     "id": 74,
@@ -1272,7 +2113,9 @@
     "dex": 43,
     "wis": 38,
     "int": 17,
-    "hit": 64
+    "hit": 64,
+    "ability": "Angry Wind",
+    "advances": []
   },
   {
     "id": 75,
@@ -1289,7 +2132,28 @@
     "dex": 23,
     "wis": 16,
     "int": 14,
-    "hit": 36
+    "hit": 36,
+    "ability": "",
+    "advances": [
+      {
+        "id": 80,
+        "name": "Banshee",
+        "race": "Siren",
+        "rank": 2,
+        "level": 1,
+        "vp": 10,
+        "emblem": "Bone Emblem"
+      },
+      {
+        "id": 76,
+        "name": "High Elf",
+        "race": "Elf",
+        "rank": 3,
+        "level": 2,
+        "vp": 40,
+        "emblem": "Hero Emblem"
+      }
+    ]
   },
   {
     "id": 76,
@@ -1306,7 +2170,19 @@
     "dex": 35,
     "wis": 22,
     "int": 21,
-    "hit": 40
+    "hit": 40,
+    "ability": "Judgment of Heaven",
+    "advances": [
+      {
+        "id": 77,
+        "name": "Valkyrie",
+        "race": "Elf",
+        "rank": 5,
+        "level": 3,
+        "vp": 110,
+        "emblem": "Knight Emblem"
+      }
+    ]
   },
   {
     "id": 77,
@@ -1323,7 +2199,19 @@
     "dex": 51,
     "wis": 29,
     "int": 31,
-    "hit": 48
+    "hit": 48,
+    "ability": "Judgment of Heaven",
+    "advances": [
+      {
+        "id": 78,
+        "name": "Scathacha",
+        "race": "Elf",
+        "rank": 8,
+        "level": 4,
+        "vp": 250,
+        "emblem": "Champion Emblem"
+      }
+    ]
   },
   {
     "id": 78,
@@ -1340,7 +2228,19 @@
     "dex": 83,
     "wis": 44,
     "int": 50,
-    "hit": 56
+    "hit": 56,
+    "ability": "Judgment of Heaven",
+    "advances": [
+      {
+        "id": 79,
+        "name": "Luna",
+        "race": "Luna",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      }
+    ]
   },
   {
     "id": 79,
@@ -1357,7 +2257,9 @@
     "dex": 96,
     "wis": 49,
     "int": 57,
-    "hit": 66
+    "hit": 66,
+    "ability": "Lost Soul",
+    "advances": []
   },
   {
     "id": 80,
@@ -1374,7 +2276,19 @@
     "dex": 27,
     "wis": 21,
     "int": 15,
-    "hit": 28
+    "hit": 28,
+    "ability": "Shout",
+    "advances": [
+      {
+        "id": 81,
+        "name": "Siren",
+        "race": "Siren",
+        "rank": 4,
+        "level": 2,
+        "vp": 70,
+        "emblem": "Soldier Emblem"
+      }
+    ]
   },
   {
     "id": 81,
@@ -1391,7 +2305,19 @@
     "dex": 40,
     "wis": 32,
     "int": 21,
-    "hit": 36
+    "hit": 36,
+    "ability": "Siren's Lullaby",
+    "advances": [
+      {
+        "id": 82,
+        "name": "Succubus",
+        "race": "Siren",
+        "rank": 7,
+        "level": 4,
+        "vp": 200,
+        "emblem": "Night Emblem"
+      }
+    ]
   },
   {
     "id": 82,
@@ -1408,7 +2334,19 @@
     "dex": 67,
     "wis": 54,
     "int": 34,
-    "hit": 48
+    "hit": 48,
+    "ability": "Charm",
+    "advances": [
+      {
+        "id": 83,
+        "name": "Morrigan",
+        "race": "Siren",
+        "rank": 8,
+        "level": 4,
+        "vp": 250,
+        "emblem": "Moon Emblem"
+      }
+    ]
   },
   {
     "id": 83,
@@ -1425,7 +2363,19 @@
     "dex": 77,
     "wis": 63,
     "int": 39,
-    "hit": 55
+    "hit": 55,
+    "ability": "Judgment of Heaven",
+    "advances": [
+      {
+        "id": 79,
+        "name": "Luna",
+        "race": "Luna",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      }
+    ]
   },
   {
     "id": 84,
@@ -1442,7 +2392,46 @@
     "dex": 11,
     "wis": 11,
     "int": 16,
-    "hit": 39
+    "hit": 39,
+    "ability": "",
+    "advances": [
+      {
+        "id": 3,
+        "name": "Orc",
+        "race": "Orc",
+        "rank": 2,
+        "level": 1,
+        "vp": 10,
+        "emblem": "Warrior Emblem"
+      },
+      {
+        "id": 89,
+        "name": "Caveman",
+        "race": "Troll",
+        "rank": 2,
+        "level": 1,
+        "vp": 10,
+        "emblem": "Bone Emblem"
+      },
+      {
+        "id": 93,
+        "name": "Dingo",
+        "race": "Wolf",
+        "rank": 2,
+        "level": 1,
+        "vp": 10,
+        "emblem": "Hound Emblem"
+      },
+      {
+        "id": 85,
+        "name": "Imp",
+        "race": "Demon",
+        "rank": 3,
+        "level": 1,
+        "vp": 40,
+        "emblem": "Jackal Emblem"
+      }
+    ]
   },
   {
     "id": 85,
@@ -1459,7 +2448,19 @@
     "dex": 15,
     "wis": 13,
     "int": 26,
-    "hit": 38
+    "hit": 38,
+    "ability": "Silence",
+    "advances": [
+      {
+        "id": 86,
+        "name": "Lesser Demon",
+        "race": "Demon",
+        "rank": 5,
+        "level": 3,
+        "vp": 110,
+        "emblem": "Knight Emblem"
+      }
+    ]
   },
   {
     "id": 86,
@@ -1476,7 +2477,19 @@
     "dex": 21,
     "wis": 16,
     "int": 38,
-    "hit": 49
+    "hit": 49,
+    "ability": "Silence",
+    "advances": [
+      {
+        "id": 87,
+        "name": "Arc Demon",
+        "race": "Demon",
+        "rank": 7,
+        "level": 4,
+        "vp": 200,
+        "emblem": "Shogun Emblem"
+      }
+    ]
   },
   {
     "id": 87,
@@ -1493,7 +2506,19 @@
     "dex": 28,
     "wis": 20,
     "int": 54,
-    "hit": 58
+    "hit": 58,
+    "ability": "Silence",
+    "advances": [
+      {
+        "id": 88,
+        "name": "Bahzam DeGole",
+        "race": "Bahzam DeGole",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      }
+    ]
   },
   {
     "id": 88,
@@ -1510,7 +2535,9 @@
     "dex": 36,
     "wis": 25,
     "int": 72,
-    "hit": 64
+    "hit": 64,
+    "ability": "Silence",
+    "advances": []
   },
   {
     "id": 89,
@@ -1527,7 +2554,19 @@
     "dex": 12,
     "wis": 14,
     "int": 19,
-    "hit": 26
+    "hit": 26,
+    "ability": "",
+    "advances": [
+      {
+        "id": 90,
+        "name": "Troll",
+        "race": "Troll",
+        "rank": 4,
+        "level": 2,
+        "vp": 70,
+        "emblem": "Soldier Emblem"
+      }
+    ]
   },
   {
     "id": 90,
@@ -1544,7 +2583,19 @@
     "dex": 16,
     "wis": 21,
     "int": 25,
-    "hit": 35
+    "hit": 35,
+    "ability": "Automatic HP Restore",
+    "advances": [
+      {
+        "id": 91,
+        "name": "Troll King",
+        "race": "Troll",
+        "rank": 6,
+        "level": 3,
+        "vp": 150,
+        "emblem": "Victor Emblem"
+      }
+    ]
   },
   {
     "id": 91,
@@ -1561,7 +2612,19 @@
     "dex": 20,
     "wis": 31,
     "int": 34,
-    "hit": 46
+    "hit": 46,
+    "ability": "Automatic HP Restore",
+    "advances": [
+      {
+        "id": 92,
+        "name": "Gigantes",
+        "race": "Troll",
+        "rank": 9,
+        "level": 5,
+        "vp": 350,
+        "emblem": "Battleaxe Emblem"
+      }
+    ]
   },
   {
     "id": 92,
@@ -1578,7 +2641,9 @@
     "dex": 29,
     "wis": 48,
     "int": 49,
-    "hit": 53
+    "hit": 53,
+    "ability": "Automatic HP Restore",
+    "advances": []
   },
   {
     "id": 93,
@@ -1595,7 +2660,19 @@
     "dex": 14,
     "wis": 13,
     "int": 18,
-    "hit": 40
+    "hit": 40,
+    "ability": "",
+    "advances": [
+      {
+        "id": 94,
+        "name": "Shadow Wolf",
+        "race": "Wolf",
+        "rank": 4,
+        "level": 2,
+        "vp": 70,
+        "emblem": "Bear Emblem"
+      }
+    ]
   },
   {
     "id": 94,
@@ -1612,7 +2689,19 @@
     "dex": 21,
     "wis": 19,
     "int": 23,
-    "hit": 46
+    "hit": 46,
+    "ability": "Counter",
+    "advances": [
+      {
+        "id": 95,
+        "name": "Hell Hound",
+        "race": "Wolf",
+        "rank": 7,
+        "level": 4,
+        "vp": 200,
+        "emblem": "Griffon Emblem"
+      }
+    ]
   },
   {
     "id": 95,
@@ -1629,7 +2718,19 @@
     "dex": 36,
     "wis": 31,
     "int": 34,
-    "hit": 54
+    "hit": 54,
+    "ability": "Counter",
+    "advances": [
+      {
+        "id": 96,
+        "name": "Fenril",
+        "race": "Fenril",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      }
+    ]
   },
   {
     "id": 96,
@@ -1646,7 +2747,9 @@
     "dex": 48,
     "wis": 40,
     "int": 43,
-    "hit": 58
+    "hit": 58,
+    "ability": "Snarl",
+    "advances": []
   },
   {
     "id": 97,
@@ -1663,7 +2766,28 @@
     "dex": 6,
     "wis": 6,
     "int": 11,
-    "hit": 28
+    "hit": 28,
+    "ability": "",
+    "advances": [
+      {
+        "id": 98,
+        "name": "Steel Gargoyle",
+        "race": "Gargoyle",
+        "rank": 3,
+        "level": 2,
+        "vp": 40,
+        "emblem": "Hero Emblem"
+      },
+      {
+        "id": 102,
+        "name": "Golem",
+        "race": "Golem",
+        "rank": 3,
+        "level": 1,
+        "vp": 40,
+        "emblem": "Jackal Emblem"
+      }
+    ]
   },
   {
     "id": 98,
@@ -1680,7 +2804,19 @@
     "dex": 9,
     "wis": 9,
     "int": 14,
-    "hit": 36
+    "hit": 36,
+    "ability": "",
+    "advances": [
+      {
+        "id": 99,
+        "name": "Wing Guarder",
+        "race": "Gargoyle",
+        "rank": 5,
+        "level": 3,
+        "vp": 110,
+        "emblem": "Feather Emblem"
+      }
+    ]
   },
   {
     "id": 99,
@@ -1697,7 +2833,19 @@
     "dex": 13,
     "wis": 13,
     "int": 19,
-    "hit": 40
+    "hit": 40,
+    "ability": "",
+    "advances": [
+      {
+        "id": 100,
+        "name": "Imperial Guard",
+        "race": "Gargoyle",
+        "rank": 7,
+        "level": 4,
+        "vp": 200,
+        "emblem": "Sky Emblem"
+      }
+    ]
   },
   {
     "id": 100,
@@ -1714,7 +2862,19 @@
     "dex": 18,
     "wis": 18,
     "int": 26,
-    "hit": 43
+    "hit": 43,
+    "ability": "",
+    "advances": [
+      {
+        "id": 101,
+        "name": "Balrog",
+        "race": "Balrog",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Rapier Emblem"
+      }
+    ]
   },
   {
     "id": 101,
@@ -1731,7 +2891,9 @@
     "dex": 24,
     "wis": 24,
     "int": 33,
-    "hit": 47
+    "hit": 47,
+    "ability": "Magic Reflection",
+    "advances": []
   },
   {
     "id": 102,
@@ -1748,7 +2910,19 @@
     "dex": 7,
     "wis": 7,
     "int": 17,
-    "hit": 29
+    "hit": 29,
+    "ability": "Magic Reduction",
+    "advances": [
+      {
+        "id": 103,
+        "name": "Colossus",
+        "race": "Golem",
+        "rank": 6,
+        "level": 3,
+        "vp": 150,
+        "emblem": "Lightning Emblem"
+      }
+    ]
   },
   {
     "id": 103,
@@ -1765,7 +2939,19 @@
     "dex": 10,
     "wis": 11,
     "int": 31,
-    "hit": 44
+    "hit": 44,
+    "ability": "Magic Reduction",
+    "advances": [
+      {
+        "id": 104,
+        "name": "Talos",
+        "race": "Golem",
+        "rank": 8,
+        "level": 4,
+        "vp": 250,
+        "emblem": "Storm Emblem"
+      }
+    ]
   },
   {
     "id": 104,
@@ -1782,7 +2968,19 @@
     "dex": 13,
     "wis": 15,
     "int": 42,
-    "hit": 49
+    "hit": 49,
+    "ability": "Magic Reduction",
+    "advances": [
+      {
+        "id": 105,
+        "name": "Behemoth",
+        "race": "Behemoth",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Rapier Emblem"
+      }
+    ]
   },
   {
     "id": 105,
@@ -1799,7 +2997,9 @@
     "dex": 14,
     "wis": 16,
     "int": 48,
-    "hit": 52
+    "hit": 52,
+    "ability": "Earthquake",
+    "advances": []
   },
   {
     "id": 106,
@@ -1816,7 +3016,37 @@
     "dex": 5,
     "wis": 11,
     "int": 11,
-    "hit": 25
+    "hit": 25,
+    "ability": "",
+    "advances": [
+      {
+        "id": 112,
+        "name": "Mud Wall",
+        "race": "Wall",
+        "rank": 2,
+        "level": 1,
+        "vp": 10,
+        "emblem": "Warrior Emblem"
+      },
+      {
+        "id": 107,
+        "name": "Poison Jelly",
+        "race": "Slime",
+        "rank": 3,
+        "level": 2,
+        "vp": 40,
+        "emblem": "Jackal Emblem"
+      },
+      {
+        "id": 111,
+        "name": "O'Rosam",
+        "race": "O'Rosam",
+        "rank": 9,
+        "level": 20,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      }
+    ]
   },
   {
     "id": 107,
@@ -1833,7 +3063,19 @@
     "dex": 7,
     "wis": 17,
     "int": 14,
-    "hit": 33
+    "hit": 33,
+    "ability": "Corrosion",
+    "advances": [
+      {
+        "id": 108,
+        "name": "Acid Ooze",
+        "race": "Slime",
+        "rank": 5,
+        "level": 3,
+        "vp": 110,
+        "emblem": "Feather Emblem"
+      }
+    ]
   },
   {
     "id": 108,
@@ -1850,7 +3092,19 @@
     "dex": 9,
     "wis": 24,
     "int": 18,
-    "hit": 49
+    "hit": 49,
+    "ability": "Paralysis",
+    "advances": [
+      {
+        "id": 109,
+        "name": "Blood Ooze",
+        "race": "Slime",
+        "rank": 7,
+        "level": 4,
+        "vp": 200,
+        "emblem": "Sky Emblem"
+      }
+    ]
   },
   {
     "id": 109,
@@ -1867,7 +3121,19 @@
     "dex": 11,
     "wis": 33,
     "int": 23,
-    "hit": 55
+    "hit": 55,
+    "ability": "Adhesion",
+    "advances": [
+      {
+        "id": 110,
+        "name": "Kraken",
+        "race": "Kraken",
+        "rank": 9,
+        "level": 5,
+        "vp": 300,
+        "emblem": "Dragon Emblem"
+      }
+    ]
   },
   {
     "id": 110,
@@ -1884,7 +3150,9 @@
     "dex": 14,
     "wis": 44,
     "int": 29,
-    "hit": 60
+    "hit": 60,
+    "ability": "Tidal Wave",
+    "advances": []
   },
   {
     "id": 111,
@@ -1901,7 +3169,9 @@
     "dex": 24,
     "wis": 44,
     "int": 60,
-    "hit": 55
+    "hit": 55,
+    "ability": "Earthquake",
+    "advances": []
   },
   {
     "id": 112,
@@ -1918,7 +3188,19 @@
     "dex": 6,
     "wis": 14,
     "int": 20,
-    "hit": 0
+    "hit": 0,
+    "ability": "Physical Reduction",
+    "advances": [
+      {
+        "id": 113,
+        "name": "Rock Wall",
+        "race": "Wall",
+        "rank": 4,
+        "level": 2,
+        "vp": 70,
+        "emblem": "Wind Emblem"
+      }
+    ]
   },
   {
     "id": 113,
@@ -1935,7 +3217,19 @@
     "dex": 7,
     "wis": 21,
     "int": 30,
-    "hit": 0
+    "hit": 0,
+    "ability": "Physical Reduction",
+    "advances": [
+      {
+        "id": 114,
+        "name": "Thorn Wall",
+        "race": "Wall",
+        "rank": 6,
+        "level": 3,
+        "vp": 150,
+        "emblem": "Lightning Emblem"
+      }
+    ]
   },
   {
     "id": 114,
@@ -1952,6 +3246,18 @@
     "dex": 9,
     "wis": 31,
     "int": 40,
-    "hit": 0
+    "hit": 0,
+    "ability": "Physical Reduction",
+    "advances": [
+      {
+        "id": 104,
+        "name": "Talos",
+        "race": "Golem",
+        "rank": 8,
+        "level": 5,
+        "vp": 250,
+        "emblem": "Storm Emblem"
+      }
+    ]
   }
 ]
