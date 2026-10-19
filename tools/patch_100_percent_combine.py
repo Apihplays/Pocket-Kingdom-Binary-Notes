@@ -96,5 +96,8 @@ def patch_itemdata_rates_100(app_dir: str = "System/Apps/6RAH"):
 
 
 if __name__ == "__main__":
-    patch_all_recipes_100_percent()
-    patch_itemdata_rates_100()
+    import sys
+    app_dir = sys.argv[1] if len(sys.argv) > 1 else os.environ.get("PK_GAME_DIR", "System/Apps/6RAH")
+    print(f"Patching recipe rates in: {app_dir}")
+    patch_all_recipes_100_percent(app_dir)
+    patch_itemdata_rates_100(app_dir)

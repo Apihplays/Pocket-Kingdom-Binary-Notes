@@ -12,7 +12,7 @@ When reverse engineering, investigating file formats, decompiling, or inspecting
   - `npx rea-agents instructions <path>`
   - `npx rea-agents search-bytes <pattern>`
 - REA provides static and runtime analysis across native binaries, web bundles, bytecode, and application graphs.
-- RE analysis transcripts live in `docs/` (see `docs/comp_loader_points.md`, `docs/superpowers/plans/`).
+- RE analysis transcripts live in `docs/` (see `docs/comp_loader_points.md`).
 
 ### REA on THIS target (important)
 - REA **cannot open `6RAH.APP` directly** — the Symbian E32Image is not a supported
@@ -58,13 +58,13 @@ When reverse engineering, investigating file formats, decompiling, or inspecting
   - Resident recipe records at `ctx+0x19800+0x26c`, **196 bytes** each; the four
     ingredient ids sit at record `+0x78/+0x7c/+0x80/+0x84`
     (`0x2e4/0x2e8/0x2ec/0x2f0` with the 196-byte index math).
-  - `0x10031428` item-info lookup; `0x10005E98` sell confirmation handler (mass-sell hook target).
+  - `0x10031428` item-info lookup.
 - **Open question (not yet proven):** the exact loader step that turns the
   `itemdata.dat` tail byte at `entry+6` into the runtime rate at `ctx+0x73b8+52*slot`.
   The runtime value is a 32-bit slot field, so the file→runtime mapping still goes
   through one un-traced copy; everything else in the chain above is verified.
 - **Testing Environment:** EKA2L1 Symbian Emulator on Windows host.
-  - Local (non-WSL) patched copy kept in sync: `<game-install>\System\Apps\6RAH Kingdom\System\Apps\6RAH`
+  - Game install: `<game-install>\System\Apps\6RAH` (machine-specific; not published)
 
 ## CRITICAL Data-File Facts (verified)
 - The game **never opens `comp*.dat`** at runtime — confirmed two ways: (a) no
@@ -91,21 +91,25 @@ When reverse engineering, investigating file formats, decompiling, or inspecting
 - Save files: `save.dat`, `options.dat` under `C:\system\apps\6rah\` in the emulator (see `6RAH.cfg`).
 
 ## Local Modding & Patching Tools
-- **Mass-sell:** `python3 tools/patch_mass_sell.py [path_to_6RAH.APP]`
-  - Design: `MASS_SELL_DESIGN.md`; plan: `docs/superpowers/plans/2026-10-17-mass-sell.md`
-  - Safety invariants: skip empty slots (0xFF), never sell equipped items (`0x100082E8` check),
-    partial pages (<5 items) terminate cleanly, credited gold == exact price sum
-- **100% combine rates:** `python3 tools/patch_100_percent_combine.py`
+- **100% combine rates:** `python3 tools/patch_100_percent_combine.py [app_dir]`
   - Patches rates in `comp*.dat` (dev copies) AND the live `itemdata.dat` + `english/itemdata.dat` tails
   - Emblem family detection must use the `ff ff ff ff ff ff` header marker — never the (mutated) rate byte
-  - Creates `.orig` backups; idempotent (verified: second run = 0 byte changes)
-- **Verification:** `python3 tools/verify_patch.py` (mass-sell hook + shellcode disassembly check)
-- **Tests:** `PYTHONPATH=. python3 -m unittest discover tests` (8 tests, all green)
+  - Creates `.orig` backups for itemdata; idempotent (verified: second run = 0 byte changes)
+- **E32Image → ELF wrapper (for REA):** `python3 tools/wrap_raw_arm_elf.py 6rah_code.bin /tmp/6rah.elf`
+- **Tests:** `PYTHONPATH=. python3 -m unittest discover tests` (all green; self-skip without a game install)
   - `tests/test_combine_rate.py` includes itemdata-tail rate assertions
 
 ## Workflow Rules
 - Non-destructive patching: always create `.orig` backup before first modification; keep patchers idempotent.
 - Never claim a mod works without concrete verification: run tests, byte-diff, or reproducible in-game check (EKA2L1).
-- When adding shellcode: preserve `r4-r8, sb, sl, lr`; restore correctly to avoid corrupting game state.
+- **A patch being installed is not proof it behaves.** Byte-level "verification" only proves the
+  bytes were written. The removed mass-sell patch passed every byte check yet never worked in game.
 - Distinguish pre-existing behavior from changes caused by edits: run tests BEFORE and AFTER.
 - Report honestly: if broken and can't fix, say so; if skipped/assumed, state it.
+
+## Removed (do not re-apply without a real in-game test)
+- **Mass-sell patch** (`tools/patch_mass_sell.py`, `verify_patch.py`, `assemble_hook.py`,
+  `find_code_cave.py`, `MASS_SELL_DESIGN.md`, `docs/superpowers/`): it NOP'd a loop filter and
+  loop bound at `0x100023EC`/`0x10002464` plus the quantity math at `0x100056A4`, but the path
+  never credits gold (`0x10008BC4` unreachable from it) and did not sell a stack as intended.
+  Confirmed broken in game. `6RAH.APP` is vanilla; code recoverable from git history.
