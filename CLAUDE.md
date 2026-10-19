@@ -66,6 +66,13 @@ When reverse engineering, investigating file formats, decompiling, or inspecting
 - **Testing Environment:** EKA2L1 Symbian Emulator on Windows host.
   - Windows share path: `\\wsl.localhost\archlinux\home\bossku\Pocket Kingdom\System\Apps\6RAH\6RAH.APP`
   - Local (non-WSL) patched copy kept in sync: `C:\Users\Administrator\Downloads\Pocket Kingdom\System\Apps\6RAH`
+  - **RULE — ALWAYS COPY PATCHED FILES TO WINDOWS:** every time a game file changes
+    (`6RAH.APP`, `itemdata.dat`, `english/itemdata.dat`, `comp*.dat`, …), immediately copy
+    it to the Windows install above (WSL:
+    `/mnt/c/Users/Administrator/Downloads/Pocket Kingdom/System/Apps/6RAH`) so EKA2L1 picks
+    it up. Never copy `*.orig` backups there. Then verify with
+    `diff -rq -x '*:Zone.Identifier' System/Apps/6RAH "/mnt/c/Users/Administrator/Downloads/Pocket Kingdom/System/Apps/6RAH"`
+    (expect no `differ` lines). This copy step is part of "done" for any game-file change.
 
 ## CRITICAL Data-File Facts (verified)
 - The game **never opens `comp*.dat`** at runtime — confirmed two ways: (a) no
