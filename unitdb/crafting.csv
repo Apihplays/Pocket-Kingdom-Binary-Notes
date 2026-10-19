@@ -1,0 +1,71 @@
+mold,ore,item1,item2,result,effect,success,effect_ids
+Sword,Copper,Jade,MercuryRock,Giant's Mustache,HPAbsortiopn1,30,27
+Sword,Chrome,Crystal,SnakeEye,Bamboo Sword,StrongSilence,30,22
+Sword,Silver,Crystal,VenusRock,Thief's Blade,GoldRecoveryUP1,30,49
+Sword,Gold,Turquoise,UranusRock,Z Calibur,Counter1,20,32
+Sword,Platinum,Peridot,NagaEye,Anaconda Sword,DeadlyPoison,20,19
+Sword,Mythril,Amethyst,VulcanRock,Murasame Sword,HPAbsortiopn2,20,28
+Sword,Orihalcon,Diamond,DeimosRock,Sword of Justice,Critical2,10,30
+Spear,Copper,Jade,SkyllaEye,Dragonfly Lance,DeepSleep,30,13
+Spear,Chrome,Onyx,UranusRock,Knight Lance,Counter1,30,32
+Spear,Silver,Turquoise,NeptuneRock,Longinus Lance,PhysicalReduction1,30,35
+Spear,Gold,Ruby,PlutoRock,Shield Lance,MagicReduction,20,38
+Spear,Platinum,Crystal,ChrysaorEye,Storm Lance,SevereParalysis,20,16
+Spear,Mythril,Amethyst,VulcanRock,Brionac,HPAbsorption2,20,28
+Spear,Orihalcon,Diamond,NereidRock,Chaos Tower,PhysicalReduction2,10,36
+Axe,Copper,Jade,SnakeEye,Sickle,StrongSilence,30,22
+Axe,Chrome,Garnet,MarsRock,Hades Battleaxe,Critical 1,30,29
+Axe,Silver,Crystal,Gunpowder,Hellfire Axe,Self Destruct,30,44
+Axe,Gold,Ruby,MercuryRock,Mirror Axe,HPAbsorption1,20,27
+Axe,Platinum,Peridot,NagaEye,G-Force,DeadlyPoison,20,19
+Axe,Mythril,Amethyst,VulcanRock,Bloodsucker Axe,HPAbsorption2,20,28
+Axe,Orihalcon,Topaz,PhobosRock,Death Axe,Critical3,10,31
+Claw,Copper,Jade,NeptuneRock,Elf's Claw,PhysicalReduction1,30,35
+Claw,Chrome,Onyx,OberonRock,Dragon's Claw,Counter2,30,33
+Claw,Silver,Turquoise,NeptuneRock,Shield Claw,PhysicalReduction1,30,35
+Claw,Gold,Ruby,MercuryRock,Black Anis Claw,HPAbsortiopn1,20,27
+Claw,Platinum,Ruby,ShyffRock,Demon's Claw,GoldRecoveryUP2,20,50
+Claw,Mythril,Pearl,MarsRock,Skylla's Claw,Critical1,20,29
+Claw,Orihalcon,Opal,TitaniaRock,Chaos Claw,Counter3,10,34
+Blade,Copper,Jade,SnakeEye,Bizen Boat,StrongSilence,30,22
+Blade,Chrome,Jade,NagaEye,NinjaBlade,DeadlyPoison,30,19
+Blade,Silver,Crystal,VenusRock,Twin Blade,GoldRecoveryUP1,30,49
+Blade,Gold,Jade,SkyllaEye,Assassin Dagger,DeepSleep,20,13
+Blade,Platinum,Jade,ChrysaorEye,Queen Bee Sting,SevereParalysis,20,16
+Blade,Mythril,Pearl,MarsRock,Pilgrim's Staff,Critical1,20,29
+Blade,Orihalcon,Sapphire,GalaRock,Judgement Blade,GoldRecoveryUP3,10,51
+Bow,Copper,Jade,MercuryRock,Apollo Bow,HPAbsortiopn1,30,27
+Bow,Chrome,Jade,SkyllaEye,Elfin Bow,DeepSleep,30,13
+Bow,Silver,Jade,NagaEye,Goliat Sling,DeadlyPoison,30,19
+Bow,Gold,Jade,ChrysaorEye,Nasu Yoichi Bow,SevereParalysis,20,16
+Bow,Platinum,Amethyst,JupiterRock,Robin Hood Bow,AutoHPRestore1,20,24
+Bow,Mythril,Pearl,MarsRock,Kenkon Bow,Critical1,20,29
+Bow,Orihalcon,Sapphire,SnakeEye,Star Bow,StrongSilence,10,22
+Staff,Copper,Jade,UranusRock,Mitsue Staff,Counter1,30,32
+Staff,Chrome,Jade,NagaEye,Coatl Staff,DeadlyPoison,30,19
+Staff,Silver,Turquoise,NereidRock,Shield Staff,PhysicalReduction2,30,36
+Staff,Gold,Ruby,PlutoRock,Twin Snake,MagicReduction,20,38
+Staff,Platinum,Amethyst,IoRock,Shaman God Staff,AutoHPRestore2,20,25
+Staff,Mythril,Crystal,ShyffRock,Aztec Gold Staff,GoldRecoveryUP2,20,50
+Staff,Orihalcon,Topaz,Mage's Book,Emperor's Staff,Proof of Contract,10,40
+Mace,Copper,Jade,MercuryRock,ForestMace,HPAbsortiopn1,30,27
+Mace,Chrome,Jade,SkyllaEye,Awakening Mace,DeepSleep,30,13
+Mace,Silver,Crystal,ChrysaorEye,Victory Cry,SevereParalysis,30,16
+Mace,Gold,Jade,NeptuneRock,Purity Mace,PhysicalReduction1,20,35
+Mace,Platinum,Ruby,GaiaRock,Shinning Mace,MagicReflection,20,39
+Mace,Mythril,Ruby,DeimosRock,Divine Power,Critical2,20,30
+Mace,Orihalcon,Pearl,GanymedeRock,Hierophant Staff,AutoHPRestore3,10,26
+Armor,Copper,Amethyst,OceanTears,Armored Casket,Revive,20,47
+Armor,Chrome,Onyx,SkyllaEye,Shinning Robe,DeepSleep,20,13
+Armor,Silver,Amethyst,SaturnRock,Soul Jacket,ItemRecovery,20,48
+Armor,Gold,Amethyst,JupiterRock,Fairy Cloack,AutoHPRestore1,20,24
+Armor,Platinum,Amethyst,PlutoRock,Mirror Armor,MagicReduction,15,38
+Armor,Mythril,Amethyst,IoRock,Survivor Armor,AutoHPRestore2,15,25
+Armor,Orihalcon,Emerald,ProteusRock,War Chariot,PhysicalReduction3,5,37
+Accessories,Silver,Lapis Lazuli,Spellbook-Sickle,Wolf Ring,Warrior's Spirit,30,41
+Accessories,Gold,Topaz,Mage's Book,Mage Necklace,Proof of Contract,25,40
+Accessories,Gold,Any,ChaostHeart,Rebirth Necklace,Regenerate,40,45
+Accessories,Gold,Any,Dividing Heart,Dividing Necklace,Multiply,40,46
+Accessories,Platinum,MercuryRock,JupiterRock,Ring of Life,HPAbsortiopn1 AutoHPRestore1,10,27+24
+Accessories,Mythril,Peridot,BlackMagicBook,Owl Ring,Mage's Spirit,30,42
+Accessories,Orihalcon,Opal,Forbidden Spells,Ring of the Sun,Hero's Spirit,5,43

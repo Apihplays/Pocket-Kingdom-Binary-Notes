@@ -34,14 +34,15 @@ python3 tools/patch_100_percent_combine.py [app_dir]
 Idempotent; creates one-time `.orig` backups for `itemdata.dat`. Tests self-skip
 when no game install is present.
 
-## Unit & emblem database
+## Unit, emblem & crafting database
 
 **Live app: <https://apihplays.github.io/Pocket-Kingdom-Binary-Notes/>**
 
 `unitdb/` is a compact offline database built from archived pk.warcry.com pages
-(Wayback Machine, 2005): 115 units (class, race, rank, slots, move,
-HP/ATK/DEF/AGI/DEX/WIS/INT/HIT%), their special abilities, the full evolution
-tree (target, rank, level, VP, RankUp Emblem), and 31 emblems / 70 recipes.
+(Wayback Machine, 2005) plus a community crafting chart: 115 units (class, race,
+rank, slots, move, HP/ATK/DEF/AGI/DEX/WIS/INT/HIT%), their special abilities, the
+full evolution tree (target, rank, level, VP, RankUp Emblem), 31 emblems /
+70 recipes, and 70 weapon/armor/accessory crafting recipes with effect ids.
 
 `unitdb/PocketKingdom-Units.html` is a **self-contained app** — open it in any
 browser; no server or internet needed. It has:
@@ -52,17 +53,20 @@ browser; no server or internet needed. It has:
   combined stats (saved in your browser).
 - **Emblems** — recipe table (Ore + Item1 + Item2 → Success%); clicking a
   RankUp Emblem in a unit's evolution jumps straight to its recipe.
+- **Crafting** — weapon/armor/accessory recipes (Mold + Ore + 2 materials →
+  Result + effect + success%), filterable by mold/ore/success, with a
+  cross-referenced effect-id table.
 
 Rebuild/refresh:
 
 ```bash
-python3 tools/build_unitdb.py --details --emblems
+python3 tools/build_unitdb.py --details --emblems --crafting
 ```
 
-`--details` re-fetches each unit page and `--emblems` the recipe table; both
-cache into `unitdb/raw/` (git-ignored). Omit the flags for a fast index-only
-rebuild. Stats are base values — the game scales them with level, and
-combining/evolving changes them.
+`--details` re-fetches each unit page, `--emblems` the recipe table and
+`--crafting` the crafting chart; all cache into `unitdb/raw/` (git-ignored).
+Omit the flags for a fast index-only rebuild. Unit stats are base values — the
+game scales them with level, and combining/evolving changes them.
 
 ## Removed: mass-sell
 

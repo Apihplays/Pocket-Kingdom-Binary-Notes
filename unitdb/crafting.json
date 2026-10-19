@@ -1,0 +1,843 @@
+[
+  {
+    "mold": "Sword",
+    "ore": "Copper",
+    "item1": "Jade",
+    "item2": "MercuryRock",
+    "result": "Giant's Mustache",
+    "effect": "HPAbsortiopn1",
+    "success": 30,
+    "effect_ids": [
+      27
+    ]
+  },
+  {
+    "mold": "Sword",
+    "ore": "Chrome",
+    "item1": "Crystal",
+    "item2": "SnakeEye",
+    "result": "Bamboo Sword",
+    "effect": "StrongSilence",
+    "success": 30,
+    "effect_ids": [
+      22
+    ]
+  },
+  {
+    "mold": "Sword",
+    "ore": "Silver",
+    "item1": "Crystal",
+    "item2": "VenusRock",
+    "result": "Thief's Blade",
+    "effect": "GoldRecoveryUP1",
+    "success": 30,
+    "effect_ids": [
+      49
+    ]
+  },
+  {
+    "mold": "Sword",
+    "ore": "Gold",
+    "item1": "Turquoise",
+    "item2": "UranusRock",
+    "result": "Z Calibur",
+    "effect": "Counter1",
+    "success": 20,
+    "effect_ids": [
+      32
+    ]
+  },
+  {
+    "mold": "Sword",
+    "ore": "Platinum",
+    "item1": "Peridot",
+    "item2": "NagaEye",
+    "result": "Anaconda Sword",
+    "effect": "DeadlyPoison",
+    "success": 20,
+    "effect_ids": [
+      19
+    ]
+  },
+  {
+    "mold": "Sword",
+    "ore": "Mythril",
+    "item1": "Amethyst",
+    "item2": "VulcanRock",
+    "result": "Murasame Sword",
+    "effect": "HPAbsortiopn2",
+    "success": 20,
+    "effect_ids": [
+      28
+    ]
+  },
+  {
+    "mold": "Sword",
+    "ore": "Orihalcon",
+    "item1": "Diamond",
+    "item2": "DeimosRock",
+    "result": "Sword of Justice",
+    "effect": "Critical2",
+    "success": 10,
+    "effect_ids": [
+      30
+    ]
+  },
+  {
+    "mold": "Spear",
+    "ore": "Copper",
+    "item1": "Jade",
+    "item2": "SkyllaEye",
+    "result": "Dragonfly Lance",
+    "effect": "DeepSleep",
+    "success": 30,
+    "effect_ids": [
+      13
+    ]
+  },
+  {
+    "mold": "Spear",
+    "ore": "Chrome",
+    "item1": "Onyx",
+    "item2": "UranusRock",
+    "result": "Knight Lance",
+    "effect": "Counter1",
+    "success": 30,
+    "effect_ids": [
+      32
+    ]
+  },
+  {
+    "mold": "Spear",
+    "ore": "Silver",
+    "item1": "Turquoise",
+    "item2": "NeptuneRock",
+    "result": "Longinus Lance",
+    "effect": "PhysicalReduction1",
+    "success": 30,
+    "effect_ids": [
+      35
+    ]
+  },
+  {
+    "mold": "Spear",
+    "ore": "Gold",
+    "item1": "Ruby",
+    "item2": "PlutoRock",
+    "result": "Shield Lance",
+    "effect": "MagicReduction",
+    "success": 20,
+    "effect_ids": [
+      38
+    ]
+  },
+  {
+    "mold": "Spear",
+    "ore": "Platinum",
+    "item1": "Crystal",
+    "item2": "ChrysaorEye",
+    "result": "Storm Lance",
+    "effect": "SevereParalysis",
+    "success": 20,
+    "effect_ids": [
+      16
+    ]
+  },
+  {
+    "mold": "Spear",
+    "ore": "Mythril",
+    "item1": "Amethyst",
+    "item2": "VulcanRock",
+    "result": "Brionac",
+    "effect": "HPAbsorption2",
+    "success": 20,
+    "effect_ids": [
+      28
+    ]
+  },
+  {
+    "mold": "Spear",
+    "ore": "Orihalcon",
+    "item1": "Diamond",
+    "item2": "NereidRock",
+    "result": "Chaos Tower",
+    "effect": "PhysicalReduction2",
+    "success": 10,
+    "effect_ids": [
+      36
+    ]
+  },
+  {
+    "mold": "Axe",
+    "ore": "Copper",
+    "item1": "Jade",
+    "item2": "SnakeEye",
+    "result": "Sickle",
+    "effect": "StrongSilence",
+    "success": 30,
+    "effect_ids": [
+      22
+    ]
+  },
+  {
+    "mold": "Axe",
+    "ore": "Chrome",
+    "item1": "Garnet",
+    "item2": "MarsRock",
+    "result": "Hades Battleaxe",
+    "effect": "Critical 1",
+    "success": 30,
+    "effect_ids": [
+      29
+    ]
+  },
+  {
+    "mold": "Axe",
+    "ore": "Silver",
+    "item1": "Crystal",
+    "item2": "Gunpowder",
+    "result": "Hellfire Axe",
+    "effect": "Self Destruct",
+    "success": 30,
+    "effect_ids": [
+      44
+    ]
+  },
+  {
+    "mold": "Axe",
+    "ore": "Gold",
+    "item1": "Ruby",
+    "item2": "MercuryRock",
+    "result": "Mirror Axe",
+    "effect": "HPAbsorption1",
+    "success": 20,
+    "effect_ids": [
+      27
+    ]
+  },
+  {
+    "mold": "Axe",
+    "ore": "Platinum",
+    "item1": "Peridot",
+    "item2": "NagaEye",
+    "result": "G-Force",
+    "effect": "DeadlyPoison",
+    "success": 20,
+    "effect_ids": [
+      19
+    ]
+  },
+  {
+    "mold": "Axe",
+    "ore": "Mythril",
+    "item1": "Amethyst",
+    "item2": "VulcanRock",
+    "result": "Bloodsucker Axe",
+    "effect": "HPAbsorption2",
+    "success": 20,
+    "effect_ids": [
+      28
+    ]
+  },
+  {
+    "mold": "Axe",
+    "ore": "Orihalcon",
+    "item1": "Topaz",
+    "item2": "PhobosRock",
+    "result": "Death Axe",
+    "effect": "Critical3",
+    "success": 10,
+    "effect_ids": [
+      31
+    ]
+  },
+  {
+    "mold": "Claw",
+    "ore": "Copper",
+    "item1": "Jade",
+    "item2": "NeptuneRock",
+    "result": "Elf's Claw",
+    "effect": "PhysicalReduction1",
+    "success": 30,
+    "effect_ids": [
+      35
+    ]
+  },
+  {
+    "mold": "Claw",
+    "ore": "Chrome",
+    "item1": "Onyx",
+    "item2": "OberonRock",
+    "result": "Dragon's Claw",
+    "effect": "Counter2",
+    "success": 30,
+    "effect_ids": [
+      33
+    ]
+  },
+  {
+    "mold": "Claw",
+    "ore": "Silver",
+    "item1": "Turquoise",
+    "item2": "NeptuneRock",
+    "result": "Shield Claw",
+    "effect": "PhysicalReduction1",
+    "success": 30,
+    "effect_ids": [
+      35
+    ]
+  },
+  {
+    "mold": "Claw",
+    "ore": "Gold",
+    "item1": "Ruby",
+    "item2": "MercuryRock",
+    "result": "Black Anis Claw",
+    "effect": "HPAbsortiopn1",
+    "success": 20,
+    "effect_ids": [
+      27
+    ]
+  },
+  {
+    "mold": "Claw",
+    "ore": "Platinum",
+    "item1": "Ruby",
+    "item2": "ShyffRock",
+    "result": "Demon's Claw",
+    "effect": "GoldRecoveryUP2",
+    "success": 20,
+    "effect_ids": [
+      50
+    ]
+  },
+  {
+    "mold": "Claw",
+    "ore": "Mythril",
+    "item1": "Pearl",
+    "item2": "MarsRock",
+    "result": "Skylla's Claw",
+    "effect": "Critical1",
+    "success": 20,
+    "effect_ids": [
+      29
+    ]
+  },
+  {
+    "mold": "Claw",
+    "ore": "Orihalcon",
+    "item1": "Opal",
+    "item2": "TitaniaRock",
+    "result": "Chaos Claw",
+    "effect": "Counter3",
+    "success": 10,
+    "effect_ids": [
+      34
+    ]
+  },
+  {
+    "mold": "Blade",
+    "ore": "Copper",
+    "item1": "Jade",
+    "item2": "SnakeEye",
+    "result": "Bizen Boat",
+    "effect": "StrongSilence",
+    "success": 30,
+    "effect_ids": [
+      22
+    ]
+  },
+  {
+    "mold": "Blade",
+    "ore": "Chrome",
+    "item1": "Jade",
+    "item2": "NagaEye",
+    "result": "NinjaBlade",
+    "effect": "DeadlyPoison",
+    "success": 30,
+    "effect_ids": [
+      19
+    ]
+  },
+  {
+    "mold": "Blade",
+    "ore": "Silver",
+    "item1": "Crystal",
+    "item2": "VenusRock",
+    "result": "Twin Blade",
+    "effect": "GoldRecoveryUP1",
+    "success": 30,
+    "effect_ids": [
+      49
+    ]
+  },
+  {
+    "mold": "Blade",
+    "ore": "Gold",
+    "item1": "Jade",
+    "item2": "SkyllaEye",
+    "result": "Assassin Dagger",
+    "effect": "DeepSleep",
+    "success": 20,
+    "effect_ids": [
+      13
+    ]
+  },
+  {
+    "mold": "Blade",
+    "ore": "Platinum",
+    "item1": "Jade",
+    "item2": "ChrysaorEye",
+    "result": "Queen Bee Sting",
+    "effect": "SevereParalysis",
+    "success": 20,
+    "effect_ids": [
+      16
+    ]
+  },
+  {
+    "mold": "Blade",
+    "ore": "Mythril",
+    "item1": "Pearl",
+    "item2": "MarsRock",
+    "result": "Pilgrim's Staff",
+    "effect": "Critical1",
+    "success": 20,
+    "effect_ids": [
+      29
+    ]
+  },
+  {
+    "mold": "Blade",
+    "ore": "Orihalcon",
+    "item1": "Sapphire",
+    "item2": "GalaRock",
+    "result": "Judgement Blade",
+    "effect": "GoldRecoveryUP3",
+    "success": 10,
+    "effect_ids": [
+      51
+    ]
+  },
+  {
+    "mold": "Bow",
+    "ore": "Copper",
+    "item1": "Jade",
+    "item2": "MercuryRock",
+    "result": "Apollo Bow",
+    "effect": "HPAbsortiopn1",
+    "success": 30,
+    "effect_ids": [
+      27
+    ]
+  },
+  {
+    "mold": "Bow",
+    "ore": "Chrome",
+    "item1": "Jade",
+    "item2": "SkyllaEye",
+    "result": "Elfin Bow",
+    "effect": "DeepSleep",
+    "success": 30,
+    "effect_ids": [
+      13
+    ]
+  },
+  {
+    "mold": "Bow",
+    "ore": "Silver",
+    "item1": "Jade",
+    "item2": "NagaEye",
+    "result": "Goliat Sling",
+    "effect": "DeadlyPoison",
+    "success": 30,
+    "effect_ids": [
+      19
+    ]
+  },
+  {
+    "mold": "Bow",
+    "ore": "Gold",
+    "item1": "Jade",
+    "item2": "ChrysaorEye",
+    "result": "Nasu Yoichi Bow",
+    "effect": "SevereParalysis",
+    "success": 20,
+    "effect_ids": [
+      16
+    ]
+  },
+  {
+    "mold": "Bow",
+    "ore": "Platinum",
+    "item1": "Amethyst",
+    "item2": "JupiterRock",
+    "result": "Robin Hood Bow",
+    "effect": "AutoHPRestore1",
+    "success": 20,
+    "effect_ids": [
+      24
+    ]
+  },
+  {
+    "mold": "Bow",
+    "ore": "Mythril",
+    "item1": "Pearl",
+    "item2": "MarsRock",
+    "result": "Kenkon Bow",
+    "effect": "Critical1",
+    "success": 20,
+    "effect_ids": [
+      29
+    ]
+  },
+  {
+    "mold": "Bow",
+    "ore": "Orihalcon",
+    "item1": "Sapphire",
+    "item2": "SnakeEye",
+    "result": "Star Bow",
+    "effect": "StrongSilence",
+    "success": 10,
+    "effect_ids": [
+      22
+    ]
+  },
+  {
+    "mold": "Staff",
+    "ore": "Copper",
+    "item1": "Jade",
+    "item2": "UranusRock",
+    "result": "Mitsue Staff",
+    "effect": "Counter1",
+    "success": 30,
+    "effect_ids": [
+      32
+    ]
+  },
+  {
+    "mold": "Staff",
+    "ore": "Chrome",
+    "item1": "Jade",
+    "item2": "NagaEye",
+    "result": "Coatl Staff",
+    "effect": "DeadlyPoison",
+    "success": 30,
+    "effect_ids": [
+      19
+    ]
+  },
+  {
+    "mold": "Staff",
+    "ore": "Silver",
+    "item1": "Turquoise",
+    "item2": "NereidRock",
+    "result": "Shield Staff",
+    "effect": "PhysicalReduction2",
+    "success": 30,
+    "effect_ids": [
+      36
+    ]
+  },
+  {
+    "mold": "Staff",
+    "ore": "Gold",
+    "item1": "Ruby",
+    "item2": "PlutoRock",
+    "result": "Twin Snake",
+    "effect": "MagicReduction",
+    "success": 20,
+    "effect_ids": [
+      38
+    ]
+  },
+  {
+    "mold": "Staff",
+    "ore": "Platinum",
+    "item1": "Amethyst",
+    "item2": "IoRock",
+    "result": "Shaman God Staff",
+    "effect": "AutoHPRestore2",
+    "success": 20,
+    "effect_ids": [
+      25
+    ]
+  },
+  {
+    "mold": "Staff",
+    "ore": "Mythril",
+    "item1": "Crystal",
+    "item2": "ShyffRock",
+    "result": "Aztec Gold Staff",
+    "effect": "GoldRecoveryUP2",
+    "success": 20,
+    "effect_ids": [
+      50
+    ]
+  },
+  {
+    "mold": "Staff",
+    "ore": "Orihalcon",
+    "item1": "Topaz",
+    "item2": "Mage's Book",
+    "result": "Emperor's Staff",
+    "effect": "Proof of Contract",
+    "success": 10,
+    "effect_ids": [
+      40
+    ]
+  },
+  {
+    "mold": "Mace",
+    "ore": "Copper",
+    "item1": "Jade",
+    "item2": "MercuryRock",
+    "result": "ForestMace",
+    "effect": "HPAbsortiopn1",
+    "success": 30,
+    "effect_ids": [
+      27
+    ]
+  },
+  {
+    "mold": "Mace",
+    "ore": "Chrome",
+    "item1": "Jade",
+    "item2": "SkyllaEye",
+    "result": "Awakening Mace",
+    "effect": "DeepSleep",
+    "success": 30,
+    "effect_ids": [
+      13
+    ]
+  },
+  {
+    "mold": "Mace",
+    "ore": "Silver",
+    "item1": "Crystal",
+    "item2": "ChrysaorEye",
+    "result": "Victory Cry",
+    "effect": "SevereParalysis",
+    "success": 30,
+    "effect_ids": [
+      16
+    ]
+  },
+  {
+    "mold": "Mace",
+    "ore": "Gold",
+    "item1": "Jade",
+    "item2": "NeptuneRock",
+    "result": "Purity Mace",
+    "effect": "PhysicalReduction1",
+    "success": 20,
+    "effect_ids": [
+      35
+    ]
+  },
+  {
+    "mold": "Mace",
+    "ore": "Platinum",
+    "item1": "Ruby",
+    "item2": "GaiaRock",
+    "result": "Shinning Mace",
+    "effect": "MagicReflection",
+    "success": 20,
+    "effect_ids": [
+      39
+    ]
+  },
+  {
+    "mold": "Mace",
+    "ore": "Mythril",
+    "item1": "Ruby",
+    "item2": "DeimosRock",
+    "result": "Divine Power",
+    "effect": "Critical2",
+    "success": 20,
+    "effect_ids": [
+      30
+    ]
+  },
+  {
+    "mold": "Mace",
+    "ore": "Orihalcon",
+    "item1": "Pearl",
+    "item2": "GanymedeRock",
+    "result": "Hierophant Staff",
+    "effect": "AutoHPRestore3",
+    "success": 10,
+    "effect_ids": [
+      26
+    ]
+  },
+  {
+    "mold": "Armor",
+    "ore": "Copper",
+    "item1": "Amethyst",
+    "item2": "OceanTears",
+    "result": "Armored Casket",
+    "effect": "Revive",
+    "success": 20,
+    "effect_ids": [
+      47
+    ]
+  },
+  {
+    "mold": "Armor",
+    "ore": "Chrome",
+    "item1": "Onyx",
+    "item2": "SkyllaEye",
+    "result": "Shinning Robe",
+    "effect": "DeepSleep",
+    "success": 20,
+    "effect_ids": [
+      13
+    ]
+  },
+  {
+    "mold": "Armor",
+    "ore": "Silver",
+    "item1": "Amethyst",
+    "item2": "SaturnRock",
+    "result": "Soul Jacket",
+    "effect": "ItemRecovery",
+    "success": 20,
+    "effect_ids": [
+      48
+    ]
+  },
+  {
+    "mold": "Armor",
+    "ore": "Gold",
+    "item1": "Amethyst",
+    "item2": "JupiterRock",
+    "result": "Fairy Cloack",
+    "effect": "AutoHPRestore1",
+    "success": 20,
+    "effect_ids": [
+      24
+    ]
+  },
+  {
+    "mold": "Armor",
+    "ore": "Platinum",
+    "item1": "Amethyst",
+    "item2": "PlutoRock",
+    "result": "Mirror Armor",
+    "effect": "MagicReduction",
+    "success": 15,
+    "effect_ids": [
+      38
+    ]
+  },
+  {
+    "mold": "Armor",
+    "ore": "Mythril",
+    "item1": "Amethyst",
+    "item2": "IoRock",
+    "result": "Survivor Armor",
+    "effect": "AutoHPRestore2",
+    "success": 15,
+    "effect_ids": [
+      25
+    ]
+  },
+  {
+    "mold": "Armor",
+    "ore": "Orihalcon",
+    "item1": "Emerald",
+    "item2": "ProteusRock",
+    "result": "War Chariot",
+    "effect": "PhysicalReduction3",
+    "success": 5,
+    "effect_ids": [
+      37
+    ]
+  },
+  {
+    "mold": "Accessories",
+    "ore": "Silver",
+    "item1": "Lapis Lazuli",
+    "item2": "Spellbook-Sickle",
+    "result": "Wolf Ring",
+    "effect": "Warrior's Spirit",
+    "success": 30,
+    "effect_ids": [
+      41
+    ]
+  },
+  {
+    "mold": "Accessories",
+    "ore": "Gold",
+    "item1": "Topaz",
+    "item2": "Mage's Book",
+    "result": "Mage Necklace",
+    "effect": "Proof of Contract",
+    "success": 25,
+    "effect_ids": [
+      40
+    ]
+  },
+  {
+    "mold": "Accessories",
+    "ore": "Gold",
+    "item1": "Any",
+    "item2": "ChaostHeart",
+    "result": "Rebirth Necklace",
+    "effect": "Regenerate",
+    "success": 40,
+    "effect_ids": [
+      45
+    ]
+  },
+  {
+    "mold": "Accessories",
+    "ore": "Gold",
+    "item1": "Any",
+    "item2": "Dividing Heart",
+    "result": "Dividing Necklace",
+    "effect": "Multiply",
+    "success": 40,
+    "effect_ids": [
+      46
+    ]
+  },
+  {
+    "mold": "Accessories",
+    "ore": "Platinum",
+    "item1": "MercuryRock",
+    "item2": "JupiterRock",
+    "result": "Ring of Life",
+    "effect": "HPAbsortiopn1 AutoHPRestore1",
+    "success": 10,
+    "effect_ids": [
+      27,
+      24
+    ]
+  },
+  {
+    "mold": "Accessories",
+    "ore": "Mythril",
+    "item1": "Peridot",
+    "item2": "BlackMagicBook",
+    "result": "Owl Ring",
+    "effect": "Mage's Spirit",
+    "success": 30,
+    "effect_ids": [
+      42
+    ]
+  },
+  {
+    "mold": "Accessories",
+    "ore": "Orihalcon",
+    "item1": "Opal",
+    "item2": "Forbidden Spells",
+    "result": "Ring of the Sun",
+    "effect": "Hero's Spirit",
+    "success": 5,
+    "effect_ids": [
+      43
+    ]
+  }
+]
