@@ -1,0 +1,116 @@
+id,name,race,race_icon,rank,slots,move,hp,atk,def,agi,dex,wis,int,hit,ability,advances
+0,Soldier,Warrior,1,1,1,Walk,22,19,9,11,11,11,9,26,,"Warrior (rank 2, lvl 1, 10 VP, Warrior Emblem); Thief (rank 2, lvl 1, 10 VP, Hound Emblem); Archer (rank 2, lvl 1, 10 VP, Bone Emblem); Monk (rank 3, lvl 2, 40 VP, Jackal Emblem); Knight (rank 3, lvl 2, 40 VP, Hero Emblem)"
+1,Warrior,Warrior,1,2,1,Walk,45,24,10,13,12,12,12,30,,"Phalanx (rank 4, lvl 2, 70 VP, Soldier Emblem); Swordman (rank 5, lvl 3, 110 VP, Knight Emblem)"
+2,Phalanx,Warrior,1,4,2,Walk,89,36,12,18,16,16,16,44,,"Ogre (rank 7, lvl 3, 200 VP, Shogun Emblem)"
+3,Orc,Orc,2,2,1,Walk,34,25,10,20,13,12,18,29,,"Orc Chief (rank 4, lvl 2, 70 VP, Soldier Emblem)"
+4,Orc Chief,Orc,2,4,2,Walk,68,38,14,28,19,16,23,39,,"Ogre (rank 7, lvl 3, 200 VP, Shogun Emblem)"
+5,Ogre,Orc,2,7,2,Walk,156,61,18,28,23,23,23,48,,"Khazad's Ghost (rank 9, lvl 5, 300 VP, Dragon Emblem)"
+6,Khazad's Ghost,Khazad's Ghost,3,9,3,Walk,201,81,23,36,30,29,29,55,Counter,
+7,Swordman,Swordman,4,5,1,Walk,95,36,19,24,23,16,19,43,Critical,"Sword Master (rank 8, lvl 4, 250 VP, Champion Emblem)"
+8,Sword Master,Swordman,4,8,2,Walk,152,55,31,39,35,23,29,48,Critical,"Mikaduchi (rank 9, lvl 5, 300 VP, Dragon Emblem)"
+9,Mikaduchi,Mikaduchi,5,9,3,Walk,171,62,35,44,40,25,33,50,Critical,
+10,Monk,Monk,6,3,1,Walk,69,26,10,17,17,14,13,36,Evade,"Expert Monk (rank 5, lvl 3, 150 VP, Victor Emblem)"
+11,Expert Monk,Monk,6,5,1,Walk,116,36,12,24,24,18,16,46,Evade,"Master Monk (rank 8, lvl 4, 250 VP, Champion Emblem); Master Fist (rank 9, lvl 5, 350 VP, Origin Emblem)"
+12,Master Monk,Monk,6,8,2,Walk,185,55,16,39,39,26,23,53,Evade,
+13,Master Fist,Monk,6,9,3,Walk,208,62,17,44,44,29,25,55,Evade,
+14,Knight,Knight,7,3,1,Walk,62,24,12,14,15,14,14,38,Bash,"Undead Knight (rank 4, lvl 2, 70 VP, Mist Emblem); Temple Knight (rank 5, lvl 3, 110 VP, Knight Emblem)"
+15,Temple Knight,Knight,7,5,1,Walk,103,33,17,18,21,18,18,49,Bash,"Paladin (rank 7, lvl 4, 200 VP, Shogun Emblem)"
+16,Paladin,Knight,7,7,2,Walk,145,43,23,23,28,23,23,55,Bash,"Lord Redrick (rank 9, lvl 5, 300 VP, Dragon Emblem); Durahan (rank 9, lvl 5, 300 VP, Immortal Emblem)"
+17,Lord Redrick,Lord Redrick,8,9,3,Walk,186,56,29,29,36,29,29,60,Restore,
+18,Durahan,Durahan,9,9,3,Walk,193,75,38,33,25,33,29,48,Death Touch,
+19,Undead Knight,Vampire,10,4,1,Walk,73,28,14,17,19,19,21,42,HP Drain,"Vampire (rank 6, lvl 3, 150 VP, Chain Emblem)"
+20,Vampire,Vampire,10,6,1,Walk,109,38,20,22,26,26,31,45,HP Drain,"August (rank 9, lvl 5, 300 VP, Dragon Emblem)"
+21,August,August,11,9,3,Walk,164,56,29,33,40,40,48,50,Spirit Banquet,
+22,Thief,Thief,12,2,1,Walk,36,22,9,14,14,13,12,35,Back Stab,"Rogue (rank 4, lvl 2, 70 VP, Soldier Emblem)"
+23,Rogue,Thief,12,4,1,Walk,71,30,11,21,20,19,17,44,Back Stab,"Assassin (rank 7, lvl 4, 200 VP, Shogun Emblem)"
+24,Assassin,Thief,12,7,2,Walk,125,48,15,36,33,31,26,51,Back Stab,"Genzoh (rank 9, lvl 5, 300 VP, Dragon Emblem)"
+25,Genzoh,Genzoh,13,9,3,Walk,161,62,19,48,44,40,33,55,Flame Formation,
+26,Archer,Archer,14,2,1,Walk,40,20,10,13,14,14,12,36,Antiaircraft,"Hunter (rank 4, lvl 2, 70 VP, Soldier Emblem)"
+27,Hunter,Archer,14,4,1,Walk,79,27,12,19,21,21,16,45,Antiaircraft,"Sniper (rank 7, lvl 4, 200 VP, Shogun Emblem)"
+28,Sniper,Archer,14,7,2,Walk,139,39,18,31,36,36,23,53,Antiaircraft,"Hell Sniper (rank 9, lvl 5, 350 VP, Origin Emblem)"
+29,Hell Sniper,Archer,14,9,3,Walk,179,49,23,40,48,48,29,58,Antiaircraft,
+30,Noble,Wizard,15,1,1,Walk,12,11,3,11,6,22,22,20,,"Priest (rank 2, lvl 1, 10 VP, Bone Emblem); Theoricus (rank 3, lvl 2, 40 VP, Hero Emblem); Necromancer (rank 3, lvl 2, 40 VP, Jackal Emblem)"
+31,Theoricus,Wizard,15,3,1,Walk,32,16,5,17,7,35,32,25,Hero's Setback,"Philosophas (rank 5, lvl 3, 110 VP, Knight Emblem)"
+32,Philosophas,Wizard,15,5,1,Walk,53,23,8,26,10,51,45,32,Hero's Setback,"Adept (rank 8, lvl 4, 250 VP, Champion Emblem)"
+33,Adept,Wizard,15,8,2,Walk,85,35,13,42,15,83,71,39,Hero's Setback,"Mage Silion (rank 9, lvl 5, 300 VP, Dragon Emblem)"
+34,Mage Silion,Mage Silion,16,9,3,Walk,95,40,14,48,16,96,80,42,Meteor Strike,
+35,Priest,Priest,17,2,1,Walk,25,12,4,12,7,26,25,16,Restore,"High Priest (rank 5, lvl 3, 110 VP, Knight Emblem)"
+36,High Priest,Priest,17,5,1,Walk,62,19,7,19,13,45,39,28,Restore,"Bishop (rank 7, lvl 4, 200 VP, Shogun Emblem)"
+37,Bishop,Priest,17,7,2,Walk,86,26,9,26,18,61,51,34,Restore,"Savior (rank 9, lvl 5, 350 VP, Origin Emblem)"
+38,Savior,Priest,17,9,2,Walk,111,33,12,33,24,80,65,45,Restore,
+39,Necromancer,Lich,18,3,1,Walk,34,17,5,14,7,32,35,26,Eternal Rest,"Lich (rank 5, lvl 3, 110 VP, Needle Emblem)"
+40,Lich,Lich,18,5,1,Walk,57,26,7,19,10,45,51,33,Eternal Rest,"Lich Lord (rank 8, lvl 4, 250 VP, Moon Emblem)"
+41,Lich Lord,Lich,18,8,2,Walk,92,42,11,29,15,71,83,40,Eternal Rest,"Al Acid (rank 9, lvl 5, 300 VP, Immortal Emblem)"
+42,Al Acid,Al Acid,19,9,3,Walk,103,48,12,33,16,80,96,45,Skull Summon,
+43,Lizardfoot,Lizardfoot,20,1,1,Walk,24,22,14,11,2,11,6,25,,"Scale Runner (rank 2, lvl 1, 10 VP, Hound Emblem)"
+44,Scale Runner,Lizardfoot,20,2,1,Walk,48,26,17,12,3,14,7,27,,"Large Scale (rank 4, lvl 2, 70 VP, Bear Emblem)"
+45,Large Scale,Lizardfoot,20,4,2,Walk,95,36,25,17,4,21,11,31,,"Dragon Runner (rank 5, lvl 2, 110 VP, Lion Emblem); Serpent (rank 6, lvl 3, 150 VP, Chimera Emblem)"
+46,Serpent,Serpent,21,6,2,Walk,143,49,34,22,15,31,15,33,Tidal Wave,"Naga (rank 8, lvl 4, 250 VP, Beast Emblem)"
+47,Naga,Serpent,21,8,2,Walk,190,64,46,29,18,42,21,36,Tidal Wave,"Leviathan (rank 9, lvl 5, 300 VP, Dragon Emblem)"
+48,Leviathan,Leviathan,22,9,3,Walk,214,73,52,33,24,48,24,38,Dragon Breath,
+49,Dragon Runner,Wyvern,23,5,2,Fly,102,48,23,26,15,19,9,33,Collapse,"Wyvern (rank 7, lvl 3, 200 VP, Griffon Emblem); Dragon (rank 8, lvl 4, 250 VP, Beast Emblem)"
+50,Wyvern,Wyvern,23,7,2,Fly,142,67,30,36,17,26,11,36,Collapse,"Tiamat (rank 9, lvl 5, 300 VP, Dragon Emblem)"
+51,Dragon,Dragon,24,8,3,Walk,183,83,54,23,9,23,11,35,Dragon Breath,"Bardion (rank 9, lvl 5, 300 VP, Immortal Emblem); Thyrion (rank 9, lvl 5, 300 VP, Dragon Emblem)"
+52,Tiamat,Tiamat,25,9,3,Fly,183,88,38,48,10,33,14,39,Dragon Breath,
+53,Bardion,Bardion,26,9,3,Walk,206,96,62,25,15,25,13,36,Dragon Breath,
+54,Thyrion,Thyrion,27,9,3,Fly,222,65,52,29,15,29,14,43,Thunder Storm,
+55,Skeleton,Skeleton,28,1,1,Walk,22,15,7,16,14,16,6,23,,"Wight (rank 2, lvl 1, 10 VP, Bone Emblem); Zombie (rank 2, lvl 1, 10 VP, Warrior Emblem); Skeleton Knight (rank 3, lvl 2, 40 VP, Hero Emblem); Skull King (rank 9, lvl 5, 350 VP, Darkness Emblem)"
+56,Skeleton Knight,Skeleton,28,3,1,Walk,50,22,10,32,21,19,13,25,,"Skeleton Lord (rank 5, lvl 3, 110 VP, Needle Emblem)"
+57,Skeleton Lord,Skeleton,28,5,1,Walk,70,31,15,45,31,24,16,31,,
+58,Skull King,Skeleton,28,9,3,Walk,103,57,29,80,57,38,25,38,,
+59,Wight,Specter,29,2,1,Walk,22,17,7,28,16,21,14,22,Confusion,"Wraith (rank 4, lvl 2, 70 VP, Mist Emblem)"
+60,Wraith,Specter,29,4,1,Walk,44,23,9,42,23,32,21,28,Confusion,"Specter (rank 6, lvl 4, 150 VP, Chain Emblem)"
+61,Specter,Specter,29,6,2,Walk,66,32,12,61,32,46,31,30,Confusion,"Lich Lord (rank 8, lvl 4, 250 VP, Moon Emblem)"
+62,Zombie,Zombie,30,2,1,Walk,25,18,8,23,14,16,10,20,,"Living Dead (rank 5, lvl 2, 110 VP, Needle Emblem)"
+63,Living Dead,Zombie,30,5,1,Walk,62,33,14,33,21,17,12,30,Lure of the Dead,"Ghoul (rank 6, lvl 3, 150 VP, Chain Emblem)"
+64,Ghoul,Zombie,30,6,1,Walk,74,40,17,36,24,18,12,32,Lure of the Dead,"Nephilia (rank 9, lvl 5, 350 VP, Darkness Emblem)"
+65,Nephilia,Zombie,30,9,3,Walk,111,62,26,50,35,21,14,36,Lure of the Dead,
+66,Sprite,Harpy,31,1,1,Fly,17,17,15,12,16,9,12,35,,"Harpy (rank 2, lvl 1, 10 VP, Hound Emblem); Vulture (rank 3, lvl 2, 40 VP, Jackal Emblem)"
+67,Harpy,Harpy,31,2,1,Fly,28,19,17,11,21,8,17,32,Turmoil,"Sky Stalker (rank 4, lvl 2, 70 VP, Soldier Emblem)"
+68,Sky Stalker,Harpy,31,4,1,Fly,56,27,25,17,32,9,25,50,Turmoil,"Ladyhawke (rank 7, lvl 4, 200 VP, Shogun Emblem)"
+69,Ladyhawke,Harpy,31,7,2,Fly,98,42,40,29,54,10,43,70,Turmoil,"Lady Sky (rank 9, lvl 5, 350 VP, Origin Emblem)"
+70,Lady Sky,Harpy,31,9,3,Fly,126,55,52,38,72,11,57,77,Turmoil,
+71,Vulture,Bird,32,3,1,Fly,51,26,22,13,20,14,13,38,Angry Wind,"Garuda (rank 6, lvl 3, 150 VP, Chimera Emblem)"
+72,Garuda,Bird,32,6,2,Fly,102,46,40,23,30,24,14,58,Angry Wind,"Rock (rank 8, lvl 4, 250 VP, Beast Emblem)"
+73,Rock,Bird,32,8,2,Fly,136,63,54,31,39,33,16,62,Angry Wind,"Tempest (rank 9, lvl 5, 300 VP, Dragon Emblem)"
+74,Tempest,Tempest,33,9,3,Fly,152,72,62,35,43,38,17,64,Angry Wind,
+75,Amazoness,Elf,34,1,1,Walk,15,15,7,16,23,16,14,36,,"Banshee (rank 2, lvl 1, 10 VP, Bone Emblem); High Elf (rank 3, lvl 2, 40 VP, Hero Emblem)"
+76,High Elf,Elf,34,3,1,Walk,45,21,10,23,35,22,21,40,Judgment of Heaven,"Valkyrie (rank 5, lvl 3, 110 VP, Knight Emblem)"
+77,Valkyrie,Elf,34,5,1,Walk,74,29,15,31,51,29,31,48,Judgment of Heaven,"Scathacha (rank 8, lvl 4, 250 VP, Champion Emblem)"
+78,Scathacha,Elf,34,8,2,Walk,119,45,25,48,83,44,50,56,Judgment of Heaven,"Luna (rank 9, lvl 5, 300 VP, Dragon Emblem)"
+79,Luna,Luna,35,9,3,Walk,134,51,29,55,96,49,57,66,Lost Soul,
+80,Banshee,Siren,36,2,1,Walk,31,20,10,21,27,21,15,28,Shout,"Siren (rank 4, lvl 2, 70 VP, Soldier Emblem)"
+81,Siren,Siren,36,4,1,Walk,62,30,15,32,40,32,21,36,Siren's Lullaby,"Succubus (rank 7, lvl 4, 200 VP, Night Emblem)"
+82,Succubus,Siren,36,7,2,Walk,108,50,23,54,67,54,34,48,Charm,"Morrigan (rank 8, lvl 4, 250 VP, Moon Emblem)"
+83,Morrigan,Siren,36,8,2,Walk,123,60,30,63,77,63,39,55,Judgment of Heaven,"Luna (rank 9, lvl 5, 300 VP, Dragon Emblem)"
+84,Lycanthrope,Orc,2,1,1,Walk,15,20,9,17,11,11,16,39,,"Orc (rank 2, lvl 1, 10 VP, Warrior Emblem); Caveman (rank 2, lvl 1, 10 VP, Bone Emblem); Dingo (rank 2, lvl 1, 10 VP, Hound Emblem); Imp (rank 3, lvl 1, 40 VP, Jackal Emblem)"
+85,Imp,Demon,37,3,1,Walk,47,27,13,23,15,13,26,38,Silence,"Lesser Demon (rank 5, lvl 3, 110 VP, Knight Emblem)"
+86,Lesser Demon,Demon,37,5,2,Walk,79,38,19,31,21,16,38,49,Silence,"Arc Demon (rank 7, lvl 4, 200 VP, Shogun Emblem)"
+87,Arc Demon,Demon,37,7,2,Walk,110,51,27,42,28,20,54,58,Silence,"Bahzam DeGole (rank 9, lvl 5, 300 VP, Dragon Emblem)"
+88,Bahzam DeGole,Bahzam DeGole,38,9,3,Walk,142,66,35,55,36,25,72,64,Silence,
+89,Caveman,Troll,39,2,1,Walk,33,24,11,18,12,14,19,26,,"Troll (rank 4, lvl 2, 70 VP, Soldier Emblem)"
+90,Troll,Troll,39,4,1,Walk,65,36,17,23,16,21,25,35,Automatic HP Restore,"Troll King (rank 6, lvl 3, 150 VP, Victor Emblem)"
+91,Troll King,Troll,39,6,2,Walk,98,51,24,30,20,31,34,46,Automatic HP Restore,"Gigantes (rank 9, lvl 5, 350 VP, Battleaxe Emblem)"
+92,Gigantes,Troll,39,9,3,Walk,147,79,38,43,29,48,49,53,Automatic HP Restore,
+93,Dingo,Wolf,40,2,1,Walk,29,22,10,21,14,13,18,40,,"Shadow Wolf (rank 4, lvl 2, 70 VP, Bear Emblem)"
+94,Shadow Wolf,Wolf,40,4,1,Walk,58,30,13,32,21,19,23,46,Counter,"Hell Hound (rank 7, lvl 4, 200 VP, Griffon Emblem)"
+95,Hell Hound,Wolf,40,7,2,Walk,102,46,20,54,36,31,34,54,Counter,"Fenril (rank 9, lvl 5, 300 VP, Dragon Emblem)"
+96,Fenril,Fenril,41,9,3,Walk,131,59,26,72,48,40,43,58,Snarl,
+97,Gargoyle,Gargoyle,42,1,1,Walk,25,21,15,9,6,6,11,28,,"Steel Gargoyle (rank 3, lvl 2, 40 VP, Hero Emblem); Golem (rank 3, lvl 1, 40 VP, Jackal Emblem)"
+98,Steel Gargoyle,Gargoyle,42,3,1,Walk,74,30,22,14,9,9,14,36,,"Wing Guarder (rank 5, lvl 3, 110 VP, Feather Emblem)"
+99,Wing Guarder,Gargoyle,42,5,1,Walk,124,43,33,21,13,13,19,40,,"Imperial Guard (rank 7, lvl 4, 200 VP, Sky Emblem)"
+100,Imperial Guard,Gargoyle,42,7,2,Walk,174,58,47,29,18,18,26,43,,"Balrog (rank 9, lvl 5, 300 VP, Rapier Emblem)"
+101,Balrog,Balrog,43,9,3,Walk,223,76,62,38,24,24,33,47,Magic Reflection,
+102,Golem,Golem,44,3,1,Walk,83,33,22,11,7,7,17,29,Magic Reduction,"Colossus (rank 6, lvl 3, 150 VP, Lightning Emblem)"
+103,Colossus,Golem,44,6,2,Walk,166,58,37,16,10,11,31,44,Magic Reduction,"Talos (rank 8, lvl 4, 250 VP, Storm Emblem)"
+104,Talos,Golem,44,8,2,Walk,222,79,50,21,13,15,42,49,Magic Reduction,"Behemoth (rank 9, lvl 5, 300 VP, Rapier Emblem)"
+105,Behemoth,Behemoth,45,9,3,Walk,249,91,57,23,14,16,48,52,Earthquake,
+106,Primitive Cell,Slime,46,1,1,Walk,28,18,14,6,5,11,11,25,,"Mud Wall (rank 2, lvl 1, 10 VP, Warrior Emblem); Poison Jelly (rank 3, lvl 2, 40 VP, Jackal Emblem); O'Rosam (rank 9, lvl 20, 300 VP, Dragon Emblem)"
+107,Poison Jelly,Slime,46,3,1,Walk,84,25,18,9,7,17,14,33,Corrosion,"Acid Ooze (rank 5, lvl 3, 110 VP, Feather Emblem)"
+108,Acid Ooze,Slime,46,5,1,Walk,141,36,23,13,9,24,18,49,Paralysis,"Blood Ooze (rank 7, lvl 4, 200 VP, Sky Emblem)"
+109,Blood Ooze,Slime,46,7,2,Walk,197,49,30,18,11,33,23,55,Adhesion,"Kraken (rank 9, lvl 5, 300 VP, Dragon Emblem)"
+110,Kraken,Kraken,47,9,3,Walk,253,64,38,24,14,44,29,60,Tidal Wave,
+111,O'Rosam,O'Rosam,48,9,3,Walk,255,76,70,20,24,44,60,55,Earthquake,
+112,Mud Wall,Wall,49,2,1,Walk,100,0,20,6,6,14,20,0,Physical Reduction,"Rock Wall (rank 4, lvl 2, 70 VP, Wind Emblem)"
+113,Rock Wall,Wall,49,4,1,Walk,170,0,30,7,7,21,30,0,Physical Reduction,"Thorn Wall (rank 6, lvl 3, 150 VP, Lightning Emblem)"
+114,Thorn Wall,Wall,49,6,2,Walk,200,0,40,9,9,31,40,0,Physical Reduction,"Talos (rank 8, lvl 5, 250 VP, Storm Emblem)"

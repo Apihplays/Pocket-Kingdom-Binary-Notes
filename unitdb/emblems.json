@@ -1,0 +1,492 @@
+[
+  {
+    "emblem": "Warrior Emblem",
+    "ore": "Copper",
+    "item1": "Garnet",
+    "item2": "Black Leaf",
+    "success": 90
+  },
+  {
+    "emblem": "Warrior Emblem",
+    "ore": "Copper",
+    "item1": "Azulite",
+    "item2": "Black Leaf",
+    "success": 90
+  },
+  {
+    "emblem": "Warrior Emblem",
+    "ore": "Copper",
+    "item1": "Agate",
+    "item2": "Black Leaf",
+    "success": 90
+  },
+  {
+    "emblem": "Hound Emblem",
+    "ore": "Copper",
+    "item1": "Garnet",
+    "item2": "Yellow Leaf",
+    "success": 90
+  },
+  {
+    "emblem": "Hound Emblem",
+    "ore": "Copper",
+    "item1": "Azulite",
+    "item2": "Yellow Leaf",
+    "success": 90
+  },
+  {
+    "emblem": "Hound Emblem",
+    "ore": "Copper",
+    "item1": "Agate",
+    "item2": "Yellow Leaf",
+    "success": 90
+  },
+  {
+    "emblem": "Bone Emblem",
+    "ore": "Copper",
+    "item1": "Garnet",
+    "item2": "Red Leaf",
+    "success": 90
+  },
+  {
+    "emblem": "Bone Emblem",
+    "ore": "Copper",
+    "item1": "Azulite",
+    "item2": "Red Leaf",
+    "success": 90
+  },
+  {
+    "emblem": "Bone Emblem",
+    "ore": "Copper",
+    "item1": "Agate",
+    "item2": "Red Leaf",
+    "success": 90
+  },
+  {
+    "emblem": "Hero Emblem",
+    "ore": "Copper",
+    "item1": "Cat's Eye",
+    "item2": "Black Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Hero Emblem",
+    "ore": "Copper",
+    "item1": "Tourmaline",
+    "item2": "Black Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Jackal Emblem",
+    "ore": "Copper",
+    "item1": "Cat's Eye",
+    "item2": "Yellow Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Jackal Emblem",
+    "ore": "Copper",
+    "item1": "Tourmaline",
+    "item2": "Yellow Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Soldier Emblem",
+    "ore": "Chrome",
+    "item1": "Lapis Lazuli",
+    "item2": "Black Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Soldier Emblem",
+    "ore": "Chrome",
+    "item1": "Aquamarine",
+    "item2": "Black Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Soldier Emblem",
+    "ore": "Chrome",
+    "item1": "Jade",
+    "item2": "Black Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Mist Emblem",
+    "ore": "Chrome",
+    "item1": "Lapis Lazuli",
+    "item2": "Yellow Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Mist Emblem",
+    "ore": "Chrome",
+    "item1": "Aquamarine",
+    "item2": "Yellow Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Mist Emblem",
+    "ore": "Chrome",
+    "item1": "Jade",
+    "item2": "Yellow Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Wind Emblem",
+    "ore": "Chrome",
+    "item1": "Lapis Lazuli",
+    "item2": "Red Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Wind Emblem",
+    "ore": "Chrome",
+    "item1": "Aquamarine",
+    "item2": "Red Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Wind Emblem",
+    "ore": "Chrome",
+    "item1": "Jade",
+    "item2": "Red Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Bear Emblem",
+    "ore": "Chrome",
+    "item1": "Lapis Lazuli",
+    "item2": "Green Horn",
+    "success": 80
+  },
+  {
+    "emblem": "Bear Emblem",
+    "ore": "Chrome",
+    "item1": "Aquamarine",
+    "item2": "Green Horn",
+    "success": 80
+  },
+  {
+    "emblem": "Bear Emblem",
+    "ore": "Chrome",
+    "item1": "Jade",
+    "item2": "Green Horn",
+    "success": 80
+  },
+  {
+    "emblem": "Knight Emblem",
+    "ore": "Silver",
+    "item1": "Crystal",
+    "item2": "Yellow Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Knight Emblem",
+    "ore": "Silver",
+    "item1": "Onyx",
+    "item2": "Yellow Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Needle Emblem",
+    "ore": "Silver",
+    "item1": "Crystal",
+    "item2": "Red Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Needle Emblem",
+    "ore": "Silver",
+    "item1": "Onyx",
+    "item2": "Red Leaf",
+    "success": 80
+  },
+  {
+    "emblem": "Feather Emblem",
+    "ore": "Silver",
+    "item1": "Crystal",
+    "item2": "Green Horn",
+    "success": 80
+  },
+  {
+    "emblem": "Feather Emblem",
+    "ore": "Silver",
+    "item1": "Onyx",
+    "item2": "Green Horn",
+    "success": 80
+  },
+  {
+    "emblem": "Lion Emblem",
+    "ore": "Silver",
+    "item1": "Crystal",
+    "item2": "Blue Horn",
+    "success": 80
+  },
+  {
+    "emblem": "Lion Emblem",
+    "ore": "Silver",
+    "item1": "Onyx",
+    "item2": "Blue Horn",
+    "success": 80
+  },
+  {
+    "emblem": "Victor Emblem",
+    "ore": "Gold",
+    "item1": "Ruby",
+    "item2": "Yellow Leaf",
+    "success": 70
+  },
+  {
+    "emblem": "Victor Emblem",
+    "ore": "Gold",
+    "item1": "Turquoise",
+    "item2": "Yellow Leaf",
+    "success": 70
+  },
+  {
+    "emblem": "Chain Emblem",
+    "ore": "Gold",
+    "item1": "Ruby",
+    "item2": "Red Leaf",
+    "success": 70
+  },
+  {
+    "emblem": "Chain Emblem",
+    "ore": "Gold",
+    "item1": "Turquoise",
+    "item2": "Red Leaf",
+    "success": 70
+  },
+  {
+    "emblem": "Lightning Emblem",
+    "ore": "Gold",
+    "item1": "Ruby",
+    "item2": "Green Horn",
+    "success": 70
+  },
+  {
+    "emblem": "Lightning Emblem",
+    "ore": "Gold",
+    "item1": "Turquoise",
+    "item2": "Green Horn",
+    "success": 70
+  },
+  {
+    "emblem": "Chimera Emblem",
+    "ore": "Gold",
+    "item1": "Ruby",
+    "item2": "Blue Horn",
+    "success": 70
+  },
+  {
+    "emblem": "Chimera Emblem",
+    "ore": "Gold",
+    "item1": "Turquoise",
+    "item2": "Blue Horn",
+    "success": 70
+  },
+  {
+    "emblem": "Shogun Emblem",
+    "ore": "Platinum",
+    "item1": "Peridot",
+    "item2": "Red Claw",
+    "success": 60
+  },
+  {
+    "emblem": "Shogun Emblem",
+    "ore": "Platinum",
+    "item1": "Amethyst",
+    "item2": "Red Claw",
+    "success": 60
+  },
+  {
+    "emblem": "Night Emblem",
+    "ore": "Platinum",
+    "item1": "Peridot",
+    "item2": "Green Horn",
+    "success": 60
+  },
+  {
+    "emblem": "Night Emblem",
+    "ore": "Platinum",
+    "item1": "Amethyst",
+    "item2": "Green Horn",
+    "success": 60
+  },
+  {
+    "emblem": "Sky Emblem",
+    "ore": "Platinum",
+    "item1": "Peridot",
+    "item2": "Blue Horn",
+    "success": 60
+  },
+  {
+    "emblem": "Sky Emblem",
+    "ore": "Platinum",
+    "item1": "Amethyst",
+    "item2": "Blue Horn",
+    "success": 60
+  },
+  {
+    "emblem": "Griffon Emblem",
+    "ore": "Platinum",
+    "item1": "Peridot",
+    "item2": "Purple Claw",
+    "success": 60
+  },
+  {
+    "emblem": "Griffon Emblem",
+    "ore": "Platinum",
+    "item1": "Amethyst",
+    "item2": "Purple Claw",
+    "success": 60
+  },
+  {
+    "emblem": "Champion Emblem",
+    "ore": "Mythril",
+    "item1": "Pearl",
+    "item2": "Red Claw",
+    "success": 50
+  },
+  {
+    "emblem": "Champion Emblem",
+    "ore": "Mythril",
+    "item1": "Opal",
+    "item2": "Red Claw",
+    "success": 50
+  },
+  {
+    "emblem": "Champion Emblem",
+    "ore": "Mythril",
+    "item1": "Topaz",
+    "item2": "Red Claw",
+    "success": 50
+  },
+  {
+    "emblem": "Moon Emblem",
+    "ore": "Mythril",
+    "item1": "Pearl",
+    "item2": "Green Horn",
+    "success": 50
+  },
+  {
+    "emblem": "Moon Emblem",
+    "ore": "Mythril",
+    "item1": "Opal",
+    "item2": "Green Horn",
+    "success": 50
+  },
+  {
+    "emblem": "Moon Emblem",
+    "ore": "Mythril",
+    "item1": "Topaz",
+    "item2": "Green Horn",
+    "success": 50
+  },
+  {
+    "emblem": "Storm Emblem",
+    "ore": "Mythril",
+    "item1": "Pearl",
+    "item2": "Blue Horn",
+    "success": 50
+  },
+  {
+    "emblem": "Storm Emblem",
+    "ore": "Mythril",
+    "item1": "Opal",
+    "item2": "Blue Horn",
+    "success": 50
+  },
+  {
+    "emblem": "Storm Emblem",
+    "ore": "Mythril",
+    "item1": "Topaz",
+    "item2": "Blue Horn",
+    "success": 50
+  },
+  {
+    "emblem": "Beast Emblem",
+    "ore": "Mythril",
+    "item1": "Pearl",
+    "item2": "Purple Claw",
+    "success": 50
+  },
+  {
+    "emblem": "Beast Emblem",
+    "ore": "Mythril",
+    "item1": "Opal",
+    "item2": "Purple Claw",
+    "success": 50
+  },
+  {
+    "emblem": "Beast Emblem",
+    "ore": "Mythril",
+    "item1": "Topaz",
+    "item2": "Purple Claw",
+    "success": 50
+  },
+  {
+    "emblem": "Dragon Emblem",
+    "ore": "Orihalcon",
+    "item1": "Sapphire",
+    "item2": "White Jewel",
+    "success": 40
+  },
+  {
+    "emblem": "Dragon Emblem",
+    "ore": "Orihalcon",
+    "item1": "Emerald",
+    "item2": "White Jewel",
+    "success": 40
+  },
+  {
+    "emblem": "Immortal Emblem",
+    "ore": "Orihalcon",
+    "item1": "Sapphire",
+    "item2": "Golden Jewel",
+    "success": 40
+  },
+  {
+    "emblem": "Immortal Emblem",
+    "ore": "Orihalcon",
+    "item1": "Emerald",
+    "item2": "Golden Jewel",
+    "success": 40
+  },
+  {
+    "emblem": "Rapier Emblem",
+    "ore": "Orihalcon",
+    "item1": "Sapphire",
+    "item2": "Black Jewel",
+    "success": 40
+  },
+  {
+    "emblem": "Rapier Emblem",
+    "ore": "Orihalcon",
+    "item1": "Emerald",
+    "item2": "Black Jewel",
+    "success": 40
+  },
+  {
+    "emblem": "Origin Emblem",
+    "ore": "Orihalcon",
+    "item1": "Diamond",
+    "item2": "White Jewel",
+    "success": 30
+  },
+  {
+    "emblem": "Darkness Emblem",
+    "ore": "Orihalcon",
+    "item1": "Diamond",
+    "item2": "Golden Jewel",
+    "success": 30
+  },
+  {
+    "emblem": "Battleaxe Emblem",
+    "ore": "Orihalcon",
+    "item1": "Diamond",
+    "item2": "Black Jewel",
+    "success": 30
+  }
+]

@@ -17,5 +17,9 @@ venv/
 *.orig
 *.bak
 
+# Cached third-party source pages from the unit-db scraper
+# (regenerate with: python3 tools/build_unitdb.py --details --emblems)
+unitdb/raw/
+
 # Agent/workflow scaffolding
 .superpowers/
