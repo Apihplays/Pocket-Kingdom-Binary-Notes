@@ -36,6 +36,8 @@ when no game install is present.
 
 ## Unit & emblem database
 
+**Live app: <https://apihplays.github.io/Pocket-Kingdom-Binary-Notes/>**
+
 `unitdb/` is a compact offline database built from archived pk.warcry.com pages
 (Wayback Machine, 2005): 115 units (class, race, rank, slots, move,
 HP/ATK/DEF/AGI/DEX/WIS/INT/HIT%), their special abilities, the full evolution

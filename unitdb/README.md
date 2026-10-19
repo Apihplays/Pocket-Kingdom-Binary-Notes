@@ -1,5 +1,7 @@
 # Pocket Kingdom — Unit & Emblem database
 
+**Live: <https://apihplays.github.io/Pocket-Kingdom-Binary-Notes/>**
+
 Offline data plus a single-file web app for looking up Pocket Kingdom units,
 their evolution, and emblem recipes.
 
