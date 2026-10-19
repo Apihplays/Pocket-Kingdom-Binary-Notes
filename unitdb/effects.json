@@ -1,0 +1,210 @@
+[
+  {
+    "id": 0,
+    "name": "atk up"
+  },
+  {
+    "id": 1,
+    "name": "atk down"
+  },
+  {
+    "id": 2,
+    "name": "def up"
+  },
+  {
+    "id": 3,
+    "name": "def down"
+  },
+  {
+    "id": 4,
+    "name": "agi up"
+  },
+  {
+    "id": 5,
+    "name": "agi down"
+  },
+  {
+    "id": 6,
+    "name": "dex up"
+  },
+  {
+    "id": 7,
+    "name": "dex down"
+  },
+  {
+    "id": 8,
+    "name": "int up"
+  },
+  {
+    "id": 9,
+    "name": "int down"
+  },
+  {
+    "id": 10,
+    "name": "wis up"
+  },
+  {
+    "id": 11,
+    "name": "wis down"
+  },
+  {
+    "id": 12,
+    "name": "sleep"
+  },
+  {
+    "id": 13,
+    "name": "deep sleep"
+  },
+  {
+    "id": 14,
+    "name": "sleep resistance"
+  },
+  {
+    "id": 15,
+    "name": "paralysis"
+  },
+  {
+    "id": 16,
+    "name": "severe paralysis"
+  },
+  {
+    "id": 17,
+    "name": "paralysis resistance"
+  },
+  {
+    "id": 18,
+    "name": "poison"
+  },
+  {
+    "id": 19,
+    "name": "severe poison"
+  },
+  {
+    "id": 20,
+    "name": "poison resistance"
+  },
+  {
+    "id": 21,
+    "name": "silence"
+  },
+  {
+    "id": 22,
+    "name": "severe silence"
+  },
+  {
+    "id": 23,
+    "name": "silence resistance"
+  },
+  {
+    "id": 24,
+    "name": "auto hp restore 1"
+  },
+  {
+    "id": 25,
+    "name": "auto hp restore 2"
+  },
+  {
+    "id": 26,
+    "name": "auto hp restore 3"
+  },
+  {
+    "id": 27,
+    "name": "hp absorp 1"
+  },
+  {
+    "id": 28,
+    "name": "hp absorp 2"
+  },
+  {
+    "id": 29,
+    "name": "critical 1"
+  },
+  {
+    "id": 30,
+    "name": "critical 2"
+  },
+  {
+    "id": 31,
+    "name": "critical 3"
+  },
+  {
+    "id": 32,
+    "name": "counter 1"
+  },
+  {
+    "id": 33,
+    "name": "counter 2"
+  },
+  {
+    "id": 34,
+    "name": "counter 3"
+  },
+  {
+    "id": 35,
+    "name": "phy reduc 1"
+  },
+  {
+    "id": 36,
+    "name": "phy reduc 2"
+  },
+  {
+    "id": 37,
+    "name": "phy reduc 3"
+  },
+  {
+    "id": 38,
+    "name": "magic reduction"
+  },
+  {
+    "id": 39,
+    "name": "magic reflection"
+  },
+  {
+    "id": 40,
+    "name": "proof of contract"
+  },
+  {
+    "id": 41,
+    "name": "warrior spirit"
+  },
+  {
+    "id": 42,
+    "name": "mage spirit"
+  },
+  {
+    "id": 43,
+    "name": "hero spirit"
+  },
+  {
+    "id": 44,
+    "name": "self destruct"
+  },
+  {
+    "id": 45,
+    "name": "regenerate"
+  },
+  {
+    "id": 46,
+    "name": "multiply"
+  },
+  {
+    "id": 47,
+    "name": "revive"
+  },
+  {
+    "id": 48,
+    "name": "item recovery"
+  },
+  {
+    "id": 49,
+    "name": "loot recovery up 1"
+  },
+  {
+    "id": 50,
+    "name": "loot recovery up 2"
+  },
+  {
+    "id": 51,
+    "name": "loot recovery up 3"
+  }
+]

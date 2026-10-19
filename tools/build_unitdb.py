@@ -10,8 +10,11 @@ Source (Wayback Machine capture, 2005-02-10):
 Outputs (default: ./unitdb/):
   units.json                 structured records (incl. ability + advances)
   units.csv                  spreadsheet-friendly
-  PocketKingdom-Units.html   self-contained app: filterable table + team builder
-  raw/unit_NNN.html          cached detail pages (safe to delete)
+  emblems.json / .csv        emblem recipes (ore + 2 items + success)
+  crafting.json / .csv       weapon/armor/accessory recipes (mold + ore + 2 items + effect + success)
+  effects.json / .csv        effect id -> name table
+  PocketKingdom-Units.html   self-contained app: units, team builder, emblems, crafting
+  raw/                       cached source pages (safe to delete)
 
 The HTML app inlines the data so it works offline by double-clicking it
 (no server, so no fetch/CORS issues).
@@ -19,7 +22,7 @@ The HTML app inlines the data so it works offline by double-clicking it
 Usage:
   python3 tools/build_unitdb.py                  # index only, fast
   python3 tools/build_unitdb.py --details        # + fetch each unit's page
-  python3 tools/build_unitdb.py --details --emblems   # + emblem recipes
+  python3 tools/build_unitdb.py --details --emblems --crafting
   python3 tools/build_unitdb.py --html saved.html
 """
 from __future__ import annotations
@@ -44,6 +47,13 @@ STATS = ["hp", "atk", "def", "agi", "dex", "wis", "int", "hit"]
 FIELDS = ["id", "name", "race", "race_icon", "rank", "slots", "move", *STATS,
           "ability", "advances"]
 EMBLEM_FIELDS = ["emblem", "ore", "item1", "item2", "success"]
+CRAFT_FIELDS = ["mold", "ore", "item1", "item2", "result", "effect", "success", "effect_ids"]
+GIST_URL = (
+    "https://gist.githubusercontent.com/Apihplays/"
+    "636c34a342b070188780f7f0a417d290/raw/"
+    "df59bddaea4d7cb14c41ac89f5ef335d689c44ef/"
+    "pocket%20kingdown%20own%20the%20world"
+)
 
 
 # --------------------------------------------------------------------------- io
@@ -162,6 +172,102 @@ def parse_emblems(page: str) -> list[dict]:
     return out
 
 
+def parse_crafting(text: str) -> tuple[list[dict], list[dict]]:
+    """Parse the crafting chart + effect-id list out of the plain-text guide.
+
+    Section layout (pipe-delimited):
+        Mold | Ore | Item1 | Item2 | Result | Effect | Success
+    followed later by an ``effect list`` of ``<id> <name>`` lines.
+    """
+    try:
+        start = text.index("Weapons/Armors/Accessories Creation Chart")
+    except ValueError:
+        return [], []
+
+    recipes: list[dict] = []
+    for ln in text[start:].splitlines():
+        if ln.startswith("====") and recipes:
+            break
+        if ln.count("|") != 6 or ln.lstrip().startswith("-"):
+            continue
+        parts = [p.strip() for p in ln.split("|")]
+        if len(parts) != 7 or not parts[6].endswith("%"):
+            continue
+        recipes.append({
+            "mold": parts[0],
+            "ore": parts[1],
+            "item1": parts[2],
+            "item2": parts[3],
+            "result": parts[4],
+            "effect": parts[5],
+            "success": _int(parts[6]),
+        })
+
+    effects: list[dict] = []
+    if "effect list" in text:
+        for ln in text[text.index("effect list"):].splitlines()[1:]:
+            m = re.match(r"^(\d+)\s+(.+?)\s*$", ln)
+            if m:
+                effects.append({"id": int(m.group(1)), "name": m.group(2)})
+
+    for r in recipes:
+        r["effect_ids"] = effect_ids_for(r["effect"], effects)
+    return recipes, effects
+
+
+def _norm(s: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", s.lower())
+
+
+# Guide labels -> effect-list names. The chart uses internal spellings
+# ("HPAbsortiopn1") and short forms ("DeadlyPoison"), so normalise explicitly.
+_EFFECT_ALIASES = {
+    "hpabsorption1": "hp absorp 1",
+    "hpabsorption2": "hp absorp 2",
+    "hpabsortiopn1": "hp absorp 1",
+    "hpabsortiopn2": "hp absorp 2",
+    "critical1": "critical 1",
+    "critical2": "critical 2",
+    "critical3": "critical 3",
+    "counter1": "counter 1",
+    "counter2": "counter 2",
+    "counter3": "counter 3",
+    "strongsilence": "severe silence",
+    "deadlypoison": "severe poison",
+    "physicalreduction1": "phy reduc 1",
+    "physicalreduction2": "phy reduc 2",
+    "physicalreduction3": "phy reduc 3",
+    "goldrecoveryup1": "loot recovery up 1",
+    "goldrecoveryup2": "loot recovery up 2",
+    "goldrecoveryup3": "loot recovery up 3",
+    "warriorsspirit": "warrior spirit",
+    "magesspirit": "mage spirit",
+    "herosspirit": "hero spirit",
+}
+
+
+def effect_ids_for(label: str, effects: list[dict]) -> list[int]:
+    """Map a chart effect label (possibly compound) to effect-list ids."""
+    by_name = {_norm(e["name"]): e["id"] for e in effects}
+
+    def lookup(part: str) -> int | None:
+        key = _norm(part)
+        key = _norm(_EFFECT_ALIASES.get(key, key))
+        return by_name.get(key)
+
+    whole = lookup(label)
+    if whole is not None:
+        return [whole]
+
+    # Compound labels are space-separated, e.g. "HPAbsortiopn1 AutoHPRestore1".
+    out: list[int] = []
+    for part in label.split():
+        val = lookup(part)
+        if val is not None and val not in out:
+            out.append(val)
+    return out
+
+
 # ------------------------------------------------------------------------- html
 HTML_TEMPLATE = r"""<!doctype html>
 <html lang="en">
@@ -257,6 +363,16 @@ HTML_TEMPLATE = r"""<!doctype html>
   .trow .st{color:var(--dim);font-size:12px}
   #tab-emblems th,#tab-emblems td{text-align:left}
   #tab-emblems th:last-child,#tab-emblems td:last-child{text-align:right}
+  #tab-crafting th,#tab-crafting td{text-align:left}
+  #tab-crafting th:last-child,#tab-crafting td:last-child{text-align:right}
+  #tab-crafting th:nth-child(7),#tab-crafting td:nth-child(7){text-align:right}
+  details summary{cursor:pointer;color:var(--dim);font-size:12.5px;margin-top:18px}
+  details summary:hover{color:var(--txt)}
+  .eid{color:var(--dim);font-size:11px;font-weight:400}
+  .rate30{color:var(--good);font-weight:700}
+  .rate20{color:var(--accent)}
+  .rate10{color:#ff8f6b}
+  .rate5{color:var(--bad);font-weight:700}
   .emlink{cursor:pointer;border-bottom:1px dotted var(--dim)}
   .emlink:hover{color:var(--accent2);border-color:var(--accent2)}
   a{color:var(--accent2)}
@@ -271,6 +387,7 @@ HTML_TEMPLATE = r"""<!doctype html>
     <button class="tab on" data-tab="units">Units</button>
     <button class="tab" data-tab="team">Team Builder</button>
     <button class="tab" data-tab="emblems">Emblems</button>
+    <button class="tab" data-tab="crafting">Crafting</button>
   </div>
 </header>
 
@@ -335,6 +452,47 @@ HTML_TEMPLATE = r"""<!doctype html>
     <table><thead><tr><th>Emblem</th><th>Ore</th><th>Item 1</th><th>Item 2</th><th>Success</th></tr></thead>
       <tbody id="ebody"></tbody></table>
     <div class="empty" id="eempty" style="display:none">No emblem recipes match.</div>
+    <p style="color:var(--dim);font-size:12.5px;margin-top:12px">
+      Each emblem also consumes one <b>RankUp mold</b> (bought in the Shop from
+      map 2 onward) in addition to the three materials below.
+    </p>
+  </section>
+
+  <!-- CRAFTING -->
+  <section id="tab-crafting" style="display:none">
+    <div class="controls">
+      <div class="fld"><label>Search</label>
+        <input id="kq" type="search" placeholder="result, ore, material or effect..."></div>
+      <div class="fld"><label>Mold</label>
+        <select id="kmold"><option value="">All molds</option></select></div>
+      <div class="fld"><label>Ore</label>
+        <select id="kore"><option value="">Any ore</option></select></div>
+      <div class="fld"><label>Success &le;</label>
+        <select id="krate">
+          <option value="">Any</option><option value="30">30% or less</option>
+          <option value="20">20% or less</option><option value="10">10% or less</option>
+        </select></div>
+      <div class="fld"><label>Rank by</label>
+        <select id="ksort">
+          <option value="success">Success</option>
+          <option value="mold">Mold</option>
+          <option value="result">Result</option>
+          <option value="ore">Ore</option>
+        </select></div>
+      <div class="fld"><label>&nbsp;</label><button class="btn ghost" id="kclear">Clear</button></div>
+    </div>
+    <div class="meta"><div id="kcount"></div><div class="tagbar" id="ktags"></div></div>
+    <table><thead><tr>
+      <th>Mold</th><th>Ore</th><th>Material 1</th><th>Material 2</th>
+      <th>Result</th><th>Effect</th><th>Success</th>
+    </tr></thead><tbody id="kbody"></tbody></table>
+    <div class="empty" id="kempty" style="display:none">No crafting recipes match.</div>
+
+    <details>
+      <summary>Effect id reference (__EFFECTCOUNT__ effects)</summary>
+      <table style="margin-top:8px"><thead><tr><th>ID</th><th>Effect</th></tr></thead>
+        <tbody id="fbody"></tbody></table>
+    </details>
   </section>
 </div>
 
@@ -350,6 +508,8 @@ HTML_TEMPLATE = r"""<!doctype html>
 <script>
 const UNITS = __DATA__;
 const EMBLEMS = __EMBLEMS__;
+const CRAFTING = __CRAFTING__;
+const EFFECTS = __EFFECTS__;
 const BY_ID = Object.fromEntries(UNITS.map(u=>[u.id,u]));
 const STATS = ["hp","atk","def","agi","dex","wis","int","hit"];
 const LABEL = {hp:"HP",atk:"ATK",def:"DEF",agi:"AGI",dex:"DEX",wis:"WIS",int:"INT",hit:"HIT%"};
@@ -366,9 +526,10 @@ const saveTeam = () => localStorage.setItem("pk_team", JSON.stringify(team));
 // ---- tabs
 document.querySelectorAll(".tab").forEach(t => t.onclick = () => {
   document.querySelectorAll(".tab").forEach(x => x.classList.toggle("on", x === t));
-  ["units","team","emblems"].forEach(n => $("tab-"+n).style.display = t.dataset.tab === n ? "" : "none");
+  ["units","team","emblems","crafting"].forEach(n => $("tab-"+n).style.display = t.dataset.tab === n ? "" : "none");
   if (t.dataset.tab === "team") renderTeam();
   if (t.dataset.tab === "emblems") renderEmblems();
+  if (t.dataset.tab === "crafting") renderCrafting();
 });
 
 // ---- controls
@@ -527,17 +688,77 @@ function showEmblem(name){
   window.scrollTo({top:0, behavior:"smooth"});
 }
 
-renderEmblems(); renderUnits(); renderTeam();
+// ---- crafting
+const MOLD_ORDER = ["Sword","Spear","Axe","Claw","Blade","Bow","Staff","Mace","Armor","Accessories"];
+[...new Set(CRAFTING.map(c=>c.mold))]
+  .sort((a,b)=>MOLD_ORDER.indexOf(a)-MOLD_ORDER.indexOf(b))
+  .forEach(v=>{ const o=document.createElement("option"); o.textContent=v; $("kmold").appendChild(o); });
+[...new Set(CRAFTING.map(c=>c.ore))].sort()
+  .forEach(v=>{ const o=document.createElement("option"); o.textContent=v; $("kore").appendChild(o); });
+const EFFECT_NAME = Object.fromEntries(EFFECTS.map(e=>[e.id, e.name]));
+
+$("fbody").innerHTML = EFFECTS.map(e=>
+  `<tr><td class="eid">${e.id}</td><td>${esc(e.name)}</td></tr>`).join("");
+
+function rateClass(s){ return s>=30?"rate30" : s>=20?"rate20" : s>=10?"rate10" : "rate5"; }
+
+function filteredCraft(){
+  const q=$("kq").value.trim().toLowerCase(), mold=$("kmold").value,
+        ore=$("kore").value, max=+$("krate").value||0;
+  return CRAFTING.filter(c=>{
+    if (mold && c.mold!==mold) return false;
+    if (ore && c.ore!==ore) return false;
+    if (max && c.success>max) return false;
+    if (q && !(c.result+" "+c.mold+" "+c.ore+" "+c.item1+" "+c.item2+" "+c.effect)
+              .toLowerCase().includes(q)) return false;
+    return true;
+  });
+}
+
+function renderCrafting(){
+  const key=$("ksort").value;
+  const rows = filteredCraft().sort((a,b)=>{
+    if (key==="success") return b.success-a.success || a.mold.localeCompare(b.mold);
+    if (key==="mold")    return (MOLD_ORDER.indexOf(a.mold)-MOLD_ORDER.indexOf(b.mold)) || b.success-a.success;
+    if (key==="ore")     return a.ore.localeCompare(b.ore) || b.success-a.success;
+    return a.result.localeCompare(b.result);
+  });
+  $("kcount").textContent = `${rows.length} of ${CRAFTING.length} recipes`;
+  $("kempty").style.display = rows.length ? "none" : "block";
+  const tags = ["all molds"];
+  if ($("kmold").value) tags.unshift($("kmold").value);
+  if ($("kore").value) tags.push($("kore").value);
+  if (+$("krate").value) tags.push(`<=${$("krate").value}% success`);
+  $("ktags").innerHTML = tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("");
+  $("kbody").innerHTML = rows.map(c=>{
+    const eids = (c.effect_ids||[]).map(i=>`<span class="eid">#${i}</span>`).join(" ");
+    return `<tr>
+      <td>${esc(c.mold)}</td><td>${esc(c.ore)}</td>
+      <td>${esc(c.item1)}</td><td>${esc(c.item2)}</td>
+      <td><b>${esc(c.result)}</b></td>
+      <td>${esc(c.effect)} ${eids}</td>
+      <td class="${rateClass(c.success)}">${c.success}%</td></tr>`;
+  }).join("");
+}
+["kq","kmold","kore","krate","ksort"].forEach(id=>$(id).addEventListener("input",renderCrafting));
+$("kclear").onclick = () => { ["kq","kmold","kore","krate"].forEach(id=>$(id).value="");
+  $("ksort").value="success"; renderCrafting(); };
+
+renderEmblems(); renderUnits(); renderTeam(); renderCrafting();
 </script>
 </body>
 </html>
 """
 
 
-def build_html(units: list[dict], emblems: list[dict]) -> str:
+def build_html(units: list[dict], emblems: list[dict],
+               crafting: list[dict], effects: list[dict]) -> str:
     return (HTML_TEMPLATE
             .replace("__DATA__", json.dumps(units, separators=(",", ":")))
             .replace("__EMBLEMS__", json.dumps(emblems, separators=(",", ":")))
+            .replace("__CRAFTING__", json.dumps(crafting, separators=(",", ":")))
+            .replace("__EFFECTS__", json.dumps(effects, separators=(",", ":")))
+            .replace("__EFFECTCOUNT__", str(len(effects)))
             .replace("__COUNT__", str(len(units))))
 
 
@@ -551,6 +772,8 @@ def main() -> int:
                     help="also fetch each unit page (ability + evolution); cached in raw/")
     ap.add_argument("--emblems", action="store_true",
                     help="also fetch the Emblem Database (recipes); cached in raw/")
+    ap.add_argument("--crafting", action="store_true",
+                    help="also fetch the crafting chart (weapons/armor/accessories); cached in raw/")
     ap.add_argument("--out", default="unitdb", help="output dir (default: unitdb)")
     args = ap.parse_args()
 
@@ -617,8 +840,39 @@ def main() -> int:
         except Exception as e:  # noqa: BLE001
             print(f"  ! emblems: {e}", file=sys.stderr)
 
+    crafting: list[dict] = []
+    crafting_effects: list[dict] = []
+    if args.crafting:
+        cached = out / "raw" / "crafting.txt"
+        try:
+            if cached.exists() and cached.stat().st_size > 1000:
+                gtext = cached.read_text(encoding="utf-8", errors="replace")
+            else:
+                gtext = fetch(GIST_URL)
+                cached.parent.mkdir(parents=True, exist_ok=True)
+                cached.write_text(gtext, encoding="utf-8")
+            crafting, crafting_effects = parse_crafting(gtext)
+            (out / "crafting.json").write_text(json.dumps(crafting, indent=2), encoding="utf-8")
+            with (out / "crafting.csv").open("w", newline="", encoding="utf-8") as f:
+                w = csv.DictWriter(f, fieldnames=CRAFT_FIELDS)
+                w.writeheader()
+                for c in crafting:
+                    row = dict(c)
+                    row["effect_ids"] = "+".join(str(i) for i in c["effect_ids"])
+                    w.writerow(row)
+            (out / "effects.json").write_text(json.dumps(crafting_effects, indent=2), encoding="utf-8")
+            with (out / "effects.csv").open("w", newline="", encoding="utf-8") as f:
+                w = csv.DictWriter(f, fieldnames=["id", "name"])
+                w.writeheader()
+                w.writerows(crafting_effects)
+            print(f"crafting: {len(crafting)} recipes across "
+                  f"{len({c['mold'] for c in crafting})} molds, "
+                  f"{len(crafting_effects)} effect ids")
+        except Exception as e:  # noqa: BLE001
+            print(f"  ! crafting: {e}", file=sys.stderr)
+
     app = out / "PocketKingdom-Units.html"
-    app.write_text(build_html(units, emblems), encoding="utf-8")
+    app.write_text(build_html(units, emblems, crafting, crafting_effects), encoding="utf-8")
 
     print(f"units: {len(units)}")
     print(f"wrote {out/'units.json'}, {out/'units.csv'}, {app}")
