@@ -44,7 +44,7 @@ DEFAULT_URL = f"https://web.archive.org/web/{TS}/{BASE}/units/"
 EMBLEM_URL = f"https://web.archive.org/web/20050207131118/{BASE}/items/emblems.phtml"
 
 STATS = ["hp", "atk", "def", "agi", "dex", "wis", "int", "hit"]
-FIELDS = ["id", "name", "race", "race_icon", "rank", "slots", "move", *STATS,
+FIELDS = ["id", "name", "race", "race_icon", "rank", "slots", "move", "sp", *STATS,
           "ability", "advances"]
 EMBLEM_FIELDS = ["emblem", "ore", "item1", "item2", "success"]
 CRAFT_FIELDS = ["mold", "ore", "item1", "item2", "result", "effect", "success", "effect_ids"]
@@ -54,6 +54,7 @@ GIST_URL = (
     "df59bddaea4d7cb14c41ac89f5ef335d689c44ef/"
     "pocket%20kingdown%20own%20the%20world"
 )
+RANKUP_FIELDS = ["from", "to", "sp", "rank", "level", "vp", "emblem"]
 
 
 # --------------------------------------------------------------------------- io
@@ -114,6 +115,7 @@ def parse_units(page: str) -> list[dict]:
             "rank": _int(_text(cells[3])),
             "slots": _int(slot_alt) or 1,
             "move": move or "Walk",
+            "sp": None,
             **dict(zip(STATS, [_int(_text(cells[6 + i])) for i in range(8)])),
             "ability": "",
             "advances": [],
@@ -266,6 +268,85 @@ def effect_ids_for(label: str, effects: list[dict]) -> list[int]:
         if val is not None and val not in out:
             out.append(val)
     return out
+
+
+def parse_rankup(text: str) -> list[dict]:
+    """Parse the guide's unit rankup chart into evolution edges.
+
+    Columns are ``Start | End | SP | Rank | Level | VP | Emblem`` but the guide
+    is hand-written: some rows drop the SP cell entirely, and some merge SP and
+    Rank into one cell (``"14    5"``). ``->`` continues the previous start unit.
+    SP belongs to the *source unit*, so it is propagated to all its rows.
+    """
+    try:
+        start = text.index("UNIT RANKUP CHART")
+        end = text.index("EMBLEM CREATION CHART")
+    except ValueError:
+        return []
+    section = text[start:end]
+
+    def num(cell: str) -> int | None:
+        m = re.search(r"\d+", cell)
+        return int(m.group()) if m else None
+
+    rows: list[dict] = []
+    prev: str | None = None
+    for ln in section.splitlines():
+        if "|" not in ln or re.fullmatch(r"[-\s|]+", ln) or "Start Unit" in ln:
+            continue
+        parts = [c.strip() for c in ln.split("|")]
+        if len(parts) == 7:
+            sp, rank, level, vp, emblem = (num(parts[2]), num(parts[3]),
+                                           num(parts[4]), num(parts[5]), parts[6])
+        elif len(parts) == 6:
+            merged = re.findall(r"\d+", parts[2])
+            if len(merged) >= 2:  # SP and Rank squeezed into one cell
+                sp, rank = int(merged[0]), int(merged[1])
+            else:                 # SP cell missing entirely
+                sp, rank = None, num(parts[2])
+            level, vp, emblem = num(parts[3]), num(parts[4]), parts[5]
+        else:
+            continue
+        src = prev if parts[0] == "->" else parts[0]
+        prev = src
+        rows.append({"from": src, "to": parts[1], "sp": sp,
+                     "rank": rank, "level": level, "vp": vp, "emblem": emblem})
+
+    # SP is recorded once, on the first row of each source-unit group.
+    first_sp = {r["from"]: r["sp"] for r in rows if r["sp"] is not None}
+    for r in rows:
+        r["sp"] = first_sp.get(r["from"])
+    return rows
+
+
+def merge_sp(units: list[dict], rankup: list[dict]) -> int:
+    """Attach the guide's SP value to each unit (blank when the guide omits it)."""
+    sp_by_unit = {}
+    for r in rankup:
+        if r["sp"] is not None:
+            sp_by_unit.setdefault(r["from"], r["sp"])
+    n = 0
+    for u in units:
+        u["sp"] = sp_by_unit.get(u["name"])
+        n += u["sp"] is not None
+    return n
+
+
+def crosscheck_rankup(units: list[dict], rankup: list[dict]) -> dict:
+    """Compare scraped evolution edges against the guide's chart."""
+    mine = {(u["name"], a["name"]): a for u in units for a in u["advances"]}
+    guide = {(r["from"], r["to"]): r for r in rankup}
+    shared = set(mine) & set(guide)
+    fields = ("rank", "level", "vp", "emblem")
+    diffs = [(k, f, guide[k][f], mine[k][f])
+             for k in sorted(shared) for f in fields if guide[k][f] != mine[k][f]]
+    return {
+        "scraped": len(mine), "guide": len(guide), "shared": len(shared),
+        "agree": len(shared) - len({k for k, *_ in diffs}),
+        "diffs": diffs,
+        "only_guide": sorted(set(guide) - set(mine)),
+        "only_scraped": sorted(set(mine) - set(guide)),
+    }
 
 
 # ------------------------------------------------------------------------- html
@@ -610,7 +691,7 @@ function openDetail(id){
       </div>`).join("") || `<div class="empty" style="padding:14px">No evolution (final / unique unit).</div>`;
   $("modal-body").innerHTML = `
     <h2>${esc(u.name)}</h2>
-    <div class="m-sub">${esc(u.race)} &middot; Rank ${u.rank} &middot; ${u.slots} slot${u.slots>1?"s":""} &middot; ${u.move}</div>
+    <div class="m-sub">${esc(u.race)} &middot; Rank ${u.rank} &middot; ${u.slots} slot${u.slots>1?"s":""} &middot; ${u.move}${u.sp!=null&&u.sp!==undefined?` &middot; SP ${u.sp}`:""}</div>
     ${u.ability?`<div class="abilitybox">${esc(u.ability)}</div>`:`<div style="color:var(--dim)">No special ability</div>`}
     <div class="statgrid">${stats}</div>
     <div class="sect"><h3>Advances to</h3>${adv}</div>
@@ -774,6 +855,9 @@ def main() -> int:
                     help="also fetch the Emblem Database (recipes); cached in raw/")
     ap.add_argument("--crafting", action="store_true",
                     help="also fetch the crafting chart (weapons/armor/accessories); cached in raw/")
+    ap.add_argument("--rankup", action="store_true",
+                    help="also fetch the guide's rankup chart: adds SP to units and "
+                         "writes rankup.json/csv; cached in raw/")
     ap.add_argument("--out", default="unitdb", help="output dir (default: unitdb)")
     args = ap.parse_args()
 
@@ -806,6 +890,42 @@ def main() -> int:
         if missing:
             print(f"missing (re-run to retry): {missing}", flush=True)
         print(f"details fetched: {ok}/{len(units)}")
+
+    # --- community guide (crafting chart, effect ids, rankup chart) ---
+    guide_text: str | None = None
+    if args.crafting or args.rankup:
+        cached = out / "raw" / "crafting.txt"
+        try:
+            if cached.exists() and cached.stat().st_size > 1000:
+                guide_text = cached.read_text(encoding="utf-8", errors="replace")
+            else:
+                guide_text = fetch(GIST_URL)
+                cached.parent.mkdir(parents=True, exist_ok=True)
+                cached.write_text(guide_text, encoding="utf-8")
+        except Exception as e:  # noqa: BLE001
+            print(f"  ! guide fetch: {e}", file=sys.stderr)
+
+    rankup: list[dict] = []
+    if guide_text and args.rankup:
+        rankup = parse_rankup(guide_text)
+        with_sp = merge_sp(units, rankup)
+        (out / "rankup.json").write_text(json.dumps(rankup, indent=2), encoding="utf-8")
+        with (out / "rankup.csv").open("w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=RANKUP_FIELDS)
+            w.writeheader()
+            w.writerows(rankup)
+        print(f"rankup: {len(rankup)} edges from the guide "
+              f"({len({r['from'] for r in rankup})} source units), "
+              f"SP known for {with_sp} units")
+        cc = crosscheck_rankup(units, rankup)
+        print(f"  cross-check vs scraped data: {cc['shared']} shared edges, "
+              f"{cc['agree']} agree on rank/level/VP/emblem")
+        for key, field, gval, sval in cc["diffs"]:
+            print(f"    ! {key[0]} -> {key[1]}: guide {field}={gval}, scraped={sval}")
+        for key in cc["only_guide"]:
+            print(f"    + guide only: {key[0]} -> {key[1]}")
+        for key in cc["only_scraped"]:
+            print(f"    + scraped only: {key[0]} -> {key[1]}")
 
     (out / "units.json").write_text(json.dumps(units, indent=2), encoding="utf-8")
 
@@ -842,16 +962,9 @@ def main() -> int:
 
     crafting: list[dict] = []
     crafting_effects: list[dict] = []
-    if args.crafting:
-        cached = out / "raw" / "crafting.txt"
+    if args.crafting and guide_text:
         try:
-            if cached.exists() and cached.stat().st_size > 1000:
-                gtext = cached.read_text(encoding="utf-8", errors="replace")
-            else:
-                gtext = fetch(GIST_URL)
-                cached.parent.mkdir(parents=True, exist_ok=True)
-                cached.write_text(gtext, encoding="utf-8")
-            crafting, crafting_effects = parse_crafting(gtext)
+            crafting, crafting_effects = parse_crafting(guide_text)
             (out / "crafting.json").write_text(json.dumps(crafting, indent=2), encoding="utf-8")
             with (out / "crafting.csv").open("w", newline="", encoding="utf-8") as f:
                 w = csv.DictWriter(f, fieldnames=CRAFT_FIELDS)

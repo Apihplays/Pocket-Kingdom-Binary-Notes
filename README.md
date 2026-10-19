@@ -60,13 +60,23 @@ browser; no server or internet needed. It has:
 Rebuild/refresh:
 
 ```bash
-python3 tools/build_unitdb.py --details --emblems --crafting
+python3 tools/build_unitdb.py --details --emblems --crafting --rankup
 ```
 
-`--details` re-fetches each unit page, `--emblems` the recipe table and
-`--crafting` the crafting chart; all cache into `unitdb/raw/` (git-ignored).
-Omit the flags for a fast index-only rebuild. Unit stats are base values — the
-game scales them with level, and combining/evolving changes them.
+`--details` re-fetches each unit page, `--emblems` the recipe table,
+`--crafting` the crafting chart and `--rankup` the guide's rankup chart (which
+supplies per-unit SP and is cross-checked against the scraped evolution); all
+cache into `unitdb/raw/` (git-ignored). Omit the flags for a fast index-only
+rebuild. Unit stats are base values — the game scales them with level, and
+combining/evolving changes them.
+
+### Source cross-check
+
+Two independent sources back the evolution tree (a 2005 warcry scrape and the
+community guide). Across **108 shared evolution edges they agree on rank, level,
+VP and RankUp Emblem in every case**. The only differences: the guide omits
+`Primitive Cell -> O'Rosam`, and it places `Master Fist` after `Master Monk`
+where the scraped data attaches it to `Expert Monk` — see `unitdb/README.md`.
 
 ## Removed: mass-sell
 
