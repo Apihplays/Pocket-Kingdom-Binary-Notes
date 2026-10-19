@@ -1,0 +1,110 @@
+from,to,sp,rank,level,vp,emblem
+Soldier,Knight,11,3,2,40,Hero Emblem
+Soldier,Warrior,11,2,1,10,Warrior Emblem
+Soldier,Monk,11,3,2,40,Jackal Emblem
+Soldier,Archer,11,2,1,10,Bone Emblem
+Soldier,Thief,11,2,1,10,Hound Emblem
+Warrior,Swordman,13,5,3,110,Knight Emblem
+Warrior,Phalanx,13,4,2,70,Soldier Emblem
+Phalanx,Ogre,,7,3,200,Shogun Emblem
+Orc,Orc Chief,,4,2,70,Soldier Emblem
+Orc Chief,Ogre,,7,3,200,Shogun Emblem
+Ogre,Khazad's Ghost,,9,5,300,Dragon Emblem
+Swordman,Sword Master,24,8,4,250,Champion Emblem
+Sword Master,Mikaduchi,,9,5,300,Dragon Emblem
+Monk,Expert Monk,17,5,3,150,Victor Emblem
+Expert Monk,Master Monk,,8,4,250,Champion Emblem
+Master Monk,Master Fist,,9,5,350,Origin Emblem
+Knight,Temple Knight,14,5,3,110,Knight Emblem
+Knight,Undead Knight,14,4,2,70,Mist Emblem
+Temple Knight,Paladin,18,7,4,200,Shogun Emblem
+Paladin,Lord Redrick,,9,5,300,Dragon Emblem
+Paladin,Durahan,,9,5,300,Immortal Emblem
+Undead Knight,Vampire,,6,3,150,Chain Emblem
+Vampire,August,,9,5,300,Dragon Emblem
+Thief,Rogue,14,4,2,70,Soldier Emblem
+Rogue,Assassin,21,7,4,200,Shogun Emblem
+Assassin,Genzoh,,9,5,300,Dragon Emblem
+Archer,Hunter,13,4,2,70,Soldier Emblem
+Hunter,Sniper,19,7,4,200,Shogun Emblem
+Sniper,Hell Sniper,,9,5,350,Origin Emblem
+Noble,Necromancer,11,3,2,40,Jackal Emblem
+Noble,Priest,11,2,1,10,Bone Emblem
+Noble,Theoricus,11,3,2,40,Hero Emblem
+Theoricus,Philosophas,17,5,3,110,Knight Emblem
+Philosophas,Adept,,8,4,250,Champion Emblem
+Adept,Mage Silion,,9,5,300,Dragon Emblem
+Priest,High Priest,,5,3,110,Knight Emblem
+High Priest,Bishop,,7,4,200,Shogun Emblem
+Bishop,Savior,,9,5,350,Origin Emblem
+Necromancer,Lich,14,5,3,110,Needle Emblem
+Lich,Lich Lord,19,8,4,250,Moon Emblem
+Lich Lord,Al Acid,,9,5,300,Immortal Emblem
+Lizardfoot,Scale Runner,,2,1,10,Hound Emblem
+Scale Runner,Large Scale,,4,2,70,Bear Emblem
+Large Scale,Serpent,,6,3,150,Chimera Emblem
+Large Scale,Dragon Runner,,5,2,110,Lion Emblem
+Serpent,Naga,,8,4,250,Beast Emblem
+Naga,Leviathan,,9,5,300,Dragon Emblem
+Dragon Runner,Wyvern,,7,3,200,Griffon Emblem
+Dragon Runner,Dragon,,8,4,250,Beast Emblem
+Wyvern,Tiamat,,9,5,300,Dragon Emblem
+Dragon,Bardion,,9,5,300,Immortal Emblem
+Dragon,Thyrion,,9,5,300,Dragon Emblem
+Skeleton,Zombie,,2,1,10,Warrior Emblem
+Skeleton,Wight,,2,1,10,Bone Emblem
+Skeleton,Skeleton Knight,,3,2,40,Hero Emblem
+Skeleton,Skull King,,9,5,350,Darkness Emblem
+Skeleton Knight,Skeleton Lord,,5,3,110,Needle Emblem
+Wight,Wraith,,4,2,70,Mist Emblem
+Wraith,Specter,,6,4,150,Chain Emblem
+Specter,Lich Lord,,8,4,250,Moon Emblem
+Zombie,Living Dead,,5,2,110,Needle Emblem
+Living Dead,Ghoul,,6,3,150,Chain Emblem
+Ghoul,Nephilia,,9,5,350,Darkness Emblem
+Sprite,Vulture,,3,2,40,Jackal Emblem
+Sprite,Harpy,,2,1,10,Hound Emblem
+Harpy,Sky Stalker,,4,2,70,Soldier Emblem
+Sky Stalker,Ladyhawke,,7,4,200,Shogun Emblem
+Ladyhawke,Lady Sky,,9,5,350,Origin Emblem
+Vulture,Garuda,,6,3,150,Chimera Emblem
+Garuda,Rock,,8,4,250,Beast Emblem
+Rock,Tempest,,9,5,300,Dragon Emblem
+Amazoness,High Elf,16,3,2,40,Hero Emblem
+Amazoness,Banshee,16,2,1,10,Bone Emblem
+High Elf,Valkyrie,,5,3,110,Knight Emblem
+Valkyrie,Scathacha,,8,4,250,Champion Emblem
+Scathacha,Luna,,9,5,300,Dragon Emblem
+Banshee,Siren,21,4,2,70,Soldier Emblem
+Siren,Succubus,32,7,4,200,Night Emblem
+Succubus,Morrigan,,8,4,250,Moon Emblem
+Morrigan,Luna,,9,5,300,Dragon Emblem
+Lycanthrope,Orc,,2,1,10,Warrior Emblem
+Lycanthrope,Imp,,3,1,40,Jackal Emblem
+Lycanthrope,Caveman,,2,1,10,Bone Emblem
+Lycanthrope,Dingo,,2,1,10,Hound Emblem
+Imp,Lesser Demon,,5,3,110,Knight Emblem
+Lesser Demon,Arc Demon,,7,4,200,Shogun Emblem
+Arc Demon,Bahzam DeGole,,9,5,300,Dragon Emblem
+Caveman,Troll,,4,2,70,Soldier Emblem
+Troll,Troll King,,6,3,150,Victor Emblem
+Troll King,Gigantes,,9,5,350,Battleaxe Emblem
+Dingo,Shadow Wolf,21,4,2,70,Bear Emblem
+Shadow Wolf,Hell Hound,32,7,4,200,Griffon Emblem
+Hell Hound,Fenril,,9,5,300,Dragon Emblem
+Gargoyle,Steel Gargoyle,,3,2,40,Hero Emblem
+Gargoyle,Golem,,3,1,40,Jackal Emblem
+Steel Gargoyle,Wing Guarder,,5,3,110,Feather Emblem
+Wing Guarder,Imperial Guard,,7,4,200,Sky Emblem
+Imperial Guard,Balrog,,9,5,300,Rapier Emblem
+Golem,Colossus,,6,3,150,Lightning Emblem
+Colossus,Talos,,8,4,250,Storm Emblem
+Talos,Behemoth,,9,5,300,Rapier Emblem
+Primitive Cell,Mud Wall,,2,1,10,Warrior Emblem
+Primitive Cell,Poison Jelly,,3,2,40,Jackal Emblem
+Poison Jelly,Acid Ooze,,5,3,110,Feather Emblem
+Acid Ooze,Blood Ooze,,7,4,200,Sky Emblem
+Blood Ooze,Kraken,,9,5,300,Dragon Emblem
+Mud Wall,Rock Wall,,4,2,70,Wind Emblem
+Rock Wall,Thorn Wall,,6,3,150,Lightning Emblem
+Thorn Wall,Talos,,8,5,250,Storm Emblem

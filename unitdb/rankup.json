@@ -1,0 +1,983 @@
+[
+  {
+    "from": "Soldier",
+    "to": "Knight",
+    "sp": 11,
+    "rank": 3,
+    "level": 2,
+    "vp": 40,
+    "emblem": "Hero Emblem"
+  },
+  {
+    "from": "Soldier",
+    "to": "Warrior",
+    "sp": 11,
+    "rank": 2,
+    "level": 1,
+    "vp": 10,
+    "emblem": "Warrior Emblem"
+  },
+  {
+    "from": "Soldier",
+    "to": "Monk",
+    "sp": 11,
+    "rank": 3,
+    "level": 2,
+    "vp": 40,
+    "emblem": "Jackal Emblem"
+  },
+  {
+    "from": "Soldier",
+    "to": "Archer",
+    "sp": 11,
+    "rank": 2,
+    "level": 1,
+    "vp": 10,
+    "emblem": "Bone Emblem"
+  },
+  {
+    "from": "Soldier",
+    "to": "Thief",
+    "sp": 11,
+    "rank": 2,
+    "level": 1,
+    "vp": 10,
+    "emblem": "Hound Emblem"
+  },
+  {
+    "from": "Warrior",
+    "to": "Swordman",
+    "sp": 13,
+    "rank": 5,
+    "level": 3,
+    "vp": 110,
+    "emblem": "Knight Emblem"
+  },
+  {
+    "from": "Warrior",
+    "to": "Phalanx",
+    "sp": 13,
+    "rank": 4,
+    "level": 2,
+    "vp": 70,
+    "emblem": "Soldier Emblem"
+  },
+  {
+    "from": "Phalanx",
+    "to": "Ogre",
+    "sp": null,
+    "rank": 7,
+    "level": 3,
+    "vp": 200,
+    "emblem": "Shogun Emblem"
+  },
+  {
+    "from": "Orc",
+    "to": "Orc Chief",
+    "sp": null,
+    "rank": 4,
+    "level": 2,
+    "vp": 70,
+    "emblem": "Soldier Emblem"
+  },
+  {
+    "from": "Orc Chief",
+    "to": "Ogre",
+    "sp": null,
+    "rank": 7,
+    "level": 3,
+    "vp": 200,
+    "emblem": "Shogun Emblem"
+  },
+  {
+    "from": "Ogre",
+    "to": "Khazad's Ghost",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Dragon Emblem"
+  },
+  {
+    "from": "Swordman",
+    "to": "Sword Master",
+    "sp": 24,
+    "rank": 8,
+    "level": 4,
+    "vp": 250,
+    "emblem": "Champion Emblem"
+  },
+  {
+    "from": "Sword Master",
+    "to": "Mikaduchi",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Dragon Emblem"
+  },
+  {
+    "from": "Monk",
+    "to": "Expert Monk",
+    "sp": 17,
+    "rank": 5,
+    "level": 3,
+    "vp": 150,
+    "emblem": "Victor Emblem"
+  },
+  {
+    "from": "Expert Monk",
+    "to": "Master Monk",
+    "sp": null,
+    "rank": 8,
+    "level": 4,
+    "vp": 250,
+    "emblem": "Champion Emblem"
+  },
+  {
+    "from": "Master Monk",
+    "to": "Master Fist",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 350,
+    "emblem": "Origin Emblem"
+  },
+  {
+    "from": "Knight",
+    "to": "Temple Knight",
+    "sp": 14,
+    "rank": 5,
+    "level": 3,
+    "vp": 110,
+    "emblem": "Knight Emblem"
+  },
+  {
+    "from": "Knight",
+    "to": "Undead Knight",
+    "sp": 14,
+    "rank": 4,
+    "level": 2,
+    "vp": 70,
+    "emblem": "Mist Emblem"
+  },
+  {
+    "from": "Temple Knight",
+    "to": "Paladin",
+    "sp": 18,
+    "rank": 7,
+    "level": 4,
+    "vp": 200,
+    "emblem": "Shogun Emblem"
+  },
+  {
+    "from": "Paladin",
+    "to": "Lord Redrick",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Dragon Emblem"
+  },
+  {
+    "from": "Paladin",
+    "to": "Durahan",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Immortal Emblem"
+  },
+  {
+    "from": "Undead Knight",
+    "to": "Vampire",
+    "sp": null,
+    "rank": 6,
+    "level": 3,
+    "vp": 150,
+    "emblem": "Chain Emblem"
+  },
+  {
+    "from": "Vampire",
+    "to": "August",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Dragon Emblem"
+  },
+  {
+    "from": "Thief",
+    "to": "Rogue",
+    "sp": 14,
+    "rank": 4,
+    "level": 2,
+    "vp": 70,
+    "emblem": "Soldier Emblem"
+  },
+  {
+    "from": "Rogue",
+    "to": "Assassin",
+    "sp": 21,
+    "rank": 7,
+    "level": 4,
+    "vp": 200,
+    "emblem": "Shogun Emblem"
+  },
+  {
+    "from": "Assassin",
+    "to": "Genzoh",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Dragon Emblem"
+  },
+  {
+    "from": "Archer",
+    "to": "Hunter",
+    "sp": 13,
+    "rank": 4,
+    "level": 2,
+    "vp": 70,
+    "emblem": "Soldier Emblem"
+  },
+  {
+    "from": "Hunter",
+    "to": "Sniper",
+    "sp": 19,
+    "rank": 7,
+    "level": 4,
+    "vp": 200,
+    "emblem": "Shogun Emblem"
+  },
+  {
+    "from": "Sniper",
+    "to": "Hell Sniper",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 350,
+    "emblem": "Origin Emblem"
+  },
+  {
+    "from": "Noble",
+    "to": "Necromancer",
+    "sp": 11,
+    "rank": 3,
+    "level": 2,
+    "vp": 40,
+    "emblem": "Jackal Emblem"
+  },
+  {
+    "from": "Noble",
+    "to": "Priest",
+    "sp": 11,
+    "rank": 2,
+    "level": 1,
+    "vp": 10,
+    "emblem": "Bone Emblem"
+  },
+  {
+    "from": "Noble",
+    "to": "Theoricus",
+    "sp": 11,
+    "rank": 3,
+    "level": 2,
+    "vp": 40,
+    "emblem": "Hero Emblem"
+  },
+  {
+    "from": "Theoricus",
+    "to": "Philosophas",
+    "sp": 17,
+    "rank": 5,
+    "level": 3,
+    "vp": 110,
+    "emblem": "Knight Emblem"
+  },
+  {
+    "from": "Philosophas",
+    "to": "Adept",
+    "sp": null,
+    "rank": 8,
+    "level": 4,
+    "vp": 250,
+    "emblem": "Champion Emblem"
+  },
+  {
+    "from": "Adept",
+    "to": "Mage Silion",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Dragon Emblem"
+  },
+  {
+    "from": "Priest",
+    "to": "High Priest",
+    "sp": null,
+    "rank": 5,
+    "level": 3,
+    "vp": 110,
+    "emblem": "Knight Emblem"
+  },
+  {
+    "from": "High Priest",
+    "to": "Bishop",
+    "sp": null,
+    "rank": 7,
+    "level": 4,
+    "vp": 200,
+    "emblem": "Shogun Emblem"
+  },
+  {
+    "from": "Bishop",
+    "to": "Savior",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 350,
+    "emblem": "Origin Emblem"
+  },
+  {
+    "from": "Necromancer",
+    "to": "Lich",
+    "sp": 14,
+    "rank": 5,
+    "level": 3,
+    "vp": 110,
+    "emblem": "Needle Emblem"
+  },
+  {
+    "from": "Lich",
+    "to": "Lich Lord",
+    "sp": 19,
+    "rank": 8,
+    "level": 4,
+    "vp": 250,
+    "emblem": "Moon Emblem"
+  },
+  {
+    "from": "Lich Lord",
+    "to": "Al Acid",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Immortal Emblem"
+  },
+  {
+    "from": "Lizardfoot",
+    "to": "Scale Runner",
+    "sp": null,
+    "rank": 2,
+    "level": 1,
+    "vp": 10,
+    "emblem": "Hound Emblem"
+  },
+  {
+    "from": "Scale Runner",
+    "to": "Large Scale",
+    "sp": null,
+    "rank": 4,
+    "level": 2,
+    "vp": 70,
+    "emblem": "Bear Emblem"
+  },
+  {
+    "from": "Large Scale",
+    "to": "Serpent",
+    "sp": null,
+    "rank": 6,
+    "level": 3,
+    "vp": 150,
+    "emblem": "Chimera Emblem"
+  },
+  {
+    "from": "Large Scale",
+    "to": "Dragon Runner",
+    "sp": null,
+    "rank": 5,
+    "level": 2,
+    "vp": 110,
+    "emblem": "Lion Emblem"
+  },
+  {
+    "from": "Serpent",
+    "to": "Naga",
+    "sp": null,
+    "rank": 8,
+    "level": 4,
+    "vp": 250,
+    "emblem": "Beast Emblem"
+  },
+  {
+    "from": "Naga",
+    "to": "Leviathan",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Dragon Emblem"
+  },
+  {
+    "from": "Dragon Runner",
+    "to": "Wyvern",
+    "sp": null,
+    "rank": 7,
+    "level": 3,
+    "vp": 200,
+    "emblem": "Griffon Emblem"
+  },
+  {
+    "from": "Dragon Runner",
+    "to": "Dragon",
+    "sp": null,
+    "rank": 8,
+    "level": 4,
+    "vp": 250,
+    "emblem": "Beast Emblem"
+  },
+  {
+    "from": "Wyvern",
+    "to": "Tiamat",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Dragon Emblem"
+  },
+  {
+    "from": "Dragon",
+    "to": "Bardion",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Immortal Emblem"
+  },
+  {
+    "from": "Dragon",
+    "to": "Thyrion",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Dragon Emblem"
+  },
+  {
+    "from": "Skeleton",
+    "to": "Zombie",
+    "sp": null,
+    "rank": 2,
+    "level": 1,
+    "vp": 10,
+    "emblem": "Warrior Emblem"
+  },
+  {
+    "from": "Skeleton",
+    "to": "Wight",
+    "sp": null,
+    "rank": 2,
+    "level": 1,
+    "vp": 10,
+    "emblem": "Bone Emblem"
+  },
+  {
+    "from": "Skeleton",
+    "to": "Skeleton Knight",
+    "sp": null,
+    "rank": 3,
+    "level": 2,
+    "vp": 40,
+    "emblem": "Hero Emblem"
+  },
+  {
+    "from": "Skeleton",
+    "to": "Skull King",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 350,
+    "emblem": "Darkness Emblem"
+  },
+  {
+    "from": "Skeleton Knight",
+    "to": "Skeleton Lord",
+    "sp": null,
+    "rank": 5,
+    "level": 3,
+    "vp": 110,
+    "emblem": "Needle Emblem"
+  },
+  {
+    "from": "Wight",
+    "to": "Wraith",
+    "sp": null,
+    "rank": 4,
+    "level": 2,
+    "vp": 70,
+    "emblem": "Mist Emblem"
+  },
+  {
+    "from": "Wraith",
+    "to": "Specter",
+    "sp": null,
+    "rank": 6,
+    "level": 4,
+    "vp": 150,
+    "emblem": "Chain Emblem"
+  },
+  {
+    "from": "Specter",
+    "to": "Lich Lord",
+    "sp": null,
+    "rank": 8,
+    "level": 4,
+    "vp": 250,
+    "emblem": "Moon Emblem"
+  },
+  {
+    "from": "Zombie",
+    "to": "Living Dead",
+    "sp": null,
+    "rank": 5,
+    "level": 2,
+    "vp": 110,
+    "emblem": "Needle Emblem"
+  },
+  {
+    "from": "Living Dead",
+    "to": "Ghoul",
+    "sp": null,
+    "rank": 6,
+    "level": 3,
+    "vp": 150,
+    "emblem": "Chain Emblem"
+  },
+  {
+    "from": "Ghoul",
+    "to": "Nephilia",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 350,
+    "emblem": "Darkness Emblem"
+  },
+  {
+    "from": "Sprite",
+    "to": "Vulture",
+    "sp": null,
+    "rank": 3,
+    "level": 2,
+    "vp": 40,
+    "emblem": "Jackal Emblem"
+  },
+  {
+    "from": "Sprite",
+    "to": "Harpy",
+    "sp": null,
+    "rank": 2,
+    "level": 1,
+    "vp": 10,
+    "emblem": "Hound Emblem"
+  },
+  {
+    "from": "Harpy",
+    "to": "Sky Stalker",
+    "sp": null,
+    "rank": 4,
+    "level": 2,
+    "vp": 70,
+    "emblem": "Soldier Emblem"
+  },
+  {
+    "from": "Sky Stalker",
+    "to": "Ladyhawke",
+    "sp": null,
+    "rank": 7,
+    "level": 4,
+    "vp": 200,
+    "emblem": "Shogun Emblem"
+  },
+  {
+    "from": "Ladyhawke",
+    "to": "Lady Sky",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 350,
+    "emblem": "Origin Emblem"
+  },
+  {
+    "from": "Vulture",
+    "to": "Garuda",
+    "sp": null,
+    "rank": 6,
+    "level": 3,
+    "vp": 150,
+    "emblem": "Chimera Emblem"
+  },
+  {
+    "from": "Garuda",
+    "to": "Rock",
+    "sp": null,
+    "rank": 8,
+    "level": 4,
+    "vp": 250,
+    "emblem": "Beast Emblem"
+  },
+  {
+    "from": "Rock",
+    "to": "Tempest",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Dragon Emblem"
+  },
+  {
+    "from": "Amazoness",
+    "to": "High Elf",
+    "sp": 16,
+    "rank": 3,
+    "level": 2,
+    "vp": 40,
+    "emblem": "Hero Emblem"
+  },
+  {
+    "from": "Amazoness",
+    "to": "Banshee",
+    "sp": 16,
+    "rank": 2,
+    "level": 1,
+    "vp": 10,
+    "emblem": "Bone Emblem"
+  },
+  {
+    "from": "High Elf",
+    "to": "Valkyrie",
+    "sp": null,
+    "rank": 5,
+    "level": 3,
+    "vp": 110,
+    "emblem": "Knight Emblem"
+  },
+  {
+    "from": "Valkyrie",
+    "to": "Scathacha",
+    "sp": null,
+    "rank": 8,
+    "level": 4,
+    "vp": 250,
+    "emblem": "Champion Emblem"
+  },
+  {
+    "from": "Scathacha",
+    "to": "Luna",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Dragon Emblem"
+  },
+  {
+    "from": "Banshee",
+    "to": "Siren",
+    "sp": 21,
+    "rank": 4,
+    "level": 2,
+    "vp": 70,
+    "emblem": "Soldier Emblem"
+  },
+  {
+    "from": "Siren",
+    "to": "Succubus",
+    "sp": 32,
+    "rank": 7,
+    "level": 4,
+    "vp": 200,
+    "emblem": "Night Emblem"
+  },
+  {
+    "from": "Succubus",
+    "to": "Morrigan",
+    "sp": null,
+    "rank": 8,
+    "level": 4,
+    "vp": 250,
+    "emblem": "Moon Emblem"
+  },
+  {
+    "from": "Morrigan",
+    "to": "Luna",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Dragon Emblem"
+  },
+  {
+    "from": "Lycanthrope",
+    "to": "Orc",
+    "sp": null,
+    "rank": 2,
+    "level": 1,
+    "vp": 10,
+    "emblem": "Warrior Emblem"
+  },
+  {
+    "from": "Lycanthrope",
+    "to": "Imp",
+    "sp": null,
+    "rank": 3,
+    "level": 1,
+    "vp": 40,
+    "emblem": "Jackal Emblem"
+  },
+  {
+    "from": "Lycanthrope",
+    "to": "Caveman",
+    "sp": null,
+    "rank": 2,
+    "level": 1,
+    "vp": 10,
+    "emblem": "Bone Emblem"
+  },
+  {
+    "from": "Lycanthrope",
+    "to": "Dingo",
+    "sp": null,
+    "rank": 2,
+    "level": 1,
+    "vp": 10,
+    "emblem": "Hound Emblem"
+  },
+  {
+    "from": "Imp",
+    "to": "Lesser Demon",
+    "sp": null,
+    "rank": 5,
+    "level": 3,
+    "vp": 110,
+    "emblem": "Knight Emblem"
+  },
+  {
+    "from": "Lesser Demon",
+    "to": "Arc Demon",
+    "sp": null,
+    "rank": 7,
+    "level": 4,
+    "vp": 200,
+    "emblem": "Shogun Emblem"
+  },
+  {
+    "from": "Arc Demon",
+    "to": "Bahzam DeGole",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Dragon Emblem"
+  },
+  {
+    "from": "Caveman",
+    "to": "Troll",
+    "sp": null,
+    "rank": 4,
+    "level": 2,
+    "vp": 70,
+    "emblem": "Soldier Emblem"
+  },
+  {
+    "from": "Troll",
+    "to": "Troll King",
+    "sp": null,
+    "rank": 6,
+    "level": 3,
+    "vp": 150,
+    "emblem": "Victor Emblem"
+  },
+  {
+    "from": "Troll King",
+    "to": "Gigantes",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 350,
+    "emblem": "Battleaxe Emblem"
+  },
+  {
+    "from": "Dingo",
+    "to": "Shadow Wolf",
+    "sp": 21,
+    "rank": 4,
+    "level": 2,
+    "vp": 70,
+    "emblem": "Bear Emblem"
+  },
+  {
+    "from": "Shadow Wolf",
+    "to": "Hell Hound",
+    "sp": 32,
+    "rank": 7,
+    "level": 4,
+    "vp": 200,
+    "emblem": "Griffon Emblem"
+  },
+  {
+    "from": "Hell Hound",
+    "to": "Fenril",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Dragon Emblem"
+  },
+  {
+    "from": "Gargoyle",
+    "to": "Steel Gargoyle",
+    "sp": null,
+    "rank": 3,
+    "level": 2,
+    "vp": 40,
+    "emblem": "Hero Emblem"
+  },
+  {
+    "from": "Gargoyle",
+    "to": "Golem",
+    "sp": null,
+    "rank": 3,
+    "level": 1,
+    "vp": 40,
+    "emblem": "Jackal Emblem"
+  },
+  {
+    "from": "Steel Gargoyle",
+    "to": "Wing Guarder",
+    "sp": null,
+    "rank": 5,
+    "level": 3,
+    "vp": 110,
+    "emblem": "Feather Emblem"
+  },
+  {
+    "from": "Wing Guarder",
+    "to": "Imperial Guard",
+    "sp": null,
+    "rank": 7,
+    "level": 4,
+    "vp": 200,
+    "emblem": "Sky Emblem"
+  },
+  {
+    "from": "Imperial Guard",
+    "to": "Balrog",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Rapier Emblem"
+  },
+  {
+    "from": "Golem",
+    "to": "Colossus",
+    "sp": null,
+    "rank": 6,
+    "level": 3,
+    "vp": 150,
+    "emblem": "Lightning Emblem"
+  },
+  {
+    "from": "Colossus",
+    "to": "Talos",
+    "sp": null,
+    "rank": 8,
+    "level": 4,
+    "vp": 250,
+    "emblem": "Storm Emblem"
+  },
+  {
+    "from": "Talos",
+    "to": "Behemoth",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Rapier Emblem"
+  },
+  {
+    "from": "Primitive Cell",
+    "to": "Mud Wall",
+    "sp": null,
+    "rank": 2,
+    "level": 1,
+    "vp": 10,
+    "emblem": "Warrior Emblem"
+  },
+  {
+    "from": "Primitive Cell",
+    "to": "Poison Jelly",
+    "sp": null,
+    "rank": 3,
+    "level": 2,
+    "vp": 40,
+    "emblem": "Jackal Emblem"
+  },
+  {
+    "from": "Poison Jelly",
+    "to": "Acid Ooze",
+    "sp": null,
+    "rank": 5,
+    "level": 3,
+    "vp": 110,
+    "emblem": "Feather Emblem"
+  },
+  {
+    "from": "Acid Ooze",
+    "to": "Blood Ooze",
+    "sp": null,
+    "rank": 7,
+    "level": 4,
+    "vp": 200,
+    "emblem": "Sky Emblem"
+  },
+  {
+    "from": "Blood Ooze",
+    "to": "Kraken",
+    "sp": null,
+    "rank": 9,
+    "level": 5,
+    "vp": 300,
+    "emblem": "Dragon Emblem"
+  },
+  {
+    "from": "Mud Wall",
+    "to": "Rock Wall",
+    "sp": null,
+    "rank": 4,
+    "level": 2,
+    "vp": 70,
+    "emblem": "Wind Emblem"
+  },
+  {
+    "from": "Rock Wall",
+    "to": "Thorn Wall",
+    "sp": null,
+    "rank": 6,
+    "level": 3,
+    "vp": 150,
+    "emblem": "Lightning Emblem"
+  },
+  {
+    "from": "Thorn Wall",
+    "to": "Talos",
+    "sp": null,
+    "rank": 8,
+    "level": 5,
+    "vp": 250,
+    "emblem": "Storm Emblem"
+  }
+]
