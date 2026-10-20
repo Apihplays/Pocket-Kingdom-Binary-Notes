@@ -43,11 +43,11 @@ id,name,behavior
 41,warrior spirit,ATK & DEF +30% (x1.3)
 42,mage spirit,INT & WIS +30% (x1.3)
 43,hero spirit,ATK/DEF/AGI/DEX/WIS/INT +30% (x1.3)
-44,self destruct,
-45,regenerate,
-46,multiply,
-47,revive,
-48,item recovery,
+44,self destruct,"On death: 59px blast, damage = HP - target DEF (min 1)"
+45,regenerate,10% per action: heal 50% max HP
+46,multiply,10% per action: clone into an empty slot 4/5
+47,revive,On death: revive once at 50% max HP (consumed)
+48,item recovery,Post-battle item cleanup: 50% roll (not fully decoded)
 49,loot recovery up 1,
 50,loot recovery up 2,
 51,loot recovery up 3,

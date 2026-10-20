@@ -222,27 +222,27 @@
   {
     "id": 44,
     "name": "self destruct",
-    "behavior": ""
+    "behavior": "On death: 59px blast, damage = HP - target DEF (min 1)"
   },
   {
     "id": 45,
     "name": "regenerate",
-    "behavior": ""
+    "behavior": "10% per action: heal 50% max HP"
   },
   {
     "id": 46,
     "name": "multiply",
-    "behavior": ""
+    "behavior": "10% per action: clone into an empty slot 4/5"
   },
   {
     "id": 47,
     "name": "revive",
-    "behavior": ""
+    "behavior": "On death: revive once at 50% max HP (consumed)"
   },
   {
     "id": 48,
     "name": "item recovery",
-    "behavior": ""
+    "behavior": "Post-battle item cleanup: 50% roll (not fully decoded)"
   },
   {
     "id": 49,

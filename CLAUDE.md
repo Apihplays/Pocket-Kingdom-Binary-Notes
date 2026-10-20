@@ -90,7 +90,7 @@ When reverse engineering, investigating file formats, decompiling, or inspecting
   - Table header byte at +22 = base/aggregate rate (also patched to 100).
 - Save files: `save.dat`, `options.dat` under `C:\system\apps\6rah\` in the emulator (see `6RAH.cfg`).
 
-## Item effects 40-43 (verified 2026-10-20)
+## Item effects 40-48 (verified 2026-10-20)
 Effect **names** are data (`effect.dat`; `english/itemdata.dat` @ `0x00F0`, 52 x 48-byte
 records), but the **mechanics are hard-coded**. Dispatcher for effects 0..43:
 
@@ -110,9 +110,31 @@ records), but the **mechanics are hard-coded**. Dispatcher for effects 0..43:
   (records at `ctx+0x4a8 + 52*slot` for the player, `ctx+0x5e0 + 52*slot` for the enemy) and
   calls the dispatcher twice — duplicates stack (two Hero's Spirit = x1.69).
 - Items: 40 = Emperor's Staff, Mage Necklace; 41 = Wolf Ring; 42 = Owl Ring;
-  43 = Ring of the Sun.
-- 44-51 are not in this table (e.g. loot recovery 49-51 is handled in the drop routine at
-  `0x1000d900`). The buff lands on the battle array, so the menu stat screen does not show it.
+  43 = Ring of the Sun; 44 = Hellfire Axe; 45 = Rebirth Necklace; 46 = Dividing Necklace;
+  47 = Armored Casket; 48 = Soul Jacket.
+- HP fields: current `+0x1c`, max `+0x20` (enemy `+0x244` / `+0x248`); heal helper
+  `0x10008bc4` adds then clamps to max. `has_effect` helper = `0x1000a53c(ctx, unit, id)`.
+
+Effects 44-48 are **not** in the 0..43 dispatcher — they are procs checked elsewhere:
+
+- 44 Self Destruct (death): `0x1000dfcc` (caller `0x1002226c`), `has_effect(...,0x2c)` at
+  `0x1000e2ec`; blast routine `0x10007700` hits enemies within 59 px (`cmp r2,#0x3b`),
+  damage = user's current HP - target DEF (`0x100084ec`, min 1), halved while defending.
+- 45 Regenerate: turn start sets bit 31 of the slot status word
+  (`0x1001e9dc` -> `0x100081f0(...,0x80000000)`); after the move animation `0x1001edc0`
+  rolls `rand%100 <= 9` and heals `maxHP/2` (`0x10008cf4` -> `0x10008bc4`).
+- 46 Multiply: `0x1001d318` `has_effect(...,0x2e)` then `rand%100 <= 9` -> `0x1001d5a8`
+  copies the 92-byte battle record (stats + current HP) into a free slot; `0x1000a394`
+  only tests slots 4-5 and returns `0xff` when full.
+- 47 Revive: death handler `0x10008ec4` compares the slot to `0x2f`, consumes it (`0xff` at
+  `0x10008f50`) and restores `maxHP/2`.
+- 48 Item Recovery: post-battle cleanup (`0x1007b0f8`, called from `0x1000b5b0` when the
+  battle state is 5) sets a flag at `0x1007b1ec`/`0x1007b228`; `0x1007b3b8` applies a
+  `rand & 1` roll in the item-removal pass (inventory semantics not fully decoded).
+- 49-51 loot recovery is separate, in the drop routine at `0x1000d900`.
+- Auto HP Restore 24-26 is **not** the same: it arms a 33-tick timer at `ctx+0x7a8+slot*28`
+  and heals a small flat amount (2/5/10) when it expires. Regenerate is the 50%-max-HP proc.
+- The 40-43 buff lands on the battle array, so the menu stat screen does not show it.
 - Compendium source of truth: `EFFECT_BEHAVIOR` in `tools/build_unitdb.py` →
   `unitdb/effects.json` / `.csv`; rerun the full build to refresh the app.
 

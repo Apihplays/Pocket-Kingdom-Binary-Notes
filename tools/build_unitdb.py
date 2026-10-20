@@ -71,6 +71,11 @@ EFFECT_BEHAVIOR = {
     41: "ATK & DEF +30% (x1.3)",
     42: "INT & WIS +30% (x1.3)",
     43: "ATK/DEF/AGI/DEX/WIS/INT +30% (x1.3)",
+    44: "On death: 59px blast, damage = HP - target DEF (min 1)",
+    45: "10% per action: heal 50% max HP",
+    46: "10% per action: clone into an empty slot 4/5",
+    47: "On death: revive once at 50% max HP (consumed)",
+    48: "Post-battle item cleanup: 50% roll (not fully decoded)",
 }
 GIST_URL = (
     "https://gist.githubusercontent.com/Apihplays/"
@@ -755,9 +760,10 @@ HTML_TEMPLATE = r"""<!doctype html>
       <summary>Effect id reference (__EFFECTCOUNT__ effects)</summary>
       <table style="margin-top:8px"><thead><tr><th>ID</th><th>Effect</th><th>Behaviour</th></tr></thead>
         <tbody id="fbody"></tbody></table>
-      <p class="sub">IDs 40&ndash;43 were verified in the game binary: they multiply the
-      equipped unit&rsquo;s battle stats by the shown factor. The other effects only
-      have a name in the data files.</p>
+      <p class="sub">IDs 40&ndash;48 were verified in the game binary: 40&ndash;43 multiply
+      the equipped unit&rsquo;s battle stats, 44&ndash;47 are death / per-action procs, and
+      48 is the post-battle item-recovery roll. The other effects only have a name in
+      the data files.</p>
     </details>
   </section>
 </div>
