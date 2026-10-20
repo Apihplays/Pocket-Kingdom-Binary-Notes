@@ -356,6 +356,16 @@ _EFFECT_ALIASES = {
 }
 
 
+# Ingredient names in the guide are matched against the warcry material names
+# after normalisation (_norm here, M_NORM in the app). The chart has spelling
+# slips; map them to the real material. ``Any`` is the guide's wildcard slot and
+# intentionally matches nothing.
+INGREDIENT_ALIASES = {
+    "chaostheart": "chaosheart",   # "ChaostHeart" -> "Chaos Heart"
+}
+WILDCARD_INGREDIENTS = {"any"}
+
+
 def effect_ids_for(label: str, effects: list[dict]) -> list[int]:
     """Map a chart effect label (possibly compound) to effect-list ids."""
     by_name = {_norm(e["name"]): e["id"] for e in effects}
@@ -932,9 +942,12 @@ function showEmblem(name){
 
 // ---- materials
 const M_NORM = s => String(s).toLowerCase().replace(/[^a-z0-9]/g, "");
+// Guide spelling slips -> the real material name (mirrors INGREDIENT_ALIASES).
+const ING_ALIAS = __INGALIAS__;
+const M_KEY = s => ING_ALIAS[M_NORM(s)] || M_NORM(s);
 function materialUses(m){
-  const key = M_NORM(m.name);
-  const hit = x => M_NORM(x) === key;
+  const key = M_KEY(m.name);
+  const hit = x => M_KEY(x) === key;
   return {
     craft: CRAFTING.filter(c => [c.ore, c.item1, c.item2].some(hit)),
     emblems: EMBLEMS.filter(e => [e.ore, e.item1, e.item2].some(hit)),
@@ -1161,6 +1174,7 @@ def build_html(units: list[dict], emblems: list[dict],
             .replace("__MATERIALS__", json.dumps(materials, separators=(",", ":")))
             .replace("__CRAFTING__", json.dumps(crafting, separators=(",", ":")))
             .replace("__EFFECTS__", json.dumps(effects, separators=(",", ":")))
+            .replace("__INGALIAS__", json.dumps(INGREDIENT_ALIASES, separators=(",", ":")))
             .replace("__EFFECTCOUNT__", str(len(effects)))
             .replace("__MATCOUNT__", str(len(materials)))
             .replace("__COUNT__", str(len(units))))
