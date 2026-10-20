@@ -1,6 +1,6 @@
-# Pocket Kingdom — game database
+# Pocket Kingdom — Compendium
 
-**Live: <https://apihplays.github.io/Pocket-Kingdom-Binary-Notes/>**
+**Live: <https://apihplays.github.io/Pocket-Kingdom-Compendium/>**
 
 Offline data plus a single-file web app for looking up Pocket Kingdom units,
 their evolution, emblem recipes, materials, and weapon/armor/accessory crafting.
@@ -76,7 +76,7 @@ python3 tools/build_unitdb.py --details --emblems --crafting --rankup --material
 ## Sources on the live app
 
 The GitHub Pages build copies `unitdb/**` only; `raw/` caches stay local.
-Site: <https://apihplays.github.io/Pocket-Kingdom-Binary-Notes/>
+Site: <https://apihplays.github.io/Pocket-Kingdom-Compendium/>
 
 ## Cross-check: two independent sources
 
