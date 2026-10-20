@@ -1,4 +1,4 @@
-# Pocket-Kingdom-Binary-Notes
+# Pocket-Kingdom-Compendium
 
 Reverse-engineering notes, patch tooling, and tests for the Nokia N-Gage game
 **Pocket Kingdom: Own the World** (Symbian OS 6.1/7.0s, ARMv4T, E32Image).
@@ -36,7 +36,7 @@ when no game install is present.
 
 ## Unit, emblem, material & crafting database
 
-**Live app: <https://apihplays.github.io/Pocket-Kingdom-Binary-Notes/>**
+**Live app: <https://apihplays.github.io/Pocket-Kingdom-Compendium/>**
 
 `unitdb/` is a compact offline database built from archived pk.warcry.com pages
 (Wayback Machine, 2005) plus a community crafting chart: 115 units (class, race,
