@@ -6,14 +6,17 @@ Source (Wayback Machine capture, 2005-02-10):
   http://pk.warcry.com/units/view_unit.phtml?id=N
        -> per-unit Ability and an "Advances To" evolution table
           (target class, race, rank, level, VP, RankUp Emblem)
+  http://pk.warcry.com/items/materials.phtml (2006-09-01)
+       -> material database (jewels/ores/other): id, rarity, effect
 
 Outputs (default: ./unitdb/):
   units.json                 structured records (incl. ability + advances)
   units.csv                  spreadsheet-friendly
   emblems.json / .csv        emblem recipes (ore + 2 items + success)
+  materials.json / .csv      material database (id, name, category, rarity, effect)
   crafting.json / .csv       weapon/armor/accessory recipes (mold + ore + 2 items + effect + success)
   effects.json / .csv        effect id -> name table
-  PocketKingdom-Units.html   self-contained app: units, team builder, emblems, crafting
+  PocketKingdom-Units.html   self-contained app: units, team builder, emblems, materials, crafting
   raw/                       cached source pages (safe to delete)
 
 The HTML app inlines the data so it works offline by double-clicking it
@@ -22,7 +25,7 @@ The HTML app inlines the data so it works offline by double-clicking it
 Usage:
   python3 tools/build_unitdb.py                  # index only, fast
   python3 tools/build_unitdb.py --details        # + fetch each unit's page
-  python3 tools/build_unitdb.py --details --emblems --crafting
+  python3 tools/build_unitdb.py --details --emblems --crafting --materials
   python3 tools/build_unitdb.py --html saved.html
 """
 from __future__ import annotations
@@ -42,11 +45,13 @@ TS = "20050210003854"
 BASE = "http://pk.warcry.com"
 DEFAULT_URL = f"https://web.archive.org/web/{TS}/{BASE}/units/"
 EMBLEM_URL = f"https://web.archive.org/web/20050207131118/{BASE}/items/emblems.phtml"
+MATERIAL_URL = f"https://web.archive.org/web/20060901040635/{BASE}/items/materials.phtml"
 
 STATS = ["hp", "atk", "def", "agi", "dex", "wis", "int", "hit"]
 FIELDS = ["id", "name", "race", "race_icon", "rank", "slots", "move", "sp", *STATS,
           "ability", "advances"]
 EMBLEM_FIELDS = ["emblem", "ore", "item1", "item2", "success"]
+MATERIAL_FIELDS = ["id", "name", "category", "rarity", "effect"]
 CRAFT_FIELDS = ["mold", "ore", "item1", "item2", "result", "effect", "success", "effect_ids"]
 GIST_URL = (
     "https://gist.githubusercontent.com/Apihplays/"
@@ -170,6 +175,36 @@ def parse_emblems(page: str) -> list[dict]:
             "item1": cells[3],
             "item2": cells[4],
             "success": _int(cells[5]),
+        })
+    return out
+
+
+def parse_materials(page: str) -> list[dict]:
+    """Material Database: category headers then Item | Rarity | Effect rows.
+
+    Sections are ``Jewels``, ``Ores`` and ``Other Materials``; each row links
+    to ``view_material.phtml?id=N``, which is the in-game material id.
+    """
+    out: list[dict] = []
+    category = ""
+    for row in re.findall(r"(?s)<tr[^>]*>(.*?)</tr>", page):
+        if 'class="TableHead"' in row and "view_material.phtml" not in row:
+            head = re.search(r"<b>(.*?)</b>", row, re.S)
+            if head:
+                category = _text(head.group(1))
+            continue
+        ids = re.search(r"view_material\.phtml\?id=(\d+)", row)
+        if not ids or not category:
+            continue
+        cells = [_text(c) for c in re.findall(r"(?s)<td[^>]*>(.*?)</td>", row)]
+        if len(cells) < 3 or not cells[0]:
+            continue
+        out.append({
+            "id": int(ids.group(1)),
+            "name": cells[0],
+            "category": category,
+            "rarity": _int(cells[1]),
+            "effect": cells[2],
         })
     return out
 
@@ -447,6 +482,9 @@ HTML_TEMPLATE = r"""<!doctype html>
   #tab-crafting th,#tab-crafting td{text-align:left}
   #tab-crafting th:last-child,#tab-crafting td:last-child{text-align:right}
   #tab-crafting th:nth-child(7),#tab-crafting td:nth-child(7){text-align:right}
+  #tab-materials th,#tab-materials td{text-align:left}
+  #tab-materials th:nth-child(3),#tab-materials td:nth-child(3),
+  #tab-materials th:nth-child(5),#tab-materials td:nth-child(5){text-align:right}
   details summary{cursor:pointer;color:var(--dim);font-size:12.5px;margin-top:18px}
   details summary:hover{color:var(--txt)}
   .eid{color:var(--dim);font-size:11px;font-weight:400}
@@ -463,11 +501,12 @@ HTML_TEMPLATE = r"""<!doctype html>
 <body>
 <header>
   <h1>Pocket Kingdom <span>Unit Database</span></h1>
-  <div class="sub">__COUNT__ units &middot; source: pk.warcry.com (Wayback Machine 2005-02-10) &middot; offline</div>
+  <div class="sub">__COUNT__ units &middot; __MATCOUNT__ materials &middot; source: pk.warcry.com (Wayback Machine 2005-02-10) &middot; offline</div>
   <div class="tabs">
     <button class="tab on" data-tab="units">Units</button>
     <button class="tab" data-tab="team">Team Builder</button>
     <button class="tab" data-tab="emblems">Emblems</button>
+    <button class="tab" data-tab="materials">Materials</button>
     <button class="tab" data-tab="crafting">Crafting</button>
   </div>
 </header>
@@ -539,6 +578,45 @@ HTML_TEMPLATE = r"""<!doctype html>
     </p>
   </section>
 
+  <!-- MATERIALS -->
+  <section id="tab-materials" style="display:none">
+    <div class="controls">
+      <div class="fld"><label>Search</label>
+        <input id="mq" type="search" placeholder="material or effect..."></div>
+      <div class="fld"><label>Category</label>
+        <div class="chips" id="mcat">
+          <span class="chip on" data-v="">All</span>
+          <span class="chip" data-v="Jewels">Jewels</span>
+          <span class="chip" data-v="Ores">Ores</span>
+          <span class="chip" data-v="Other Materials">Other</span></div></div>
+      <div class="fld"><label>Rarity min-max</label>
+        <div style="display:flex;gap:6px;align-items:center">
+          <input id="mmin" type="number" min="1" max="10" placeholder="1">
+          <span style="color:var(--dim)">-</span>
+          <input id="mmax" type="number" min="1" max="10" placeholder="10"></div></div>
+      <div class="fld"><label>Rank by</label>
+        <select id="msort">
+          <option value="rarity">Rarity</option>
+          <option value="name">Item</option>
+          <option value="category">Category</option>
+          <option value="effect">Effect</option>
+          <option value="uses">Recipes</option>
+        </select></div>
+      <div class="fld"><label>&nbsp;</label><button class="btn ghost" id="mclear">Clear</button></div>
+    </div>
+    <div class="meta"><div id="mcount"></div><div class="tagbar" id="mtags"></div></div>
+    <table><thead><tr>
+      <th>Item</th><th>Category</th><th>Rarity</th><th>Effect</th><th>Used in</th>
+    </tr></thead><tbody id="mbody"></tbody></table>
+    <div class="empty" id="mempty" style="display:none">No materials match.</div>
+    <p style="color:var(--dim);font-size:12.5px;margin-top:12px">
+      Click a material for the crafting and emblem recipes that consume it.
+      Rarity is the warcry.com value (higher = rarer). Recipe counts only cover
+      the crafting and emblem tables in this database, so a dash means no known
+      recipe here — not that the material is useless in game.
+    </p>
+  </section>
+
   <!-- CRAFTING -->
   <section id="tab-crafting" style="display:none">
     <div class="controls">
@@ -589,9 +667,11 @@ HTML_TEMPLATE = r"""<!doctype html>
 <script>
 const UNITS = __DATA__;
 const EMBLEMS = __EMBLEMS__;
+const MATERIALS = __MATERIALS__;
 const CRAFTING = __CRAFTING__;
 const EFFECTS = __EFFECTS__;
 const BY_ID = Object.fromEntries(UNITS.map(u=>[u.id,u]));
+const MAT_BY_ID = Object.fromEntries(MATERIALS.map(m=>[m.id,m]));
 const STATS = ["hp","atk","def","agi","dex","wis","int","hit"];
 const LABEL = {hp:"HP",atk:"ATK",def:"DEF",agi:"AGI",dex:"DEX",wis:"WIS",int:"INT",hit:"HIT%"};
 const COLS = [["name","Class"],["race","Race"],["rank","Rank"],["slots","Slots"],["move","Move"],
@@ -605,11 +685,16 @@ try { team = JSON.parse(localStorage.getItem("pk_team") || "[]"); } catch(e){ te
 const saveTeam = () => localStorage.setItem("pk_team", JSON.stringify(team));
 
 // ---- tabs
+function showTab(name){
+  document.querySelectorAll(".tab").forEach(x => x.classList.toggle("on", x.dataset.tab === name));
+  ["units","team","emblems","materials","crafting"]
+    .forEach(n => $("tab-"+n).style.display = n === name ? "" : "none");
+}
 document.querySelectorAll(".tab").forEach(t => t.onclick = () => {
-  document.querySelectorAll(".tab").forEach(x => x.classList.toggle("on", x === t));
-  ["units","team","emblems","crafting"].forEach(n => $("tab-"+n).style.display = t.dataset.tab === n ? "" : "none");
+  showTab(t.dataset.tab);
   if (t.dataset.tab === "team") renderTeam();
   if (t.dataset.tab === "emblems") renderEmblems();
+  if (t.dataset.tab === "materials") renderMaterials();
   if (t.dataset.tab === "crafting") renderCrafting();
 });
 
@@ -761,13 +846,109 @@ function renderEmblems(){
 $("eq").addEventListener("input", renderEmblems);
 $("eclear").onclick = () => { $("eq").value = ""; renderEmblems(); };
 function showEmblem(name){
-  closeModal();
-  document.querySelectorAll(".tab").forEach(x => x.classList.toggle("on", x.dataset.tab === "emblems"));
-  ["units","team","emblems"].forEach(n => $("tab-"+n).style.display = n === "emblems" ? "" : "none");
+  closeModal(); showTab("emblems");
   $("eq").value = String(name).replace(/\s*Emblem$/i, "");
   renderEmblems();
   window.scrollTo({top:0, behavior:"smooth"});
 }
+
+// ---- materials
+const M_NORM = s => String(s).toLowerCase().replace(/[^a-z0-9]/g, "");
+function materialUses(m){
+  const key = M_NORM(m.name);
+  const hit = x => M_NORM(x) === key;
+  return {
+    craft: CRAFTING.filter(c => [c.ore, c.item1, c.item2].some(hit)),
+    emblems: EMBLEMS.filter(e => [e.ore, e.item1, e.item2].some(hit)),
+  };
+}
+
+function renderMaterials(){
+  const q = $("mq").value.trim().toLowerCase();
+  const cat = $("mcat").querySelector(".chip.on").dataset.v;
+  const lo = +$("mmin").value || 0, hi = +$("mmax").value || 99;
+  const key = $("msort").value;
+  const rows = MATERIALS.filter(m => {
+    if (cat && m.category !== cat) return false;
+    if (m.rarity < lo || m.rarity > hi) return false;
+    if (q && !(m.name + " " + m.category + " " + m.effect).toLowerCase().includes(q)) return false;
+    return true;
+  }).map(m => { const use = materialUses(m); return {m, ...use, uses: use.craft.length + use.emblems.length}; });
+
+  rows.sort((a,b) => {
+    if (key === "name")     return a.m.name.localeCompare(b.m.name);
+    if (key === "category") return a.m.category.localeCompare(b.m.category) || b.m.rarity - a.m.rarity;
+    if (key === "effect")   return a.m.effect.localeCompare(b.m.effect) || a.m.name.localeCompare(b.m.name);
+    if (key === "uses")     return b.uses - a.uses || a.m.name.localeCompare(b.m.name);
+    return b.m.rarity - a.m.rarity || a.m.name.localeCompare(b.m.name);
+  });
+
+  $("mcount").textContent = `${rows.length} of ${MATERIALS.length} materials`;
+  $("mempty").style.display = rows.length ? "none" : "block";
+  const tags = [cat || "all categories"];
+  if (q) tags.push(`"${q}"`);
+  if (lo || hi < 99) tags.push(`rarity ${lo || 1}-${hi < 99 ? hi : 10}`);
+  const rarest = rows.length ? Math.max(...rows.map(r => r.m.rarity)) : null;
+  $("mtags").innerHTML = tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")
+    + (rarest !== null ? `<span class="tag">max rarity: <b style="color:var(--good)">${rarest}</b></span>` : "");
+
+  $("mbody").innerHTML = rows.map(({m, uses}) => `<tr data-mat="${m.id}">
+      <td><span class="name">${esc(m.name)}</span></td>
+      <td><span class="race">${esc(m.category)}</span></td>
+      <td>${m.rarity}</td>
+      <td>${m.effect && m.effect !== "-" ? esc(m.effect) : '<span style="color:var(--dim)">-</span>'}</td>
+      <td>${uses ? uses : '<span style="color:var(--dim)">-</span>'}</td></tr>`).join("");
+  $("mbody").querySelectorAll("tr[data-mat]").forEach(tr=>tr.onclick=()=>openMaterial(+tr.dataset.mat));
+}
+
+function openMaterial(id){
+  const m = MAT_BY_ID[id]; if (!m) return;
+  const {craft, emblems} = materialUses(m);
+
+  const craftHtml = craft.map(c => `
+      <div class="adv" data-craft="${esc(c.result)}">
+        <div><b>${esc(c.result)}</b> <span class="race" style="color:var(--dim)">${esc(c.mold)}</span></div>
+        <div class="r">${esc(c.ore)} + ${esc(c.item1)} + ${esc(c.item2)}<br>
+          ${esc(c.effect)} &middot; <span class="${rateClass(c.success)}">${c.success}%</span></div>
+      </div>`).join("") || `<div class="empty" style="padding:14px">Not used in any crafting recipe.</div>`;
+
+  const grouped = new Map();
+  emblems.forEach(e => {
+    const g = grouped.get(e.emblem) || {name: e.emblem, n: 0, min: e.success, max: e.success};
+    g.n++; g.min = Math.min(g.min, e.success); g.max = Math.max(g.max, e.success);
+    grouped.set(e.emblem, g);
+  });
+  const embHtml = [...grouped.values()].map(g => `
+      <div class="adv" data-emb="${esc(g.name)}">
+        <div><b>${esc(g.name)}</b></div>
+        <div class="r">${g.n} recipe${g.n > 1 ? "s" : ""} &middot;
+          <span class="${rateClass(g.min)}">${g.min === g.max ? g.min + "%" : g.min + "-" + g.max + "%"}</span></div>
+      </div>`).join("") || `<div class="empty" style="padding:14px">Not used in any emblem recipe.</div>`;
+
+  $("modal-body").innerHTML = `
+    <h2>${esc(m.name)}</h2>
+    <div class="m-sub">${esc(m.category)} &middot; Rarity ${m.rarity}
+      ${m.effect && m.effect !== "-" ? `&middot; ${esc(m.effect)}` : "&middot; no effect"}
+      &middot; material #${m.id}</div>
+    <div class="sect"><h3>Used in crafting (${craft.length})</h3>${craftHtml}</div>
+    <div class="sect"><h3>Used in emblems (${grouped.size} emblems)</h3>${embHtml}</div>`;
+  $("modal").classList.add("on"); $("backdrop").classList.add("on");
+  $("modal-body").querySelectorAll(".adv[data-craft]").forEach(d=>d.onclick=()=>{
+    closeModal(); showTab("crafting");
+    $("kq").value = d.dataset.craft; $("ksort").value = "result"; renderCrafting();
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+  $("modal-body").querySelectorAll(".adv[data-emb]").forEach(d=>d.onclick=()=>showEmblem(d.dataset.emb));
+}
+
+$("mcat").querySelectorAll(".chip").forEach(c=>c.onclick=()=>{
+  $("mcat").querySelectorAll(".chip").forEach(x=>x.classList.remove("on")); c.classList.add("on"); renderMaterials(); });
+["mq","mmin","mmax","msort"].forEach(id=>$(id).addEventListener("input", renderMaterials));
+$("mclear").onclick = () => {
+  ["mq","mmin","mmax"].forEach(id=>$(id).value="");
+  $("mcat").querySelectorAll(".chip").forEach((x,i)=>x.classList.toggle("on", i===0));
+  $("msort").value="rarity"; renderMaterials();
+};
 
 // ---- crafting
 const MOLD_ORDER = ["Sword","Spear","Axe","Claw","Blade","Bow","Staff","Mace","Armor","Accessories"];
@@ -825,7 +1006,7 @@ function renderCrafting(){
 $("kclear").onclick = () => { ["kq","kmold","kore","krate"].forEach(id=>$(id).value="");
   $("ksort").value="success"; renderCrafting(); };
 
-renderEmblems(); renderUnits(); renderTeam(); renderCrafting();
+renderEmblems(); renderMaterials(); renderUnits(); renderTeam(); renderCrafting();
 </script>
 </body>
 </html>
@@ -833,13 +1014,16 @@ renderEmblems(); renderUnits(); renderTeam(); renderCrafting();
 
 
 def build_html(units: list[dict], emblems: list[dict],
-               crafting: list[dict], effects: list[dict]) -> str:
+               crafting: list[dict], effects: list[dict],
+               materials: list[dict]) -> str:
     return (HTML_TEMPLATE
             .replace("__DATA__", json.dumps(units, separators=(",", ":")))
             .replace("__EMBLEMS__", json.dumps(emblems, separators=(",", ":")))
+            .replace("__MATERIALS__", json.dumps(materials, separators=(",", ":")))
             .replace("__CRAFTING__", json.dumps(crafting, separators=(",", ":")))
             .replace("__EFFECTS__", json.dumps(effects, separators=(",", ":")))
             .replace("__EFFECTCOUNT__", str(len(effects)))
+            .replace("__MATCOUNT__", str(len(materials)))
             .replace("__COUNT__", str(len(units))))
 
 
@@ -855,6 +1039,8 @@ def main() -> int:
                     help="also fetch the Emblem Database (recipes); cached in raw/")
     ap.add_argument("--crafting", action="store_true",
                     help="also fetch the crafting chart (weapons/armor/accessories); cached in raw/")
+    ap.add_argument("--materials", action="store_true",
+                    help="also fetch the Material Database (jewels/ores/other); cached in raw/")
     ap.add_argument("--rankup", action="store_true",
                     help="also fetch the guide's rankup chart: adds SP to units and "
                          "writes rankup.json/csv; cached in raw/")
@@ -960,6 +1146,29 @@ def main() -> int:
         except Exception as e:  # noqa: BLE001
             print(f"  ! emblems: {e}", file=sys.stderr)
 
+    materials: list[dict] = []
+    if args.materials:
+        cached = out / "raw" / "materials.html"
+        try:
+            if cached.exists() and cached.stat().st_size > 1000:
+                mhtml = cached.read_text(encoding="utf-8", errors="replace")
+            else:
+                mhtml = fetch(MATERIAL_URL)
+                cached.parent.mkdir(parents=True, exist_ok=True)
+                cached.write_text(mhtml, encoding="utf-8")
+            materials = parse_materials(mhtml)
+            (out / "materials.json").write_text(json.dumps(materials, indent=2), encoding="utf-8")
+            with (out / "materials.csv").open("w", newline="", encoding="utf-8") as f:
+                w = csv.DictWriter(f, fieldnames=MATERIAL_FIELDS)
+                w.writeheader()
+                w.writerows(materials)
+            cats = {c: sum(1 for m in materials if m["category"] == c)
+                    for c in dict.fromkeys(m["category"] for m in materials)}
+            print(f"materials: {len(materials)} items "
+                  f"({', '.join(f'{k} {v}' for k, v in cats.items())})")
+        except Exception as e:  # noqa: BLE001
+            print(f"  ! materials: {e}", file=sys.stderr)
+
     crafting: list[dict] = []
     crafting_effects: list[dict] = []
     if args.crafting and guide_text:
@@ -985,7 +1194,8 @@ def main() -> int:
             print(f"  ! crafting: {e}", file=sys.stderr)
 
     app = out / "PocketKingdom-Units.html"
-    app.write_text(build_html(units, emblems, crafting, crafting_effects), encoding="utf-8")
+    app.write_text(build_html(units, emblems, crafting, crafting_effects, materials),
+                   encoding="utf-8")
 
     print(f"units: {len(units)}")
     print(f"wrote {out/'units.json'}, {out/'units.csv'}, {app}")

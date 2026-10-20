@@ -5,8 +5,8 @@ Reverse-engineering notes, patch tooling, and tests for the Nokia N-Gage game
 
 This repository is a **toolkit + research log**, not a distribution. It contains
 **no game binaries, no extracted game data files, and no artwork**. The scripts
-here patch a copy of the game that *you* already own. The unit/emblem database
-under `unitdb/` is factual game statistics transcribed from a 2005 fan site
+here patch a copy of the game that *you* already own. The unit/emblem/material
+database under `unitdb/` is factual game statistics transcribed from a 2005 fan site
 (pk.warcry.com) — not game assets.
 
 ## What's here
@@ -14,7 +14,7 @@ under `unitdb/` is factual game statistics transcribed from a 2005 fan site
 | Area | Files |
 |---|---|
 | 100% combine/merge success rates | `tools/patch_100_percent_combine.py` |
-| Unit & emblem database + offline app | `tools/build_unitdb.py`, `unitdb/` |
+| Unit, emblem & material database + offline app | `tools/build_unitdb.py`, `unitdb/` |
 | E32Image → ELF wrapper (for REA/Hopper analysis) | `tools/wrap_raw_arm_elf.py` |
 | Tests | `tests/` (`python3 -m unittest discover tests`) |
 | RE findings | `CLAUDE.md`, `docs/` |
@@ -34,7 +34,7 @@ python3 tools/patch_100_percent_combine.py [app_dir]
 Idempotent; creates one-time `.orig` backups for `itemdata.dat`. Tests self-skip
 when no game install is present.
 
-## Unit, emblem & crafting database
+## Unit, emblem, material & crafting database
 
 **Live app: <https://apihplays.github.io/Pocket-Kingdom-Binary-Notes/>**
 
@@ -42,7 +42,8 @@ when no game install is present.
 (Wayback Machine, 2005) plus a community crafting chart: 115 units (class, race,
 rank, slots, move, HP/ATK/DEF/AGI/DEX/WIS/INT/HIT%), their special abilities, the
 full evolution tree (target, rank, level, VP, RankUp Emblem), 31 emblems /
-70 recipes, and 70 weapon/armor/accessory crafting recipes with effect ids.
+70 recipes, 89 materials (jewels, ores, other) with rarity and effect, and 70
+weapon/armor/accessory crafting recipes with effect ids.
 
 `unitdb/PocketKingdom-Units.html` is a **self-contained app** — open it in any
 browser; no server or internet needed. It has:
@@ -53,6 +54,9 @@ browser; no server or internet needed. It has:
   combined stats (saved in your browser).
 - **Emblems** — recipe table (Ore + Item1 + Item2 → Success%); clicking a
   RankUp Emblem in a unit's evolution jumps straight to its recipe.
+- **Materials** — jewels, ores and other materials with rarity and effect,
+  filterable by category and rarity; open one to see the crafting and emblem
+  recipes that consume it.
 - **Crafting** — weapon/armor/accessory recipes (Mold + Ore + 2 materials →
   Result + effect + success%), filterable by mold/ore/success, with a
   cross-referenced effect-id table.
@@ -60,13 +64,14 @@ browser; no server or internet needed. It has:
 Rebuild/refresh:
 
 ```bash
-python3 tools/build_unitdb.py --details --emblems --crafting --rankup
+python3 tools/build_unitdb.py --details --emblems --crafting --rankup --materials
 ```
 
 `--details` re-fetches each unit page, `--emblems` the recipe table,
-`--crafting` the crafting chart and `--rankup` the guide's rankup chart (which
-supplies per-unit SP and is cross-checked against the scraped evolution); all
-cache into `unitdb/raw/` (git-ignored). Omit the flags for a fast index-only
+`--materials` the material database, `--crafting` the crafting chart and
+`--rankup` the guide's rankup chart (which supplies per-unit SP and is
+cross-checked against the scraped evolution); all cache into `unitdb/raw/`
+(git-ignored). Omit the flags for a fast index-only
 rebuild. Unit stats are base values — the game scales them with level, and
 combining/evolving changes them.
 
