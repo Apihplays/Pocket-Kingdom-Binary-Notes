@@ -59,6 +59,24 @@ MATERIAL_FIELDS = ["id", "name", "category", "rarity", "effect",
                    "purchase_in", "dropped_by", "area_searches", "dungeon_reward"]
 MATERIAL_DETAIL_SECTIONS = ("Purchase In", "Dropped By", "Area Searches", "Dungeon Reward")
 CRAFT_FIELDS = ["mold", "ore", "item1", "item2", "result", "effect", "success", "effect_ids"]
+
+# Effect behaviour that is *not* in the data files. effect.dat / the effect
+# block of itemdata.dat only store the 52 names; the mechanics live in code.
+# Verified in 6RAH.APP: IDs 40-43 are the last cases of the 44-entry dispatcher
+# at 0x1000f3c8, and multiply the equipped unit's battle stats
+# (ATK +0x14, DEF +0x18, AGI +0x24, DEX +0x28, WIS +0x2c, INT +0x30).
+# See CLAUDE.md > "Item effects 40-43 (verified)".
+EFFECT_BEHAVIOR = {
+    40: "INT +50% (x1.5)",
+    41: "ATK & DEF +30% (x1.3)",
+    42: "INT & WIS +30% (x1.3)",
+    43: "ATK/DEF/AGI/DEX/WIS/INT +30% (x1.3)",
+    44: "On death: 59px blast, damage = HP - target DEF (min 1)",
+    45: "10% per action: heal 50% max HP",
+    46: "10% per action: clone into an empty slot 4/5",
+    47: "On death: revive once at 50% max HP (consumed)",
+    48: "Battle end: a surviving carrier gives each fallen ally a 50% chance to keep its equipped item (kept unequipped; otherwise destroyed)",
+}
 GIST_URL = (
     "https://gist.githubusercontent.com/Apihplays/"
     "636c34a342b070188780f7f0a417d290/raw/"
@@ -319,6 +337,9 @@ def parse_crafting(text: str) -> tuple[list[dict], list[dict]]:
             m = re.match(r"^(\d+)\s+(.+?)\s*$", ln)
             if m:
                 effects.append({"id": int(m.group(1)), "name": m.group(2)})
+
+    for e in effects:
+        e["behavior"] = EFFECT_BEHAVIOR.get(e["id"], "")
 
     for r in recipes:
         r["effect_ids"] = effect_ids_for(r["effect"], effects)
@@ -737,8 +758,12 @@ HTML_TEMPLATE = r"""<!doctype html>
 
     <details>
       <summary>Effect id reference (__EFFECTCOUNT__ effects)</summary>
-      <table style="margin-top:8px"><thead><tr><th>ID</th><th>Effect</th></tr></thead>
+      <table style="margin-top:8px"><thead><tr><th>ID</th><th>Effect</th><th>Behaviour</th></tr></thead>
         <tbody id="fbody"></tbody></table>
+      <p class="sub">IDs 40&ndash;48 were verified in the game binary: 40&ndash;43 multiply
+      the equipped unit&rsquo;s battle stats, 44&ndash;47 are death / per-action procs, and
+      48 is the post-battle item-recovery roll. The other effects only have a name in
+      the data files.</p>
     </details>
   </section>
 </div>
@@ -1110,9 +1135,12 @@ const MOLD_ORDER = ["Sword","Spear","Axe","Claw","Blade","Bow","Staff","Mace","A
 [...new Set(CRAFTING.map(c=>c.ore))].sort()
   .forEach(v=>{ const o=document.createElement("option"); o.textContent=v; $("kore").appendChild(o); });
 const EFFECT_NAME = Object.fromEntries(EFFECTS.map(e=>[e.id, e.name]));
+const EFFECT_BEHAVIOR = Object.fromEntries(EFFECTS.filter(e=>e.behavior).map(e=>[e.id, e.behavior]));
+const behaviorFor = ids => (ids||[]).map(i=>EFFECT_BEHAVIOR[i]).filter(Boolean).join(" + ");
 
 $("fbody").innerHTML = EFFECTS.map(e=>
-  `<tr><td class="eid">${e.id}</td><td>${esc(e.name)}</td></tr>`).join("");
+  `<tr><td class="eid">${e.id}</td><td>${esc(e.name)}</td>` +
+  `<td class="race">${e.behavior ? esc(e.behavior) : "-"}</td></tr>`).join("");
 
 function rateClass(s){ return s>=30?"rate30" : s>=20?"rate20" : s>=10?"rate10" : "rate5"; }
 
@@ -1146,11 +1174,12 @@ function renderCrafting(){
   $("ktags").innerHTML = tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("");
   $("kbody").innerHTML = rows.map(c=>{
     const eids = (c.effect_ids||[]).map(i=>`<span class="eid">#${i}</span>`).join(" ");
+    const beh = behaviorFor(c.effect_ids);
     return `<tr>
       <td>${esc(c.mold)}</td><td>${esc(c.ore)}</td>
       <td>${esc(c.item1)}</td><td>${esc(c.item2)}</td>
       <td><b>${esc(c.result)}</b></td>
-      <td>${esc(c.effect)} ${eids}</td>
+      <td>${esc(c.effect)} ${eids}${beh ? `<div class="sub">${esc(beh)}</div>` : ""}</td>
       <td class="${rateClass(c.success)}">${c.success}%</td></tr>`;
   }).join("");
 }
@@ -1371,7 +1400,7 @@ def main() -> int:
                     w.writerow(row)
             (out / "effects.json").write_text(json.dumps(crafting_effects, indent=2), encoding="utf-8")
             with (out / "effects.csv").open("w", newline="", encoding="utf-8") as f:
-                w = csv.DictWriter(f, fieldnames=["id", "name"])
+                w = csv.DictWriter(f, fieldnames=["id", "name", "behavior"])
                 w.writeheader()
                 w.writerows(crafting_effects)
             print(f"crafting: {len(crafting)} recipes across "

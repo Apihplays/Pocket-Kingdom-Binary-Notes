@@ -98,6 +98,63 @@ When reverse engineering, investigating file formats, decompiling, or inspecting
   - Table header byte at +22 = base/aggregate rate (also patched to 100).
 - Save files: `save.dat`, `options.dat` under `C:\system\apps\6rah\` in the emulator (see `6RAH.cfg`).
 
+## Item effects 40-48 (verified 2026-10-20)
+Effect **names** are data (`effect.dat`; `english/itemdata.dat` @ `0x00F0`, 52 x 48-byte
+records), but the **mechanics are hard-coded**. Dispatcher for effects 0..43:
+
+- `0x1000f3a0` = effect-apply routine; `0x1000f3c8` is
+  `cmp r2,#0x2b; ldrls pc,[pc,r2,lsl#2]` with the 44-entry table at `0x1000f3d4`.
+  Cases: 40 `0x1000facc`, 41 `0x1000fb34`, 42 `0x1000fc04`, 43 `0x1000fcd4`.
+- Handlers multiply the unit's **battle stat** fields in place:
+  - 40 Proof of Contract: `INT +50%` (`stat + stat/2`, floor)
+  - 41 Warrior's Spirit: `ATK +30%`, `DEF +30%`
+  - 42 Mage's Spirit: `INT +30%`, `WIS +30%`
+  - 43 Hero's Spirit: ATK/DEF/AGI/DEX/WIS/INT `+30%` each
+- +30% is `stat + (((0x66666667 * 3*stat) >> 32) >> 2)` == `floor(1.3*stat)`.
+- Stat map (proved by the getters/setters the ATK/DEF/AGI/DEX/INT/WIS Up cases use):
+  `ATK +0x14`, `DEF +0x18`, `AGI +0x24`, `DEX +0x28`, `WIS +0x2c`, `INT +0x30`;
+  the enemy copy is `+0x228` higher (`ctx+0x23c..0x258`).
+- Applied per equipped effect slot: caller `0x10020f3c` reads slot fields `+0xc` and `+0x10`
+  (records at `ctx+0x4a8 + 52*slot` for the player, `ctx+0x5e0 + 52*slot` for the enemy) and
+  calls the dispatcher twice — duplicates stack (two Hero's Spirit = x1.69).
+- Items: 40 = Emperor's Staff, Mage Necklace; 41 = Wolf Ring; 42 = Owl Ring;
+  43 = Ring of the Sun; 44 = Hellfire Axe; 45 = Rebirth Necklace; 46 = Dividing Necklace;
+  47 = Armored Casket; 48 = Soul Jacket.
+- HP fields: current `+0x1c`, max `+0x20` (enemy `+0x244` / `+0x248`); heal helper
+  `0x10008bc4` adds then clamps to max. `has_effect` helper = `0x1000a53c(ctx, unit, id)`.
+
+Effects 44-48 are **not** in the 0..43 dispatcher — they are procs checked elsewhere:
+
+- 44 Self Destruct (death): `0x1000dfcc` (caller `0x1002226c`), `has_effect(...,0x2c)` at
+  `0x1000e2ec`; blast routine `0x10007700` hits enemies within 59 px (`cmp r2,#0x3b`),
+  damage = user's current HP - target DEF (`0x100084ec`, min 1), halved while defending.
+- 45 Regenerate: turn start sets bit 31 of the slot status word
+  (`0x1001e9dc` -> `0x100081f0(...,0x80000000)`); after the move animation `0x1001edc0`
+  rolls `rand%100 <= 9` and heals `maxHP/2` (`0x10008cf4` -> `0x10008bc4`).
+- 46 Multiply: `0x1001d318` `has_effect(...,0x2e)` then `rand%100 <= 9` -> `0x1001d5a8`
+  copies the 92-byte battle record (stats + current HP) into a free slot; `0x1000a394`
+  only tests slots 4-5 and returns `0xff` when full.
+- 47 Revive: death handler `0x10008ec4` compares the slot to `0x2f`, consumes it (`0xff` at
+  `0x10008f50`) and restores `maxHP/2`.
+- 48 Item Recovery: post-battle equipment save in the cleanup `0x1007b0f8` (called from
+  `0x1000b5b0` when battle state 5; skipped entirely when `0x1000d530` reports a special/online
+  battle). Pass 1 `0x1007b15c` copies battle HP/status into the army roster (`game+0x291c`) and
+  **only for units still alive (status 0)** compares both equipped-effect slots
+  (`ctx+0x4b4`/`ctx+0x4b8 + 52*slot`) with `0x30`; any survivor sets one party-wide flag at
+  `0x1007b1ec`/`0x1007b228`. Pass 2 `0x1007b254` skips the living and, for every fallen unit
+  (status != 0), deletes its equipped item (`roster+0x08` -> `0x100634a4`, which overwrites the
+  52-byte inventory record with the empty template `0x10069574`). With the flag set, `rand()`
+  (`0x100714e8`) `& 1` decides: item kept but unequipped (`+0x28=0xff`, `+0x2c=0`) instead of
+  deleted (`0x1007b3b8`-`0x1007b3fc`, mirrored in the other fate branch at `0x1007b31c`-
+  `0x1007b358`). Roll is per fallen unit. A carrier that dies never sets the flag, so its own
+  item is unprotected unless another survivor also carries it. No healing/revive/loot effect.
+- 49-51 loot recovery is separate, in the drop routine at `0x1000d900`.
+- Auto HP Restore 24-26 is **not** the same: it arms a 33-tick timer at `ctx+0x7a8+slot*28`
+  and heals a small flat amount (2/5/10) when it expires. Regenerate is the 50%-max-HP proc.
+- The 40-43 buff lands on the battle array, so the menu stat screen does not show it.
+- Compendium source of truth: `EFFECT_BEHAVIOR` in `tools/build_unitdb.py` →
+  `unitdb/effects.json` / `.csv`; rerun the full build to refresh the app.
+
 ## Local Modding & Patching Tools
 - **100% combine rates:** `python3 tools/patch_100_percent_combine.py [app_dir]`
   - Patches rates in `comp*.dat` (dev copies) AND the live `itemdata.dat` + `english/itemdata.dat` tails
