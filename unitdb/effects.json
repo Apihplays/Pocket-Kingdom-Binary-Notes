@@ -242,7 +242,7 @@
   {
     "id": 48,
     "name": "item recovery",
-    "behavior": "Post-battle item cleanup: 50% roll (not fully decoded)"
+    "behavior": "Battle end: a surviving carrier gives each fallen ally a 50% chance to keep its equipped item (kept unequipped; otherwise destroyed)"
   },
   {
     "id": 49,

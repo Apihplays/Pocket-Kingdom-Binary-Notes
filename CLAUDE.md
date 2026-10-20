@@ -128,9 +128,18 @@ Effects 44-48 are **not** in the 0..43 dispatcher — they are procs checked els
   only tests slots 4-5 and returns `0xff` when full.
 - 47 Revive: death handler `0x10008ec4` compares the slot to `0x2f`, consumes it (`0xff` at
   `0x10008f50`) and restores `maxHP/2`.
-- 48 Item Recovery: post-battle cleanup (`0x1007b0f8`, called from `0x1000b5b0` when the
-  battle state is 5) sets a flag at `0x1007b1ec`/`0x1007b228`; `0x1007b3b8` applies a
-  `rand & 1` roll in the item-removal pass (inventory semantics not fully decoded).
+- 48 Item Recovery: post-battle equipment save in the cleanup `0x1007b0f8` (called from
+  `0x1000b5b0` when battle state 5; skipped entirely when `0x1000d530` reports a special/online
+  battle). Pass 1 `0x1007b15c` copies battle HP/status into the army roster (`game+0x291c`) and
+  **only for units still alive (status 0)** compares both equipped-effect slots
+  (`ctx+0x4b4`/`ctx+0x4b8 + 52*slot`) with `0x30`; any survivor sets one party-wide flag at
+  `0x1007b1ec`/`0x1007b228`. Pass 2 `0x1007b254` skips the living and, for every fallen unit
+  (status != 0), deletes its equipped item (`roster+0x08` -> `0x100634a4`, which overwrites the
+  52-byte inventory record with the empty template `0x10069574`). With the flag set, `rand()`
+  (`0x100714e8`) `& 1` decides: item kept but unequipped (`+0x28=0xff`, `+0x2c=0`) instead of
+  deleted (`0x1007b3b8`-`0x1007b3fc`, mirrored in the other fate branch at `0x1007b31c`-
+  `0x1007b358`). Roll is per fallen unit. A carrier that dies never sets the flag, so its own
+  item is unprotected unless another survivor also carries it. No healing/revive/loot effect.
 - 49-51 loot recovery is separate, in the drop routine at `0x1000d900`.
 - Auto HP Restore 24-26 is **not** the same: it arms a 33-tick timer at `ctx+0x7a8+slot*28`
   and heals a small flat amount (2/5/10) when it expires. Regenerate is the 50%-max-HP proc.

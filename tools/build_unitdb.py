@@ -75,7 +75,7 @@ EFFECT_BEHAVIOR = {
     45: "10% per action: heal 50% max HP",
     46: "10% per action: clone into an empty slot 4/5",
     47: "On death: revive once at 50% max HP (consumed)",
-    48: "Post-battle item cleanup: 50% roll (not fully decoded)",
+    48: "Battle end: a surviving carrier gives each fallen ally a 50% chance to keep its equipped item (kept unequipped; otherwise destroyed)",
 }
 GIST_URL = (
     "https://gist.githubusercontent.com/Apihplays/"
