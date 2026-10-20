@@ -1,0 +1,90 @@
+id,name,category,rarity,effect
+63,Garnet,Jewels,2,Element: Fire
+64,Lapis Lazuli,Jewels,4,Element: Fire
+65,Ruby,Jewels,6,Element: Fire
+66,Diamond,Jewels,10,Element: Fire
+67,Azulite,Jewels,2,Element: Water
+68,Aquamarine,Jewels,4,Element: Water
+69,Turquoise,Jewels,6,Element: Water
+70,Sapphire,Jewels,9,Element: Water
+71,Agate,Jewels,2,Element: Wood
+72,Jade,Jewels,4,Element: Wood
+73,Peridot,Jewels,7,Element: Wood
+74,Emerald,Jewels,9,Element: Wood
+75,Cat's Eye,Jewels,3,Element: Metal
+76,Crystal,Jewels,5,Element: Metal
+77,Amethyst,Jewels,7,Element: Metal
+78,Opal,Jewels,8,Element: Metal
+79,Tourmaline,Jewels,3,Element: Earth
+80,Onyx,Jewels,5,Element: Earth
+81,Pearl,Jewels,8,Element: Earth
+82,Topaz,Jewels,8,Element: Earth
+90,Copper,Ores,1,-
+91,Chrome,Ores,2,-
+92,Silver,Ores,3,-
+93,Gold,Ores,4,-
+94,Platinum,Ores,5,-
+95,Mythril,Ores,6,-
+96,Orihalcon,Ores,7,-
+1,Lute,Other Materials,2,AGI Up
+2,Harp,Other Materials,2,DEX Up
+3,Book of Wisdom,Other Materials,2,INT Up
+4,Book of Conduct,Other Materials,2,WIS Up
+5,Spellbook-Sword,Other Materials,2,ATK Up
+6,Spellbook-Shield,Other Materials,2,DEF Up
+7,Griffon Blood,Other Materials,4,AGI Down
+8,Ninja Blood,Other Materials,4,DEX Down
+9,Vampire Blood,Other Materials,4,INT Down
+10,Lich Blood,Other Materials,4,WIS Down
+11,Troll Blood,Other Materials,4,ATK Down
+12,Dullahan Blood,Other Materials,4,DEF Down
+13,Kelpie Eye,Other Materials,3,Sleep
+14,Kraken Eye,Other Materials,3,Paralysis
+15,Serpent Eye,Other Materials,3,Poison
+16,Forneus Eye,Other Materials,3,Silence
+17,Coral Potion,Other Materials,5,Sleep Resistance
+18,Blue Potion,Other Materials,5,Paralysis Resistance
+19,Gray Potion,Other Materials,5,Poison Resistance
+20,Gold Potion,Other Materials,5,Silence Resistance
+21,Gaia Rock,Other Materials,10,Magic Reflection
+22,Pluto Rock,Other Materials,8,Magic Reduction
+23,Neptune Rock,Other Materials,6,Physical Reduction 1
+24,Mercury Rock,Other Materials,6,HP Absorption 1
+25,Jupiter Rock,Other Materials,6,Auto HP Restore 1
+26,Mars Rock,Other Materials,7,Critical 1
+27,Uranus Rock,Other Materials,7,Counter 1
+28,Venus Rock,Other Materials,6,Gold Recovery Up 1
+29,Saturn Rock,Other Materials,8,Item Recovery
+30,Ocean Tears,Other Materials,10,Revive
+31,Gunpowder,Other Materials,9,Self Destruct
+32,Chaos Heart,Other Materials,7,Regenerate
+33,Dividing Heart,Other Materials,7,Multiply
+34,Vulcan Rock,Other Materials,8,HP Absorption 2
+35,Io Rock,Other Materials,7,Auto HP Restore 2
+36,Ganymede Rock,Other Materials,8,Auto HP Restore 3
+37,Mage's Book,Other Materials,8,Proof of Contract
+38,Oberon Rock,Other Materials,8,Counter 2
+39,Titania Rock,Other Materials,9,Counter 3
+40,Deimos Rock,Other Materials,8,Critical 2
+41,Phobos Rock,Other Materials,9,Critical 3
+42,Chrysaor Eye,Other Materials,7,Severe Paralysis
+43,Shyff Rock,Other Materials,8,Gold Recovery Up 2
+44,Gala Rock,Other Materials,9,Gold Recovery Up 3
+45,Skylla Eye,Other Materials,7,Deep Sleep
+46,Spellbook-Sickle,Other Materials,8,Warrior's Spirit
+47,Forbidden Spells,Other Materials,10,Hero's Spirit
+48,Snake Eye,Other Materials,7,Strong Silence
+49,Black Magic Book,Other Materials,8,Mage's Spirit
+50,Naga Eye,Other Materials,7,Deadly Poison
+51,Nereid Rock,Other Materials,8,Physical Reduction 2
+52,Proteus Rock,Other Materials,10,Physical Reduction 3
+53,Black Leaf,Other Materials,2,-
+54,Yellow Leaf,Other Materials,3,-
+55,Red Leaf,Other Materials,4,-
+56,Green Horn,Other Materials,5,-
+57,Blue Horn,Other Materials,6,-
+58,Purple Claw,Other Materials,7,-
+59,Red Claw,Other Materials,8,-
+60,White Jewel,Other Materials,9,-
+61,Golden Jewel,Other Materials,9,-
+62,Black Jewel,Other Materials,9,-
