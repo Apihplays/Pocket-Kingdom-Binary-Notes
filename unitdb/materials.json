@@ -4,622 +4,7551 @@
     "name": "Garnet",
     "category": "Jewels",
     "rarity": 2,
-    "effect": "Element: Fire"
+    "effect": "Element: Fire",
+    "purchase_in": [
+      "Elynotis"
+    ],
+    "dropped_by": [
+      {
+        "id": 0,
+        "name": "Soldier"
+      },
+      {
+        "id": 84,
+        "name": "Lycanthrope"
+      },
+      {
+        "id": 55,
+        "name": "Skeleton"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Elynotis",
+        "status": "Offline"
+      },
+      {
+        "area": "Earl's Castle",
+        "status": "Offline"
+      },
+      {
+        "area": "Elfaria",
+        "status": "Offline"
+      },
+      {
+        "area": "Deserted Ruins",
+        "status": "Offline"
+      },
+      {
+        "area": "Deserted Ruins",
+        "status": "Online"
+      },
+      {
+        "area": "Elynotis",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Castle Matres",
+        "area": "Elynotis",
+        "floors": 1
+      },
+      {
+        "dungeon": "Old Ruins",
+        "area": "Ruins Road",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Silk",
+        "area": "Elfaria",
+        "floors": 1
+      },
+      {
+        "dungeon": "Beast Lair",
+        "area": "Beast Lair",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Stagnation",
+        "area": "Deserted Ruins",
+        "floors": 1
+      },
+      {
+        "dungeon": "Moon Ruins",
+        "area": "Altar of the Spirits",
+        "floors": 1
+      },
+      {
+        "dungeon": "Sun Ruins",
+        "area": "Altar of the Spirits",
+        "floors": 1
+      },
+      {
+        "dungeon": "Wind Ruins",
+        "area": "Tiwana Ruins",
+        "floors": 1
+      },
+      {
+        "dungeon": "Burned-out Ruins",
+        "area": "Treasure Island",
+        "floors": 1
+      },
+      {
+        "dungeon": "Red Lake",
+        "area": "Treasure Island",
+        "floors": 1
+      },
+      {
+        "dungeon": "Silent Lake",
+        "area": "Spirits Forest",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Shadow",
+        "area": "Dark Elf Settlement",
+        "floors": 1
+      },
+      {
+        "dungeon": "Deep Blue Lake",
+        "area": "Yggdrasill",
+        "floors": 1
+      },
+      {
+        "dungeon": "Collapsed Ruins",
+        "area": "Gate of Recollection",
+        "floors": 1
+      },
+      {
+        "dungeon": "Mossy Ruins",
+        "area": "Gate of Recollection",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Heaven",
+        "area": "Water City",
+        "floors": 1
+      },
+      {
+        "dungeon": "Brightness Lake",
+        "area": "Mizuchi Shrine",
+        "floors": 1
+      },
+      {
+        "dungeon": "Watery Lake",
+        "area": "Mizuchi Shrine",
+        "floors": 1
+      },
+      {
+        "dungeon": "Deep Lake",
+        "area": "Mizuchi Shrine",
+        "floors": 1
+      },
+      {
+        "dungeon": "Mysterious Ruins",
+        "area": "Forgotten Village",
+        "floors": 1
+      },
+      {
+        "dungeon": "Town Ruins",
+        "area": "Donam",
+        "floors": 1
+      },
+      {
+        "dungeon": "Mirage Ruins",
+        "area": "Seles",
+        "floors": 1
+      },
+      {
+        "dungeon": "Soul Spring",
+        "area": "Yamato",
+        "floors": 1
+      },
+      {
+        "dungeon": "Great Edo Lake",
+        "area": "Edo",
+        "floors": 1
+      },
+      {
+        "dungeon": "Historic Ruins",
+        "area": "Shalom",
+        "floors": 1
+      },
+      {
+        "dungeon": "Canal",
+        "area": "Mikado Mausoleum",
+        "floors": 1
+      },
+      {
+        "dungeon": "Putrid Puddle",
+        "area": "Huge Swamp",
+        "floors": 1
+      },
+      {
+        "dungeon": "Stagnant Puddle",
+        "area": "Huge Swamp",
+        "floors": 1
+      },
+      {
+        "dungeon": "Muddy Puddle",
+        "area": "Huge Swamp",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Sandblast",
+        "area": "Water Shrine",
+        "floors": 1
+      }
+    ]
   },
   {
     "id": 64,
     "name": "Lapis Lazuli",
     "category": "Jewels",
     "rarity": 4,
-    "effect": "Element: Fire"
+    "effect": "Element: Fire",
+    "purchase_in": [
+      "Elfaria",
+      "Ilyumine",
+      "Spirits Forest"
+    ],
+    "dropped_by": [
+      {
+        "id": 14,
+        "name": "Knight"
+      },
+      {
+        "id": 56,
+        "name": "Skeleton Knight"
+      },
+      {
+        "id": 85,
+        "name": "Imp"
+      },
+      {
+        "id": 107,
+        "name": "Poison Jelly"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Bedouin",
+        "status": "Offline"
+      },
+      {
+        "area": "Water City",
+        "status": "Offline"
+      },
+      {
+        "area": "Nomad",
+        "status": "Offline"
+      },
+      {
+        "area": "Deeva Volcano",
+        "status": "Online"
+      },
+      {
+        "area": "Nomad",
+        "status": "Online"
+      },
+      {
+        "area": "Spirits Forest",
+        "status": "Online"
+      },
+      {
+        "area": "Bedouin",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Beast Palace",
+        "area": "Gulldria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Shadow Tower",
+        "area": "Ruins Road",
+        "floors": 3
+      },
+      {
+        "dungeon": "Abysm",
+        "area": "Ruins Road",
+        "floors": 3
+      },
+      {
+        "dungeon": "Mayor's House",
+        "area": "Elfaria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Giant Lair",
+        "area": "Beast Lair",
+        "floors": 3
+      },
+      {
+        "dungeon": "Patriarch's House",
+        "area": "Thick Forest",
+        "floors": 3
+      },
+      {
+        "dungeon": "Deserted Ruins",
+        "area": "Deserted Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Altar of the Spirits",
+        "area": "Altar of the Spirits",
+        "floors": 3
+      },
+      {
+        "dungeon": "Sealed Cavern",
+        "area": "Tiwana Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Stone Tower",
+        "area": "Tiwana Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Earth Shrine",
+        "area": "Tiwana Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Meeting Place",
+        "area": "Ilyumine",
+        "floors": 3
+      },
+      {
+        "dungeon": "Wind Hole",
+        "area": "Distaria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Merchant League",
+        "area": "Distaria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Surveillance Fort",
+        "area": "Pirate Island",
+        "floors": 3
+      },
+      {
+        "dungeon": "Hideout",
+        "area": "Pirate Island",
+        "floors": 3
+      },
+      {
+        "dungeon": "Fire Shrine",
+        "area": "Treasure Island",
+        "floors": 3
+      },
+      {
+        "dungeon": "Ivory Tower",
+        "area": "Earl's Castle",
+        "floors": 3
+      },
+      {
+        "dungeon": "Darkness Cavern",
+        "area": "Dark Elf Settlement",
+        "floors": 3
+      },
+      {
+        "dungeon": "Tower of Darkness",
+        "area": "Dark Elf Settlement",
+        "floors": 3
+      },
+      {
+        "dungeon": "Tree Ruins",
+        "area": "Yggdrasill",
+        "floors": 3
+      },
+      {
+        "dungeon": "Water Ruins",
+        "area": "Water City",
+        "floors": 3
+      },
+      {
+        "dungeon": "Foggy Tower",
+        "area": "Runeheim",
+        "floors": 3
+      },
+      {
+        "dungeon": "Mausoleum Entrance",
+        "area": "Mikado Mausoleum",
+        "floors": 3
+      },
+      {
+        "dungeon": "Sunset Castle",
+        "area": "Desert Road",
+        "floors": 3
+      },
+      {
+        "dungeon": "Sand Devil Lair",
+        "area": "Bedouin",
+        "floors": 3
+      }
+    ]
   },
   {
     "id": 65,
     "name": "Ruby",
     "category": "Jewels",
     "rarity": 6,
-    "effect": "Element: Fire"
+    "effect": "Element: Fire",
+    "purchase_in": [
+      "Nomad",
+      "Edo",
+      "Shalom"
+    ],
+    "dropped_by": [
+      {
+        "id": 7,
+        "name": "Swordman"
+      },
+      {
+        "id": 32,
+        "name": "Philosophas"
+      },
+      {
+        "id": 40,
+        "name": "Lich"
+      },
+      {
+        "id": 57,
+        "name": "Skeleton Lord"
+      },
+      {
+        "id": 77,
+        "name": "Valkyrie"
+      },
+      {
+        "id": 99,
+        "name": "Wing Guarder"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Mikado Mausoleum",
+        "status": "Offline"
+      },
+      {
+        "area": "Dark Elf Settlement",
+        "status": "Offline"
+      },
+      {
+        "area": "Mountaintop Shrine",
+        "status": "Offline"
+      },
+      {
+        "area": "Altar of the Spirits",
+        "status": "Online"
+      },
+      {
+        "area": "Mikado Mausoleum",
+        "status": "Online"
+      },
+      {
+        "area": "Dark Elf Settlement",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Night Ruins",
+        "area": "Nightwalker Town",
+        "floors": 6
+      },
+      {
+        "dungeon": "Sand Road",
+        "area": "Pyramid",
+        "floors": 6
+      }
+    ]
   },
   {
     "id": 66,
     "name": "Diamond",
     "category": "Jewels",
     "rarity": 10,
-    "effect": "Element: Fire"
+    "effect": "Element: Fire",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 13,
+        "name": "Master Fist"
+      },
+      {
+        "id": 29,
+        "name": "Hell Sniper"
+      },
+      {
+        "id": 38,
+        "name": "Savior"
+      },
+      {
+        "id": 58,
+        "name": "Skull King"
+      },
+      {
+        "id": 65,
+        "name": "Nephilia"
+      },
+      {
+        "id": 70,
+        "name": "Lady Sky"
+      },
+      {
+        "id": 92,
+        "name": "Gigantes"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Nightwalker Town",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Quiet Lakeside",
+        "area": "Mizuchi Shrine",
+        "floors": 13
+      },
+      {
+        "dungeon": "Mossy Cavern",
+        "area": "Forgotten Village",
+        "floors": 14
+      },
+      {
+        "dungeon": "Tower of Fortune",
+        "area": "Mountaintop Shrine",
+        "floors": 15
+      }
+    ]
   },
   {
     "id": 67,
     "name": "Azulite",
     "category": "Jewels",
     "rarity": 2,
-    "effect": "Element: Water"
+    "effect": "Element: Water",
+    "purchase_in": [
+      "Cressence",
+      "Ruins Road"
+    ],
+    "dropped_by": [
+      {
+        "id": 30,
+        "name": "Noble"
+      },
+      {
+        "id": 66,
+        "name": "Sprite"
+      },
+      {
+        "id": 97,
+        "name": "Gargoyle"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Cressence",
+        "status": "Offline"
+      },
+      {
+        "area": "Donam",
+        "status": "Offline"
+      },
+      {
+        "area": "Ruins Road",
+        "status": "Offline"
+      },
+      {
+        "area": "Ilyumine",
+        "status": "Offline"
+      },
+      {
+        "area": "Ilyumine",
+        "status": "Online"
+      },
+      {
+        "area": "Cressence",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Castle Matres",
+        "area": "Elynotis",
+        "floors": 1
+      },
+      {
+        "dungeon": "Old Ruins",
+        "area": "Ruins Road",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Silk",
+        "area": "Elfaria",
+        "floors": 1
+      },
+      {
+        "dungeon": "Beast Lair",
+        "area": "Beast Lair",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Stagnation",
+        "area": "Deserted Ruins",
+        "floors": 1
+      },
+      {
+        "dungeon": "Moon Ruins",
+        "area": "Altar of the Spirits",
+        "floors": 1
+      },
+      {
+        "dungeon": "Sun Ruins",
+        "area": "Altar of the Spirits",
+        "floors": 1
+      },
+      {
+        "dungeon": "Wind Ruins",
+        "area": "Tiwana Ruins",
+        "floors": 1
+      },
+      {
+        "dungeon": "Burned-out Ruins",
+        "area": "Treasure Island",
+        "floors": 1
+      },
+      {
+        "dungeon": "Red Lake",
+        "area": "Treasure Island",
+        "floors": 1
+      },
+      {
+        "dungeon": "Silent Lake",
+        "area": "Spirits Forest",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Shadow",
+        "area": "Dark Elf Settlement",
+        "floors": 1
+      },
+      {
+        "dungeon": "Deep Blue Lake",
+        "area": "Yggdrasill",
+        "floors": 1
+      },
+      {
+        "dungeon": "Collapsed Ruins",
+        "area": "Gate of Recollection",
+        "floors": 1
+      },
+      {
+        "dungeon": "Mossy Ruins",
+        "area": "Gate of Recollection",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Heaven",
+        "area": "Water City",
+        "floors": 1
+      },
+      {
+        "dungeon": "Brightness Lake",
+        "area": "Mizuchi Shrine",
+        "floors": 1
+      },
+      {
+        "dungeon": "Watery Lake",
+        "area": "Mizuchi Shrine",
+        "floors": 1
+      },
+      {
+        "dungeon": "Deep Lake",
+        "area": "Mizuchi Shrine",
+        "floors": 1
+      },
+      {
+        "dungeon": "Mysterious Ruins",
+        "area": "Forgotten Village",
+        "floors": 1
+      },
+      {
+        "dungeon": "Town Ruins",
+        "area": "Donam",
+        "floors": 1
+      },
+      {
+        "dungeon": "Mirage Ruins",
+        "area": "Seles",
+        "floors": 1
+      },
+      {
+        "dungeon": "Soul Spring",
+        "area": "Yamato",
+        "floors": 1
+      },
+      {
+        "dungeon": "Great Edo Lake",
+        "area": "Edo",
+        "floors": 1
+      },
+      {
+        "dungeon": "Historic Ruins",
+        "area": "Shalom",
+        "floors": 1
+      },
+      {
+        "dungeon": "Canal",
+        "area": "Mikado Mausoleum",
+        "floors": 1
+      },
+      {
+        "dungeon": "Putrid Puddle",
+        "area": "Huge Swamp",
+        "floors": 1
+      },
+      {
+        "dungeon": "Stagnant Puddle",
+        "area": "Huge Swamp",
+        "floors": 1
+      },
+      {
+        "dungeon": "Muddy Puddle",
+        "area": "Huge Swamp",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Sandblast",
+        "area": "Water Shrine",
+        "floors": 1
+      }
+    ]
   },
   {
     "id": 68,
     "name": "Aquamarine",
     "category": "Jewels",
     "rarity": 4,
-    "effect": "Element: Water"
+    "effect": "Element: Water",
+    "purchase_in": [
+      "Altar of the Spirits",
+      "Distaria",
+      "Pirate Island"
+    ],
+    "dropped_by": [
+      {
+        "id": 31,
+        "name": "Theoricus"
+      },
+      {
+        "id": 71,
+        "name": "Vulture"
+      },
+      {
+        "id": 98,
+        "name": "Steel Gargoyle"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Pyramid",
+        "status": "Offline"
+      },
+      {
+        "area": "Mizuchi Shrine",
+        "status": "Offline"
+      },
+      {
+        "area": "Desert Road",
+        "status": "Offline"
+      },
+      {
+        "area": "Elfaria",
+        "status": "Online"
+      },
+      {
+        "area": "Desert Road",
+        "status": "Online"
+      },
+      {
+        "area": "Earl's Castle",
+        "status": "Online"
+      },
+      {
+        "area": "Pyramid",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Beast Palace",
+        "area": "Gulldria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Shadow Tower",
+        "area": "Ruins Road",
+        "floors": 3
+      },
+      {
+        "dungeon": "Abysm",
+        "area": "Ruins Road",
+        "floors": 3
+      },
+      {
+        "dungeon": "Mayor's House",
+        "area": "Elfaria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Giant Lair",
+        "area": "Beast Lair",
+        "floors": 3
+      },
+      {
+        "dungeon": "Patriarch's House",
+        "area": "Thick Forest",
+        "floors": 3
+      },
+      {
+        "dungeon": "Deserted Ruins",
+        "area": "Deserted Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Altar of the Spirits",
+        "area": "Altar of the Spirits",
+        "floors": 3
+      },
+      {
+        "dungeon": "Sealed Cavern",
+        "area": "Tiwana Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Stone Tower",
+        "area": "Tiwana Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Earth Shrine",
+        "area": "Tiwana Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Meeting Place",
+        "area": "Ilyumine",
+        "floors": 3
+      },
+      {
+        "dungeon": "Wind Hole",
+        "area": "Distaria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Merchant League",
+        "area": "Distaria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Surveillance Fort",
+        "area": "Pirate Island",
+        "floors": 3
+      },
+      {
+        "dungeon": "Hideout",
+        "area": "Pirate Island",
+        "floors": 3
+      },
+      {
+        "dungeon": "Fire Shrine",
+        "area": "Treasure Island",
+        "floors": 3
+      },
+      {
+        "dungeon": "Ivory Tower",
+        "area": "Earl's Castle",
+        "floors": 3
+      },
+      {
+        "dungeon": "Darkness Cavern",
+        "area": "Dark Elf Settlement",
+        "floors": 3
+      },
+      {
+        "dungeon": "Tower of Darkness",
+        "area": "Dark Elf Settlement",
+        "floors": 3
+      },
+      {
+        "dungeon": "Tree Ruins",
+        "area": "Yggdrasill",
+        "floors": 3
+      },
+      {
+        "dungeon": "Water Ruins",
+        "area": "Water City",
+        "floors": 3
+      },
+      {
+        "dungeon": "Foggy Tower",
+        "area": "Runeheim",
+        "floors": 3
+      },
+      {
+        "dungeon": "Mausoleum Entrance",
+        "area": "Mikado Mausoleum",
+        "floors": 3
+      },
+      {
+        "dungeon": "Sunset Castle",
+        "area": "Desert Road",
+        "floors": 3
+      },
+      {
+        "dungeon": "Sand Devil Lair",
+        "area": "Bedouin",
+        "floors": 3
+      }
+    ]
   },
   {
     "id": 69,
     "name": "Turquoise",
     "category": "Jewels",
     "rarity": 6,
-    "effect": "Element: Water"
+    "effect": "Element: Water",
+    "purchase_in": [
+      "Dark Elf Settlement",
+      "Echigo",
+      "Yamato"
+    ],
+    "dropped_by": [
+      {
+        "id": 15,
+        "name": "Temple Knight"
+      },
+      {
+        "id": 36,
+        "name": "High Priest"
+      },
+      {
+        "id": 49,
+        "name": "Dragon Runner"
+      },
+      {
+        "id": 63,
+        "name": "Living Dead"
+      },
+      {
+        "id": 86,
+        "name": "Lesser Demon"
+      },
+      {
+        "id": 108,
+        "name": "Acid Ooze"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Echigo",
+        "status": "Offline"
+      },
+      {
+        "area": "Nightwalker Town",
+        "status": "Offline"
+      },
+      {
+        "area": "Yggdrasill",
+        "status": "Online"
+      },
+      {
+        "area": "Echigo",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Night Ruins",
+        "area": "Nightwalker Town",
+        "floors": 6
+      },
+      {
+        "dungeon": "Sand Road",
+        "area": "Pyramid",
+        "floors": 6
+      }
+    ]
   },
   {
     "id": 70,
     "name": "Sapphire",
     "category": "Jewels",
     "rarity": 9,
-    "effect": "Element: Water"
+    "effect": "Element: Water",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 6,
+        "name": "Khazad's Ghost"
+      },
+      {
+        "id": 8,
+        "name": "Sword Master"
+      },
+      {
+        "id": 17,
+        "name": "Lord Redrick"
+      },
+      {
+        "id": 21,
+        "name": "August"
+      },
+      {
+        "id": 33,
+        "name": "Adept"
+      },
+      {
+        "id": 34,
+        "name": "Mage Silion"
+      },
+      {
+        "id": 47,
+        "name": "Naga"
+      },
+      {
+        "id": 48,
+        "name": "Leviathan"
+      },
+      {
+        "id": 53,
+        "name": "Bardion"
+      },
+      {
+        "id": 73,
+        "name": "Rock"
+      },
+      {
+        "id": 74,
+        "name": "Tempest"
+      },
+      {
+        "id": 83,
+        "name": "Morrigan"
+      },
+      {
+        "id": 88,
+        "name": "Bahzam DeGole"
+      },
+      {
+        "id": 101,
+        "name": "Balrog"
+      },
+      {
+        "id": 110,
+        "name": "Kraken"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Huge Swamp",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Mossy Cavern",
+        "area": "Forgotten Village",
+        "floors": 14
+      }
+    ]
   },
   {
     "id": 71,
     "name": "Agate",
     "category": "Jewels",
     "rarity": 2,
-    "effect": "Element: Wood"
+    "effect": "Element: Wood",
+    "purchase_in": [
+      "Gulldria"
+    ],
+    "dropped_by": [
+      {
+        "id": 43,
+        "name": "Lizardfoot"
+      },
+      {
+        "id": 75,
+        "name": "Amazoness"
+      },
+      {
+        "id": 106,
+        "name": "Primitive Cell"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Gulldria",
+        "status": "Offline"
+      },
+      {
+        "area": "Runeheim",
+        "status": "Offline"
+      },
+      {
+        "area": "Tiwana Ruins",
+        "status": "Offline"
+      },
+      {
+        "area": "Distaria",
+        "status": "Offline"
+      },
+      {
+        "area": "Distaria",
+        "status": "Online"
+      },
+      {
+        "area": "Gulldria",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Castle Matres",
+        "area": "Elynotis",
+        "floors": 1
+      },
+      {
+        "dungeon": "Old Ruins",
+        "area": "Ruins Road",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Silk",
+        "area": "Elfaria",
+        "floors": 1
+      },
+      {
+        "dungeon": "Beast Lair",
+        "area": "Beast Lair",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Stagnation",
+        "area": "Deserted Ruins",
+        "floors": 1
+      },
+      {
+        "dungeon": "Moon Ruins",
+        "area": "Altar of the Spirits",
+        "floors": 1
+      },
+      {
+        "dungeon": "Sun Ruins",
+        "area": "Altar of the Spirits",
+        "floors": 1
+      },
+      {
+        "dungeon": "Wind Ruins",
+        "area": "Tiwana Ruins",
+        "floors": 1
+      },
+      {
+        "dungeon": "Burned-out Ruins",
+        "area": "Treasure Island",
+        "floors": 1
+      },
+      {
+        "dungeon": "Red Lake",
+        "area": "Treasure Island",
+        "floors": 1
+      },
+      {
+        "dungeon": "Silent Lake",
+        "area": "Spirits Forest",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Shadow",
+        "area": "Dark Elf Settlement",
+        "floors": 1
+      },
+      {
+        "dungeon": "Deep Blue Lake",
+        "area": "Yggdrasill",
+        "floors": 1
+      },
+      {
+        "dungeon": "Collapsed Ruins",
+        "area": "Gate of Recollection",
+        "floors": 1
+      },
+      {
+        "dungeon": "Mossy Ruins",
+        "area": "Gate of Recollection",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Heaven",
+        "area": "Water City",
+        "floors": 1
+      },
+      {
+        "dungeon": "Brightness Lake",
+        "area": "Mizuchi Shrine",
+        "floors": 1
+      },
+      {
+        "dungeon": "Watery Lake",
+        "area": "Mizuchi Shrine",
+        "floors": 1
+      },
+      {
+        "dungeon": "Deep Lake",
+        "area": "Mizuchi Shrine",
+        "floors": 1
+      },
+      {
+        "dungeon": "Mysterious Ruins",
+        "area": "Forgotten Village",
+        "floors": 1
+      },
+      {
+        "dungeon": "Town Ruins",
+        "area": "Donam",
+        "floors": 1
+      },
+      {
+        "dungeon": "Mirage Ruins",
+        "area": "Seles",
+        "floors": 1
+      },
+      {
+        "dungeon": "Soul Spring",
+        "area": "Yamato",
+        "floors": 1
+      },
+      {
+        "dungeon": "Great Edo Lake",
+        "area": "Edo",
+        "floors": 1
+      },
+      {
+        "dungeon": "Historic Ruins",
+        "area": "Shalom",
+        "floors": 1
+      },
+      {
+        "dungeon": "Canal",
+        "area": "Mikado Mausoleum",
+        "floors": 1
+      },
+      {
+        "dungeon": "Putrid Puddle",
+        "area": "Huge Swamp",
+        "floors": 1
+      },
+      {
+        "dungeon": "Stagnant Puddle",
+        "area": "Huge Swamp",
+        "floors": 1
+      },
+      {
+        "dungeon": "Muddy Puddle",
+        "area": "Huge Swamp",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Sandblast",
+        "area": "Water Shrine",
+        "floors": 1
+      }
+    ]
   },
   {
     "id": 72,
     "name": "Jade",
     "category": "Jewels",
     "rarity": 4,
-    "effect": "Element: Wood"
+    "effect": "Element: Wood",
+    "purchase_in": [
+      "Tiwana Ruins",
+      "Deeva Volcano",
+      "Treasure Island",
+      "Gate of Recollection"
+    ],
+    "dropped_by": [
+      {
+        "id": 39,
+        "name": "Necromancer"
+      },
+      {
+        "id": 76,
+        "name": "High Elf"
+      },
+      {
+        "id": 102,
+        "name": "Golem"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Altar of the Spirits",
+        "status": "Offline"
+      },
+      {
+        "area": "Water Shrine",
+        "status": "Offline"
+      },
+      {
+        "area": "Ruins Road",
+        "status": "Online"
+      },
+      {
+        "area": "Water Shrine",
+        "status": "Online"
+      },
+      {
+        "area": "Donam",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Red Wolf Castle",
+        "area": "Cressence",
+        "floors": 2
+      },
+      {
+        "dungeon": "Beast Palace",
+        "area": "Gulldria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Shadow Tower",
+        "area": "Ruins Road",
+        "floors": 3
+      },
+      {
+        "dungeon": "Abysm",
+        "area": "Ruins Road",
+        "floors": 3
+      },
+      {
+        "dungeon": "Mayor's House",
+        "area": "Elfaria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Giant Lair",
+        "area": "Beast Lair",
+        "floors": 3
+      },
+      {
+        "dungeon": "Patriarch's House",
+        "area": "Thick Forest",
+        "floors": 3
+      },
+      {
+        "dungeon": "Deserted Ruins",
+        "area": "Deserted Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Altar of the Spirits",
+        "area": "Altar of the Spirits",
+        "floors": 3
+      },
+      {
+        "dungeon": "Sealed Cavern",
+        "area": "Tiwana Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Stone Tower",
+        "area": "Tiwana Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Earth Shrine",
+        "area": "Tiwana Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Meeting Place",
+        "area": "Ilyumine",
+        "floors": 3
+      },
+      {
+        "dungeon": "Wind Hole",
+        "area": "Distaria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Merchant League",
+        "area": "Distaria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Surveillance Fort",
+        "area": "Pirate Island",
+        "floors": 3
+      },
+      {
+        "dungeon": "Hideout",
+        "area": "Pirate Island",
+        "floors": 3
+      },
+      {
+        "dungeon": "Fire Shrine",
+        "area": "Treasure Island",
+        "floors": 3
+      },
+      {
+        "dungeon": "Ivory Tower",
+        "area": "Earl's Castle",
+        "floors": 3
+      },
+      {
+        "dungeon": "Darkness Cavern",
+        "area": "Dark Elf Settlement",
+        "floors": 3
+      },
+      {
+        "dungeon": "Tower of Darkness",
+        "area": "Dark Elf Settlement",
+        "floors": 3
+      },
+      {
+        "dungeon": "Tree Ruins",
+        "area": "Yggdrasill",
+        "floors": 3
+      },
+      {
+        "dungeon": "Water Ruins",
+        "area": "Water City",
+        "floors": 3
+      },
+      {
+        "dungeon": "Foggy Tower",
+        "area": "Runeheim",
+        "floors": 3
+      },
+      {
+        "dungeon": "Mausoleum Entrance",
+        "area": "Mikado Mausoleum",
+        "floors": 3
+      },
+      {
+        "dungeon": "Sunset Castle",
+        "area": "Desert Road",
+        "floors": 3
+      },
+      {
+        "dungeon": "Sand Devil Lair",
+        "area": "Bedouin",
+        "floors": 3
+      }
+    ]
   },
   {
     "id": 73,
     "name": "Peridot",
     "category": "Jewels",
     "rarity": 7,
-    "effect": "Element: Wood"
+    "effect": "Element: Wood",
+    "purchase_in": [
+      "Mikado Mausoleum",
+      "Desert Road"
+    ],
+    "dropped_by": [
+      {
+        "id": 11,
+        "name": "Expert Monk"
+      },
+      {
+        "id": 46,
+        "name": "Serpent"
+      },
+      {
+        "id": 64,
+        "name": "Ghoul"
+      },
+      {
+        "id": 91,
+        "name": "Troll King"
+      },
+      {
+        "id": 114,
+        "name": "Thorn Wall"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Yamato",
+        "status": "Offline"
+      },
+      {
+        "area": "Huge Swamp",
+        "status": "Offline"
+      },
+      {
+        "area": "Gate of Recollection",
+        "status": "Online"
+      },
+      {
+        "area": "Yamato",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Flame Pit",
+        "area": "Deeva Volcano",
+        "floors": 5
+      },
+      {
+        "dungeon": "Tower of Trees",
+        "area": "Yggdrasill",
+        "floors": 5
+      },
+      {
+        "dungeon": "Mountain Path",
+        "area": "Forgotten Village",
+        "floors": 5
+      },
+      {
+        "dungeon": "Origin Altar",
+        "area": "Mountaintop Shrine",
+        "floors": 5
+      },
+      {
+        "dungeon": "Mikado Lodge",
+        "area": "Shalom",
+        "floors": 5
+      },
+      {
+        "dungeon": "Metal Shrine",
+        "area": "Mikado Mausoleum",
+        "floors": 5
+      },
+      {
+        "dungeon": "Giant Sculpture",
+        "area": "Desert Road",
+        "floors": 5
+      },
+      {
+        "dungeon": "Tomb of the Dead",
+        "area": "Huge Swamp",
+        "floors": 5
+      },
+      {
+        "dungeon": "Fort of Oblivion",
+        "area": "Gate of Oblivion",
+        "floors": 5
+      },
+      {
+        "dungeon": "Ishtal Castle",
+        "area": "Ishtal",
+        "floors": 5
+      },
+      {
+        "dungeon": "Royal Tomb",
+        "area": "Royal Tomb",
+        "floors": 5
+      }
+    ]
   },
   {
     "id": 74,
     "name": "Emerald",
     "category": "Jewels",
     "rarity": 9,
-    "effect": "Element: Wood"
+    "effect": "Element: Wood",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 9,
+        "name": "Mikaduchi"
+      },
+      {
+        "id": 12,
+        "name": "Master Monk"
+      },
+      {
+        "id": 18,
+        "name": "Durahan"
+      },
+      {
+        "id": 25,
+        "name": "Genzoh"
+      },
+      {
+        "id": 41,
+        "name": "Lich Lord"
+      },
+      {
+        "id": 42,
+        "name": "Al Acid"
+      },
+      {
+        "id": 51,
+        "name": "Dragon"
+      },
+      {
+        "id": 52,
+        "name": "Tiamat"
+      },
+      {
+        "id": 54,
+        "name": "Thyrion"
+      },
+      {
+        "id": 78,
+        "name": "Scathacha"
+      },
+      {
+        "id": 79,
+        "name": "Luna"
+      },
+      {
+        "id": 96,
+        "name": "Fenril"
+      },
+      {
+        "id": 104,
+        "name": "Talos"
+      },
+      {
+        "id": 105,
+        "name": "Behemoth"
+      },
+      {
+        "id": 111,
+        "name": "O'Rosam"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Gate of Oblivion",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Tower of Fortune",
+        "area": "Mountaintop Shrine",
+        "floors": 15
+      }
+    ]
   },
   {
     "id": 75,
     "name": "Cat's Eye",
     "category": "Jewels",
     "rarity": 3,
-    "effect": "Element: Metal"
+    "effect": "Element: Metal",
+    "purchase_in": [
+      "Beast Lair",
+      "Deserted Ruins"
+    ],
+    "dropped_by": [
+      {
+        "id": 1,
+        "name": "Warrior"
+      },
+      {
+        "id": 22,
+        "name": "Thief"
+      },
+      {
+        "id": 35,
+        "name": "Priest"
+      },
+      {
+        "id": 59,
+        "name": "Wight"
+      },
+      {
+        "id": 67,
+        "name": "Harpy"
+      },
+      {
+        "id": 89,
+        "name": "Caveman"
+      },
+      {
+        "id": 112,
+        "name": "Mud Wall"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Beast Lair",
+        "status": "Offline"
+      },
+      {
+        "area": "Treasure Island",
+        "status": "Offline"
+      },
+      {
+        "area": "Seles",
+        "status": "Offline"
+      },
+      {
+        "area": "Pirate Island",
+        "status": "Offline"
+      },
+      {
+        "area": "Beast Lair",
+        "status": "Online"
+      },
+      {
+        "area": "Pirate Island",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Castle Matres",
+        "area": "Elynotis",
+        "floors": 1
+      },
+      {
+        "dungeon": "Old Ruins",
+        "area": "Ruins Road",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Silk",
+        "area": "Elfaria",
+        "floors": 1
+      },
+      {
+        "dungeon": "Beast Lair",
+        "area": "Beast Lair",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Stagnation",
+        "area": "Deserted Ruins",
+        "floors": 1
+      },
+      {
+        "dungeon": "Moon Ruins",
+        "area": "Altar of the Spirits",
+        "floors": 1
+      },
+      {
+        "dungeon": "Sun Ruins",
+        "area": "Altar of the Spirits",
+        "floors": 1
+      },
+      {
+        "dungeon": "Wind Ruins",
+        "area": "Tiwana Ruins",
+        "floors": 1
+      },
+      {
+        "dungeon": "Burned-out Ruins",
+        "area": "Treasure Island",
+        "floors": 1
+      },
+      {
+        "dungeon": "Red Lake",
+        "area": "Treasure Island",
+        "floors": 1
+      },
+      {
+        "dungeon": "Silent Lake",
+        "area": "Spirits Forest",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Shadow",
+        "area": "Dark Elf Settlement",
+        "floors": 1
+      },
+      {
+        "dungeon": "Deep Blue Lake",
+        "area": "Yggdrasill",
+        "floors": 1
+      },
+      {
+        "dungeon": "Collapsed Ruins",
+        "area": "Gate of Recollection",
+        "floors": 1
+      },
+      {
+        "dungeon": "Mossy Ruins",
+        "area": "Gate of Recollection",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Heaven",
+        "area": "Water City",
+        "floors": 1
+      },
+      {
+        "dungeon": "Brightness Lake",
+        "area": "Mizuchi Shrine",
+        "floors": 1
+      },
+      {
+        "dungeon": "Watery Lake",
+        "area": "Mizuchi Shrine",
+        "floors": 1
+      },
+      {
+        "dungeon": "Deep Lake",
+        "area": "Mizuchi Shrine",
+        "floors": 1
+      },
+      {
+        "dungeon": "Mysterious Ruins",
+        "area": "Forgotten Village",
+        "floors": 1
+      },
+      {
+        "dungeon": "Town Ruins",
+        "area": "Donam",
+        "floors": 1
+      },
+      {
+        "dungeon": "Mirage Ruins",
+        "area": "Seles",
+        "floors": 1
+      },
+      {
+        "dungeon": "Soul Spring",
+        "area": "Yamato",
+        "floors": 1
+      },
+      {
+        "dungeon": "Great Edo Lake",
+        "area": "Edo",
+        "floors": 1
+      },
+      {
+        "dungeon": "Historic Ruins",
+        "area": "Shalom",
+        "floors": 1
+      },
+      {
+        "dungeon": "Canal",
+        "area": "Mikado Mausoleum",
+        "floors": 1
+      },
+      {
+        "dungeon": "Putrid Puddle",
+        "area": "Huge Swamp",
+        "floors": 1
+      },
+      {
+        "dungeon": "Stagnant Puddle",
+        "area": "Huge Swamp",
+        "floors": 1
+      },
+      {
+        "dungeon": "Muddy Puddle",
+        "area": "Huge Swamp",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Sandblast",
+        "area": "Water Shrine",
+        "floors": 1
+      }
+    ]
   },
   {
     "id": 76,
     "name": "Crystal",
     "category": "Jewels",
     "rarity": 5,
-    "effect": "Element: Metal"
+    "effect": "Element: Metal",
+    "purchase_in": [
+      "Earl's Castle",
+      "Mountaintop Shrine",
+      "Nightwalker Town",
+      "Water Shrine",
+      "Bedouin"
+    ],
+    "dropped_by": [
+      {
+        "id": 2,
+        "name": "Phalanx"
+      },
+      {
+        "id": 19,
+        "name": "Undead Knight"
+      },
+      {
+        "id": 27,
+        "name": "Hunter"
+      },
+      {
+        "id": 60,
+        "name": "Wraith"
+      },
+      {
+        "id": 81,
+        "name": "Siren"
+      },
+      {
+        "id": 94,
+        "name": "Shadow Wolf"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Yggdrasill",
+        "status": "Offline"
+      },
+      {
+        "area": "Royal Tomb",
+        "status": "Offline"
+      },
+      {
+        "area": "Tiwana Ruins",
+        "status": "Online"
+      },
+      {
+        "area": "Royal Tomb",
+        "status": "Online"
+      },
+      {
+        "area": "Runeheim",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Red Wolf Castle",
+        "area": "Cressence",
+        "floors": 2
+      },
+      {
+        "dungeon": "Beast Palace",
+        "area": "Gulldria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Shadow Tower",
+        "area": "Ruins Road",
+        "floors": 3
+      },
+      {
+        "dungeon": "Abysm",
+        "area": "Ruins Road",
+        "floors": 3
+      },
+      {
+        "dungeon": "Mayor's House",
+        "area": "Elfaria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Giant Lair",
+        "area": "Beast Lair",
+        "floors": 3
+      },
+      {
+        "dungeon": "Patriarch's House",
+        "area": "Thick Forest",
+        "floors": 3
+      },
+      {
+        "dungeon": "Deserted Ruins",
+        "area": "Deserted Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Altar of the Spirits",
+        "area": "Altar of the Spirits",
+        "floors": 3
+      },
+      {
+        "dungeon": "Sealed Cavern",
+        "area": "Tiwana Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Stone Tower",
+        "area": "Tiwana Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Earth Shrine",
+        "area": "Tiwana Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Meeting Place",
+        "area": "Ilyumine",
+        "floors": 3
+      },
+      {
+        "dungeon": "Wind Hole",
+        "area": "Distaria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Merchant League",
+        "area": "Distaria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Surveillance Fort",
+        "area": "Pirate Island",
+        "floors": 3
+      },
+      {
+        "dungeon": "Hideout",
+        "area": "Pirate Island",
+        "floors": 3
+      },
+      {
+        "dungeon": "Fire Shrine",
+        "area": "Treasure Island",
+        "floors": 3
+      },
+      {
+        "dungeon": "Ivory Tower",
+        "area": "Earl's Castle",
+        "floors": 3
+      },
+      {
+        "dungeon": "Darkness Cavern",
+        "area": "Dark Elf Settlement",
+        "floors": 3
+      },
+      {
+        "dungeon": "Tower of Darkness",
+        "area": "Dark Elf Settlement",
+        "floors": 3
+      },
+      {
+        "dungeon": "Tree Ruins",
+        "area": "Yggdrasill",
+        "floors": 3
+      },
+      {
+        "dungeon": "Water Ruins",
+        "area": "Water City",
+        "floors": 3
+      },
+      {
+        "dungeon": "Foggy Tower",
+        "area": "Runeheim",
+        "floors": 3
+      },
+      {
+        "dungeon": "Mausoleum Entrance",
+        "area": "Mikado Mausoleum",
+        "floors": 3
+      },
+      {
+        "dungeon": "Sunset Castle",
+        "area": "Desert Road",
+        "floors": 3
+      },
+      {
+        "dungeon": "Sand Devil Lair",
+        "area": "Bedouin",
+        "floors": 3
+      }
+    ]
   },
   {
     "id": 77,
     "name": "Amethyst",
     "category": "Jewels",
     "rarity": 7,
-    "effect": "Element: Metal"
+    "effect": "Element: Metal",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 20,
+        "name": "Vampire"
+      },
+      {
+        "id": 61,
+        "name": "Specter"
+      },
+      {
+        "id": 72,
+        "name": "Garuda"
+      },
+      {
+        "id": 103,
+        "name": "Colossus"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Edo",
+        "status": "Offline"
+      },
+      {
+        "area": "Gate of Oblivion",
+        "status": "Offline"
+      },
+      {
+        "area": "Water City",
+        "status": "Online"
+      },
+      {
+        "area": "Edo",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Flame Pit",
+        "area": "Deeva Volcano",
+        "floors": 5
+      },
+      {
+        "dungeon": "Tower of Trees",
+        "area": "Yggdrasill",
+        "floors": 5
+      },
+      {
+        "dungeon": "Mountain Path",
+        "area": "Forgotten Village",
+        "floors": 5
+      },
+      {
+        "dungeon": "Origin Altar",
+        "area": "Mountaintop Shrine",
+        "floors": 5
+      },
+      {
+        "dungeon": "Mikado Lodge",
+        "area": "Shalom",
+        "floors": 5
+      },
+      {
+        "dungeon": "Metal Shrine",
+        "area": "Mikado Mausoleum",
+        "floors": 5
+      },
+      {
+        "dungeon": "Giant Sculpture",
+        "area": "Desert Road",
+        "floors": 5
+      },
+      {
+        "dungeon": "Tomb of the Dead",
+        "area": "Huge Swamp",
+        "floors": 5
+      },
+      {
+        "dungeon": "Fort of Oblivion",
+        "area": "Gate of Oblivion",
+        "floors": 5
+      },
+      {
+        "dungeon": "Ishtal Castle",
+        "area": "Ishtal",
+        "floors": 5
+      },
+      {
+        "dungeon": "Royal Tomb",
+        "area": "Royal Tomb",
+        "floors": 5
+      }
+    ]
   },
   {
     "id": 78,
     "name": "Opal",
     "category": "Jewels",
     "rarity": 8,
-    "effect": "Element: Metal"
+    "effect": "Element: Metal",
+    "purchase_in": [
+      "Mizuchi Shrine",
+      "Forgotten Village",
+      "Huge Swamp"
+    ],
+    "dropped_by": [
+      {
+        "id": 5,
+        "name": "Ogre"
+      },
+      {
+        "id": 8,
+        "name": "Sword Master"
+      },
+      {
+        "id": 28,
+        "name": "Sniper"
+      },
+      {
+        "id": 41,
+        "name": "Lich Lord"
+      },
+      {
+        "id": 69,
+        "name": "Ladyhawke"
+      },
+      {
+        "id": 73,
+        "name": "Rock"
+      },
+      {
+        "id": 95,
+        "name": "Hell Hound"
+      },
+      {
+        "id": 104,
+        "name": "Talos"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Forgotten Village",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Quiet Lakeside",
+        "area": "Mizuchi Shrine",
+        "floors": 13
+      }
+    ]
   },
   {
     "id": 79,
     "name": "Tourmaline",
     "category": "Jewels",
     "rarity": 3,
-    "effect": "Element: Earth"
+    "effect": "Element: Earth",
+    "purchase_in": [
+      "Thick Forest"
+    ],
+    "dropped_by": [
+      {
+        "id": 3,
+        "name": "Orc"
+      },
+      {
+        "id": 10,
+        "name": "Monk"
+      },
+      {
+        "id": 26,
+        "name": "Archer"
+      },
+      {
+        "id": 44,
+        "name": "Scale Runner"
+      },
+      {
+        "id": 62,
+        "name": "Zombie"
+      },
+      {
+        "id": 80,
+        "name": "Banshee"
+      },
+      {
+        "id": 93,
+        "name": "Dingo"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Thick Forest",
+        "status": "Offline"
+      },
+      {
+        "area": "Deeva Volcano",
+        "status": "Offline"
+      },
+      {
+        "area": "Spirits Forest",
+        "status": "Offline"
+      },
+      {
+        "area": "Thick Forest",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Red Wolf Castle",
+        "area": "Cressence",
+        "floors": 2
+      }
+    ]
   },
   {
     "id": 80,
     "name": "Onyx",
     "category": "Jewels",
     "rarity": 5,
-    "effect": "Element: Earth"
+    "effect": "Element: Earth",
+    "purchase_in": [
+      "Yggdrasill",
+      "Water City",
+      "Donam",
+      "Runeheim",
+      "Seles",
+      "Gate of Oblivion",
+      "Pyramid",
+      "Ishtal",
+      "Royal Tomb"
+    ],
+    "dropped_by": [
+      {
+        "id": 4,
+        "name": "Orc Chief"
+      },
+      {
+        "id": 23,
+        "name": "Rogue"
+      },
+      {
+        "id": 45,
+        "name": "Large Scale"
+      },
+      {
+        "id": 68,
+        "name": "Sky Stalker"
+      },
+      {
+        "id": 90,
+        "name": "Troll"
+      },
+      {
+        "id": 113,
+        "name": "Rock Wall"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Gate of Recollection",
+        "status": "Offline"
+      },
+      {
+        "area": "Ishtal",
+        "status": "Offline"
+      },
+      {
+        "area": "Treasure Island",
+        "status": "Online"
+      },
+      {
+        "area": "Ishtal",
+        "status": "Online"
+      },
+      {
+        "area": "Seles",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Red Wolf Castle",
+        "area": "Cressence",
+        "floors": 2
+      }
+    ]
   },
   {
     "id": 81,
     "name": "Pearl",
     "category": "Jewels",
     "rarity": 8,
-    "effect": "Element: Earth"
+    "effect": "Element: Earth",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 12,
+        "name": "Master Monk"
+      },
+      {
+        "id": 16,
+        "name": "Paladin"
+      },
+      {
+        "id": 37,
+        "name": "Bishop"
+      },
+      {
+        "id": 47,
+        "name": "Naga"
+      },
+      {
+        "id": 78,
+        "name": "Scathacha"
+      },
+      {
+        "id": 82,
+        "name": "Succubus"
+      },
+      {
+        "id": 100,
+        "name": "Imperial Guard"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Forgotten Village",
+        "status": "Offline"
+      },
+      {
+        "area": "Shalom",
+        "status": "Offline"
+      },
+      {
+        "area": "Mizuchi Shrine",
+        "status": "Online"
+      },
+      {
+        "area": "Shalom",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Flame Pit",
+        "area": "Deeva Volcano",
+        "floors": 5
+      },
+      {
+        "dungeon": "Tower of Trees",
+        "area": "Yggdrasill",
+        "floors": 5
+      },
+      {
+        "dungeon": "Mountain Path",
+        "area": "Forgotten Village",
+        "floors": 5
+      },
+      {
+        "dungeon": "Origin Altar",
+        "area": "Mountaintop Shrine",
+        "floors": 5
+      },
+      {
+        "dungeon": "Mikado Lodge",
+        "area": "Shalom",
+        "floors": 5
+      },
+      {
+        "dungeon": "Metal Shrine",
+        "area": "Mikado Mausoleum",
+        "floors": 5
+      },
+      {
+        "dungeon": "Giant Sculpture",
+        "area": "Desert Road",
+        "floors": 5
+      },
+      {
+        "dungeon": "Tomb of the Dead",
+        "area": "Huge Swamp",
+        "floors": 5
+      },
+      {
+        "dungeon": "Fort of Oblivion",
+        "area": "Gate of Oblivion",
+        "floors": 5
+      },
+      {
+        "dungeon": "Ishtal Castle",
+        "area": "Ishtal",
+        "floors": 5
+      },
+      {
+        "dungeon": "Royal Tomb",
+        "area": "Royal Tomb",
+        "floors": 5
+      }
+    ]
   },
   {
     "id": 82,
     "name": "Topaz",
     "category": "Jewels",
     "rarity": 8,
-    "effect": "Element: Earth"
+    "effect": "Element: Earth",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 24,
+        "name": "Assassin"
+      },
+      {
+        "id": 33,
+        "name": "Adept"
+      },
+      {
+        "id": 50,
+        "name": "Wyvern"
+      },
+      {
+        "id": 51,
+        "name": "Dragon"
+      },
+      {
+        "id": 83,
+        "name": "Morrigan"
+      },
+      {
+        "id": 87,
+        "name": "Arc Demon"
+      },
+      {
+        "id": 109,
+        "name": "Blood Ooze"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Mountaintop Shrine",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Quiet Lakeside",
+        "area": "Mizuchi Shrine",
+        "floors": 13
+      },
+      {
+        "dungeon": "Mossy Cavern",
+        "area": "Forgotten Village",
+        "floors": 14
+      }
+    ]
   },
   {
     "id": 90,
     "name": "Copper",
     "category": "Ores",
     "rarity": 1,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [
+      "Elynotis",
+      "Cressence",
+      "Gulldria",
+      "Ruins Road",
+      "Beast Lair",
+      "Thick Forest",
+      "Deserted Ruins"
+    ],
+    "dropped_by": [],
+    "area_searches": [
+      {
+        "area": "Elynotis",
+        "status": "Offline"
+      },
+      {
+        "area": "Cressence",
+        "status": "Offline"
+      },
+      {
+        "area": "Beast Lair",
+        "status": "Offline"
+      },
+      {
+        "area": "Thick Forest",
+        "status": "Offline"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 91,
     "name": "Chrome",
     "category": "Ores",
     "rarity": 2,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [
+      "Elfaria",
+      "Altar of the Spirits",
+      "Tiwana Ruins",
+      "Ilyumine",
+      "Deeva Volcano",
+      "Distaria",
+      "Pirate Island",
+      "Treasure Island",
+      "Spirits Forest",
+      "Gate of Recollection"
+    ],
+    "dropped_by": [],
+    "area_searches": [
+      {
+        "area": "Deserted Ruins",
+        "status": "Offline"
+      },
+      {
+        "area": "Distaria",
+        "status": "Offline"
+      },
+      {
+        "area": "Pirate Island",
+        "status": "Offline"
+      },
+      {
+        "area": "Elynotis",
+        "status": "Online"
+      },
+      {
+        "area": "Cressence",
+        "status": "Online"
+      },
+      {
+        "area": "Beast Lair",
+        "status": "Online"
+      },
+      {
+        "area": "Thick Forest",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Castle Matres",
+        "area": "Elynotis",
+        "floors": 1
+      },
+      {
+        "dungeon": "Old Ruins",
+        "area": "Ruins Road",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Silk",
+        "area": "Elfaria",
+        "floors": 1
+      },
+      {
+        "dungeon": "Beast Lair",
+        "area": "Beast Lair",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Stagnation",
+        "area": "Deserted Ruins",
+        "floors": 1
+      },
+      {
+        "dungeon": "Moon Ruins",
+        "area": "Altar of the Spirits",
+        "floors": 1
+      },
+      {
+        "dungeon": "Sun Ruins",
+        "area": "Altar of the Spirits",
+        "floors": 1
+      },
+      {
+        "dungeon": "Wind Ruins",
+        "area": "Tiwana Ruins",
+        "floors": 1
+      },
+      {
+        "dungeon": "Burned-out Ruins",
+        "area": "Treasure Island",
+        "floors": 1
+      },
+      {
+        "dungeon": "Red Lake",
+        "area": "Treasure Island",
+        "floors": 1
+      },
+      {
+        "dungeon": "Silent Lake",
+        "area": "Spirits Forest",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Shadow",
+        "area": "Dark Elf Settlement",
+        "floors": 1
+      },
+      {
+        "dungeon": "Deep Blue Lake",
+        "area": "Yggdrasill",
+        "floors": 1
+      },
+      {
+        "dungeon": "Collapsed Ruins",
+        "area": "Gate of Recollection",
+        "floors": 1
+      },
+      {
+        "dungeon": "Mossy Ruins",
+        "area": "Gate of Recollection",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Heaven",
+        "area": "Water City",
+        "floors": 1
+      },
+      {
+        "dungeon": "Brightness Lake",
+        "area": "Mizuchi Shrine",
+        "floors": 1
+      },
+      {
+        "dungeon": "Watery Lake",
+        "area": "Mizuchi Shrine",
+        "floors": 1
+      },
+      {
+        "dungeon": "Deep Lake",
+        "area": "Mizuchi Shrine",
+        "floors": 1
+      },
+      {
+        "dungeon": "Mysterious Ruins",
+        "area": "Forgotten Village",
+        "floors": 1
+      },
+      {
+        "dungeon": "Town Ruins",
+        "area": "Donam",
+        "floors": 1
+      },
+      {
+        "dungeon": "Mirage Ruins",
+        "area": "Seles",
+        "floors": 1
+      },
+      {
+        "dungeon": "Soul Spring",
+        "area": "Yamato",
+        "floors": 1
+      },
+      {
+        "dungeon": "Great Edo Lake",
+        "area": "Edo",
+        "floors": 1
+      },
+      {
+        "dungeon": "Historic Ruins",
+        "area": "Shalom",
+        "floors": 1
+      },
+      {
+        "dungeon": "Canal",
+        "area": "Mikado Mausoleum",
+        "floors": 1
+      },
+      {
+        "dungeon": "Putrid Puddle",
+        "area": "Huge Swamp",
+        "floors": 1
+      },
+      {
+        "dungeon": "Stagnant Puddle",
+        "area": "Huge Swamp",
+        "floors": 1
+      },
+      {
+        "dungeon": "Muddy Puddle",
+        "area": "Huge Swamp",
+        "floors": 1
+      },
+      {
+        "dungeon": "Lake Sandblast",
+        "area": "Water Shrine",
+        "floors": 1
+      }
+    ]
   },
   {
     "id": 92,
     "name": "Silver",
     "category": "Ores",
     "rarity": 3,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [
+      "Earl's Castle",
+      "Yggdrasill",
+      "Water City",
+      "Mizuchi Shrine",
+      "Donam",
+      "Runeheim",
+      "Seles",
+      "Nomad",
+      "Pyramid",
+      "Ishtal",
+      "Water Shrine",
+      "Royal Tomb",
+      "Bedouin"
+    ],
+    "dropped_by": [],
+    "area_searches": [
+      {
+        "area": "Spirits Forest",
+        "status": "Offline"
+      },
+      {
+        "area": "Elfaria",
+        "status": "Offline"
+      },
+      {
+        "area": "Donam",
+        "status": "Offline"
+      },
+      {
+        "area": "Runeheim",
+        "status": "Offline"
+      },
+      {
+        "area": "Tiwana Ruins",
+        "status": "Offline"
+      },
+      {
+        "area": "Treasure Island",
+        "status": "Offline"
+      },
+      {
+        "area": "Seles",
+        "status": "Offline"
+      },
+      {
+        "area": "Deeva Volcano",
+        "status": "Offline"
+      },
+      {
+        "area": "Distaria",
+        "status": "Online"
+      },
+      {
+        "area": "Deserted Ruins",
+        "status": "Online"
+      },
+      {
+        "area": "Pirate Island",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Red Wolf Castle",
+        "area": "Cressence",
+        "floors": 2
+      }
+    ]
   },
   {
     "id": 93,
     "name": "Gold",
     "category": "Ores",
     "rarity": 4,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [
+      "Dark Elf Settlement",
+      "Echigo",
+      "Yamato",
+      "Edo",
+      "Shalom",
+      "Mikado Mausoleum"
+    ],
+    "dropped_by": [],
+    "area_searches": [
+      {
+        "area": "Royal Tomb",
+        "status": "Offline"
+      },
+      {
+        "area": "Nomad",
+        "status": "Offline"
+      },
+      {
+        "area": "Bedouin",
+        "status": "Offline"
+      },
+      {
+        "area": "Pyramid",
+        "status": "Offline"
+      },
+      {
+        "area": "Ishtal",
+        "status": "Offline"
+      },
+      {
+        "area": "Seles",
+        "status": "Online"
+      },
+      {
+        "area": "Elfaria",
+        "status": "Online"
+      },
+      {
+        "area": "Spirits Forest",
+        "status": "Online"
+      },
+      {
+        "area": "Tiwana Ruins",
+        "status": "Online"
+      },
+      {
+        "area": "Donam",
+        "status": "Online"
+      },
+      {
+        "area": "Deeva Volcano",
+        "status": "Online"
+      },
+      {
+        "area": "Runeheim",
+        "status": "Online"
+      },
+      {
+        "area": "Treasure Island",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 94,
     "name": "Platinum",
     "category": "Ores",
     "rarity": 5,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [
+      "Desert Road",
+      "Huge Swamp",
+      "Nightwalker Town"
+    ],
+    "dropped_by": [],
+    "area_searches": [
+      {
+        "area": "Altar of the Spirits",
+        "status": "Offline"
+      },
+      {
+        "area": "Shalom",
+        "status": "Offline"
+      },
+      {
+        "area": "Yggdrasill",
+        "status": "Offline"
+      },
+      {
+        "area": "Echigo",
+        "status": "Offline"
+      },
+      {
+        "area": "Water City",
+        "status": "Offline"
+      },
+      {
+        "area": "Dark Elf Settlement",
+        "status": "Offline"
+      },
+      {
+        "area": "Mizuchi Shrine",
+        "status": "Offline"
+      },
+      {
+        "area": "Edo",
+        "status": "Offline"
+      },
+      {
+        "area": "Nomad",
+        "status": "Online"
+      },
+      {
+        "area": "Bedouin",
+        "status": "Online"
+      },
+      {
+        "area": "Altar of the Spirits",
+        "status": "Online"
+      },
+      {
+        "area": "Pyramid",
+        "status": "Online"
+      },
+      {
+        "area": "Echigo",
+        "status": "Online"
+      },
+      {
+        "area": "Ishtal",
+        "status": "Online"
+      },
+      {
+        "area": "Dark Elf Settlement",
+        "status": "Online"
+      },
+      {
+        "area": "Royal Tomb",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Beast Palace",
+        "area": "Gulldria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Shadow Tower",
+        "area": "Ruins Road",
+        "floors": 3
+      },
+      {
+        "dungeon": "Abysm",
+        "area": "Ruins Road",
+        "floors": 3
+      },
+      {
+        "dungeon": "Mayor's House",
+        "area": "Elfaria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Giant Lair",
+        "area": "Beast Lair",
+        "floors": 3
+      },
+      {
+        "dungeon": "Patriarch's House",
+        "area": "Thick Forest",
+        "floors": 3
+      },
+      {
+        "dungeon": "Deserted Ruins",
+        "area": "Deserted Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Altar of the Spirits",
+        "area": "Altar of the Spirits",
+        "floors": 3
+      },
+      {
+        "dungeon": "Sealed Cavern",
+        "area": "Tiwana Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Stone Tower",
+        "area": "Tiwana Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Earth Shrine",
+        "area": "Tiwana Ruins",
+        "floors": 3
+      },
+      {
+        "dungeon": "Meeting Place",
+        "area": "Ilyumine",
+        "floors": 3
+      },
+      {
+        "dungeon": "Wind Hole",
+        "area": "Distaria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Merchant League",
+        "area": "Distaria",
+        "floors": 3
+      },
+      {
+        "dungeon": "Surveillance Fort",
+        "area": "Pirate Island",
+        "floors": 3
+      },
+      {
+        "dungeon": "Hideout",
+        "area": "Pirate Island",
+        "floors": 3
+      },
+      {
+        "dungeon": "Fire Shrine",
+        "area": "Treasure Island",
+        "floors": 3
+      },
+      {
+        "dungeon": "Spirit Lord Castle",
+        "area": "Spirits Forest",
+        "floors": 4
+      },
+      {
+        "dungeon": "Ivory Tower",
+        "area": "Earl's Castle",
+        "floors": 3
+      },
+      {
+        "dungeon": "Earl's Castle",
+        "area": "Earl's Castle",
+        "floors": 4
+      },
+      {
+        "dungeon": "Darkness Cavern",
+        "area": "Dark Elf Settlement",
+        "floors": 3
+      },
+      {
+        "dungeon": "Tower of Darkness",
+        "area": "Dark Elf Settlement",
+        "floors": 3
+      },
+      {
+        "dungeon": "Darkness Shrine",
+        "area": "Dark Elf Settlement",
+        "floors": 4
+      },
+      {
+        "dungeon": "Tree Ruins",
+        "area": "Yggdrasill",
+        "floors": 3
+      },
+      {
+        "dungeon": "Wood Shrine",
+        "area": "Yggdrasill",
+        "floors": 4
+      },
+      {
+        "dungeon": "Collapsed Cavern",
+        "area": "Gate of Recollection",
+        "floors": 4
+      },
+      {
+        "dungeon": "Recollection Fort",
+        "area": "Gate of Recollection",
+        "floors": 4
+      },
+      {
+        "dungeon": "Water Ruins",
+        "area": "Water City",
+        "floors": 3
+      },
+      {
+        "dungeon": "Underwater Temple",
+        "area": "Water City",
+        "floors": 4
+      },
+      {
+        "dungeon": "Mizuchi's Lair",
+        "area": "Mizuchi Shrine",
+        "floors": 4
+      },
+      {
+        "dungeon": "Lord Donam's Castle",
+        "area": "Donam",
+        "floors": 4
+      },
+      {
+        "dungeon": "Foggy Tower",
+        "area": "Runeheim",
+        "floors": 3
+      },
+      {
+        "dungeon": "Lord Runeheim's Castle",
+        "area": "Runeheim",
+        "floors": 4
+      },
+      {
+        "dungeon": "Lord Seles's Castle",
+        "area": "Seles",
+        "floors": 4
+      },
+      {
+        "dungeon": "Sandstorm Castle",
+        "area": "Nomad",
+        "floors": 4
+      },
+      {
+        "dungeon": "Moonlight Ruins",
+        "area": "Nomad",
+        "floors": 4
+      },
+      {
+        "dungeon": "Sandstorm Bar",
+        "area": "Nomad",
+        "floors": 4
+      },
+      {
+        "dungeon": "Training Cavern",
+        "area": "Echigo",
+        "floors": 4
+      },
+      {
+        "dungeon": "Ninja Lodge",
+        "area": "Echigo",
+        "floors": 4
+      },
+      {
+        "dungeon": "Firefighter Tower",
+        "area": "Yamato",
+        "floors": 4
+      },
+      {
+        "dungeon": "Xinzhou Lodge",
+        "area": "Yamato",
+        "floors": 4
+      },
+      {
+        "dungeon": "Motoyasu Lodge",
+        "area": "Edo",
+        "floors": 4
+      },
+      {
+        "dungeon": "Historic Tower",
+        "area": "Shalom",
+        "floors": 4
+      },
+      {
+        "dungeon": "Mausoleum Entrance",
+        "area": "Mikado Mausoleum",
+        "floors": 3
+      },
+      {
+        "dungeon": "Sunset Castle",
+        "area": "Desert Road",
+        "floors": 3
+      },
+      {
+        "dungeon": "Deep Stagnation",
+        "area": "Huge Swamp",
+        "floors": 4
+      },
+      {
+        "dungeon": "King's Castle",
+        "area": "Nightwalker Town",
+        "floors": 4
+      },
+      {
+        "dungeon": "Pyramid",
+        "area": "Pyramid",
+        "floors": 4
+      },
+      {
+        "dungeon": "Water Shrine",
+        "area": "Water Shrine",
+        "floors": 4
+      },
+      {
+        "dungeon": "Sand Devil Lair",
+        "area": "Bedouin",
+        "floors": 3
+      }
+    ]
   },
   {
     "id": 95,
     "name": "Mythril",
     "category": "Ores",
     "rarity": 6,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [
+      "Forgotten Village",
+      "Mountaintop Shrine",
+      "Gate of Oblivion"
+    ],
+    "dropped_by": [],
+    "area_searches": [
+      {
+        "area": "Huge Swamp",
+        "status": "Offline"
+      },
+      {
+        "area": "Mikado Mausoleum",
+        "status": "Offline"
+      },
+      {
+        "area": "Nightwalker Town",
+        "status": "Offline"
+      },
+      {
+        "area": "Forgotten Village",
+        "status": "Offline"
+      },
+      {
+        "area": "Mikado Mausoleum",
+        "status": "Online"
+      },
+      {
+        "area": "Yggdrasill",
+        "status": "Online"
+      },
+      {
+        "area": "Nightwalker Town",
+        "status": "Online"
+      },
+      {
+        "area": "Edo",
+        "status": "Online"
+      },
+      {
+        "area": "Water City",
+        "status": "Online"
+      },
+      {
+        "area": "Shalom",
+        "status": "Online"
+      },
+      {
+        "area": "Huge Swamp",
+        "status": "Online"
+      },
+      {
+        "area": "Mizuchi Shrine",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Air Hole",
+        "area": "Desert Road",
+        "floors": 7
+      },
+      {
+        "dungeon": "Night Ruins",
+        "area": "Nightwalker Town",
+        "floors": 6
+      },
+      {
+        "dungeon": "Garbage Dump",
+        "area": "Gate of Oblivion",
+        "floors": 7
+      },
+      {
+        "dungeon": "Sand Road",
+        "area": "Pyramid",
+        "floors": 6
+      },
+      {
+        "dungeon": "Desert Ruins 1",
+        "area": "Bedouin",
+        "floors": 7
+      }
+    ]
   },
   {
     "id": 96,
     "name": "Orihalcon",
     "category": "Ores",
     "rarity": 7,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [],
+    "dropped_by": [],
+    "area_searches": [
+      {
+        "area": "Mountaintop Shrine",
+        "status": "Offline"
+      },
+      {
+        "area": "Forgotten Village",
+        "status": "Online"
+      },
+      {
+        "area": "Mountaintop Shrine",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Base Cavern",
+        "area": "Deeva Volcano",
+        "floors": 10
+      },
+      {
+        "dungeon": "Wind Cavern",
+        "area": "Deeva Volcano",
+        "floors": 11
+      },
+      {
+        "dungeon": "Fire Cavern",
+        "area": "Deeva Volcano",
+        "floors": 12
+      },
+      {
+        "dungeon": "Mole Hole",
+        "area": "Yggdrasill",
+        "floors": 9
+      },
+      {
+        "dungeon": "Deep Blue Cavern",
+        "area": "Water City",
+        "floors": 12
+      },
+      {
+        "dungeon": "Quiet Lakeside",
+        "area": "Mizuchi Shrine",
+        "floors": 13
+      },
+      {
+        "dungeon": "Old Cavern",
+        "area": "Forgotten Village",
+        "floors": 9
+      },
+      {
+        "dungeon": "Origin Tower",
+        "area": "Mountaintop Shrine",
+        "floors": 10
+      },
+      {
+        "dungeon": "Ivory Cavern",
+        "area": "Mountaintop Shrine",
+        "floors": 11
+      },
+      {
+        "dungeon": "Jade Ruins",
+        "area": "Mountaintop Shrine",
+        "floors": 12
+      },
+      {
+        "dungeon": "Edo Tower",
+        "area": "Edo",
+        "floors": 8
+      },
+      {
+        "dungeon": "Guard Station",
+        "area": "Mikado Mausoleum",
+        "floors": 8
+      },
+      {
+        "dungeon": "Yomotsu Hirasaka",
+        "area": "Mikado Mausoleum",
+        "floors": 9
+      },
+      {
+        "dungeon": "Underground Passage",
+        "area": "Desert Road",
+        "floors": 10
+      },
+      {
+        "dungeon": "Shadow Moon Tower",
+        "area": "Nightwalker Town",
+        "floors": 8
+      },
+      {
+        "dungeon": "Mountain of Rubble",
+        "area": "Gate of Oblivion",
+        "floors": 9
+      },
+      {
+        "dungeon": "Stone Tree",
+        "area": "Gate of Oblivion",
+        "floors": 11
+      },
+      {
+        "dungeon": "Way of the Dead",
+        "area": "Gate of Oblivion",
+        "floors": 8
+      },
+      {
+        "dungeon": "Sand Cavern",
+        "area": "Pyramid",
+        "floors": 9
+      },
+      {
+        "dungeon": "Sand Ruins",
+        "area": "Pyramid",
+        "floors": 11
+      },
+      {
+        "dungeon": "Rockwork Cavern",
+        "area": "Ishtal",
+        "floors": 12
+      },
+      {
+        "dungeon": "Ocean Ruins",
+        "area": "Water Shrine",
+        "floors": 9
+      },
+      {
+        "dungeon": "Ice Ruins",
+        "area": "Water Shrine",
+        "floors": 9
+      },
+      {
+        "dungeon": "Deep Cavern",
+        "area": "Royal Tomb",
+        "floors": 9
+      },
+      {
+        "dungeon": "Cold Cavern",
+        "area": "Royal Tomb",
+        "floors": 10
+      },
+      {
+        "dungeon": "Ancient Tomb",
+        "area": "Royal Tomb",
+        "floors": 11
+      },
+      {
+        "dungeon": "Great Tomb",
+        "area": "Royal Tomb",
+        "floors": 12
+      },
+      {
+        "dungeon": "Desert Ruins 2",
+        "area": "Bedouin",
+        "floors": 9
+      }
+    ]
   },
   {
     "id": 1,
     "name": "Lute",
     "category": "Other Materials",
     "rarity": 2,
-    "effect": "AGI Up"
+    "effect": "AGI Up",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 0,
+        "name": "Soldier"
+      },
+      {
+        "id": 84,
+        "name": "Lycanthrope"
+      },
+      {
+        "id": 26,
+        "name": "Archer"
+      },
+      {
+        "id": 80,
+        "name": "Banshee"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Gulldria",
+        "status": "Offline"
+      },
+      {
+        "area": "Gate of Recollection",
+        "status": "Offline"
+      },
+      {
+        "area": "Gulldria",
+        "status": "Online"
+      },
+      {
+        "area": "Gate of Recollection",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 2,
     "name": "Harp",
     "category": "Other Materials",
     "rarity": 2,
-    "effect": "DEX Up"
+    "effect": "DEX Up",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 30,
+        "name": "Noble"
+      },
+      {
+        "id": 35,
+        "name": "Priest"
+      },
+      {
+        "id": 89,
+        "name": "Caveman"
+      },
+      {
+        "id": 97,
+        "name": "Gargoyle"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Ilyumine",
+        "status": "Offline"
+      },
+      {
+        "area": "Yamato",
+        "status": "Offline"
+      },
+      {
+        "area": "Ilyumine",
+        "status": "Online"
+      },
+      {
+        "area": "Yamato",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 3,
     "name": "Book of Wisdom",
     "category": "Other Materials",
     "rarity": 2,
-    "effect": "INT Up"
+    "effect": "INT Up",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 43,
+        "name": "Lizardfoot"
+      },
+      {
+        "id": 44,
+        "name": "Scale Runner"
+      },
+      {
+        "id": 93,
+        "name": "Dingo"
+      },
+      {
+        "id": 106,
+        "name": "Primitive Cell"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Ruins Road",
+        "status": "Offline"
+      },
+      {
+        "area": "Gate of Oblivion",
+        "status": "Offline"
+      },
+      {
+        "area": "Ruins Road",
+        "status": "Online"
+      },
+      {
+        "area": "Gate of Oblivion",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 4,
     "name": "Book of Conduct",
     "category": "Other Materials",
     "rarity": 2,
-    "effect": "WIS Up"
+    "effect": "WIS Up",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 1,
+        "name": "Warrior"
+      },
+      {
+        "id": 55,
+        "name": "Skeleton"
+      },
+      {
+        "id": 59,
+        "name": "Wight"
+      },
+      {
+        "id": 112,
+        "name": "Mud Wall"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Earl's Castle",
+        "status": "Offline"
+      },
+      {
+        "area": "Earl's Castle",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 5,
     "name": "Spellbook-Sword",
     "category": "Other Materials",
     "rarity": 2,
-    "effect": "ATK Up"
+    "effect": "ATK Up",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 3,
+        "name": "Orc"
+      },
+      {
+        "id": 62,
+        "name": "Zombie"
+      },
+      {
+        "id": 66,
+        "name": "Sprite"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Water Shrine",
+        "status": "Offline"
+      },
+      {
+        "area": "Water Shrine",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 6,
     "name": "Spellbook-Shield",
     "category": "Other Materials",
     "rarity": 2,
-    "effect": "DEF Up"
+    "effect": "DEF Up",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 22,
+        "name": "Thief"
+      },
+      {
+        "id": 67,
+        "name": "Harpy"
+      },
+      {
+        "id": 75,
+        "name": "Amazoness"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Desert Road",
+        "status": "Offline"
+      },
+      {
+        "area": "Desert Road",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 7,
     "name": "Griffon Blood",
     "category": "Other Materials",
     "rarity": 4,
-    "effect": "AGI Down"
+    "effect": "AGI Down",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 2,
+        "name": "Phalanx"
+      },
+      {
+        "id": 60,
+        "name": "Wraith"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Cressence",
+        "status": "Offline"
+      },
+      {
+        "area": "Pyramid",
+        "status": "Offline"
+      },
+      {
+        "area": "Edo",
+        "status": "Offline"
+      },
+      {
+        "area": "Cressence",
+        "status": "Online"
+      },
+      {
+        "area": "Pyramid",
+        "status": "Online"
+      },
+      {
+        "area": "Edo",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 8,
     "name": "Ninja Blood",
     "category": "Other Materials",
     "rarity": 4,
-    "effect": "DEX Down"
+    "effect": "DEX Down",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 4,
+        "name": "Orc Chief"
+      },
+      {
+        "id": 68,
+        "name": "Sky Stalker"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Beast Lair",
+        "status": "Offline"
+      },
+      {
+        "area": "Royal Tomb",
+        "status": "Offline"
+      },
+      {
+        "area": "Mikado Mausoleum",
+        "status": "Offline"
+      },
+      {
+        "area": "Beast Lair",
+        "status": "Online"
+      },
+      {
+        "area": "Royal Tomb",
+        "status": "Online"
+      },
+      {
+        "area": "Mikado Mausoleum",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 9,
     "name": "Vampire Blood",
     "category": "Other Materials",
     "rarity": 4,
-    "effect": "INT Down"
+    "effect": "INT Down",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 19,
+        "name": "Undead Knight"
+      },
+      {
+        "id": 81,
+        "name": "Siren"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Elfaria",
+        "status": "Offline"
+      },
+      {
+        "area": "Bedouin",
+        "status": "Offline"
+      },
+      {
+        "area": "Forgotten Village",
+        "status": "Offline"
+      },
+      {
+        "area": "Elfaria",
+        "status": "Online"
+      },
+      {
+        "area": "Bedouin",
+        "status": "Online"
+      },
+      {
+        "area": "Forgotten Village",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 10,
     "name": "Lich Blood",
     "category": "Other Materials",
     "rarity": 4,
-    "effect": "WIS Down"
+    "effect": "WIS Down",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 23,
+        "name": "Rogue"
+      },
+      {
+        "id": 90,
+        "name": "Troll"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Tiwana Ruins",
+        "status": "Offline"
+      },
+      {
+        "area": "Yggdrasill",
+        "status": "Offline"
+      },
+      {
+        "area": "Tiwana Ruins",
+        "status": "Online"
+      },
+      {
+        "area": "Yggdrasill",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 11,
     "name": "Troll Blood",
     "category": "Other Materials",
     "rarity": 4,
-    "effect": "ATK Down"
+    "effect": "ATK Down",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 27,
+        "name": "Hunter"
+      },
+      {
+        "id": 94,
+        "name": "Shadow Wolf"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Water City",
+        "status": "Offline"
+      },
+      {
+        "area": "Donam",
+        "status": "Offline"
+      },
+      {
+        "area": "Water City",
+        "status": "Online"
+      },
+      {
+        "area": "Donam",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 12,
     "name": "Dullahan Blood",
     "category": "Other Materials",
     "rarity": 4,
-    "effect": "DEF Down"
+    "effect": "DEF Down",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 45,
+        "name": "Large Scale"
+      },
+      {
+        "id": 113,
+        "name": "Rock Wall"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Seles",
+        "status": "Offline"
+      },
+      {
+        "area": "Echigo",
+        "status": "Offline"
+      },
+      {
+        "area": "Seles",
+        "status": "Online"
+      },
+      {
+        "area": "Echigo",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 13,
     "name": "Kelpie Eye",
     "category": "Other Materials",
     "rarity": 3,
-    "effect": "Sleep"
+    "effect": "Sleep",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 10,
+        "name": "Monk"
+      },
+      {
+        "id": 56,
+        "name": "Skeleton Knight"
+      },
+      {
+        "id": 98,
+        "name": "Steel Gargoyle"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Gulldria",
+        "status": "Offline"
+      },
+      {
+        "area": "Water Shrine",
+        "status": "Offline"
+      },
+      {
+        "area": "Gate of Oblivion",
+        "status": "Offline"
+      },
+      {
+        "area": "Gulldria",
+        "status": "Online"
+      },
+      {
+        "area": "Water Shrine",
+        "status": "Online"
+      },
+      {
+        "area": "Gate of Oblivion",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 14,
     "name": "Kraken Eye",
     "category": "Other Materials",
     "rarity": 3,
-    "effect": "Paralysis"
+    "effect": "Paralysis",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 14,
+        "name": "Knight"
+      },
+      {
+        "id": 71,
+        "name": "Vulture"
+      },
+      {
+        "id": 102,
+        "name": "Golem"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Ilyumine",
+        "status": "Offline"
+      },
+      {
+        "area": "Desert Road",
+        "status": "Offline"
+      },
+      {
+        "area": "Ilyumine",
+        "status": "Online"
+      },
+      {
+        "area": "Desert Road",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 15,
     "name": "Serpent Eye",
     "category": "Other Materials",
     "rarity": 3,
-    "effect": "Poison"
+    "effect": "Poison",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 31,
+        "name": "Theoricus"
+      },
+      {
+        "id": 76,
+        "name": "High Elf"
+      },
+      {
+        "id": 107,
+        "name": "Poison Jelly"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Ruins Road",
+        "status": "Offline"
+      },
+      {
+        "area": "Gate of Recollection",
+        "status": "Offline"
+      },
+      {
+        "area": "Ruins Road",
+        "status": "Online"
+      },
+      {
+        "area": "Gate of Recollection",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 16,
     "name": "Forneus Eye",
     "category": "Other Materials",
     "rarity": 3,
-    "effect": "Silence"
+    "effect": "Silence",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 39,
+        "name": "Necromancer"
+      },
+      {
+        "id": 85,
+        "name": "Imp"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Earl's Castle",
+        "status": "Offline"
+      },
+      {
+        "area": "Yamato",
+        "status": "Offline"
+      },
+      {
+        "area": "Earl's Castle",
+        "status": "Online"
+      },
+      {
+        "area": "Yamato",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 17,
     "name": "Coral Potion",
     "category": "Other Materials",
     "rarity": 5,
-    "effect": "Sleep Resistance"
+    "effect": "Sleep Resistance",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 7,
+        "name": "Swordman"
+      },
+      {
+        "id": 40,
+        "name": "Lich"
+      },
+      {
+        "id": 77,
+        "name": "Valkyrie"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Elynotis",
+        "status": "Offline"
+      },
+      {
+        "area": "Tiwana Ruins",
+        "status": "Offline"
+      },
+      {
+        "area": "Edo",
+        "status": "Offline"
+      },
+      {
+        "area": "Altar of the Spirits",
+        "status": "Offline"
+      },
+      {
+        "area": "Runeheim",
+        "status": "Offline"
+      },
+      {
+        "area": "Runeheim",
+        "status": "Online"
+      },
+      {
+        "area": "Elynotis",
+        "status": "Online"
+      },
+      {
+        "area": "Tiwana Ruins",
+        "status": "Online"
+      },
+      {
+        "area": "Edo",
+        "status": "Online"
+      },
+      {
+        "area": "Altar of the Spirits",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 18,
     "name": "Blue Potion",
     "category": "Other Materials",
     "rarity": 5,
-    "effect": "Paralysis Resistance"
+    "effect": "Paralysis Resistance",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 15,
+        "name": "Temple Knight"
+      },
+      {
+        "id": 49,
+        "name": "Dragon Runner"
+      },
+      {
+        "id": 86,
+        "name": "Lesser Demon"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Beast Lair",
+        "status": "Offline"
+      },
+      {
+        "area": "Water City",
+        "status": "Offline"
+      },
+      {
+        "area": "Shalom",
+        "status": "Offline"
+      },
+      {
+        "area": "Treasure Island",
+        "status": "Offline"
+      },
+      {
+        "area": "Nomad",
+        "status": "Offline"
+      },
+      {
+        "area": "Nomad",
+        "status": "Online"
+      },
+      {
+        "area": "Beast Lair",
+        "status": "Online"
+      },
+      {
+        "area": "Water City",
+        "status": "Online"
+      },
+      {
+        "area": "Shalom",
+        "status": "Online"
+      },
+      {
+        "area": "Treasure Island",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 19,
     "name": "Gray Potion",
     "category": "Other Materials",
     "rarity": 5,
-    "effect": "Poison Resistance"
+    "effect": "Poison Resistance",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 32,
+        "name": "Philosophas"
+      },
+      {
+        "id": 57,
+        "name": "Skeleton Lord"
+      },
+      {
+        "id": 99,
+        "name": "Wing Guarder"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Thick Forest",
+        "status": "Offline"
+      },
+      {
+        "area": "Mizuchi Shrine",
+        "status": "Offline"
+      },
+      {
+        "area": "Spirits Forest",
+        "status": "Offline"
+      },
+      {
+        "area": "Royal Tomb",
+        "status": "Offline"
+      },
+      {
+        "area": "Royal Tomb",
+        "status": "Online"
+      },
+      {
+        "area": "Thick Forest",
+        "status": "Online"
+      },
+      {
+        "area": "Mizuchi Shrine",
+        "status": "Online"
+      },
+      {
+        "area": "Spirits Forest",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 20,
     "name": "Gold Potion",
     "category": "Other Materials",
     "rarity": 5,
-    "effect": "Silence Resistance"
+    "effect": "Silence Resistance",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 36,
+        "name": "High Priest"
+      },
+      {
+        "id": 63,
+        "name": "Living Dead"
+      },
+      {
+        "id": 108,
+        "name": "Acid Ooze"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Deserted Ruins",
+        "status": "Offline"
+      },
+      {
+        "area": "Donam",
+        "status": "Offline"
+      },
+      {
+        "area": "Dark Elf Settlement",
+        "status": "Offline"
+      },
+      {
+        "area": "Ishtal",
+        "status": "Offline"
+      },
+      {
+        "area": "Ishtal",
+        "status": "Online"
+      },
+      {
+        "area": "Deserted Ruins",
+        "status": "Online"
+      },
+      {
+        "area": "Donam",
+        "status": "Online"
+      },
+      {
+        "area": "Dark Elf Settlement",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 21,
     "name": "Gaia Rock",
     "category": "Other Materials",
     "rarity": 10,
-    "effect": "Magic Reflection"
+    "effect": "Magic Reflection",
+    "purchase_in": [],
+    "dropped_by": [],
+    "area_searches": [],
+    "dungeon_reward": [
+      {
+        "dungeon": "Quiet Lakeside",
+        "area": "Mizuchi Shrine",
+        "floors": 13
+      }
+    ]
   },
   {
     "id": 22,
     "name": "Pluto Rock",
     "category": "Other Materials",
     "rarity": 8,
-    "effect": "Magic Reduction"
+    "effect": "Magic Reduction",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 8,
+        "name": "Sword Master"
+      },
+      {
+        "id": 25,
+        "name": "Genzoh"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Bedouin",
+        "status": "Offline"
+      },
+      {
+        "area": "Bedouin",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Edo Tower",
+        "area": "Edo",
+        "floors": 8
+      },
+      {
+        "dungeon": "Guard Station",
+        "area": "Mikado Mausoleum",
+        "floors": 8
+      },
+      {
+        "dungeon": "Shadow Moon Tower",
+        "area": "Nightwalker Town",
+        "floors": 8
+      },
+      {
+        "dungeon": "Way of the Dead",
+        "area": "Gate of Oblivion",
+        "floors": 8
+      }
+    ]
   },
   {
     "id": 23,
     "name": "Neptune Rock",
     "category": "Other Materials",
     "rarity": 6,
-    "effect": "Physical Reduction 1"
+    "effect": "Physical Reduction 1",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 11,
+        "name": "Expert Monk"
+      },
+      {
+        "id": 64,
+        "name": "Ghoul"
+      },
+      {
+        "id": 114,
+        "name": "Thorn Wall"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Elynotis",
+        "status": "Offline"
+      },
+      {
+        "area": "Deserted Ruins",
+        "status": "Offline"
+      },
+      {
+        "area": "Elynotis",
+        "status": "Online"
+      },
+      {
+        "area": "Deserted Ruins",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Flame Pit",
+        "area": "Deeva Volcano",
+        "floors": 5
+      },
+      {
+        "dungeon": "Spirit Lord Castle",
+        "area": "Spirits Forest",
+        "floors": 4
+      },
+      {
+        "dungeon": "Earl's Castle",
+        "area": "Earl's Castle",
+        "floors": 4
+      },
+      {
+        "dungeon": "Darkness Shrine",
+        "area": "Dark Elf Settlement",
+        "floors": 4
+      },
+      {
+        "dungeon": "Tower of Trees",
+        "area": "Yggdrasill",
+        "floors": 5
+      },
+      {
+        "dungeon": "Wood Shrine",
+        "area": "Yggdrasill",
+        "floors": 4
+      },
+      {
+        "dungeon": "Collapsed Cavern",
+        "area": "Gate of Recollection",
+        "floors": 4
+      },
+      {
+        "dungeon": "Recollection Fort",
+        "area": "Gate of Recollection",
+        "floors": 4
+      },
+      {
+        "dungeon": "Underwater Temple",
+        "area": "Water City",
+        "floors": 4
+      },
+      {
+        "dungeon": "Mizuchi's Lair",
+        "area": "Mizuchi Shrine",
+        "floors": 4
+      },
+      {
+        "dungeon": "Mountain Path",
+        "area": "Forgotten Village",
+        "floors": 5
+      },
+      {
+        "dungeon": "Origin Altar",
+        "area": "Mountaintop Shrine",
+        "floors": 5
+      },
+      {
+        "dungeon": "Lord Donam's Castle",
+        "area": "Donam",
+        "floors": 4
+      },
+      {
+        "dungeon": "Lord Runeheim's Castle",
+        "area": "Runeheim",
+        "floors": 4
+      },
+      {
+        "dungeon": "Lord Seles's Castle",
+        "area": "Seles",
+        "floors": 4
+      },
+      {
+        "dungeon": "Sandstorm Castle",
+        "area": "Nomad",
+        "floors": 4
+      },
+      {
+        "dungeon": "Moonlight Ruins",
+        "area": "Nomad",
+        "floors": 4
+      },
+      {
+        "dungeon": "Sandstorm Bar",
+        "area": "Nomad",
+        "floors": 4
+      },
+      {
+        "dungeon": "Training Cavern",
+        "area": "Echigo",
+        "floors": 4
+      },
+      {
+        "dungeon": "Ninja Lodge",
+        "area": "Echigo",
+        "floors": 4
+      },
+      {
+        "dungeon": "Firefighter Tower",
+        "area": "Yamato",
+        "floors": 4
+      },
+      {
+        "dungeon": "Xinzhou Lodge",
+        "area": "Yamato",
+        "floors": 4
+      },
+      {
+        "dungeon": "Motoyasu Lodge",
+        "area": "Edo",
+        "floors": 4
+      },
+      {
+        "dungeon": "Historic Tower",
+        "area": "Shalom",
+        "floors": 4
+      },
+      {
+        "dungeon": "Mikado Lodge",
+        "area": "Shalom",
+        "floors": 5
+      },
+      {
+        "dungeon": "Metal Shrine",
+        "area": "Mikado Mausoleum",
+        "floors": 5
+      },
+      {
+        "dungeon": "Giant Sculpture",
+        "area": "Desert Road",
+        "floors": 5
+      },
+      {
+        "dungeon": "Tomb of the Dead",
+        "area": "Huge Swamp",
+        "floors": 5
+      },
+      {
+        "dungeon": "Deep Stagnation",
+        "area": "Huge Swamp",
+        "floors": 4
+      },
+      {
+        "dungeon": "King's Castle",
+        "area": "Nightwalker Town",
+        "floors": 4
+      },
+      {
+        "dungeon": "Fort of Oblivion",
+        "area": "Gate of Oblivion",
+        "floors": 5
+      },
+      {
+        "dungeon": "Pyramid",
+        "area": "Pyramid",
+        "floors": 4
+      },
+      {
+        "dungeon": "Ishtal Castle",
+        "area": "Ishtal",
+        "floors": 5
+      },
+      {
+        "dungeon": "Water Shrine",
+        "area": "Water Shrine",
+        "floors": 4
+      },
+      {
+        "dungeon": "Royal Tomb",
+        "area": "Royal Tomb",
+        "floors": 5
+      }
+    ]
   },
   {
     "id": 24,
     "name": "Mercury Rock",
     "category": "Other Materials",
     "rarity": 6,
-    "effect": "HP Absorption 1"
+    "effect": "HP Absorption 1",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 20,
+        "name": "Vampire"
+      },
+      {
+        "id": 72,
+        "name": "Garuda"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Cressence",
+        "status": "Offline"
+      },
+      {
+        "area": "Distaria",
+        "status": "Offline"
+      },
+      {
+        "area": "Cressence",
+        "status": "Online"
+      },
+      {
+        "area": "Distaria",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Flame Pit",
+        "area": "Deeva Volcano",
+        "floors": 5
+      },
+      {
+        "dungeon": "Tower of Trees",
+        "area": "Yggdrasill",
+        "floors": 5
+      },
+      {
+        "dungeon": "Mountain Path",
+        "area": "Forgotten Village",
+        "floors": 5
+      },
+      {
+        "dungeon": "Origin Altar",
+        "area": "Mountaintop Shrine",
+        "floors": 5
+      },
+      {
+        "dungeon": "Mikado Lodge",
+        "area": "Shalom",
+        "floors": 5
+      },
+      {
+        "dungeon": "Metal Shrine",
+        "area": "Mikado Mausoleum",
+        "floors": 5
+      },
+      {
+        "dungeon": "Giant Sculpture",
+        "area": "Desert Road",
+        "floors": 5
+      },
+      {
+        "dungeon": "Tomb of the Dead",
+        "area": "Huge Swamp",
+        "floors": 5
+      },
+      {
+        "dungeon": "Fort of Oblivion",
+        "area": "Gate of Oblivion",
+        "floors": 5
+      },
+      {
+        "dungeon": "Ishtal Castle",
+        "area": "Ishtal",
+        "floors": 5
+      },
+      {
+        "dungeon": "Royal Tomb",
+        "area": "Royal Tomb",
+        "floors": 5
+      }
+    ]
   },
   {
     "id": 25,
     "name": "Jupiter Rock",
     "category": "Other Materials",
     "rarity": 6,
-    "effect": "Auto HP Restore 1"
+    "effect": "Auto HP Restore 1",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 46,
+        "name": "Serpent"
+      },
+      {
+        "id": 91,
+        "name": "Troll King"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Gulldria",
+        "status": "Offline"
+      },
+      {
+        "area": "Pirate Island",
+        "status": "Offline"
+      },
+      {
+        "area": "Gulldria",
+        "status": "Online"
+      },
+      {
+        "area": "Pirate Island",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Spirit Lord Castle",
+        "area": "Spirits Forest",
+        "floors": 4
+      },
+      {
+        "dungeon": "Earl's Castle",
+        "area": "Earl's Castle",
+        "floors": 4
+      },
+      {
+        "dungeon": "Darkness Shrine",
+        "area": "Dark Elf Settlement",
+        "floors": 4
+      },
+      {
+        "dungeon": "Wood Shrine",
+        "area": "Yggdrasill",
+        "floors": 4
+      },
+      {
+        "dungeon": "Collapsed Cavern",
+        "area": "Gate of Recollection",
+        "floors": 4
+      },
+      {
+        "dungeon": "Recollection Fort",
+        "area": "Gate of Recollection",
+        "floors": 4
+      },
+      {
+        "dungeon": "Underwater Temple",
+        "area": "Water City",
+        "floors": 4
+      },
+      {
+        "dungeon": "Mizuchi's Lair",
+        "area": "Mizuchi Shrine",
+        "floors": 4
+      },
+      {
+        "dungeon": "Lord Donam's Castle",
+        "area": "Donam",
+        "floors": 4
+      },
+      {
+        "dungeon": "Lord Runeheim's Castle",
+        "area": "Runeheim",
+        "floors": 4
+      },
+      {
+        "dungeon": "Lord Seles's Castle",
+        "area": "Seles",
+        "floors": 4
+      },
+      {
+        "dungeon": "Sandstorm Castle",
+        "area": "Nomad",
+        "floors": 4
+      },
+      {
+        "dungeon": "Moonlight Ruins",
+        "area": "Nomad",
+        "floors": 4
+      },
+      {
+        "dungeon": "Sandstorm Bar",
+        "area": "Nomad",
+        "floors": 4
+      },
+      {
+        "dungeon": "Training Cavern",
+        "area": "Echigo",
+        "floors": 4
+      },
+      {
+        "dungeon": "Ninja Lodge",
+        "area": "Echigo",
+        "floors": 4
+      },
+      {
+        "dungeon": "Firefighter Tower",
+        "area": "Yamato",
+        "floors": 4
+      },
+      {
+        "dungeon": "Xinzhou Lodge",
+        "area": "Yamato",
+        "floors": 4
+      },
+      {
+        "dungeon": "Motoyasu Lodge",
+        "area": "Edo",
+        "floors": 4
+      },
+      {
+        "dungeon": "Historic Tower",
+        "area": "Shalom",
+        "floors": 4
+      },
+      {
+        "dungeon": "Deep Stagnation",
+        "area": "Huge Swamp",
+        "floors": 4
+      },
+      {
+        "dungeon": "King's Castle",
+        "area": "Nightwalker Town",
+        "floors": 4
+      },
+      {
+        "dungeon": "Pyramid",
+        "area": "Pyramid",
+        "floors": 4
+      },
+      {
+        "dungeon": "Water Shrine",
+        "area": "Water Shrine",
+        "floors": 4
+      }
+    ]
   },
   {
     "id": 26,
     "name": "Mars Rock",
     "category": "Other Materials",
     "rarity": 7,
-    "effect": "Critical 1"
+    "effect": "Critical 1",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 5,
+        "name": "Ogre"
+      },
+      {
+        "id": 95,
+        "name": "Hell Hound"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Earl's Castle",
+        "status": "Offline"
+      },
+      {
+        "area": "Earl's Castle",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 27,
     "name": "Uranus Rock",
     "category": "Other Materials",
     "rarity": 7,
-    "effect": "Counter 1"
+    "effect": "Counter 1",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 16,
+        "name": "Paladin"
+      },
+      {
+        "id": 100,
+        "name": "Imperial Guard"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Spirits Forest",
+        "status": "Offline"
+      },
+      {
+        "area": "Seles",
+        "status": "Offline"
+      },
+      {
+        "area": "Spirits Forest",
+        "status": "Online"
+      },
+      {
+        "area": "Seles",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 28,
     "name": "Venus Rock",
     "category": "Other Materials",
     "rarity": 6,
-    "effect": "Gold Recovery Up 1"
+    "effect": "Gold Recovery Up 1",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 61,
+        "name": "Specter"
+      },
+      {
+        "id": 103,
+        "name": "Colossus"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Thick Forest",
+        "status": "Offline"
+      },
+      {
+        "area": "Deeva Volcano",
+        "status": "Offline"
+      },
+      {
+        "area": "Thick Forest",
+        "status": "Online"
+      },
+      {
+        "area": "Deeva Volcano",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Spirit Lord Castle",
+        "area": "Spirits Forest",
+        "floors": 4
+      },
+      {
+        "dungeon": "Earl's Castle",
+        "area": "Earl's Castle",
+        "floors": 4
+      },
+      {
+        "dungeon": "Darkness Shrine",
+        "area": "Dark Elf Settlement",
+        "floors": 4
+      },
+      {
+        "dungeon": "Wood Shrine",
+        "area": "Yggdrasill",
+        "floors": 4
+      },
+      {
+        "dungeon": "Collapsed Cavern",
+        "area": "Gate of Recollection",
+        "floors": 4
+      },
+      {
+        "dungeon": "Recollection Fort",
+        "area": "Gate of Recollection",
+        "floors": 4
+      },
+      {
+        "dungeon": "Underwater Temple",
+        "area": "Water City",
+        "floors": 4
+      },
+      {
+        "dungeon": "Mizuchi's Lair",
+        "area": "Mizuchi Shrine",
+        "floors": 4
+      },
+      {
+        "dungeon": "Lord Donam's Castle",
+        "area": "Donam",
+        "floors": 4
+      },
+      {
+        "dungeon": "Lord Runeheim's Castle",
+        "area": "Runeheim",
+        "floors": 4
+      },
+      {
+        "dungeon": "Lord Seles's Castle",
+        "area": "Seles",
+        "floors": 4
+      },
+      {
+        "dungeon": "Sandstorm Castle",
+        "area": "Nomad",
+        "floors": 4
+      },
+      {
+        "dungeon": "Moonlight Ruins",
+        "area": "Nomad",
+        "floors": 4
+      },
+      {
+        "dungeon": "Sandstorm Bar",
+        "area": "Nomad",
+        "floors": 4
+      },
+      {
+        "dungeon": "Training Cavern",
+        "area": "Echigo",
+        "floors": 4
+      },
+      {
+        "dungeon": "Ninja Lodge",
+        "area": "Echigo",
+        "floors": 4
+      },
+      {
+        "dungeon": "Firefighter Tower",
+        "area": "Yamato",
+        "floors": 4
+      },
+      {
+        "dungeon": "Xinzhou Lodge",
+        "area": "Yamato",
+        "floors": 4
+      },
+      {
+        "dungeon": "Motoyasu Lodge",
+        "area": "Edo",
+        "floors": 4
+      },
+      {
+        "dungeon": "Historic Tower",
+        "area": "Shalom",
+        "floors": 4
+      },
+      {
+        "dungeon": "Deep Stagnation",
+        "area": "Huge Swamp",
+        "floors": 4
+      },
+      {
+        "dungeon": "King's Castle",
+        "area": "Nightwalker Town",
+        "floors": 4
+      },
+      {
+        "dungeon": "Pyramid",
+        "area": "Pyramid",
+        "floors": 4
+      },
+      {
+        "dungeon": "Water Shrine",
+        "area": "Water Shrine",
+        "floors": 4
+      }
+    ]
   },
   {
     "id": 29,
     "name": "Saturn Rock",
     "category": "Other Materials",
     "rarity": 8,
-    "effect": "Item Recovery"
+    "effect": "Item Recovery",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 12,
+        "name": "Master Monk"
+      },
+      {
+        "id": 34,
+        "name": "Mage Silion"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Desert Road",
+        "status": "Offline"
+      },
+      {
+        "area": "Desert Road",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Air Hole",
+        "area": "Desert Road",
+        "floors": 7
+      },
+      {
+        "dungeon": "Garbage Dump",
+        "area": "Gate of Oblivion",
+        "floors": 7
+      },
+      {
+        "dungeon": "Desert Ruins 1",
+        "area": "Bedouin",
+        "floors": 7
+      }
+    ]
   },
   {
     "id": 30,
     "name": "Ocean Tears",
     "category": "Other Materials",
     "rarity": 10,
-    "effect": "Revive"
+    "effect": "Revive",
+    "purchase_in": [],
+    "dropped_by": [],
+    "area_searches": [],
+    "dungeon_reward": [
+      {
+        "dungeon": "Tower of Fortune",
+        "area": "Mountaintop Shrine",
+        "floors": 15
+      }
+    ]
   },
   {
     "id": 31,
     "name": "Gunpowder",
     "category": "Other Materials",
     "rarity": 9,
-    "effect": "Self Destruct"
+    "effect": "Self Destruct",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 9,
+        "name": "Mikaduchi"
+      },
+      {
+        "id": 13,
+        "name": "Master Fist"
+      },
+      {
+        "id": 65,
+        "name": "Nephilia"
+      },
+      {
+        "id": 101,
+        "name": "Balrog"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Mountaintop Shrine",
+        "status": "Offline"
+      },
+      {
+        "area": "Nightwalker Town",
+        "status": "Offline"
+      },
+      {
+        "area": "Mountaintop Shrine",
+        "status": "Online"
+      },
+      {
+        "area": "Nightwalker Town",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Base Cavern",
+        "area": "Deeva Volcano",
+        "floors": 10
+      },
+      {
+        "dungeon": "Wind Cavern",
+        "area": "Deeva Volcano",
+        "floors": 11
+      },
+      {
+        "dungeon": "Mole Hole",
+        "area": "Yggdrasill",
+        "floors": 9
+      },
+      {
+        "dungeon": "Old Cavern",
+        "area": "Forgotten Village",
+        "floors": 9
+      },
+      {
+        "dungeon": "Origin Tower",
+        "area": "Mountaintop Shrine",
+        "floors": 10
+      },
+      {
+        "dungeon": "Ivory Cavern",
+        "area": "Mountaintop Shrine",
+        "floors": 11
+      },
+      {
+        "dungeon": "Yomotsu Hirasaka",
+        "area": "Mikado Mausoleum",
+        "floors": 9
+      },
+      {
+        "dungeon": "Underground Passage",
+        "area": "Desert Road",
+        "floors": 10
+      },
+      {
+        "dungeon": "Mountain of Rubble",
+        "area": "Gate of Oblivion",
+        "floors": 9
+      },
+      {
+        "dungeon": "Stone Tree",
+        "area": "Gate of Oblivion",
+        "floors": 11
+      },
+      {
+        "dungeon": "Sand Cavern",
+        "area": "Pyramid",
+        "floors": 9
+      },
+      {
+        "dungeon": "Sand Ruins",
+        "area": "Pyramid",
+        "floors": 11
+      },
+      {
+        "dungeon": "Ocean Ruins",
+        "area": "Water Shrine",
+        "floors": 9
+      },
+      {
+        "dungeon": "Ice Ruins",
+        "area": "Water Shrine",
+        "floors": 9
+      },
+      {
+        "dungeon": "Deep Cavern",
+        "area": "Royal Tomb",
+        "floors": 9
+      },
+      {
+        "dungeon": "Cold Cavern",
+        "area": "Royal Tomb",
+        "floors": 10
+      },
+      {
+        "dungeon": "Ancient Tomb",
+        "area": "Royal Tomb",
+        "floors": 11
+      },
+      {
+        "dungeon": "Desert Ruins 2",
+        "area": "Bedouin",
+        "floors": 9
+      }
+    ]
   },
   {
     "id": 32,
     "name": "Chaos Heart",
     "category": "Other Materials",
     "rarity": 7,
-    "effect": "Regenerate"
+    "effect": "Regenerate",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 24,
+        "name": "Assassin"
+      },
+      {
+        "id": 109,
+        "name": "Blood Ooze"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Treasure Island",
+        "status": "Offline"
+      },
+      {
+        "area": "Ishtal",
+        "status": "Offline"
+      },
+      {
+        "area": "Runeheim",
+        "status": "Offline"
+      },
+      {
+        "area": "Treasure Island",
+        "status": "Online"
+      },
+      {
+        "area": "Ishtal",
+        "status": "Online"
+      },
+      {
+        "area": "Runeheim",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 33,
     "name": "Dividing Heart",
     "category": "Other Materials",
     "rarity": 7,
-    "effect": "Multiply"
+    "effect": "Multiply",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 28,
+        "name": "Sniper"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Ruins Road",
+        "status": "Offline"
+      },
+      {
+        "area": "Ruins Road",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 34,
     "name": "Vulcan Rock",
     "category": "Other Materials",
     "rarity": 8,
-    "effect": "HP Absorption 2"
+    "effect": "HP Absorption 2",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 33,
+        "name": "Adept"
+      },
+      {
+        "id": 42,
+        "name": "Al Acid"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Altar of the Spirits",
+        "status": "Offline"
+      },
+      {
+        "area": "Altar of the Spirits",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Air Hole",
+        "area": "Desert Road",
+        "floors": 7
+      },
+      {
+        "dungeon": "Garbage Dump",
+        "area": "Gate of Oblivion",
+        "floors": 7
+      },
+      {
+        "dungeon": "Desert Ruins 1",
+        "area": "Bedouin",
+        "floors": 7
+      }
+    ]
   },
   {
     "id": 35,
     "name": "Io Rock",
     "category": "Other Materials",
     "rarity": 7,
-    "effect": "Auto HP Restore 2"
+    "effect": "Auto HP Restore 2",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 37,
+        "name": "Bishop"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Elfaria",
+        "status": "Offline"
+      },
+      {
+        "area": "Nomad",
+        "status": "Offline"
+      },
+      {
+        "area": "Elfaria",
+        "status": "Online"
+      },
+      {
+        "area": "Nomad",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 36,
     "name": "Ganymede Rock",
     "category": "Other Materials",
     "rarity": 8,
-    "effect": "Auto HP Restore 3"
+    "effect": "Auto HP Restore 3",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 41,
+        "name": "Lich Lord"
+      },
+      {
+        "id": 48,
+        "name": "Leviathan"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Yggdrasill",
+        "status": "Offline"
+      },
+      {
+        "area": "Yggdrasill",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Air Hole",
+        "area": "Desert Road",
+        "floors": 7
+      },
+      {
+        "dungeon": "Garbage Dump",
+        "area": "Gate of Oblivion",
+        "floors": 7
+      },
+      {
+        "dungeon": "Desert Ruins 1",
+        "area": "Bedouin",
+        "floors": 7
+      }
+    ]
   },
   {
     "id": 37,
     "name": "Mage's Book",
     "category": "Other Materials",
     "rarity": 8,
-    "effect": "Proof of Contract"
+    "effect": "Proof of Contract",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 47,
+        "name": "Naga"
+      },
+      {
+        "id": 52,
+        "name": "Tiamat"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Gate of Recollection",
+        "status": "Offline"
+      },
+      {
+        "area": "Gate of Recollection",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Air Hole",
+        "area": "Desert Road",
+        "floors": 7
+      },
+      {
+        "dungeon": "Garbage Dump",
+        "area": "Gate of Oblivion",
+        "floors": 7
+      },
+      {
+        "dungeon": "Desert Ruins 1",
+        "area": "Bedouin",
+        "floors": 7
+      }
+    ]
   },
   {
     "id": 38,
     "name": "Oberon Rock",
     "category": "Other Materials",
     "rarity": 8,
-    "effect": "Counter 2"
+    "effect": "Counter 2",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 51,
+        "name": "Dragon"
+      },
+      {
+        "id": 53,
+        "name": "Bardion"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Mizuchi Shrine",
+        "status": "Offline"
+      },
+      {
+        "area": "Mizuchi Shrine",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 39,
     "name": "Titania Rock",
     "category": "Other Materials",
     "rarity": 9,
-    "effect": "Counter 3"
+    "effect": "Counter 3",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 17,
+        "name": "Lord Redrick"
+      },
+      {
+        "id": 29,
+        "name": "Hell Sniper"
+      },
+      {
+        "id": 70,
+        "name": "Lady Sky"
+      },
+      {
+        "id": 105,
+        "name": "Behemoth"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Huge Swamp",
+        "status": "Offline"
+      },
+      {
+        "area": "Nightwalker Town",
+        "status": "Offline"
+      },
+      {
+        "area": "Huge Swamp",
+        "status": "Online"
+      },
+      {
+        "area": "Nightwalker Town",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Base Cavern",
+        "area": "Deeva Volcano",
+        "floors": 10
+      },
+      {
+        "dungeon": "Wind Cavern",
+        "area": "Deeva Volcano",
+        "floors": 11
+      },
+      {
+        "dungeon": "Fire Cavern",
+        "area": "Deeva Volcano",
+        "floors": 12
+      },
+      {
+        "dungeon": "Deep Blue Cavern",
+        "area": "Water City",
+        "floors": 12
+      },
+      {
+        "dungeon": "Origin Tower",
+        "area": "Mountaintop Shrine",
+        "floors": 10
+      },
+      {
+        "dungeon": "Ivory Cavern",
+        "area": "Mountaintop Shrine",
+        "floors": 11
+      },
+      {
+        "dungeon": "Jade Ruins",
+        "area": "Mountaintop Shrine",
+        "floors": 12
+      },
+      {
+        "dungeon": "Underground Passage",
+        "area": "Desert Road",
+        "floors": 10
+      },
+      {
+        "dungeon": "Stone Tree",
+        "area": "Gate of Oblivion",
+        "floors": 11
+      },
+      {
+        "dungeon": "Sand Ruins",
+        "area": "Pyramid",
+        "floors": 11
+      },
+      {
+        "dungeon": "Rockwork Cavern",
+        "area": "Ishtal",
+        "floors": 12
+      },
+      {
+        "dungeon": "Cold Cavern",
+        "area": "Royal Tomb",
+        "floors": 10
+      },
+      {
+        "dungeon": "Ancient Tomb",
+        "area": "Royal Tomb",
+        "floors": 11
+      },
+      {
+        "dungeon": "Great Tomb",
+        "area": "Royal Tomb",
+        "floors": 12
+      }
+    ]
   },
   {
     "id": 40,
     "name": "Deimos Rock",
     "category": "Other Materials",
     "rarity": 8,
-    "effect": "Critical 2"
+    "effect": "Critical 2",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 54,
+        "name": "Thyrion"
+      },
+      {
+        "id": 73,
+        "name": "Rock"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Dark Elf Settlement",
+        "status": "Offline"
+      },
+      {
+        "area": "Dark Elf Settlement",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Edo Tower",
+        "area": "Edo",
+        "floors": 8
+      },
+      {
+        "dungeon": "Guard Station",
+        "area": "Mikado Mausoleum",
+        "floors": 8
+      },
+      {
+        "dungeon": "Shadow Moon Tower",
+        "area": "Nightwalker Town",
+        "floors": 8
+      },
+      {
+        "dungeon": "Way of the Dead",
+        "area": "Gate of Oblivion",
+        "floors": 8
+      }
+    ]
   },
   {
     "id": 41,
     "name": "Phobos Rock",
     "category": "Other Materials",
     "rarity": 9,
-    "effect": "Critical 3"
+    "effect": "Critical 3",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 18,
+        "name": "Durahan"
+      },
+      {
+        "id": 38,
+        "name": "Savior"
+      },
+      {
+        "id": 92,
+        "name": "Gigantes"
+      },
+      {
+        "id": 110,
+        "name": "Kraken"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Huge Swamp",
+        "status": "Offline"
+      },
+      {
+        "area": "Gate of Oblivion",
+        "status": "Offline"
+      },
+      {
+        "area": "Huge Swamp",
+        "status": "Online"
+      },
+      {
+        "area": "Gate of Oblivion",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Fire Cavern",
+        "area": "Deeva Volcano",
+        "floors": 12
+      },
+      {
+        "dungeon": "Deep Blue Cavern",
+        "area": "Water City",
+        "floors": 12
+      },
+      {
+        "dungeon": "Jade Ruins",
+        "area": "Mountaintop Shrine",
+        "floors": 12
+      },
+      {
+        "dungeon": "Rockwork Cavern",
+        "area": "Ishtal",
+        "floors": 12
+      },
+      {
+        "dungeon": "Great Tomb",
+        "area": "Royal Tomb",
+        "floors": 12
+      }
+    ]
   },
   {
     "id": 42,
     "name": "Chrysaor Eye",
     "category": "Other Materials",
     "rarity": 7,
-    "effect": "Severe Paralysis"
+    "effect": "Severe Paralysis",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 50,
+        "name": "Wyvern"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Deeva Volcano",
+        "status": "Offline"
+      },
+      {
+        "area": "Deeva Volcano",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 43,
     "name": "Shyff Rock",
     "category": "Other Materials",
     "rarity": 8,
-    "effect": "Gold Recovery Up 2"
+    "effect": "Gold Recovery Up 2",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 74,
+        "name": "Tempest"
+      },
+      {
+        "id": 78,
+        "name": "Scathacha"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Echigo",
+        "status": "Offline"
+      },
+      {
+        "area": "Echigo",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Edo Tower",
+        "area": "Edo",
+        "floors": 8
+      },
+      {
+        "dungeon": "Guard Station",
+        "area": "Mikado Mausoleum",
+        "floors": 8
+      },
+      {
+        "dungeon": "Shadow Moon Tower",
+        "area": "Nightwalker Town",
+        "floors": 8
+      },
+      {
+        "dungeon": "Way of the Dead",
+        "area": "Gate of Oblivion",
+        "floors": 8
+      }
+    ]
   },
   {
     "id": 44,
     "name": "Gala Rock",
     "category": "Other Materials",
     "rarity": 9,
-    "effect": "Gold Recovery Up 3"
+    "effect": "Gold Recovery Up 3",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 21,
+        "name": "August"
+      },
+      {
+        "id": 58,
+        "name": "Skull King"
+      },
+      {
+        "id": 111,
+        "name": "O'Rosam"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Forgotten Village",
+        "status": "Offline"
+      },
+      {
+        "area": "Mountaintop Shrine",
+        "status": "Offline"
+      },
+      {
+        "area": "Forgotten Village",
+        "status": "Online"
+      },
+      {
+        "area": "Mountaintop Shrine",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Fire Cavern",
+        "area": "Deeva Volcano",
+        "floors": 12
+      },
+      {
+        "dungeon": "Mole Hole",
+        "area": "Yggdrasill",
+        "floors": 9
+      },
+      {
+        "dungeon": "Deep Blue Cavern",
+        "area": "Water City",
+        "floors": 12
+      },
+      {
+        "dungeon": "Old Cavern",
+        "area": "Forgotten Village",
+        "floors": 9
+      },
+      {
+        "dungeon": "Jade Ruins",
+        "area": "Mountaintop Shrine",
+        "floors": 12
+      },
+      {
+        "dungeon": "Yomotsu Hirasaka",
+        "area": "Mikado Mausoleum",
+        "floors": 9
+      },
+      {
+        "dungeon": "Mountain of Rubble",
+        "area": "Gate of Oblivion",
+        "floors": 9
+      },
+      {
+        "dungeon": "Sand Cavern",
+        "area": "Pyramid",
+        "floors": 9
+      },
+      {
+        "dungeon": "Rockwork Cavern",
+        "area": "Ishtal",
+        "floors": 12
+      },
+      {
+        "dungeon": "Ocean Ruins",
+        "area": "Water Shrine",
+        "floors": 9
+      },
+      {
+        "dungeon": "Ice Ruins",
+        "area": "Water Shrine",
+        "floors": 9
+      },
+      {
+        "dungeon": "Deep Cavern",
+        "area": "Royal Tomb",
+        "floors": 9
+      },
+      {
+        "dungeon": "Great Tomb",
+        "area": "Royal Tomb",
+        "floors": 12
+      },
+      {
+        "dungeon": "Desert Ruins 2",
+        "area": "Bedouin",
+        "floors": 9
+      }
+    ]
   },
   {
     "id": 45,
     "name": "Skylla Eye",
     "category": "Other Materials",
     "rarity": 7,
-    "effect": "Deep Sleep"
+    "effect": "Deep Sleep",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 69,
+        "name": "Ladyhawke"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Pirate Island",
+        "status": "Offline"
+      },
+      {
+        "area": "Pirate Island",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 46,
     "name": "Spellbook-Sickle",
     "category": "Other Materials",
     "rarity": 8,
-    "effect": "Warrior's Spirit"
+    "effect": "Warrior's Spirit",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 79,
+        "name": "Luna"
+      },
+      {
+        "id": 83,
+        "name": "Morrigan"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Yamato",
+        "status": "Offline"
+      },
+      {
+        "area": "Yamato",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Mole Hole",
+        "area": "Yggdrasill",
+        "floors": 9
+      },
+      {
+        "dungeon": "Old Cavern",
+        "area": "Forgotten Village",
+        "floors": 9
+      },
+      {
+        "dungeon": "Yomotsu Hirasaka",
+        "area": "Mikado Mausoleum",
+        "floors": 9
+      },
+      {
+        "dungeon": "Mountain of Rubble",
+        "area": "Gate of Oblivion",
+        "floors": 9
+      },
+      {
+        "dungeon": "Sand Cavern",
+        "area": "Pyramid",
+        "floors": 9
+      },
+      {
+        "dungeon": "Ocean Ruins",
+        "area": "Water Shrine",
+        "floors": 9
+      },
+      {
+        "dungeon": "Ice Ruins",
+        "area": "Water Shrine",
+        "floors": 9
+      },
+      {
+        "dungeon": "Deep Cavern",
+        "area": "Royal Tomb",
+        "floors": 9
+      },
+      {
+        "dungeon": "Desert Ruins 2",
+        "area": "Bedouin",
+        "floors": 9
+      }
+    ]
   },
   {
     "id": 47,
     "name": "Forbidden Spells",
     "category": "Other Materials",
     "rarity": 10,
-    "effect": "Hero's Spirit"
+    "effect": "Hero's Spirit",
+    "purchase_in": [],
+    "dropped_by": [],
+    "area_searches": [],
+    "dungeon_reward": [
+      {
+        "dungeon": "Mossy Cavern",
+        "area": "Forgotten Village",
+        "floors": 14
+      }
+    ]
   },
   {
     "id": 48,
     "name": "Snake Eye",
     "category": "Other Materials",
     "rarity": 7,
-    "effect": "Strong Silence"
+    "effect": "Strong Silence",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 82,
+        "name": "Succubus"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Distaria",
+        "status": "Offline"
+      },
+      {
+        "area": "Water Shrine",
+        "status": "Offline"
+      },
+      {
+        "area": "Distaria",
+        "status": "Online"
+      },
+      {
+        "area": "Water Shrine",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 49,
     "name": "Black Magic Book",
     "category": "Other Materials",
     "rarity": 8,
-    "effect": "Mage's Spirit"
+    "effect": "Mage's Spirit",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 88,
+        "name": "Bahzam DeGole"
+      },
+      {
+        "id": 104,
+        "name": "Talos"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Shalom",
+        "status": "Offline"
+      },
+      {
+        "area": "Shalom",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Base Cavern",
+        "area": "Deeva Volcano",
+        "floors": 10
+      },
+      {
+        "dungeon": "Mole Hole",
+        "area": "Yggdrasill",
+        "floors": 9
+      },
+      {
+        "dungeon": "Old Cavern",
+        "area": "Forgotten Village",
+        "floors": 9
+      },
+      {
+        "dungeon": "Origin Tower",
+        "area": "Mountaintop Shrine",
+        "floors": 10
+      },
+      {
+        "dungeon": "Yomotsu Hirasaka",
+        "area": "Mikado Mausoleum",
+        "floors": 9
+      },
+      {
+        "dungeon": "Underground Passage",
+        "area": "Desert Road",
+        "floors": 10
+      },
+      {
+        "dungeon": "Mountain of Rubble",
+        "area": "Gate of Oblivion",
+        "floors": 9
+      },
+      {
+        "dungeon": "Sand Cavern",
+        "area": "Pyramid",
+        "floors": 9
+      },
+      {
+        "dungeon": "Ocean Ruins",
+        "area": "Water Shrine",
+        "floors": 9
+      },
+      {
+        "dungeon": "Ice Ruins",
+        "area": "Water Shrine",
+        "floors": 9
+      },
+      {
+        "dungeon": "Deep Cavern",
+        "area": "Royal Tomb",
+        "floors": 9
+      },
+      {
+        "dungeon": "Cold Cavern",
+        "area": "Royal Tomb",
+        "floors": 10
+      },
+      {
+        "dungeon": "Desert Ruins 2",
+        "area": "Bedouin",
+        "floors": 9
+      }
+    ]
   },
   {
     "id": 50,
     "name": "Naga Eye",
     "category": "Other Materials",
     "rarity": 7,
-    "effect": "Deadly Poison"
+    "effect": "Deadly Poison",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 87,
+        "name": "Arc Demon"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Ilyumine",
+        "status": "Offline"
+      },
+      {
+        "area": "Pyramid",
+        "status": "Offline"
+      },
+      {
+        "area": "Ilyumine",
+        "status": "Online"
+      },
+      {
+        "area": "Pyramid",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 51,
     "name": "Nereid Rock",
     "category": "Other Materials",
     "rarity": 8,
-    "effect": "Physical Reduction 2"
+    "effect": "Physical Reduction 2",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 6,
+        "name": "Khazad's Ghost"
+      },
+      {
+        "id": 96,
+        "name": "Fenril"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Mikado Mausoleum",
+        "status": "Offline"
+      },
+      {
+        "area": "Mikado Mausoleum",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Night Ruins",
+        "area": "Nightwalker Town",
+        "floors": 6
+      },
+      {
+        "dungeon": "Sand Road",
+        "area": "Pyramid",
+        "floors": 6
+      }
+    ]
   },
   {
     "id": 52,
     "name": "Proteus Rock",
     "category": "Other Materials",
     "rarity": 10,
-    "effect": "Physical Reduction 3"
+    "effect": "Physical Reduction 3",
+    "purchase_in": [],
+    "dropped_by": [],
+    "area_searches": [],
+    "dungeon_reward": [
+      {
+        "dungeon": "Mossy Cavern",
+        "area": "Forgotten Village",
+        "floors": 14
+      },
+      {
+        "dungeon": "Tower of Fortune",
+        "area": "Mountaintop Shrine",
+        "floors": 15
+      }
+    ]
   },
   {
     "id": 53,
     "name": "Black Leaf",
     "category": "Other Materials",
     "rarity": 2,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 0,
+        "name": "Soldier"
+      },
+      {
+        "id": 1,
+        "name": "Warrior"
+      },
+      {
+        "id": 2,
+        "name": "Phalanx"
+      },
+      {
+        "id": 3,
+        "name": "Orc"
+      },
+      {
+        "id": 4,
+        "name": "Orc Chief"
+      },
+      {
+        "id": 84,
+        "name": "Lycanthrope"
+      },
+      {
+        "id": 14,
+        "name": "Knight"
+      },
+      {
+        "id": 23,
+        "name": "Rogue"
+      },
+      {
+        "id": 27,
+        "name": "Hunter"
+      },
+      {
+        "id": 31,
+        "name": "Theoricus"
+      },
+      {
+        "id": 43,
+        "name": "Lizardfoot"
+      },
+      {
+        "id": 56,
+        "name": "Skeleton Knight"
+      },
+      {
+        "id": 62,
+        "name": "Zombie"
+      },
+      {
+        "id": 68,
+        "name": "Sky Stalker"
+      },
+      {
+        "id": 75,
+        "name": "Amazoness"
+      },
+      {
+        "id": 76,
+        "name": "High Elf"
+      },
+      {
+        "id": 81,
+        "name": "Siren"
+      },
+      {
+        "id": 90,
+        "name": "Troll"
+      },
+      {
+        "id": 98,
+        "name": "Steel Gargoyle"
+      },
+      {
+        "id": 112,
+        "name": "Mud Wall"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Elynotis",
+        "status": "Offline"
+      },
+      {
+        "area": "Cressence",
+        "status": "Offline"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 54,
     "name": "Yellow Leaf",
     "category": "Other Materials",
     "rarity": 3,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 7,
+        "name": "Swordman"
+      },
+      {
+        "id": 10,
+        "name": "Monk"
+      },
+      {
+        "id": 11,
+        "name": "Expert Monk"
+      },
+      {
+        "id": 15,
+        "name": "Temple Knight"
+      },
+      {
+        "id": 19,
+        "name": "Undead Knight"
+      },
+      {
+        "id": 22,
+        "name": "Thief"
+      },
+      {
+        "id": 30,
+        "name": "Noble"
+      },
+      {
+        "id": 32,
+        "name": "Philosophas"
+      },
+      {
+        "id": 36,
+        "name": "High Priest"
+      },
+      {
+        "id": 39,
+        "name": "Necromancer"
+      },
+      {
+        "id": 44,
+        "name": "Scale Runner"
+      },
+      {
+        "id": 60,
+        "name": "Wraith"
+      },
+      {
+        "id": 66,
+        "name": "Sprite"
+      },
+      {
+        "id": 67,
+        "name": "Harpy"
+      },
+      {
+        "id": 71,
+        "name": "Vulture"
+      },
+      {
+        "id": 77,
+        "name": "Valkyrie"
+      },
+      {
+        "id": 85,
+        "name": "Imp"
+      },
+      {
+        "id": 86,
+        "name": "Lesser Demon"
+      },
+      {
+        "id": 91,
+        "name": "Troll King"
+      },
+      {
+        "id": 93,
+        "name": "Dingo"
+      },
+      {
+        "id": 102,
+        "name": "Golem"
+      },
+      {
+        "id": 107,
+        "name": "Poison Jelly"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Thick Forest",
+        "status": "Offline"
+      },
+      {
+        "area": "Tiwana Ruins",
+        "status": "Offline"
+      },
+      {
+        "area": "Ruins Road",
+        "status": "Offline"
+      },
+      {
+        "area": "Ilyumine",
+        "status": "Offline"
+      },
+      {
+        "area": "Elfaria",
+        "status": "Offline"
+      },
+      {
+        "area": "Gulldria",
+        "status": "Offline"
+      },
+      {
+        "area": "Distaria",
+        "status": "Offline"
+      },
+      {
+        "area": "Altar of the Spirits",
+        "status": "Offline"
+      },
+      {
+        "area": "Elynotis",
+        "status": "Online"
+      },
+      {
+        "area": "Thick Forest",
+        "status": "Online"
+      },
+      {
+        "area": "Cressence",
+        "status": "Online"
+      },
+      {
+        "area": "Deserted Ruins",
+        "status": "Online"
+      },
+      {
+        "area": "Beast Lair",
+        "status": "Online"
+      },
+      {
+        "area": "Gulldria",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 55,
     "name": "Red Leaf",
     "category": "Other Materials",
     "rarity": 4,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 5,
+        "name": "Ogre"
+      },
+      {
+        "id": 16,
+        "name": "Paladin"
+      },
+      {
+        "id": 20,
+        "name": "Vampire"
+      },
+      {
+        "id": 24,
+        "name": "Assassin"
+      },
+      {
+        "id": 26,
+        "name": "Archer"
+      },
+      {
+        "id": 28,
+        "name": "Sniper"
+      },
+      {
+        "id": 35,
+        "name": "Priest"
+      },
+      {
+        "id": 37,
+        "name": "Bishop"
+      },
+      {
+        "id": 40,
+        "name": "Lich"
+      },
+      {
+        "id": 55,
+        "name": "Skeleton"
+      },
+      {
+        "id": 57,
+        "name": "Skeleton Lord"
+      },
+      {
+        "id": 59,
+        "name": "Wight"
+      },
+      {
+        "id": 61,
+        "name": "Specter"
+      },
+      {
+        "id": 63,
+        "name": "Living Dead"
+      },
+      {
+        "id": 64,
+        "name": "Ghoul"
+      },
+      {
+        "id": 69,
+        "name": "Ladyhawke"
+      },
+      {
+        "id": 80,
+        "name": "Banshee"
+      },
+      {
+        "id": 87,
+        "name": "Arc Demon"
+      },
+      {
+        "id": 89,
+        "name": "Caveman"
+      },
+      {
+        "id": 97,
+        "name": "Gargoyle"
+      },
+      {
+        "id": 106,
+        "name": "Primitive Cell"
+      },
+      {
+        "id": 113,
+        "name": "Rock Wall"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Deeva Volcano",
+        "status": "Offline"
+      },
+      {
+        "area": "Pirate Island",
+        "status": "Offline"
+      },
+      {
+        "area": "Beast Lair",
+        "status": "Offline"
+      },
+      {
+        "area": "Treasure Island",
+        "status": "Offline"
+      },
+      {
+        "area": "Deserted Ruins",
+        "status": "Offline"
+      },
+      {
+        "area": "Ruins Road",
+        "status": "Online"
+      },
+      {
+        "area": "Altar of the Spirits",
+        "status": "Online"
+      },
+      {
+        "area": "Distaria",
+        "status": "Online"
+      },
+      {
+        "area": "Elfaria",
+        "status": "Online"
+      },
+      {
+        "area": "Tiwana Ruins",
+        "status": "Online"
+      },
+      {
+        "area": "Ilyumine",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 56,
     "name": "Green Horn",
     "category": "Other Materials",
     "rarity": 5,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 8,
+        "name": "Sword Master"
+      },
+      {
+        "id": 12,
+        "name": "Master Monk"
+      },
+      {
+        "id": 33,
+        "name": "Adept"
+      },
+      {
+        "id": 45,
+        "name": "Large Scale"
+      },
+      {
+        "id": 78,
+        "name": "Scathacha"
+      },
+      {
+        "id": 82,
+        "name": "Succubus"
+      },
+      {
+        "id": 94,
+        "name": "Shadow Wolf"
+      },
+      {
+        "id": 99,
+        "name": "Wing Guarder"
+      },
+      {
+        "id": 103,
+        "name": "Colossus"
+      },
+      {
+        "id": 108,
+        "name": "Acid Ooze"
+      },
+      {
+        "id": 114,
+        "name": "Thorn Wall"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Gate of Recollection",
+        "status": "Offline"
+      },
+      {
+        "area": "Runeheim",
+        "status": "Offline"
+      },
+      {
+        "area": "Earl's Castle",
+        "status": "Offline"
+      },
+      {
+        "area": "Water City",
+        "status": "Offline"
+      },
+      {
+        "area": "Seles",
+        "status": "Offline"
+      },
+      {
+        "area": "Dark Elf Settlement",
+        "status": "Offline"
+      },
+      {
+        "area": "Mizuchi Shrine",
+        "status": "Offline"
+      },
+      {
+        "area": "Yggdrasill",
+        "status": "Offline"
+      },
+      {
+        "area": "Donam",
+        "status": "Offline"
+      },
+      {
+        "area": "Spirits Forest",
+        "status": "Offline"
+      },
+      {
+        "area": "Deeva Volcano",
+        "status": "Online"
+      },
+      {
+        "area": "Pirate Island",
+        "status": "Online"
+      },
+      {
+        "area": "Treasure Island",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 57,
     "name": "Blue Horn",
     "category": "Other Materials",
     "rarity": 6,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 41,
+        "name": "Lich Lord"
+      },
+      {
+        "id": 46,
+        "name": "Serpent"
+      },
+      {
+        "id": 49,
+        "name": "Dragon Runner"
+      },
+      {
+        "id": 72,
+        "name": "Garuda"
+      },
+      {
+        "id": 83,
+        "name": "Morrigan"
+      },
+      {
+        "id": 100,
+        "name": "Imperial Guard"
+      },
+      {
+        "id": 109,
+        "name": "Blood Ooze"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Pyramid",
+        "status": "Offline"
+      },
+      {
+        "area": "Bedouin",
+        "status": "Offline"
+      },
+      {
+        "area": "Ishtal",
+        "status": "Offline"
+      },
+      {
+        "area": "Water Shrine",
+        "status": "Offline"
+      },
+      {
+        "area": "Nomad",
+        "status": "Offline"
+      },
+      {
+        "area": "Royal Tomb",
+        "status": "Offline"
+      },
+      {
+        "area": "Donam",
+        "status": "Online"
+      },
+      {
+        "area": "Spirits Forest",
+        "status": "Online"
+      },
+      {
+        "area": "Gate of Recollection",
+        "status": "Online"
+      },
+      {
+        "area": "Runeheim",
+        "status": "Online"
+      },
+      {
+        "area": "Earl's Castle",
+        "status": "Online"
+      },
+      {
+        "area": "Water City",
+        "status": "Online"
+      },
+      {
+        "area": "Seles",
+        "status": "Online"
+      },
+      {
+        "area": "Dark Elf Settlement",
+        "status": "Online"
+      },
+      {
+        "area": "Mizuchi Shrine",
+        "status": "Online"
+      },
+      {
+        "area": "Yggdrasill",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Spirit Lord Castle",
+        "area": "Spirits Forest",
+        "floors": 4
+      },
+      {
+        "dungeon": "Earl's Castle",
+        "area": "Earl's Castle",
+        "floors": 4
+      },
+      {
+        "dungeon": "Darkness Shrine",
+        "area": "Dark Elf Settlement",
+        "floors": 4
+      },
+      {
+        "dungeon": "Wood Shrine",
+        "area": "Yggdrasill",
+        "floors": 4
+      },
+      {
+        "dungeon": "Collapsed Cavern",
+        "area": "Gate of Recollection",
+        "floors": 4
+      },
+      {
+        "dungeon": "Recollection Fort",
+        "area": "Gate of Recollection",
+        "floors": 4
+      },
+      {
+        "dungeon": "Underwater Temple",
+        "area": "Water City",
+        "floors": 4
+      },
+      {
+        "dungeon": "Mizuchi's Lair",
+        "area": "Mizuchi Shrine",
+        "floors": 4
+      },
+      {
+        "dungeon": "Lord Donam's Castle",
+        "area": "Donam",
+        "floors": 4
+      },
+      {
+        "dungeon": "Lord Runeheim's Castle",
+        "area": "Runeheim",
+        "floors": 4
+      },
+      {
+        "dungeon": "Lord Seles's Castle",
+        "area": "Seles",
+        "floors": 4
+      },
+      {
+        "dungeon": "Sandstorm Castle",
+        "area": "Nomad",
+        "floors": 4
+      },
+      {
+        "dungeon": "Moonlight Ruins",
+        "area": "Nomad",
+        "floors": 4
+      },
+      {
+        "dungeon": "Sandstorm Bar",
+        "area": "Nomad",
+        "floors": 4
+      },
+      {
+        "dungeon": "Training Cavern",
+        "area": "Echigo",
+        "floors": 4
+      },
+      {
+        "dungeon": "Ninja Lodge",
+        "area": "Echigo",
+        "floors": 4
+      },
+      {
+        "dungeon": "Firefighter Tower",
+        "area": "Yamato",
+        "floors": 4
+      },
+      {
+        "dungeon": "Xinzhou Lodge",
+        "area": "Yamato",
+        "floors": 4
+      },
+      {
+        "dungeon": "Motoyasu Lodge",
+        "area": "Edo",
+        "floors": 4
+      },
+      {
+        "dungeon": "Historic Tower",
+        "area": "Shalom",
+        "floors": 4
+      },
+      {
+        "dungeon": "Deep Stagnation",
+        "area": "Huge Swamp",
+        "floors": 4
+      },
+      {
+        "dungeon": "King's Castle",
+        "area": "Nightwalker Town",
+        "floors": 4
+      },
+      {
+        "dungeon": "Pyramid",
+        "area": "Pyramid",
+        "floors": 4
+      },
+      {
+        "dungeon": "Water Shrine",
+        "area": "Water Shrine",
+        "floors": 4
+      }
+    ]
   },
   {
     "id": 58,
     "name": "Purple Claw",
     "category": "Other Materials",
     "rarity": 7,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 50,
+        "name": "Wyvern"
+      },
+      {
+        "id": 95,
+        "name": "Hell Hound"
+      },
+      {
+        "id": 104,
+        "name": "Talos"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Huge Swamp",
+        "status": "Offline"
+      },
+      {
+        "area": "Shalom",
+        "status": "Offline"
+      },
+      {
+        "area": "Nightwalker Town",
+        "status": "Offline"
+      },
+      {
+        "area": "Echigo",
+        "status": "Offline"
+      },
+      {
+        "area": "Mikado Mausoleum",
+        "status": "Offline"
+      },
+      {
+        "area": "Gate of Oblivion",
+        "status": "Offline"
+      },
+      {
+        "area": "Yamato",
+        "status": "Offline"
+      },
+      {
+        "area": "Desert Road",
+        "status": "Offline"
+      },
+      {
+        "area": "Edo",
+        "status": "Offline"
+      },
+      {
+        "area": "Nomad",
+        "status": "Online"
+      },
+      {
+        "area": "Ishtal",
+        "status": "Online"
+      },
+      {
+        "area": "Water Shrine",
+        "status": "Online"
+      },
+      {
+        "area": "Royal Tomb",
+        "status": "Online"
+      },
+      {
+        "area": "Pyramid",
+        "status": "Online"
+      },
+      {
+        "area": "Bedouin",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": []
   },
   {
     "id": 59,
     "name": "Red Claw",
     "category": "Other Materials",
     "rarity": 8,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 47,
+        "name": "Naga"
+      },
+      {
+        "id": 51,
+        "name": "Dragon"
+      },
+      {
+        "id": 73,
+        "name": "Rock"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Forgotten Village",
+        "status": "Offline"
+      },
+      {
+        "area": "Mountaintop Shrine",
+        "status": "Offline"
+      },
+      {
+        "area": "Desert Road",
+        "status": "Online"
+      },
+      {
+        "area": "Edo",
+        "status": "Online"
+      },
+      {
+        "area": "Huge Swamp",
+        "status": "Online"
+      },
+      {
+        "area": "Shalom",
+        "status": "Online"
+      },
+      {
+        "area": "Nightwalker Town",
+        "status": "Online"
+      },
+      {
+        "area": "Echigo",
+        "status": "Online"
+      },
+      {
+        "area": "Mikado Mausoleum",
+        "status": "Online"
+      },
+      {
+        "area": "Gate of Oblivion",
+        "status": "Online"
+      },
+      {
+        "area": "Yamato",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Night Ruins",
+        "area": "Nightwalker Town",
+        "floors": 6
+      },
+      {
+        "dungeon": "Sand Road",
+        "area": "Pyramid",
+        "floors": 6
+      }
+    ]
   },
   {
     "id": 60,
     "name": "White Jewel",
     "category": "Other Materials",
     "rarity": 9,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 6,
+        "name": "Khazad's Ghost"
+      },
+      {
+        "id": 9,
+        "name": "Mikaduchi"
+      },
+      {
+        "id": 13,
+        "name": "Master Fist"
+      },
+      {
+        "id": 17,
+        "name": "Lord Redrick"
+      },
+      {
+        "id": 21,
+        "name": "August"
+      },
+      {
+        "id": 25,
+        "name": "Genzoh"
+      },
+      {
+        "id": 29,
+        "name": "Hell Sniper"
+      },
+      {
+        "id": 34,
+        "name": "Mage Silion"
+      },
+      {
+        "id": 38,
+        "name": "Savior"
+      },
+      {
+        "id": 48,
+        "name": "Leviathan"
+      },
+      {
+        "id": 52,
+        "name": "Tiamat"
+      },
+      {
+        "id": 54,
+        "name": "Thyrion"
+      },
+      {
+        "id": 70,
+        "name": "Lady Sky"
+      },
+      {
+        "id": 74,
+        "name": "Tempest"
+      },
+      {
+        "id": 79,
+        "name": "Luna"
+      },
+      {
+        "id": 88,
+        "name": "Bahzam DeGole"
+      },
+      {
+        "id": 96,
+        "name": "Fenril"
+      },
+      {
+        "id": 110,
+        "name": "Kraken"
+      },
+      {
+        "id": 111,
+        "name": "O'Rosam"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Forgotten Village",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Base Cavern",
+        "area": "Deeva Volcano",
+        "floors": 10
+      },
+      {
+        "dungeon": "Wind Cavern",
+        "area": "Deeva Volcano",
+        "floors": 11
+      },
+      {
+        "dungeon": "Origin Tower",
+        "area": "Mountaintop Shrine",
+        "floors": 10
+      },
+      {
+        "dungeon": "Ivory Cavern",
+        "area": "Mountaintop Shrine",
+        "floors": 11
+      },
+      {
+        "dungeon": "Underground Passage",
+        "area": "Desert Road",
+        "floors": 10
+      },
+      {
+        "dungeon": "Stone Tree",
+        "area": "Gate of Oblivion",
+        "floors": 11
+      },
+      {
+        "dungeon": "Sand Ruins",
+        "area": "Pyramid",
+        "floors": 11
+      },
+      {
+        "dungeon": "Cold Cavern",
+        "area": "Royal Tomb",
+        "floors": 10
+      },
+      {
+        "dungeon": "Ancient Tomb",
+        "area": "Royal Tomb",
+        "floors": 11
+      }
+    ]
   },
   {
     "id": 61,
     "name": "Golden Jewel",
     "category": "Other Materials",
     "rarity": 9,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 18,
+        "name": "Durahan"
+      },
+      {
+        "id": 42,
+        "name": "Al Acid"
+      },
+      {
+        "id": 53,
+        "name": "Bardion"
+      },
+      {
+        "id": 58,
+        "name": "Skull King"
+      },
+      {
+        "id": 65,
+        "name": "Nephilia"
+      }
+    ],
+    "area_searches": [
+      {
+        "area": "Mountaintop Shrine",
+        "status": "Online"
+      }
+    ],
+    "dungeon_reward": [
+      {
+        "dungeon": "Wind Cavern",
+        "area": "Deeva Volcano",
+        "floors": 11
+      },
+      {
+        "dungeon": "Fire Cavern",
+        "area": "Deeva Volcano",
+        "floors": 12
+      },
+      {
+        "dungeon": "Deep Blue Cavern",
+        "area": "Water City",
+        "floors": 12
+      },
+      {
+        "dungeon": "Ivory Cavern",
+        "area": "Mountaintop Shrine",
+        "floors": 11
+      },
+      {
+        "dungeon": "Jade Ruins",
+        "area": "Mountaintop Shrine",
+        "floors": 12
+      },
+      {
+        "dungeon": "Stone Tree",
+        "area": "Gate of Oblivion",
+        "floors": 11
+      },
+      {
+        "dungeon": "Sand Ruins",
+        "area": "Pyramid",
+        "floors": 11
+      },
+      {
+        "dungeon": "Rockwork Cavern",
+        "area": "Ishtal",
+        "floors": 12
+      },
+      {
+        "dungeon": "Ancient Tomb",
+        "area": "Royal Tomb",
+        "floors": 11
+      },
+      {
+        "dungeon": "Great Tomb",
+        "area": "Royal Tomb",
+        "floors": 12
+      }
+    ]
   },
   {
     "id": 62,
     "name": "Black Jewel",
     "category": "Other Materials",
     "rarity": 9,
-    "effect": "-"
+    "effect": "-",
+    "purchase_in": [],
+    "dropped_by": [
+      {
+        "id": 92,
+        "name": "Gigantes"
+      },
+      {
+        "id": 101,
+        "name": "Balrog"
+      },
+      {
+        "id": 105,
+        "name": "Behemoth"
+      }
+    ],
+    "area_searches": [],
+    "dungeon_reward": [
+      {
+        "dungeon": "Tower of Fortune",
+        "area": "Mountaintop Shrine",
+        "floors": 15
+      }
+    ]
   }
 ]

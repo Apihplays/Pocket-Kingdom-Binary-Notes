@@ -1,6 +1,6 @@
 import unittest
 
-from tools.build_unitdb import parse_materials
+from tools.build_unitdb import parse_material_detail, parse_materials
 
 # Trimmed slice of the archived Material Database (2006-09-01): the section
 # header rows are what carries each row's category.
@@ -25,6 +25,70 @@ FIXTURE = """
     <td class="TableCell1" align="center">Element: Metal</td></tr>
 </table>
 """
+
+
+# Trimmed detail page: every section is a bold-titled table and any of them
+# may be absent for a given material.
+DETAIL_FIXTURE = """
+<div style="font-family: Arial; font-size: 12pt; font-weight: bold; color: #000000;">COPPER</div>
+<table width="100%" class="TableBase"><tr><td class="TableHead">Item</td></tr></table>
+<div style="font-family: Arial; font-size: 12pt; font-weight: bold; color: #000000;">Purchase In</div>
+<table width="100%" class="TableBase">
+<tr><td width="100%" class="TableHead">Location</td></tr>
+<tr valign="center"><td class="TableCell1">Elynotis</td></tr>
+<tr valign="center"><td class="TableCell2">Cressence</td></tr>
+</table>
+<div style="font-family: Arial; font-size: 12pt; font-weight: bold; color: #000000;">Dropped By</div>
+<table width="100%" class="TableBase">
+<tr><td class="TableHead">#</td><td class="TableHead">Class</td><td class="TableHead">Race</td></tr>
+<tr valign="center"><td class="TableCell1"><a href="/web/20060908144251/http://pk.warcry.com/units/view_unit.phtml?id=0">
+    <img src="/gfx/race_icons/1.gif" alt="Unit 0"></a></td>
+    <td class="TableCell1"><a href="view_unit.phtml?id=0" class="TableCell1Link"><b>Soldier</b></a></td>
+    <td class="TableCell1">Warrior</td></tr>
+</table>
+<div style="font-family: Arial; font-size: 12pt; font-weight: bold; color: #000000;">Area Searches</div>
+<table width="100%" class="TableBase">
+<tr><td width="45%" class="TableHead">Area</td><td width="5%" class="TableHead">&nbsp;</td></tr>
+<tr><td class="TableCell1">Elynotis</td><td class="TableCell1" align="center">Offline</td></tr>
+<tr><td class="TableCell2">Cressence</td><td class="TableCell2" align="center">Online</td></tr>
+</table>
+<div style="font-family: Arial; font-size: 12pt; font-weight: bold; color: #000000;">Dungeon Reward</div>
+<table width="100%" class="TableBase">
+<tr><td class="TableHead">Dungeon</td><td class="TableHead">Area</td><td class="TableHead">Floors</td></tr>
+<tr><td class="TableCell1">Castle Matres</td><td class="TableCell1">Elynotis</td>
+    <td class="TableCell1" align="center">1</td></tr>
+</table>
+"""
+
+BARE_FIXTURE = """
+<div style="font-family: Arial; font-size: 12pt; font-weight: bold; color: #000000;">GAIA ROCK</div>
+<table><tr><td class="TableHead">Item</td></tr></table>
+"""
+
+
+class TestParseMaterialDetail(unittest.TestCase):
+    def setUp(self):
+        self.detail = parse_material_detail(DETAIL_FIXTURE)
+
+    def test_purchase_locations(self):
+        self.assertEqual(self.detail["purchase_in"], ["Elynotis", "Cressence"])
+
+    def test_dropped_by_units(self):
+        self.assertEqual(self.detail["dropped_by"], [{"id": 0, "name": "Soldier"}])
+
+    def test_area_searches(self):
+        self.assertEqual(self.detail["area_searches"],
+                         [{"area": "Elynotis", "status": "Offline"},
+                          {"area": "Cressence", "status": "Online"}])
+
+    def test_dungeon_reward(self):
+        self.assertEqual(self.detail["dungeon_reward"],
+                         [{"dungeon": "Castle Matres", "area": "Elynotis", "floors": 1}])
+
+    def test_missing_sections_are_empty(self):
+        self.assertEqual(parse_material_detail(BARE_FIXTURE),
+                         {"purchase_in": [], "dropped_by": [],
+                          "area_searches": [], "dungeon_reward": []})
 
 
 class TestParseMaterials(unittest.TestCase):

@@ -8,12 +8,15 @@ Source (Wayback Machine capture, 2005-02-10):
           (target class, race, rank, level, VP, RankUp Emblem)
   http://pk.warcry.com/items/materials.phtml (2006-09-01)
        -> material database (jewels/ores/other): id, rarity, effect
+  http://pk.warcry.com/items/view_material.phtml?id=N (2006-09-08)
+       -> per-material Purchase In, Dropped By, Area Searches, Dungeon Reward
 
 Outputs (default: ./unitdb/):
   units.json                 structured records (incl. ability + advances)
   units.csv                  spreadsheet-friendly
   emblems.json / .csv        emblem recipes (ore + 2 items + success)
-  materials.json / .csv      material database (id, name, category, rarity, effect)
+  materials.json / .csv      material database (id, name, category, rarity, effect,
+                             purchase locations, drops, area searches, dungeons)
   crafting.json / .csv       weapon/armor/accessory recipes (mold + ore + 2 items + effect + success)
   effects.json / .csv        effect id -> name table
   PocketKingdom-Units.html   self-contained app: units, team builder, emblems, materials, crafting
@@ -25,7 +28,7 @@ The HTML app inlines the data so it works offline by double-clicking it
 Usage:
   python3 tools/build_unitdb.py                  # index only, fast
   python3 tools/build_unitdb.py --details        # + fetch each unit's page
-  python3 tools/build_unitdb.py --details --emblems --crafting --materials
+  python3 tools/build_unitdb.py --details --emblems --crafting --materials --material-details
   python3 tools/build_unitdb.py --html saved.html
 """
 from __future__ import annotations
@@ -46,12 +49,15 @@ BASE = "http://pk.warcry.com"
 DEFAULT_URL = f"https://web.archive.org/web/{TS}/{BASE}/units/"
 EMBLEM_URL = f"https://web.archive.org/web/20050207131118/{BASE}/items/emblems.phtml"
 MATERIAL_URL = f"https://web.archive.org/web/20060901040635/{BASE}/items/materials.phtml"
+MATERIAL_DETAIL_URL = f"https://web.archive.org/web/20060908142300/{BASE}/items/view_material.phtml?id={{id}}"
 
 STATS = ["hp", "atk", "def", "agi", "dex", "wis", "int", "hit"]
 FIELDS = ["id", "name", "race", "race_icon", "rank", "slots", "move", "sp", *STATS,
           "ability", "advances"]
 EMBLEM_FIELDS = ["emblem", "ore", "item1", "item2", "success"]
-MATERIAL_FIELDS = ["id", "name", "category", "rarity", "effect"]
+MATERIAL_FIELDS = ["id", "name", "category", "rarity", "effect",
+                   "purchase_in", "dropped_by", "area_searches", "dungeon_reward"]
+MATERIAL_DETAIL_SECTIONS = ("Purchase In", "Dropped By", "Area Searches", "Dungeon Reward")
 CRAFT_FIELDS = ["mold", "ore", "item1", "item2", "result", "effect", "success", "effect_ids"]
 GIST_URL = (
     "https://gist.githubusercontent.com/Apihplays/"
@@ -207,6 +213,73 @@ def parse_materials(page: str) -> list[dict]:
             "effect": cells[2],
         })
     return out
+
+
+def fetch_material_detail(mid: int, cache: Path) -> str:
+    cached = cache / f"material_{mid:03d}.html"
+    if cached.exists() and cached.stat().st_size > 1000:
+        return cached.read_text(encoding="utf-8", errors="replace")
+    page = fetch(MATERIAL_DETAIL_URL.format(id=mid))
+    cached.parent.mkdir(parents=True, exist_ok=True)
+    cached.write_text(page, encoding="utf-8")
+    return page
+
+
+def parse_material_detail(page: str) -> dict:
+    """Where a material comes from, from its ``view_material.phtml`` page.
+
+    The page is a stack of bold-titled tables; only four matter here:
+      Purchase In     -> shop locations (one per row)
+      Dropped By      -> units that drop it (# icon link, then name)
+      Area Searches   -> area + ``Offline``/``Online`` search availability
+      Dungeon Reward  -> dungeon, area, floor count
+    Materials legitimately omit any of them, so every field defaults to [].
+    """
+    heads = list(re.finditer(
+        r'font-size: 12pt; font-weight: bold; color: #000000;">(.*?)</div>', page, re.S))
+    chunks: dict[str, str] = {}
+    for i, m in enumerate(heads):
+        end = heads[i + 1].start() if i + 1 < len(heads) else len(page)
+        chunks[_text(m.group(1))] = page[m.end():end]
+
+    def rows(title: str) -> list[tuple[str, list[str]]]:
+        out: list[tuple[str, list[str]]] = []
+        for row in re.findall(r"(?s)<tr[^>]*>(.*?)</tr>", chunks.get(title, "")):
+            if 'class="TableHead"' in row:
+                continue
+            cells = [_text(c) for c in re.findall(r"(?s)<td[^>]*>(.*?)</td>", row)]
+            if any(cells):
+                out.append((row, cells))
+        return out
+
+    purchase_in: list[str] = []
+    for _, cells in rows("Purchase In"):
+        name = cells[0].strip()
+        if name and name not in purchase_in:
+            purchase_in.append(name)
+
+    dropped_by: list[dict] = []
+    for row, cells in rows("Dropped By"):
+        uid = re.search(r"view_unit\.phtml\?id=(\d+)", row)
+        if not uid or len(cells) < 2 or not cells[1]:
+            continue
+        dropped_by.append({"id": int(uid.group(1)), "name": cells[1]})
+
+    area_searches: list[dict] = []
+    for _, cells in rows("Area Searches"):
+        if len(cells) < 2 or not cells[0]:
+            continue
+        area_searches.append({"area": cells[0], "status": cells[1]})
+
+    dungeon_reward: list[dict] = []
+    for _, cells in rows("Dungeon Reward"):
+        if len(cells) < 3 or not cells[0]:
+            continue
+        dungeon_reward.append({"dungeon": cells[0], "area": cells[1],
+                               "floors": _int(cells[2])})
+
+    return {"purchase_in": purchase_in, "dropped_by": dropped_by,
+            "area_searches": area_searches, "dungeon_reward": dungeon_reward}
 
 
 def parse_crafting(text: str) -> tuple[list[dict], list[dict]]:
@@ -484,7 +557,7 @@ HTML_TEMPLATE = r"""<!doctype html>
   #tab-crafting th:nth-child(7),#tab-crafting td:nth-child(7){text-align:right}
   #tab-materials th,#tab-materials td{text-align:left}
   #tab-materials th:nth-child(3),#tab-materials td:nth-child(3),
-  #tab-materials th:nth-child(5),#tab-materials td:nth-child(5){text-align:right}
+  #tab-materials th:nth-child(7),#tab-materials td:nth-child(7){text-align:right}
   details summary{cursor:pointer;color:var(--dim);font-size:12.5px;margin-top:18px}
   details summary:hover{color:var(--txt)}
   .eid{color:var(--dim);font-size:11px;font-weight:400}
@@ -582,7 +655,7 @@ HTML_TEMPLATE = r"""<!doctype html>
   <section id="tab-materials" style="display:none">
     <div class="controls">
       <div class="fld"><label>Search</label>
-        <input id="mq" type="search" placeholder="material or effect..."></div>
+        <input id="mq" type="search" placeholder="material, effect or location..."></div>
       <div class="fld"><label>Category</label>
         <div class="chips" id="mcat">
           <span class="chip on" data-v="">All</span>
@@ -594,26 +667,31 @@ HTML_TEMPLATE = r"""<!doctype html>
           <input id="mmin" type="number" min="1" max="10" placeholder="1">
           <span style="color:var(--dim)">-</span>
           <input id="mmax" type="number" min="1" max="10" placeholder="10"></div></div>
+      <div class="fld"><label>Sold in</label>
+        <select id="mshop"><option value="">Any shop</option></select></div>
       <div class="fld"><label>Rank by</label>
         <select id="msort">
           <option value="rarity">Rarity</option>
           <option value="name">Item</option>
           <option value="category">Category</option>
           <option value="effect">Effect</option>
+          <option value="shops">Shops</option>
           <option value="uses">Recipes</option>
         </select></div>
       <div class="fld"><label>&nbsp;</label><button class="btn ghost" id="mclear">Clear</button></div>
     </div>
     <div class="meta"><div id="mcount"></div><div class="tagbar" id="mtags"></div></div>
     <table><thead><tr>
-      <th>Item</th><th>Category</th><th>Rarity</th><th>Effect</th><th>Used in</th>
+      <th>Item</th><th>Category</th><th>Rarity</th><th>Effect</th>
+      <th>Where</th><th>Used in</th>
     </tr></thead><tbody id="mbody"></tbody></table>
     <div class="empty" id="mempty" style="display:none">No materials match.</div>
     <p style="color:var(--dim);font-size:12.5px;margin-top:12px">
-      Click a material for the crafting and emblem recipes that consume it.
-      Rarity is the warcry.com value (higher = rarer). Recipe counts only cover
-      the crafting and emblem tables in this database, so a dash means no known
-      recipe here — not that the material is useless in game.
+      Click a material for shops that sell it, the areas you can search, dungeons
+      that reward it, units that drop it, and the crafting/emblem recipes that
+      consume it. Rarity is the warcry.com value (higher = rarer). Recipe counts
+      only cover the crafting and emblem tables here, so a dash means no known
+      recipe — not that the material is useless in game.
     </p>
   </section>
 
@@ -863,15 +941,46 @@ function materialUses(m){
   };
 }
 
+const matShops = m => m.purchase_in || [];
+const matAreas = m => m.area_searches || [];
+const matDungeons = m => m.dungeon_reward || [];
+const matDrops = m => m.dropped_by || [];
+function whereParts(m){
+  const p = matShops(m).length, a = new Set(matAreas(m).map(x=>x.area)).size,
+        d = matDungeons(m).length, k = matDrops(m).length;
+  const out = [];
+  if (p) out.push(`${p} shop${p>1?"s":""}`);
+  if (a) out.push(`${a} area${a>1?"s":""}`);
+  if (d) out.push(`${d} dungeon${d>1?"s":""}`);
+  if (k) out.push(`${k} drop${k>1?"s":""}`);
+  return out;
+}
+function whereTitle(m){
+  const bits = [];
+  if (matShops(m).length) bits.push("Buy: " + matShops(m).join(", "));
+  const areas = matAreas(m).map(a=>`${a.area} (${a.status})`);
+  if (areas.length) bits.push("Search: " + areas.join(", "));
+  if (matDungeons(m).length) bits.push("Dungeons: " + matDungeons(m).map(d=>d.dungeon).join(", "));
+  if (matDrops(m).length) bits.push("Drops: " + matDrops(m).map(d=>d.name).join(", "));
+  return bits.join(" | ");
+}
+
 function renderMaterials(){
   const q = $("mq").value.trim().toLowerCase();
   const cat = $("mcat").querySelector(".chip.on").dataset.v;
   const lo = +$("mmin").value || 0, hi = +$("mmax").value || 99;
+  const shop = $("mshop").value;
   const key = $("msort").value;
   const rows = MATERIALS.filter(m => {
     if (cat && m.category !== cat) return false;
     if (m.rarity < lo || m.rarity > hi) return false;
-    if (q && !(m.name + " " + m.category + " " + m.effect).toLowerCase().includes(q)) return false;
+    if (shop && !matShops(m).includes(shop)) return false;
+    if (q) {
+      const hay = [m.name, m.category, m.effect, ...matShops(m),
+                   ...matAreas(m).map(a=>a.area), ...matDungeons(m).map(d=>d.dungeon),
+                   ...matDrops(m).map(d=>d.name)].join(" ").toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
     return true;
   }).map(m => { const use = materialUses(m); return {m, ...use, uses: use.craft.length + use.emblems.length}; });
 
@@ -879,6 +988,7 @@ function renderMaterials(){
     if (key === "name")     return a.m.name.localeCompare(b.m.name);
     if (key === "category") return a.m.category.localeCompare(b.m.category) || b.m.rarity - a.m.rarity;
     if (key === "effect")   return a.m.effect.localeCompare(b.m.effect) || a.m.name.localeCompare(b.m.name);
+    if (key === "shops")    return matShops(b.m).length - matShops(a.m).length || a.m.name.localeCompare(b.m.name);
     if (key === "uses")     return b.uses - a.uses || a.m.name.localeCompare(b.m.name);
     return b.m.rarity - a.m.rarity || a.m.name.localeCompare(b.m.name);
   });
@@ -887,23 +997,46 @@ function renderMaterials(){
   $("mempty").style.display = rows.length ? "none" : "block";
   const tags = [cat || "all categories"];
   if (q) tags.push(`"${q}"`);
+  if (shop) tags.push(shop);
   if (lo || hi < 99) tags.push(`rarity ${lo || 1}-${hi < 99 ? hi : 10}`);
   const rarest = rows.length ? Math.max(...rows.map(r => r.m.rarity)) : null;
   $("mtags").innerHTML = tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")
     + (rarest !== null ? `<span class="tag">max rarity: <b style="color:var(--good)">${rarest}</b></span>` : "");
 
-  $("mbody").innerHTML = rows.map(({m, uses}) => `<tr data-mat="${m.id}">
+  $("mbody").innerHTML = rows.map(({m, uses}) => {
+    const parts = whereParts(m);
+    return `<tr data-mat="${m.id}">
       <td><span class="name">${esc(m.name)}</span></td>
       <td><span class="race">${esc(m.category)}</span></td>
       <td>${m.rarity}</td>
       <td>${m.effect && m.effect !== "-" ? esc(m.effect) : '<span style="color:var(--dim)">-</span>'}</td>
-      <td>${uses ? uses : '<span style="color:var(--dim)">-</span>'}</td></tr>`).join("");
+      <td title="${esc(whereTitle(m))}">${parts.length ? parts.join(" &middot; ") : '<span style="color:var(--dim)">-</span>'}</td>
+      <td>${uses ? uses : '<span style="color:var(--dim)">-</span>'}</td></tr>`;
+  }).join("");
   $("mbody").querySelectorAll("tr[data-mat]").forEach(tr=>tr.onclick=()=>openMaterial(+tr.dataset.mat));
 }
 
 function openMaterial(id){
   const m = MAT_BY_ID[id]; if (!m) return;
   const {craft, emblems} = materialUses(m);
+  const shops = matShops(m), areas = matAreas(m), dungeons = matDungeons(m), drops = matDrops(m);
+
+  const shopsHtml = shops.length
+    ? `<div class="tagbar">${shops.map(s=>`<span class="tag">${esc(s)}</span>`).join("")}</div>`
+    : `<div class="empty" style="padding:14px">Not sold in any shop.</div>`;
+  const areasHtml = areas.length
+    ? `<div class="tagbar">${areas.map(a=>`<span class="tag">${esc(a.area)}${a.status ? ` &middot; ${esc(a.status)}` : ""}</span>`).join("")}</div>`
+    : `<div class="empty" style="padding:14px">No area search data.</div>`;
+  const dungeonsHtml = dungeons.map(d => `
+      <div class="adv"><div><b>${esc(d.dungeon)}</b> <span class="race" style="color:var(--dim)">${esc(d.area)}</span></div>
+        <div class="r">${d.floors} floor${d.floors>1?"s":""}</div></div>`).join("");
+  const dropsHtml = drops.map(d => `
+      <div class="adv" data-unit="${d.id}"><div><b>${esc(d.name)}</b></div>
+        <div class="r">drops it</div></div>`).join("");
+  const foundHtml = [
+    dungeonsHtml ? `<h3 style="margin-top:12px">Dungeon rewards (${dungeons.length})</h3>${dungeonsHtml}` : "",
+    dropsHtml ? `<h3 style="margin-top:12px">Dropped by (${drops.length} units)</h3>${dropsHtml}` : "",
+  ].join("") || `<div class="empty" style="padding:14px">No dungeon or drop data.</div>`;
 
   const craftHtml = craft.map(c => `
       <div class="adv" data-craft="${esc(c.result)}">
@@ -930,6 +1063,9 @@ function openMaterial(id){
     <div class="m-sub">${esc(m.category)} &middot; Rarity ${m.rarity}
       ${m.effect && m.effect !== "-" ? `&middot; ${esc(m.effect)}` : "&middot; no effect"}
       &middot; material #${m.id}</div>
+    <div class="sect"><h3>Purchase in (${shops.length} location${shops.length===1?"":"s"})</h3>${shopsHtml}</div>
+    <div class="sect"><h3>Area searches (${areas.length})</h3>${areasHtml}</div>
+    <div class="sect"><h3>Where to find</h3>${foundHtml}</div>
     <div class="sect"><h3>Used in crafting (${craft.length})</h3>${craftHtml}</div>
     <div class="sect"><h3>Used in emblems (${grouped.size} emblems)</h3>${embHtml}</div>`;
   $("modal").classList.add("on"); $("backdrop").classList.add("on");
@@ -939,13 +1075,16 @@ function openMaterial(id){
     window.scrollTo({top:0, behavior:"smooth"});
   });
   $("modal-body").querySelectorAll(".adv[data-emb]").forEach(d=>d.onclick=()=>showEmblem(d.dataset.emb));
+  $("modal-body").querySelectorAll(".adv[data-unit]").forEach(d=>d.onclick=()=>openDetail(+d.dataset.unit));
 }
 
 $("mcat").querySelectorAll(".chip").forEach(c=>c.onclick=()=>{
   $("mcat").querySelectorAll(".chip").forEach(x=>x.classList.remove("on")); c.classList.add("on"); renderMaterials(); });
-["mq","mmin","mmax","msort"].forEach(id=>$(id).addEventListener("input", renderMaterials));
+[...new Set(MATERIALS.flatMap(m=>matShops(m)))].sort()
+  .forEach(v=>{ const o=document.createElement("option"); o.textContent=v; $("mshop").appendChild(o); });
+["mq","mmin","mmax","mshop","msort"].forEach(id=>$(id).addEventListener("input", renderMaterials));
 $("mclear").onclick = () => {
-  ["mq","mmin","mmax"].forEach(id=>$(id).value="");
+  ["mq","mmin","mmax","mshop"].forEach(id=>$(id).value="");
   $("mcat").querySelectorAll(".chip").forEach((x,i)=>x.classList.toggle("on", i===0));
   $("msort").value="rarity"; renderMaterials();
 };
@@ -1041,6 +1180,9 @@ def main() -> int:
                     help="also fetch the crafting chart (weapons/armor/accessories); cached in raw/")
     ap.add_argument("--materials", action="store_true",
                     help="also fetch the Material Database (jewels/ores/other); cached in raw/")
+    ap.add_argument("--material-details", action="store_true",
+                    help="also fetch each material's page (purchase locations, drops, "
+                         "area searches, dungeon rewards); cached in raw/; implies --materials")
     ap.add_argument("--rankup", action="store_true",
                     help="also fetch the guide's rankup chart: adds SP to units and "
                          "writes rankup.json/csv; cached in raw/")
@@ -1147,7 +1289,7 @@ def main() -> int:
             print(f"  ! emblems: {e}", file=sys.stderr)
 
     materials: list[dict] = []
-    if args.materials:
+    if args.materials or args.material_details:
         cached = out / "raw" / "materials.html"
         try:
             if cached.exists() and cached.stat().st_size > 1000:
@@ -1157,17 +1299,48 @@ def main() -> int:
                 cached.parent.mkdir(parents=True, exist_ok=True)
                 cached.write_text(mhtml, encoding="utf-8")
             materials = parse_materials(mhtml)
-            (out / "materials.json").write_text(json.dumps(materials, indent=2), encoding="utf-8")
-            with (out / "materials.csv").open("w", newline="", encoding="utf-8") as f:
-                w = csv.DictWriter(f, fieldnames=MATERIAL_FIELDS)
-                w.writeheader()
-                w.writerows(materials)
             cats = {c: sum(1 for m in materials if m["category"] == c)
                     for c in dict.fromkeys(m["category"] for m in materials)}
             print(f"materials: {len(materials)} items "
                   f"({', '.join(f'{k} {v}' for k, v in cats.items())})")
         except Exception as e:  # noqa: BLE001
             print(f"  ! materials: {e}", file=sys.stderr)
+
+    if args.material_details and materials:
+        cache = out / "raw"
+        ok = 0
+        for i, m in enumerate(materials, 1):
+            fresh = not (cache / f"material_{m['id']:03d}.html").exists()
+            if fresh:
+                time.sleep(0.4)  # be polite to archive.org
+            try:
+                m.update(parse_material_detail(fetch_material_detail(m["id"], cache)))
+                ok += 1
+            except Exception as e:  # noqa: BLE001
+                print(f"  ! material {m['id']} ({m['name']}): {e}", file=sys.stderr, flush=True)
+            if i % 20 == 0:
+                print(f"  material details {i}/{len(materials)}", flush=True)
+        missing = [m["id"] for m in materials
+                   if not (cache / f"material_{m['id']:03d}.html").exists()]
+        if missing:
+            print(f"missing (re-run to retry): {missing}", flush=True)
+        print(f"material details fetched: {ok}/{len(materials)}")
+
+    if materials:
+        (out / "materials.json").write_text(json.dumps(materials, indent=2), encoding="utf-8")
+        with (out / "materials.csv").open("w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=MATERIAL_FIELDS)
+            w.writeheader()
+            for m in materials:
+                row = dict(m)
+                row["purchase_in"] = "; ".join(m.get("purchase_in", []))
+                row["dropped_by"] = "; ".join(d["name"] for d in m.get("dropped_by", []))
+                row["area_searches"] = "; ".join(
+                    f'{a["area"]} ({a["status"]})' for a in m.get("area_searches", []))
+                row["dungeon_reward"] = "; ".join(
+                    f'{d["dungeon"]} / {d["area"]} (floors {d["floors"]})'
+                    for d in m.get("dungeon_reward", []))
+                w.writerow(row)
 
     crafting: list[dict] = []
     crafting_effects: list[dict] = []

@@ -42,8 +42,9 @@ when no game install is present.
 (Wayback Machine, 2005) plus a community crafting chart: 115 units (class, race,
 rank, slots, move, HP/ATK/DEF/AGI/DEX/WIS/INT/HIT%), their special abilities, the
 full evolution tree (target, rank, level, VP, RankUp Emblem), 31 emblems /
-70 recipes, 89 materials (jewels, ores, other) with rarity and effect, and 70
-weapon/armor/accessory crafting recipes with effect ids.
+70 recipes, 89 materials (jewels, ores, other) with rarity/effect and where to
+buy or find each one, and 70 weapon/armor/accessory crafting recipes with
+effect ids.
 
 `unitdb/PocketKingdom-Units.html` is a **self-contained app** — open it in any
 browser; no server or internet needed. It has:
@@ -55,8 +56,9 @@ browser; no server or internet needed. It has:
 - **Emblems** — recipe table (Ore + Item1 + Item2 → Success%); clicking a
   RankUp Emblem in a unit's evolution jumps straight to its recipe.
 - **Materials** — jewels, ores and other materials with rarity and effect,
-  filterable by category and rarity; open one to see the crafting and emblem
-  recipes that consume it.
+  filterable by category, rarity and shop; open one for the shops that sell it,
+  area searches, dungeon rewards, the units that drop it, and the crafting and
+  emblem recipes that consume it.
 - **Crafting** — weapon/armor/accessory recipes (Mold + Ore + 2 materials →
   Result + effect + success%), filterable by mold/ore/success, with a
   cross-referenced effect-id table.
@@ -64,12 +66,14 @@ browser; no server or internet needed. It has:
 Rebuild/refresh:
 
 ```bash
-python3 tools/build_unitdb.py --details --emblems --crafting --rankup --materials
+python3 tools/build_unitdb.py --details --emblems --crafting --rankup \
+    --materials --material-details
 ```
 
 `--details` re-fetches each unit page, `--emblems` the recipe table,
-`--materials` the material database, `--crafting` the crafting chart and
-`--rankup` the guide's rankup chart (which supplies per-unit SP and is
+`--materials` the material database, `--material-details` each material's
+shops/drops/search areas, `--crafting` the crafting chart and `--rankup` the
+guide's rankup chart (which supplies per-unit SP and is
 cross-checked against the scraped evolution); all cache into `unitdb/raw/`
 (git-ignored). Omit the flags for a fast index-only
 rebuild. Unit stats are base values — the game scales them with level, and
