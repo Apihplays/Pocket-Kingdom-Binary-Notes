@@ -472,9 +472,12 @@ function showEmblem(name){
 
 // ---- materials
 const M_NORM = s => String(s).toLowerCase().replace(/[^a-z0-9]/g, "");
+// Guide spelling slips -> the real material name (mirrors INGREDIENT_ALIASES).
+const ING_ALIAS = {"chaostheart":"chaosheart"};
+const M_KEY = s => ING_ALIAS[M_NORM(s)] || M_NORM(s);
 function materialUses(m){
-  const key = M_NORM(m.name);
-  const hit = x => M_NORM(x) === key;
+  const key = M_KEY(m.name);
+  const hit = x => M_KEY(x) === key;
   return {
     craft: CRAFTING.filter(c => [c.ore, c.item1, c.item2].some(hit)),
     emblems: EMBLEMS.filter(e => [e.ore, e.item1, e.item2].some(hit)),

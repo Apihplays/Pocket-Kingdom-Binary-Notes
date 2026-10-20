@@ -62,10 +62,13 @@ python3 tools/build_unitdb.py --details --emblems --crafting --rankup --material
 - The material list is 89 items, not the full 1–96 id range: the 2006 capture
   omits ids 83–89. Rarity is the site's own value (higher = rarer).
 - A material's **Used in** count only covers the 70 crafting recipes and 70
-  emblem recipes in this database, so 21 of the 89 show no uses yet (bloods,
+  emblem recipes in this database, so 20 of the 89 show no uses yet (bloods,
   books, potions, …) even though they are craftable ingredients in game.
   Matching normalises names because the crafting guide spells them without
-  spaces (`GaiaRock`, `ChrysaorEye`).
+  spaces (`GaiaRock`, `ChrysaorEye`), and the guide's `ChaostHeart` typo is
+  mapped to **Chaos Heart** (`INGREDIENT_ALIASES` in the builder) so the
+  Rebirth Necklace recipe links to it. The recipe row still reads as written.
+  `Any` is the guide's wildcard ingredient and matches no material.
 - Shop / drop / search data only exists where the archived material page had it:
   every field defaults to empty, and some high-rarity materials list only a
   dungeon. `Offline` / `Online` under **Area searches** are the site's own labels
