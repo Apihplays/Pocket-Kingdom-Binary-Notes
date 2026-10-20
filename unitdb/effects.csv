@@ -1,53 +1,53 @@
-id,name
-0,atk up
-1,atk down
-2,def up
-3,def down
-4,agi up
-5,agi down
-6,dex up
-7,dex down
-8,int up
-9,int down
-10,wis up
-11,wis down
-12,sleep
-13,deep sleep
-14,sleep resistance
-15,paralysis
-16,severe paralysis
-17,paralysis resistance
-18,poison
-19,severe poison
-20,poison resistance
-21,silence
-22,severe silence
-23,silence resistance
-24,auto hp restore 1
-25,auto hp restore 2
-26,auto hp restore 3
-27,hp absorp 1
-28,hp absorp 2
-29,critical 1
-30,critical 2
-31,critical 3
-32,counter 1
-33,counter 2
-34,counter 3
-35,phy reduc 1
-36,phy reduc 2
-37,phy reduc 3
-38,magic reduction
-39,magic reflection
-40,proof of contract
-41,warrior spirit
-42,mage spirit
-43,hero spirit
-44,self destruct
-45,regenerate
-46,multiply
-47,revive
-48,item recovery
-49,loot recovery up 1
-50,loot recovery up 2
-51,loot recovery up 3
+id,name,behavior
+0,atk up,
+1,atk down,
+2,def up,
+3,def down,
+4,agi up,
+5,agi down,
+6,dex up,
+7,dex down,
+8,int up,
+9,int down,
+10,wis up,
+11,wis down,
+12,sleep,
+13,deep sleep,
+14,sleep resistance,
+15,paralysis,
+16,severe paralysis,
+17,paralysis resistance,
+18,poison,
+19,severe poison,
+20,poison resistance,
+21,silence,
+22,severe silence,
+23,silence resistance,
+24,auto hp restore 1,
+25,auto hp restore 2,
+26,auto hp restore 3,
+27,hp absorp 1,
+28,hp absorp 2,
+29,critical 1,
+30,critical 2,
+31,critical 3,
+32,counter 1,
+33,counter 2,
+34,counter 3,
+35,phy reduc 1,
+36,phy reduc 2,
+37,phy reduc 3,
+38,magic reduction,
+39,magic reflection,
+40,proof of contract,INT +50% (x1.5)
+41,warrior spirit,ATK & DEF +30% (x1.3)
+42,mage spirit,INT & WIS +30% (x1.3)
+43,hero spirit,ATK/DEF/AGI/DEX/WIS/INT +30% (x1.3)
+44,self destruct,
+45,regenerate,
+46,multiply,
+47,revive,
+48,item recovery,
+49,loot recovery up 1,
+50,loot recovery up 2,
+51,loot recovery up 3,

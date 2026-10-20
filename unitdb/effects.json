@@ -1,210 +1,262 @@
 [
   {
     "id": 0,
-    "name": "atk up"
+    "name": "atk up",
+    "behavior": ""
   },
   {
     "id": 1,
-    "name": "atk down"
+    "name": "atk down",
+    "behavior": ""
   },
   {
     "id": 2,
-    "name": "def up"
+    "name": "def up",
+    "behavior": ""
   },
   {
     "id": 3,
-    "name": "def down"
+    "name": "def down",
+    "behavior": ""
   },
   {
     "id": 4,
-    "name": "agi up"
+    "name": "agi up",
+    "behavior": ""
   },
   {
     "id": 5,
-    "name": "agi down"
+    "name": "agi down",
+    "behavior": ""
   },
   {
     "id": 6,
-    "name": "dex up"
+    "name": "dex up",
+    "behavior": ""
   },
   {
     "id": 7,
-    "name": "dex down"
+    "name": "dex down",
+    "behavior": ""
   },
   {
     "id": 8,
-    "name": "int up"
+    "name": "int up",
+    "behavior": ""
   },
   {
     "id": 9,
-    "name": "int down"
+    "name": "int down",
+    "behavior": ""
   },
   {
     "id": 10,
-    "name": "wis up"
+    "name": "wis up",
+    "behavior": ""
   },
   {
     "id": 11,
-    "name": "wis down"
+    "name": "wis down",
+    "behavior": ""
   },
   {
     "id": 12,
-    "name": "sleep"
+    "name": "sleep",
+    "behavior": ""
   },
   {
     "id": 13,
-    "name": "deep sleep"
+    "name": "deep sleep",
+    "behavior": ""
   },
   {
     "id": 14,
-    "name": "sleep resistance"
+    "name": "sleep resistance",
+    "behavior": ""
   },
   {
     "id": 15,
-    "name": "paralysis"
+    "name": "paralysis",
+    "behavior": ""
   },
   {
     "id": 16,
-    "name": "severe paralysis"
+    "name": "severe paralysis",
+    "behavior": ""
   },
   {
     "id": 17,
-    "name": "paralysis resistance"
+    "name": "paralysis resistance",
+    "behavior": ""
   },
   {
     "id": 18,
-    "name": "poison"
+    "name": "poison",
+    "behavior": ""
   },
   {
     "id": 19,
-    "name": "severe poison"
+    "name": "severe poison",
+    "behavior": ""
   },
   {
     "id": 20,
-    "name": "poison resistance"
+    "name": "poison resistance",
+    "behavior": ""
   },
   {
     "id": 21,
-    "name": "silence"
+    "name": "silence",
+    "behavior": ""
   },
   {
     "id": 22,
-    "name": "severe silence"
+    "name": "severe silence",
+    "behavior": ""
   },
   {
     "id": 23,
-    "name": "silence resistance"
+    "name": "silence resistance",
+    "behavior": ""
   },
   {
     "id": 24,
-    "name": "auto hp restore 1"
+    "name": "auto hp restore 1",
+    "behavior": ""
   },
   {
     "id": 25,
-    "name": "auto hp restore 2"
+    "name": "auto hp restore 2",
+    "behavior": ""
   },
   {
     "id": 26,
-    "name": "auto hp restore 3"
+    "name": "auto hp restore 3",
+    "behavior": ""
   },
   {
     "id": 27,
-    "name": "hp absorp 1"
+    "name": "hp absorp 1",
+    "behavior": ""
   },
   {
     "id": 28,
-    "name": "hp absorp 2"
+    "name": "hp absorp 2",
+    "behavior": ""
   },
   {
     "id": 29,
-    "name": "critical 1"
+    "name": "critical 1",
+    "behavior": ""
   },
   {
     "id": 30,
-    "name": "critical 2"
+    "name": "critical 2",
+    "behavior": ""
   },
   {
     "id": 31,
-    "name": "critical 3"
+    "name": "critical 3",
+    "behavior": ""
   },
   {
     "id": 32,
-    "name": "counter 1"
+    "name": "counter 1",
+    "behavior": ""
   },
   {
     "id": 33,
-    "name": "counter 2"
+    "name": "counter 2",
+    "behavior": ""
   },
   {
     "id": 34,
-    "name": "counter 3"
+    "name": "counter 3",
+    "behavior": ""
   },
   {
     "id": 35,
-    "name": "phy reduc 1"
+    "name": "phy reduc 1",
+    "behavior": ""
   },
   {
     "id": 36,
-    "name": "phy reduc 2"
+    "name": "phy reduc 2",
+    "behavior": ""
   },
   {
     "id": 37,
-    "name": "phy reduc 3"
+    "name": "phy reduc 3",
+    "behavior": ""
   },
   {
     "id": 38,
-    "name": "magic reduction"
+    "name": "magic reduction",
+    "behavior": ""
   },
   {
     "id": 39,
-    "name": "magic reflection"
+    "name": "magic reflection",
+    "behavior": ""
   },
   {
     "id": 40,
-    "name": "proof of contract"
+    "name": "proof of contract",
+    "behavior": "INT +50% (x1.5)"
   },
   {
     "id": 41,
-    "name": "warrior spirit"
+    "name": "warrior spirit",
+    "behavior": "ATK & DEF +30% (x1.3)"
   },
   {
     "id": 42,
-    "name": "mage spirit"
+    "name": "mage spirit",
+    "behavior": "INT & WIS +30% (x1.3)"
   },
   {
     "id": 43,
-    "name": "hero spirit"
+    "name": "hero spirit",
+    "behavior": "ATK/DEF/AGI/DEX/WIS/INT +30% (x1.3)"
   },
   {
     "id": 44,
-    "name": "self destruct"
+    "name": "self destruct",
+    "behavior": ""
   },
   {
     "id": 45,
-    "name": "regenerate"
+    "name": "regenerate",
+    "behavior": ""
   },
   {
     "id": 46,
-    "name": "multiply"
+    "name": "multiply",
+    "behavior": ""
   },
   {
     "id": 47,
-    "name": "revive"
+    "name": "revive",
+    "behavior": ""
   },
   {
     "id": 48,
-    "name": "item recovery"
+    "name": "item recovery",
+    "behavior": ""
   },
   {
     "id": 49,
-    "name": "loot recovery up 1"
+    "name": "loot recovery up 1",
+    "behavior": ""
   },
   {
     "id": 50,
-    "name": "loot recovery up 2"
+    "name": "loot recovery up 2",
+    "behavior": ""
   },
   {
     "id": 51,
-    "name": "loot recovery up 3"
+    "name": "loot recovery up 3",
+    "behavior": ""
   }
 ]

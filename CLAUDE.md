@@ -90,6 +90,32 @@ When reverse engineering, investigating file formats, decompiling, or inspecting
   - Table header byte at +22 = base/aggregate rate (also patched to 100).
 - Save files: `save.dat`, `options.dat` under `C:\system\apps\6rah\` in the emulator (see `6RAH.cfg`).
 
+## Item effects 40-43 (verified 2026-10-20)
+Effect **names** are data (`effect.dat`; `english/itemdata.dat` @ `0x00F0`, 52 x 48-byte
+records), but the **mechanics are hard-coded**. Dispatcher for effects 0..43:
+
+- `0x1000f3a0` = effect-apply routine; `0x1000f3c8` is
+  `cmp r2,#0x2b; ldrls pc,[pc,r2,lsl#2]` with the 44-entry table at `0x1000f3d4`.
+  Cases: 40 `0x1000facc`, 41 `0x1000fb34`, 42 `0x1000fc04`, 43 `0x1000fcd4`.
+- Handlers multiply the unit's **battle stat** fields in place:
+  - 40 Proof of Contract: `INT +50%` (`stat + stat/2`, floor)
+  - 41 Warrior's Spirit: `ATK +30%`, `DEF +30%`
+  - 42 Mage's Spirit: `INT +30%`, `WIS +30%`
+  - 43 Hero's Spirit: ATK/DEF/AGI/DEX/WIS/INT `+30%` each
+- +30% is `stat + (((0x66666667 * 3*stat) >> 32) >> 2)` == `floor(1.3*stat)`.
+- Stat map (proved by the getters/setters the ATK/DEF/AGI/DEX/INT/WIS Up cases use):
+  `ATK +0x14`, `DEF +0x18`, `AGI +0x24`, `DEX +0x28`, `WIS +0x2c`, `INT +0x30`;
+  the enemy copy is `+0x228` higher (`ctx+0x23c..0x258`).
+- Applied per equipped effect slot: caller `0x10020f3c` reads slot fields `+0xc` and `+0x10`
+  (records at `ctx+0x4a8 + 52*slot` for the player, `ctx+0x5e0 + 52*slot` for the enemy) and
+  calls the dispatcher twice — duplicates stack (two Hero's Spirit = x1.69).
+- Items: 40 = Emperor's Staff, Mage Necklace; 41 = Wolf Ring; 42 = Owl Ring;
+  43 = Ring of the Sun.
+- 44-51 are not in this table (e.g. loot recovery 49-51 is handled in the drop routine at
+  `0x1000d900`). The buff lands on the battle array, so the menu stat screen does not show it.
+- Compendium source of truth: `EFFECT_BEHAVIOR` in `tools/build_unitdb.py` →
+  `unitdb/effects.json` / `.csv`; rerun the full build to refresh the app.
+
 ## Local Modding & Patching Tools
 - **100% combine rates:** `python3 tools/patch_100_percent_combine.py [app_dir]`
   - Patches rates in `comp*.dat` (dev copies) AND the live `itemdata.dat` + `english/itemdata.dat` tails
