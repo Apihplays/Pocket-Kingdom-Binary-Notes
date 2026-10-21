@@ -17,8 +17,8 @@ id,name,behavior
 15,paralysis,On a connecting hit: inflicts Paralysis (INT/2 % cure per action); blocked by Paralysis Resistance
 16,severe paralysis,"Always inflicts Paralysis, even on a miss (INT/2 % cure per action); blocked by Paralysis Resistance"
 17,paralysis resistance,Battle start: immune to Paralysis
-18,poison,Always inflicts Poison; coded at 5 HP per action but the damage counter is never armed (see notes)
-19,severe poison,Always inflicts Deadly Poison; coded at 10 HP per action but the damage counter is never armed (see notes)
+18,poison,Always inflicts Poison; the 5 HP/action tick appears unreachable in code (wrong timer cell) — not measured in-game
+19,severe poison,Always inflicts Severe Poison; the 10 HP/action tick appears unreachable in code (wrong timer cell) — not measured in-game
 20,poison resistance,Battle start: immune to Poison and Deadly Poison
 21,silence,On a connecting hit: inflicts Silence (blocks magic abilities; INT/2 % cure per action)
 22,severe silence,"Always inflicts Silence, even on a miss (blocks magic; INT/2 % cure per action)"

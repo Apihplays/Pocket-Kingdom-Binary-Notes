@@ -92,12 +92,12 @@
   {
     "id": 18,
     "name": "poison",
-    "behavior": "Always inflicts Poison; coded at 5 HP per action but the damage counter is never armed (see notes)"
+    "behavior": "Always inflicts Poison; the 5 HP/action tick appears unreachable in code (wrong timer cell) \u2014 not measured in-game"
   },
   {
     "id": 19,
     "name": "severe poison",
-    "behavior": "Always inflicts Deadly Poison; coded at 10 HP per action but the damage counter is never armed (see notes)"
+    "behavior": "Always inflicts Severe Poison; the 10 HP/action tick appears unreachable in code (wrong timer cell) \u2014 not measured in-game"
   },
   {
     "id": 20,
