@@ -31,14 +31,14 @@ id,name,behavior
 29,critical 1,
 30,critical 2,
 31,critical 3,
-32,counter 1,
-33,counter 2,
-34,counter 3,
-35,phy reduc 1,
-36,phy reduc 2,
-37,phy reduc 3,
-38,magic reduction,
-39,magic reflection,
+32,counter 1,20% chance to counter a melee hit (attacker within 40px front / 8px back)
+33,counter 2,40% chance to counter a melee hit (attacker within 40px front / 8px back)
+34,counter 3,60% chance to counter a melee hit (attacker within 40px front / 8px back)
+35,phy reduc 1,Physical damage taken x0.8 (-20%); highest tier only
+36,phy reduc 2,Physical damage taken x0.6 (-40%); highest tier only
+37,phy reduc 3,Physical damage taken x0.5 (-50%); highest tier only
+38,magic reduction,Magic damage taken x0.75 (-25%)
+39,magic reflection,Magic damage taken x0.75 (-25%); same handler as 38 (no separate reflect code)
 40,proof of contract,INT +50% (x1.5)
 41,warrior spirit,ATK & DEF +30% (x1.3)
 42,mage spirit,INT & WIS +30% (x1.3)

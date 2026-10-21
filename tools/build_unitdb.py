@@ -67,6 +67,14 @@ CRAFT_FIELDS = ["mold", "ore", "item1", "item2", "result", "effect", "success", 
 # (ATK +0x14, DEF +0x18, AGI +0x24, DEX +0x28, WIS +0x2c, INT +0x30).
 # See CLAUDE.md > "Item effects 40-43 (verified)".
 EFFECT_BEHAVIOR = {
+    32: "20% chance to counter a melee hit (attacker within 40px front / 8px back)",
+    33: "40% chance to counter a melee hit (attacker within 40px front / 8px back)",
+    34: "60% chance to counter a melee hit (attacker within 40px front / 8px back)",
+    35: "Physical damage taken x0.8 (-20%); highest tier only",
+    36: "Physical damage taken x0.6 (-40%); highest tier only",
+    37: "Physical damage taken x0.5 (-50%); highest tier only",
+    38: "Magic damage taken x0.75 (-25%)",
+    39: "Magic damage taken x0.75 (-25%); same handler as 38 (no separate reflect code)",
     40: "INT +50% (x1.5)",
     41: "ATK & DEF +30% (x1.3)",
     42: "INT & WIS +30% (x1.3)",

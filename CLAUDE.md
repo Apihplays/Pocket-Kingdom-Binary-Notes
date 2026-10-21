@@ -155,6 +155,24 @@ Effects 44-48 are **not** in the 0..43 dispatcher — they are procs checked els
 - Compendium source of truth: `EFFECT_BEHAVIOR` in `tools/build_unitdb.py` →
   `unitdb/effects.json` / `.csv`; rerun the full build to refresh the app.
 
+## Counter & damage reduction 32-39 (verified 2026-10-21)
+- Dispatch `0x1000f3d4[id]`: 32-39 -> `0x1000fa40..0x1000fab8`; each only ORs one bit into the
+  slot effect array (`0x100081f0`): 32/33/34 = `0x200000/0x400000/0x800000` (Counter 1/2/3),
+  35/36/37 = `0x10000/0x20000/0x40000` (Phys Red 1/2/3), **38 and 39 both = `0x80000`**
+  (same handler address; no handler sets `0x8000`, the bit the reflect branch tests).
+- Physical damage (`0x1000e7e4`, reached when attacker effect bit `0x2` is clear) tests `0x70000`
+  on the defender and keeps the highest tier only: `0x40000` -> `dmg/2` (50% taken); `0x20000` ->
+  `((0x66666667*3dmg)>>32)>>1` (60%); else `0x10000` -> `dmg-((0x66666667*dmg)>>32)>>1` (80%).
+  Clamp `max(1,dmg)` at `0x1000e8b0`, then `0x10008af4(game, defender, dmg)`.
+- Magic (`0x1000e77c`, attacker bit `0x2`) + defender `0x80000` -> `dmg - dmg/4` (75% taken).
+- Counter (`0x10022a70`, inside melee tick `0x100228c4`): any of `0xe00000`, opponent != 0,
+  `rand()%100 < 60/40/20` (`0x800000`/`0x400000`/else; roll `0x100714e8`), then a range gate
+  using facing bit `0x4` of `[unit+0xc]`: opponent x in `[x-0x28,x+8]` if set, `[x-8,x+0x28]`
+  if clear (0x28 = 40 px). Success sets `[unit+0x70]=2`, `[unit+0x18]=0`, `[unit+0x1c]=2`
+  (counter exchange, handler `0x100132ec`); failure sets `[unit+0x70]=1`.
+- Effect flags: `battle+0x83c+4*slot` (player) / `+0x854` (enemy); get/OR/clear =
+  `0x100082e8`/`0x100081f0`/`0x1000826c`.
+
 ## Local Modding & Patching Tools
 - **100% combine rates:** `python3 tools/patch_100_percent_combine.py [app_dir]`
   - Patches rates in `comp*.dat` (dev copies) AND the live `itemdata.dat` + `english/itemdata.dat` tails
