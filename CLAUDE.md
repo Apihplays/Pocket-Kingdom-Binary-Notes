@@ -2,6 +2,7 @@
 
 ## Project Overview
 This repository contains reverse engineering analysis, tools, and modifications for **Pocket Kingdom: Own the World** (Nokia N-Gage / Symbian OS 6.1/7.0s ARMv4T binary).
+**Agents:** read `AGENT_CONTEXT.md` → `notes/INDEX.md` → one topic note; use this file for project history/tooling.
 
 ## Primary Reverse Engineering Tool: REA (Reverse Engineer Anything)
 When reverse engineering, investigating file formats, decompiling, or inspecting binaries in this project:
@@ -11,8 +12,7 @@ When reverse engineering, investigating file formats, decompiling, or inspecting
   - `npx rea-agents decompile <path>`
   - `npx rea-agents instructions <path>`
   - `npx rea-agents search-bytes <pattern>`
-- REA provides static and runtime analysis across native binaries, web bundles, bytecode, and application graphs.
-- RE analysis transcripts live in `docs/` (see `docs/comp_loader_points.md`).
+- REA provides static and runtime analysis across native binaries, web bundles, bytecode, and application graphs; transcripts live in `docs/` (`docs/comp_loader_points.md`).
 
 ### REA on THIS target (important)
 - REA **cannot open `6RAH.APP` directly** — the Symbian E32Image is not a supported
