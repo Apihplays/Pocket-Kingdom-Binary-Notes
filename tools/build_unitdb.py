@@ -67,6 +67,21 @@ CRAFT_FIELDS = ["mold", "ore", "item1", "item2", "result", "effect", "success", 
 # (ATK +0x14, DEF +0x18, AGI +0x24, DEX +0x28, WIS +0x2c, INT +0x30).
 # See CLAUDE.md > "Item effects 40-43 (verified)".
 EFFECT_BEHAVIOR = {
+    0: "Battle start: wearer ATK +25% (ATK + ATK/4)",
+    1: "Attack proc: wearer's own ATK -INT(target)/4 (target unaffected)",
+    2: "Battle start: wearer DEF +25% (DEF + DEF/4)",
+    3: "Attack proc: wearer's own DEF -INT(target)/4 (target unaffected)",
+    4: "Battle start: wearer AGI +25% (AGI + AGI/4)",
+    5: "Attack proc: wearer's DEF -INT(target)/4 (bug: AGI never changes)",
+    6: "Battle start: wearer DEX +25% (DEX + DEX/4)",
+    7: "Attack proc: wearer's DEF -INT(target)/4 (bug: DEX never changes)",
+    8: "Battle start: wearer INT +25% (INT + INT/4)",
+    9: "Attack proc: wearer's DEF -INT(target)/4 (bug: INT never changes)",
+    10: "Battle start: wearer WIS +25% (WIS + WIS/4)",
+    11: "Attack proc: wearer's DEF -INT(target)/4 (bug: WIS never changes)",
+    24: "Every 33 action ticks: heal 2 HP (clamped to max)",
+    25: "Every 33 action ticks: heal 5 HP (clamped to max)",
+    26: "Every 33 action ticks: heal 10 HP (clamped to max; highest tier wins)",
     27: "Attack proc: drain ATK-DEF (min 3) from the target, wielder heals 1/3 of it",
     28: "Attack proc: drain ATK-DEF (min 3) from the target, wielder heals 2/3 of it",
     29: "10% chance on hit: marks the target with the x2 damage flag (not the wielder)",
@@ -89,6 +104,9 @@ EFFECT_BEHAVIOR = {
     46: "10% per action: clone into an empty slot 4/5",
     47: "On death: revive once at 50% max HP (consumed)",
     48: "Battle end: a surviving carrier gives each fallen ally a 50% chance to keep its equipped item (kept unequipped; otherwise destroyed)",
+    49: "Battle end: battle gold x1.2 (highest tier only)",
+    50: "Battle end: battle gold x1.5 (highest tier only)",
+    51: "Battle end: battle gold x2.0 (highest tier only)",
 }
 GIST_URL = (
     "https://gist.githubusercontent.com/Apihplays/"

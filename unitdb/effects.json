@@ -2,62 +2,62 @@
   {
     "id": 0,
     "name": "atk up",
-    "behavior": ""
+    "behavior": "Battle start: wearer ATK +25% (ATK + ATK/4)"
   },
   {
     "id": 1,
     "name": "atk down",
-    "behavior": ""
+    "behavior": "Attack proc: wearer's own ATK -INT(target)/4 (target unaffected)"
   },
   {
     "id": 2,
     "name": "def up",
-    "behavior": ""
+    "behavior": "Battle start: wearer DEF +25% (DEF + DEF/4)"
   },
   {
     "id": 3,
     "name": "def down",
-    "behavior": ""
+    "behavior": "Attack proc: wearer's own DEF -INT(target)/4 (target unaffected)"
   },
   {
     "id": 4,
     "name": "agi up",
-    "behavior": ""
+    "behavior": "Battle start: wearer AGI +25% (AGI + AGI/4)"
   },
   {
     "id": 5,
     "name": "agi down",
-    "behavior": ""
+    "behavior": "Attack proc: wearer's DEF -INT(target)/4 (bug: AGI never changes)"
   },
   {
     "id": 6,
     "name": "dex up",
-    "behavior": ""
+    "behavior": "Battle start: wearer DEX +25% (DEX + DEX/4)"
   },
   {
     "id": 7,
     "name": "dex down",
-    "behavior": ""
+    "behavior": "Attack proc: wearer's DEF -INT(target)/4 (bug: DEX never changes)"
   },
   {
     "id": 8,
     "name": "int up",
-    "behavior": ""
+    "behavior": "Battle start: wearer INT +25% (INT + INT/4)"
   },
   {
     "id": 9,
     "name": "int down",
-    "behavior": ""
+    "behavior": "Attack proc: wearer's DEF -INT(target)/4 (bug: INT never changes)"
   },
   {
     "id": 10,
     "name": "wis up",
-    "behavior": ""
+    "behavior": "Battle start: wearer WIS +25% (WIS + WIS/4)"
   },
   {
     "id": 11,
     "name": "wis down",
-    "behavior": ""
+    "behavior": "Attack proc: wearer's DEF -INT(target)/4 (bug: WIS never changes)"
   },
   {
     "id": 12,
@@ -122,17 +122,17 @@
   {
     "id": 24,
     "name": "auto hp restore 1",
-    "behavior": ""
+    "behavior": "Every 33 action ticks: heal 2 HP (clamped to max)"
   },
   {
     "id": 25,
     "name": "auto hp restore 2",
-    "behavior": ""
+    "behavior": "Every 33 action ticks: heal 5 HP (clamped to max)"
   },
   {
     "id": 26,
     "name": "auto hp restore 3",
-    "behavior": ""
+    "behavior": "Every 33 action ticks: heal 10 HP (clamped to max; highest tier wins)"
   },
   {
     "id": 27,
@@ -247,16 +247,16 @@
   {
     "id": 49,
     "name": "loot recovery up 1",
-    "behavior": ""
+    "behavior": "Battle end: battle gold x1.2 (highest tier only)"
   },
   {
     "id": 50,
     "name": "loot recovery up 2",
-    "behavior": ""
+    "behavior": "Battle end: battle gold x1.5 (highest tier only)"
   },
   {
     "id": 51,
     "name": "loot recovery up 3",
-    "behavior": ""
+    "behavior": "Battle end: battle gold x2.0 (highest tier only)"
   }
 ]
