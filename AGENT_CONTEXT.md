@@ -28,6 +28,10 @@ unless you need project/tooling history.
 | Battle struct | `[ctx+0x1a590]` — gold `+0x960`, regen timers `+0x7a8`, hit timers `+0x7d8` |
 | HP damage / heal | `0x10008af4` (subtract) / `0x10008bc4` (add, clamps) |
 | Effect-flag word get / OR / clear | `0x100082e8` / `0x100081f0` / `0x1000826c` |
+| Status ailments (apply) | `0x10007a3c` silence · `0x10007b28` poison · `0x10007c94` deadly · `0x10007e00` paralysis · `0x10007f48` sleep |
+| Status bits (effect word) | silence `0x10` · poison `0x20` · deadly `0x40` · sleep `0x100` · paralysis `0x400` |
+| Status immunity bits (`unit+0xc`) | poison `0x1000` · silence `0x2000` · sleep `0x4000` · paralysis `0x8000` |
+| Natural cure (per action) | `0x1000a5f8` — `rand%100 < WIS/2` (sleep/poison), `< INT/2` (silence/paralysis) |
 | `has_effect(ctx, unit, id)` | `0x1000a53c` |
 | and `rng` | `0x100714e8` (`rand()`), `%100` done inline |
 
@@ -40,10 +44,11 @@ unless you need project/tooling history.
 - **Equipped records**: `ctx+0x4a8 + 52*slot` (player), `ctx+0x5e0 + 52*slot` (enemy),
   item id at `+0x00` (`0xff` = empty), effect ids at `+0x0c` and `+0x10`.
 - **Effect IDs are 0-based** indices into the 52-name table (`effect.dat`, UTF-16BE records;
-  `english/itemdata.dat` @ `0x00F0`, 52×48 UTF-16LE). 0–11 = stat Up/Down, 24–26 = Auto HP
-  Restore, 27/28 = HP Absorption 1/2, 29–31 = Critical 1/2/3, 32–34 = Counter, 35–37 = Phys Red,
-  38/39 = Magic Red/Reflection, 44–48 = Self Destruct / Regenerate / Multiply / Revive / Item
-  Recovery, 49–51 = Gold Recovery Up.
+  `english/itemdata.dat` @ `0x00F0`, 52×48 UTF-16LE). 0–11 = stat Up/Down, 12/13 = Sleep/D.Sleep,
+  14 = Sleep Res, 15/16 = Paralysis, 17 = Paralysis Res, 18/19 = Poison/Deadly, 20 = Poison Res,
+  21/22 = Silence/Strong, 23 = Silence Res, 24–26 = Auto HP Restore, 27/28 = HP Absorption 1/2,
+  29–31 = Critical 1/2/3, 32–34 = Counter, 35–37 = Phys Red, 38/39 = Magic Red/Reflection,
+  44–48 = Self Destruct / Regenerate / Multiply / Revive / Item Recovery, 49–51 = Gold Recovery Up.
 
 ## Data facts that bite
 - `comp*.dat` is **never opened** by the game; live recipe data is the 4704-byte tail of

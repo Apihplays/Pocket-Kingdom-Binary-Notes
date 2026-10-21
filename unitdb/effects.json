@@ -62,62 +62,62 @@
   {
     "id": 12,
     "name": "sleep",
-    "behavior": ""
+    "behavior": "On a connecting hit: inflicts Sleep (WIS/2 % cure per action); blocked by Sleep Resistance"
   },
   {
     "id": 13,
     "name": "deep sleep",
-    "behavior": ""
+    "behavior": "Always inflicts Sleep, even on a miss (WIS/2 % cure per action); blocked by Sleep Resistance"
   },
   {
     "id": 14,
     "name": "sleep resistance",
-    "behavior": ""
+    "behavior": "Battle start: immune to Sleep"
   },
   {
     "id": 15,
     "name": "paralysis",
-    "behavior": ""
+    "behavior": "On a connecting hit: inflicts Paralysis (INT/2 % cure per action); blocked by Paralysis Resistance"
   },
   {
     "id": 16,
     "name": "severe paralysis",
-    "behavior": ""
+    "behavior": "Always inflicts Paralysis, even on a miss (INT/2 % cure per action); blocked by Paralysis Resistance"
   },
   {
     "id": 17,
     "name": "paralysis resistance",
-    "behavior": ""
+    "behavior": "Battle start: immune to Paralysis"
   },
   {
     "id": 18,
     "name": "poison",
-    "behavior": ""
+    "behavior": "Always inflicts Poison; coded at 5 HP per action but the damage counter is never armed (see notes)"
   },
   {
     "id": 19,
     "name": "severe poison",
-    "behavior": ""
+    "behavior": "Always inflicts Deadly Poison; coded at 10 HP per action but the damage counter is never armed (see notes)"
   },
   {
     "id": 20,
     "name": "poison resistance",
-    "behavior": ""
+    "behavior": "Battle start: immune to Poison and Deadly Poison"
   },
   {
     "id": 21,
     "name": "silence",
-    "behavior": ""
+    "behavior": "On a connecting hit: inflicts Silence (blocks magic abilities; INT/2 % cure per action)"
   },
   {
     "id": 22,
     "name": "severe silence",
-    "behavior": ""
+    "behavior": "Always inflicts Silence, even on a miss (blocks magic; INT/2 % cure per action)"
   },
   {
     "id": 23,
     "name": "silence resistance",
-    "behavior": ""
+    "behavior": "Battle start: immune to Silence"
   },
   {
     "id": 24,

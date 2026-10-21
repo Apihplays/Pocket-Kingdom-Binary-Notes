@@ -90,12 +90,11 @@ When reverse engineering, investigating file formats, decompiling, or inspecting
   - Table header byte at +22 = base/aggregate rate (also patched to 100).
 - Save files: `save.dat`, `options.dat` under `C:\system\apps\6rah\` in the emulator (see `6RAH.cfg`).
 
-## Item effects 0-11, 24-51 (verified 2026-10-20/21)
+## Item effects 0-51 (verified 2026-10-20/21)
 Effect **names** are data (`effect.dat`; `english/itemdata.dat` @ `0x00F0`, 52 x 48-byte records);
 the **mechanics are hard-coded** in `0x1000f3a0`: `cmp r2,#0x2b; ldrls pc,[pc,r2,lsl#2]`, 44-entry
 table `0x1000f3d4` (40 `0x1000facc`, 41 `0x1000fb34`, 42 `0x1000fc04`, 43 `0x1000fcd4`).
-- Multiplies the unit's **battle stat** fields in place: 40 INT +50%; 41 ATK/DEF +30%;
-  42 INT/WIS +30%; 43 all six +30%. `+30%` = `stat + (((0x66666667*3*stat)>>32)>>2)` = `floor(1.3*stat)`.
+- Multiplies the unit's **battle stat** fields in place: 40 INT +50%; 41 ATK/DEF +30%; 42 INT/WIS +30%; 43 all six +30% (`+30%` = `stat + (((0x66666667*3*stat)>>32)>>2)` = `floor(1.3*stat)`).
 - Stat map (proved by the getters/setters): `ATK +0x14`, `DEF +0x18`, `AGI +0x24`, `DEX +0x28`,
   `WIS +0x2c`, `INT +0x30`; enemy copy is `+0x228` higher (`ctx+0x23c..0x258`).
 - Applied per equipped effect slot: caller `0x10020f3c` reads `+0xc`/`+0x10` of
@@ -103,30 +102,31 @@ table `0x1000f3d4` (40 `0x1000facc`, 41 `0x1000fb34`, 42 `0x1000fc04`, 43 `0x100
   duplicates stack (two Hero's Spirit = x1.69).
 - Items: 40 = Emperor's Staff, Mage Necklace; 41 = Wolf Ring; 42 = Owl Ring; 43 = Ring of the Sun;
   44 = Hellfire Axe; 45 = Rebirth Necklace; 46 = Dividing Necklace; 47 = Armored Casket; 48 = Soul Jacket.
-- HP fields: current `+0x1c`, max `+0x20` (enemy `+0x244` / `+0x248`); heal helper
-  `0x10008bc4` adds then clamps to max. `has_effect` helper = `0x1000a53c(ctx, unit, id)`.
+- HP: current `+0x1c`, max `+0x20` (enemy `+0x244`/`+0x248`); heal `0x10008bc4` adds then clamps; `has_effect` = `0x1000a53c(ctx, unit, id)`.
 
-- 44 Self Destruct (death): `0x1000dfcc` → `has_effect(...,0x2c)` at `0x1000e2ec`; `0x10007700`
-  hits enemies within 59 px, damage = user HP - target DEF (`0x100084ec`, min 1), halved while defending.
-- 45 Regenerate: turn start sets bit 31 (`0x1001e9dc` → `0x100081f0(...,0x80000000)`); after the
-  move animation `0x1001edc0` rolls `rand%100 <= 9` and heals `maxHP/2` (`0x10008cf4` → `0x10008bc4`).
-- 46 Multiply: `0x1001d318` `has_effect(...,0x2e)`, `rand%100 <= 9` → `0x1001d5a8` copies the
-  92-byte battle record into a free slot; `0x1000a394` tests slots 4-5 only (`0xff` when full).
-- 47 Revive: death handler `0x10008ec4` compares the slot to `0x2f`, consumes it (`0xff` at
-  `0x10008f50`) and restores `maxHP/2`.
-- 48 Item Recovery: post-battle save `0x1007b0f8` (from `0x1000b5b0`, battle state 5; skipped when
-  `0x1000d530` reports a special/online battle). Pass 1 `0x1007b15c` copies battle HP/status into
-  the roster (`game+0x291c`) and, for survivors only, tests both effect slots
-  (`ctx+0x4b4`/`0x4b8 + 52*slot`) against `0x30` → party flag (`0x1007b1ec`/`0x1007b228`). Pass 2
-  `0x1007b254` skips the living and deletes each fallen unit's item (52-byte template `0x10069574`).
-  With the flag, `rand()&1` keeps it but unequips it (`+0x28=0xff`, `+0x2c=0`). A carrier that dies
-  never sets the flag, so its own item is unprotected. No heal/revive/loot effect.
+- 44 Self Destruct: `0x1000dfcc` → `has_effect(...,0x2c)` at `0x1000e2ec`; `0x10007700` hits enemies within 59 px for `userHP - DEF(target)` (min 1), halved while defending.
+- 45 Regenerate: turn start sets bit 31 (`0x1001e9dc` → `0x100081f0(...,0x80000000)`); after the move animation `0x1001edc0` rolls `rand%100 <= 9` and heals `maxHP/2` (`0x10008cf4` → `0x10008bc4`).
+- 46 Multiply: `0x1001d318` `has_effect(...,0x2e)`, `rand%100 <= 9` → `0x1001d5a8` copies the 92-byte battle record into a free slot; `0x1000a394` tests slots 4-5 only (`0xff` when full).
+- 47 Revive: death handler `0x10008ec4` compares the slot to `0x2f`, consumes it (`0xff` at `0x10008f50`) and restores `maxHP/2`.
+- 48 Item Recovery: post-battle save `0x1007b0f8` (from `0x1000b5b0`; skipped for special/online battles via `0x1000d530`). Pass 1 `0x1007b15c` copies HP/status into the roster (`game+0x291c`) and, for survivors only, tests both effect slots (`ctx+0x4b4`/`0x4b8+52*slot`) against `0x30` → flag (`0x1007b1ec`/`0x1007b228`); pass 2 `0x1007b254` deletes fallen units' items (`0x10069574`), and with the flag `rand()&1` keeps the item but unequips it (`+0x28=0xff`, `+0x2c=0`). A carrier that dies never sets the flag. No heal/revive/loot effect.
 - Up (0/2/4/6/8/10) = battle start `0x1000f484/54c/614/6dc/7a4/86c`: `stat += stat/4` (+25%);
   getters `0x10008490/84ec/85a4/8714/86b8/8600`, setters `0x10009304/93d0/9700/9634/9568/949c`
   write `+0x14/18/24/28/2c/30`. Both slots dispatch, so copies compound (two = x1.5625).
 - Down (1/3/5/7/9/11) = attack procs `0x1000eee4/efb8/f044/f0d0/f15c/f1e8`, gated on `[sp+0x10]`:
   `wearer -= INT(target)/4` (`r8` = wearer, `r5` = target). 1 writes ATK; 3, **and 5/7/9/11**, write
   DEF — all four branch to `0x1000f26c`; AGI/DEX/INT/WIS setters are only reached from Up (bug).
+- 12/13 Sleep, 15/16 Paralysis, 21/22 Silence, 18/19 Poison = attack table `0x1000ee68`; handlers
+  `0x10007f48/7e00/7a3c/7b28/7c94`; effect flags `0x100/0x400/0x10/0x20/0x40`. 12/15/21 gate on
+  `[sp+0x10]==0` (a connecting hit); 13/16/22 skip the gate, and 18/19 never gate → land on a miss.
+- 14/17/20/23 = battle start `0x1000f934/944/954/964`: OR `0x4000/0x8000/0x1000/0x2000` into
+  `unit+0xc` (byte `+0xd`). The five affliction routines `ldrb +0xd` and abort with message id 2 →
+  **complete immunity** (20 also covers 19). They are no-ops at attack time (`0x1000f390`).
+- Sleep/paralysis stall the action helpers `0x10022dc0`/`0x10022d68`; silence makes every magic
+  ability handler jump to action state 4 (`0x10011c10` → `0x10011d8c`), wasting the turn.
+- Cure `0x1000a5f8` (called from `0x10022214`, once per action): `rand%100 < WIS/2` clears `0x160`
+  (sleep/poison/deadly), `< INT/2` clears `0x410` (silence/paralysis). Poison damage `0x1000e8f0`
+  (5 HP, or 10 for deadly) reads `battle+0x718`, but the affliction writes `battle+0x748` → the tick
+  is unreachable as coded (inference; not measured in-game).
 - 24-26 arm a 33-tick timer at `battle+0x7a8+24*team+4*slot` (`battle=[ctx+0x1a590]`,
   `team=[unit+0x7c]`); `0x10022384` (inside `0x10022230`) heals 2/5/10 (highest of `0x7000000`),
   message `0x41`, resets to 33. Skipped while `ctx+0x44c` or `[unit+0xe]&4` is set.

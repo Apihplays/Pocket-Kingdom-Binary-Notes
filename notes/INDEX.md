@@ -6,6 +6,11 @@ open questions. Status: ✅ verified at instruction level · 🟡 inferred / par
 ## Effects
 - ✅ [Stat Up/Down (0–11)](effects/stat-modifiers.md) — Up = +25 % at battle start; Down = the
   **wearer's own** stat −INT(target)/4, and 5/7/9/11 all write DEF. `0x1000f484` / `0x1000f26c`
+- ✅ [Status ailments (12/13/15/16/18/19/21/22)](effects/status-ailments.md) — sleep/paralysis/
+  poison/silence; "deep/severe/strong" variants skip the accuracy check; per-action cure by
+  WIS/2 or INT/2. `0x10007a3c`–`0x10007f48` / `0x1000a5f8`
+- ✅ [Resistances (14/17/20/23)](effects/resistances.md) — battle-start immunity bits in
+  `unit+0xc` `0x1000`/`0x2000`/`0x4000`/`0x8000`; no attack-time effect. `0x1000f934`–`0x1000f964`
 - ✅ [Auto HP Restore 1/2/3 (24–26)](effects/auto-hp-restore.md) — 33-tick timer, heals 2/5/10 HP.
   `0x1000f974` / `0x10022384`
 - ✅ [Gold Recovery Up 1/2/3 (49–51)](effects/gold-recovery.md) — battle gold ×1.2/1.5/2.0,
