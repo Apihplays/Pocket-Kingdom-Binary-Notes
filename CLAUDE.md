@@ -90,7 +90,7 @@ When reverse engineering, investigating file formats, decompiling, or inspecting
   - Table header byte at +22 = base/aggregate rate (also patched to 100).
 - Save files: `save.dat`, `options.dat` under `C:\system\apps\6rah\` in the emulator (see `6RAH.cfg`).
 
-## Item effects 0-51 (verified 2026-10-20/21)
+## Item effects 0-51 (verified 2026-10-20/21; 18/19 damage tick inferred)
 Effect **names** are data (`effect.dat`; `english/itemdata.dat` @ `0x00F0`, 52 x 48-byte records);
 the **mechanics are hard-coded** in `0x1000f3a0`: `cmp r2,#0x2b; ldrls pc,[pc,r2,lsl#2]`, 44-entry
 table `0x1000f3d4` (40 `0x1000facc`, 41 `0x1000fb34`, 42 `0x1000fc04`, 43 `0x1000fcd4`).
