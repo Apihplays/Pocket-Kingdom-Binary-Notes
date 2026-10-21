@@ -67,6 +67,11 @@ CRAFT_FIELDS = ["mold", "ore", "item1", "item2", "result", "effect", "success", 
 # (ATK +0x14, DEF +0x18, AGI +0x24, DEX +0x28, WIS +0x2c, INT +0x30).
 # See CLAUDE.md > "Item effects 40-43 (verified)".
 EFFECT_BEHAVIOR = {
+    27: "Attack proc: drain ATK-DEF (min 3) from the target, wielder heals 1/3 of it",
+    28: "Attack proc: drain ATK-DEF (min 3) from the target, wielder heals 2/3 of it",
+    29: "10% chance on hit: marks the target with the x2 damage flag (not the wielder)",
+    30: "20% chance on hit: marks the target with the x2 damage flag (not the wielder)",
+    31: "30% chance on hit: marks the target with the x2 damage flag (not the wielder)",
     32: "20% chance to counter a melee hit (attacker within 40px front / 8px back)",
     33: "40% chance to counter a melee hit (attacker within 40px front / 8px back)",
     34: "60% chance to counter a melee hit (attacker within 40px front / 8px back)",

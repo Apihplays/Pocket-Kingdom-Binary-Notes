@@ -137,27 +137,27 @@
   {
     "id": 27,
     "name": "hp absorp 1",
-    "behavior": ""
+    "behavior": "Attack proc: drain ATK-DEF (min 3) from the target, wielder heals 1/3 of it"
   },
   {
     "id": 28,
     "name": "hp absorp 2",
-    "behavior": ""
+    "behavior": "Attack proc: drain ATK-DEF (min 3) from the target, wielder heals 2/3 of it"
   },
   {
     "id": 29,
     "name": "critical 1",
-    "behavior": ""
+    "behavior": "10% chance on hit: marks the target with the x2 damage flag (not the wielder)"
   },
   {
     "id": 30,
     "name": "critical 2",
-    "behavior": ""
+    "behavior": "20% chance on hit: marks the target with the x2 damage flag (not the wielder)"
   },
   {
     "id": 31,
     "name": "critical 3",
-    "behavior": ""
+    "behavior": "30% chance on hit: marks the target with the x2 damage flag (not the wielder)"
   },
   {
     "id": 32,
