@@ -1,86 +1,157 @@
-import unittest
 import glob
+import io
+import contextlib
 import os
+import shutil
+import tempfile
+import unittest
 
 from tests import assets
 
 GAME_DIR = assets.GAME_DIR
 
 
-@assets.needs_data
-class Test100PercentCombine(unittest.TestCase):
-    def test_all_emblem_recipes_are_100_percent(self):
-        # Verify compa0 through compa6
-        for fpath in glob.glob(os.path.join(GAME_DIR, "compa*.dat")):
-            with open(fpath, "rb") as f:
-                d = f.read()
-            for off in range(32, len(d), 16):
-                rate = d[off + 6]
-                self.assertEqual(rate, 100, f"{fpath} at offset {off+6} should be 100% but is {rate}%")
+def _comp_files(app_dir):
+    return sorted(glob.glob(os.path.join(app_dir, "comp*.dat")))
 
-    def test_all_comp9_recipes_are_100_percent(self):
-        for fpath in glob.glob(os.path.join(GAME_DIR, "comp9*.dat")):
-            with open(fpath, "rb") as f:
-                d = f.read()
-            for off in range(32, len(d), 16):
-                rate = d[off + 6]
-                self.assertEqual(rate, 100, f"{fpath} at offset {off+6} should be 100% but is {rate}%")
 
-    def test_itemdata_tier_header_rates_are_100_percent(self):
-        # In-game rates live in the itemdata.dat tail (mirrors comp*.dat);
-        # standalone comp files are never read by the game.
-        import os
-        from tools.patch_100_percent_combine import patch_itemdata_rates_100
-        comp_sizes = [len(open(fp, "rb").read())
-                      for fp in sorted(glob.glob(os.path.join(GAME_DIR, "comp*.dat")))]
-        for sub in ["", "english/"]:
-            path = os.path.join(GAME_DIR, sub, "itemdata.dat")
-            with open(path, "rb") as f:
-                d = f.read()
-            base = len(d) - sum(comp_sizes)
-            for size in comp_sizes:
-                rate = d[base + 22]
-                # emblem-style tables carry header rate 0; tier tables must be 100
-                nonzero = rate != 0
-                if nonzero:
+def _rate_offsets(size):
+    """Offsets of the success-rate fields in one table (header +22, entries +6)."""
+    return [22] + [off + 6 for off in range(32, size - 6, 16)]
+
+
+def _vanilla_itemdata(app_dir):
+    """The pristine recipe blob: the .orig backup the 100% patch leaves behind."""
+    for sub in ("", "english/"):
+        path = os.path.join(app_dir, sub, "itemdata.dat.orig")
+        if os.path.exists(path):
+            return open(path, "rb").read()
+    return None
+
+
+class CombineRateTestCase(unittest.TestCase):
+    """Runs the patch and revert tools on a temp install built from the vanilla
+    reference, so results do not depend on whether the live install is patched."""
+
+    def setUp(self):
+        vanilla = _vanilla_itemdata(GAME_DIR)
+        if vanilla is None:
+            self.skipTest(f"no itemdata.dat.orig under {GAME_DIR!r}")
+        sizes = {os.path.basename(p): os.path.getsize(p) for p in _comp_files(GAME_DIR)}
+        tail = vanilla[len(vanilla) - sum(sizes.values()):]
+        self.dir = tempfile.mkdtemp(prefix="pk-combine-")
+        self.addCleanup(shutil.rmtree, self.dir, True)
+        os.makedirs(os.path.join(self.dir, "english"))
+        self.vanilla_comps = {}
+        base = 0
+        for name, size in sizes.items():
+            self.vanilla_comps[name] = tail[base:base + size]
+            base += size
+        self.vanilla = vanilla
+        for name, blob in self.vanilla_comps.items():
+            self.write(name, blob)
+        for sub in ("", "english"):
+            self.write(sub, "itemdata.dat", vanilla)
+            self.write(sub, "itemdata.dat.orig", vanilla)
+
+    def write(self, *parts):
+        *name, blob = parts
+        with open(os.path.join(self.dir, *name), "wb") as f:
+            f.write(blob)
+
+    def read(self, *parts):
+        with open(os.path.join(self.dir, *parts), "rb") as f:
+            return f.read()
+
+    def run_patch(self):
+        from tools.patch_100_percent_combine import (
+            patch_all_recipes_100_percent, patch_itemdata_rates_100)
+        with contextlib.redirect_stdout(io.StringIO()):
+            patch_all_recipes_100_percent(self.dir)
+            patch_itemdata_rates_100(self.dir)
+
+    def run_revert(self):
+        from tools.revert_combine_rates import (
+            revert_comp_rates, revert_itemdata_rates)
+        with contextlib.redirect_stdout(io.StringIO()):
+            revert_comp_rates(self.dir)
+            revert_itemdata_rates(self.dir)
+
+    def test_patch_sets_all_rates_to_100(self):
+        self.run_patch()
+        for name, region in self.vanilla_comps.items():
+            data = self.read(name)
+            for off in _rate_offsets(len(region)):
+                # 0 = "no header rate" (emblem tables); the patch leaves it 0.
+                expected = 0 if region[off] == 0 else 100
+                self.assertEqual(
+                    data[off], expected,
+                    f"{name} rate at {off} should be {expected}% but is {data[off]}%")
+        blob_len = sum(len(r) for r in self.vanilla_comps.values())
+        for sub in ("", "english"):
+            data = self.read(sub, "itemdata.dat")
+            base = len(data) - blob_len
+            for name, region in self.vanilla_comps.items():
+                for off in _rate_offsets(len(region)):
+                    expected = 0 if region[off] == 0 else 100
                     self.assertEqual(
-                        rate, 100,
-                        f"{path} at {base+22} should be 100% but is {rate}%")
-                base += size
+                        data[base + off], expected,
+                        f"{sub}/itemdata.dat rate at {base + off} should be {expected}%")
+                base += len(region)
 
-    def test_itemdata_entry_rates_are_100_percent(self):
-        # Per-recipe rate = byte at +6 of every 16-byte entry, ALL families
-        # (tier tables ship 25/40/30/10/5% for unique recipes like bows).
-        from tools.patch_100_percent_combine import patch_itemdata_rates_100
-        comp_sizes = [len(open(fp, "rb").read())
-                      for fp in sorted(glob.glob(os.path.join(GAME_DIR, "comp*.dat")))]
-        for sub in ["", "english/"]:
-            path = os.path.join(GAME_DIR, sub, "itemdata.dat")
-            with open(path, "rb") as f:
-                d = f.read()
-            base = len(d) - sum(comp_sizes)
-            for size in comp_sizes:
-                for off in range(32, size - 6, 16):
-                    rate = d[base + off + 6]
-                    if rate != 0:
-                        self.assertEqual(
-                            rate, 100,
-                            f"{path} entry rate at {base+off+6} should be 100% but is {rate}%")
-                base += size
+    def test_revert_restores_vanilla_rates(self):
+        self.run_patch()
+        self.run_revert()
+        self.assertEqual(self.read("itemdata.dat"), self.vanilla)
+        self.assertEqual(self.read("english", "itemdata.dat"), self.vanilla)
+        for name, region in self.vanilla_comps.items():
+            self.assertEqual(self.read(name), region, name)
 
-class TestItemdataPatchIdempotent(unittest.TestCase):
-    @assets.needs_data
-    def test_patch_runs_twice_without_growth(self):
-        from tools.patch_100_percent_combine import patch_itemdata_rates_100
-        import io, contextlib
-        buf = io.StringIO()
-        with contextlib.redirect_stdout(buf):
-            patch_itemdata_rates_100(GAME_DIR)
-        s1 = open(os.path.join(GAME_DIR, "itemdata.dat"), "rb").read()
-        with contextlib.redirect_stdout(buf):
-            patch_itemdata_rates_100(GAME_DIR)
-        s2 = open(os.path.join(GAME_DIR, "itemdata.dat"), "rb").read()
-        self.assertEqual(s1, s2)
+    def test_revert_restores_known_vanilla_values(self):
+        self.run_patch()
+        self.run_revert()
+        expected = {  # verified vanilla rates (CLAUDE.md recipe-table layout)
+            "comp00.dat": [80, 30],
+            "comp06.dat": [50, 10],
+            "comp86.dat": [50, 5],
+            "comp93.dat": [65, 25, 40, 40],
+            "compa0.dat": [0] + [90] * 9 + [80] * 4,
+            "compa6.dat": [0, 40, 40, 40, 40, 40, 40, 30, 30, 30],
+        }
+        for name, rates in expected.items():
+            data = self.read(name)
+            self.assertEqual([data[o] for o in _rate_offsets(len(data))], rates, name)
+
+    def test_revert_is_idempotent(self):
+        self.run_patch()
+        self.run_revert()
+        once = {name: self.read(name) for name in self.vanilla_comps}
+        once["itemdata"] = self.read("itemdata.dat")
+        self.run_revert()
+        self.assertEqual(self.read("itemdata.dat"), once["itemdata"])
+        for name in self.vanilla_comps:
+            self.assertEqual(self.read(name), once[name], name)
+
+    def test_revert_leaves_other_bytes_alone(self):
+        """Non-rate edits in the itemdata tail must survive a revert."""
+        cooked = bytearray(self.read("itemdata.dat"))
+        blob_len = sum(len(r) for r in self.vanilla_comps.values())
+        marker = len(cooked) - blob_len + 40  # inside the first table, not a rate
+        self.assertNotIn(marker, self._rate_positions(cooked))
+        cooked[marker] = 0x2A
+        self.write("itemdata.dat", bytes(cooked))
+        self.run_revert()
+        self.assertEqual(self.read("itemdata.dat")[marker], 0x2A)
+
+    def _rate_positions(self, data):
+        base = len(data) - sum(len(r) for r in self.vanilla_comps.values())
+        positions = set()
+        for region in self.vanilla_comps.values():
+            for off in _rate_offsets(len(region)):
+                positions.add(base + off)
+            base += len(region)
+        return positions
+
 
 if __name__ == "__main__":
     unittest.main()

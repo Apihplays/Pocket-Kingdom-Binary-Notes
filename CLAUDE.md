@@ -90,6 +90,19 @@ When reverse engineering, investigating file formats, decompiling, or inspecting
   - Table header byte at +22 = base/aggregate rate (also patched to 100).
 - Save files: `save.dat`, `options.dat` under `C:\system\apps\6rah\` in the emulator (see `6RAH.cfg`).
 
+## Save file `save.dat` (inferred)
+- `C:\System\Apps\6RAH\save.dat` must be **exactly 10584 (`0x2958`) bytes** — the loader
+  rejects any other size before reading the data (`0x10075f00`, `cmp` at `0x10075f80`).
+- The body is **Blowfish-ECB** (8-byte blocks): key schedule `0x10011038`, P = 18 words at
+  `0x100800b4`, S = 4×256 at `0x100800fc`, encrypt `0x100113c4`, decrypt `0x10011600`.
+- The plaintext ends with a **CRC-32 (poly `0x04C11DB7`, reflected = zlib)**: `0x1007602c`
+  builds the table, `0x1007613c` compares. Size or CRC failure → *"Save file is corrupted."*
+  (`english/mestext.dat` records `0x14B`–`0x14D`).
+- The key is **not in the file**: 72 bytes from the 32-byte context buffer `ctx+0x1b310`
+  (zero-filled at `0x1006cddc`, filled at startup by `0x1006b754` from an imported OS call at
+  `0x1007d134`). That is why a bare copy is rejected on another install; the fixed-key patch
+  above removes the dependence. Full write-up: `notes/systems/save-file.md`.
+
 ## Item effects 0-51 (verified 2026-10-20/21; 18/19 damage tick inferred)
 Effect **names** are data (`effect.dat`; `english/itemdata.dat` @ `0x00F0`, 52 x 48-byte records);
 the **mechanics are hard-coded** in `0x1000f3a0`: `cmp r2,#0x2b; ldrls pc,[pc,r2,lsl#2]`, 44-entry
@@ -171,9 +184,22 @@ table `0x1000f3d4` (40 `0x1000facc`, 41 `0x1000fb34`, 42 `0x1000fc04`, 43 `0x100
   - Patches rates in `comp*.dat` (dev copies) AND the live `itemdata.dat` + `english/itemdata.dat` tails
   - Emblem family detection must use the `ff ff ff ff ff ff` header marker — never the (mutated) rate byte
   - Creates `.orig` backups for itemdata; idempotent (verified: second run = 0 byte changes)
+- **Revert to vanilla combine rates:** `python3 tools/revert_combine_rates.py [app_dir]`
+  - Copies the rate bytes (header `+22`, per-entry `+6`) back from the `itemdata.dat.orig` /
+    `english/itemdata.dat.orig` backup; `comp*.dat` are restored from that same tail reference
+  - Only rate bytes are written, so other edits (compa3/compa4 ingredient ids) survive
+  - Refuses to run without a `.orig` backup (no guessing at vanilla values); idempotent
+- **Portable saves (fixed save key):** `python3 tools/patch_save_fixed_key.py [app_dir]` (`--revert`)
+  - Patches `6RAH.APP` at `0x100110B4`: `ldrb r4,[sl,r5]` → `b 0x10011128`, so the Blowfish
+    key-XOR loop in the save key schedule (`0x10011038`) runs zero times
+  - Result: `save.dat` always uses the all-zero Blowfish key, so saves move between patched
+    installs. Size (`0x2958`) and CRC-32 checks remain active; old saves no longer load
 - **E32Image → ELF wrapper (for REA):** `python3 tools/wrap_raw_arm_elf.py 6rah_code.bin /tmp/6rah.elf`
 - **Tests:** `PYTHONPATH=. python3 -m unittest discover tests` (all green; self-skip without a game install)
-  - `tests/test_combine_rate.py` includes itemdata-tail rate assertions
+  - `tests/test_combine_rate.py` round-trips the 100 % patch and the revert on a temp install built
+    from the `.orig` reference, so it passes whether the live install is patched or vanilla
+  - `tests/test_save_key_patch.py` checks the fixed-key patch is exactly 4 bytes, idempotent and
+    reversible, and that it refuses an unknown build
 
 ## Workflow Rules
 - Non-destructive patching: always create `.orig` backup before first modification; keep patchers idempotent.

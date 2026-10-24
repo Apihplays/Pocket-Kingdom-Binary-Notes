@@ -14,6 +14,8 @@ database under `unitdb/` is factual game statistics transcribed from a 2005 fan 
 | Area | Files |
 |---|---|
 | 100% combine/merge success rates | `tools/patch_100_percent_combine.py` |
+| Back to vanilla combine rates | `tools/revert_combine_rates.py` |
+| Portable saves (fixed save key) | `tools/patch_save_fixed_key.py` |
 | Unit, emblem & material database + offline app | `tools/build_unitdb.py`, `unitdb/` |
 | E32Image → ELF wrapper (for REA/Hopper analysis) | `tools/wrap_raw_arm_elf.py` |
 | Tests | `tests/` (`python3 -m unittest discover tests`) |
@@ -33,6 +35,38 @@ python3 tools/patch_100_percent_combine.py [app_dir]
 
 Idempotent; creates one-time `.orig` backups for `itemdata.dat`. Tests self-skip
 when no game install is present.
+
+## Revert to vanilla rates
+
+Undo the 100% patch when you want retail difficulty back:
+
+```bash
+python3 tools/revert_combine_rates.py [app_dir]
+```
+
+Restores only the rate bytes (table header `+22`, per-recipe `entry+6`) from the `.orig`
+backup the patcher created, in `itemdata.dat` and `english/itemdata.dat`; the `comp*.dat`
+dev copies are restored from the same reference tail. Other edits in the tables (for
+example the compa3/compa4 ingredient-id differences) are left alone. Idempotent, and it
+refuses to run without a `.orig` backup instead of guessing at vanilla values.
+
+## Portable saves (fixed save key)
+
+`save.dat` is Blowfish-ECB encrypted with a per-install key that is **not stored in the
+file**, then CRC-32 checked, so copying it to another machine normally fails with
+"Save file is corrupted." This patch pins the cipher to a fixed key:
+
+```bash
+python3 tools/patch_save_fixed_key.py            # patch 6RAH.APP in place
+python3 tools/patch_save_fixed_key.py --revert   # back to the per-install key
+```
+
+One 4-byte change: the key-XOR loop of the Blowfish key schedule (`0x100110B4`) is
+skipped, so every install encrypts and decrypts with the all-zero key. Copy the patched
+`6RAH.APP` to each install once; after that a save copied between them loads everywhere.
+The 10584-byte size check and the CRC-32 stay active, so real corruption is still
+reported. Saves written before the patch use the real key and will no longer load — back
+up `save.dat` first. Format details: `notes/systems/save-file.md`.
 
 ## Unit, emblem, material & crafting database
 

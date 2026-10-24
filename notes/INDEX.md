@@ -29,6 +29,8 @@ open questions. Status: ✅ verified at instruction level · 🟡 inferred / par
   who is `r5` vs `r8`. `0x1000f3a0` / `0x1000eda8`
 - ✅ [Battle records & stat layout](systems/battle-records.md) — 92-byte stats, unit struct,
   effect-flag word, equipment slots
+- 🟡 [Save file (`save.dat`)](systems/save-file.md) — fixed 10584 bytes, Blowfish-ECB body,
+  CRC-32 trailer, key from `ctx+0x1b310` (not in the file). `0x10075f00` / `0x1007709c`
 
 ## Conventions
 - Every note starts with a `> **TL;DR**` block so an agent can stop reading after 6 lines.
