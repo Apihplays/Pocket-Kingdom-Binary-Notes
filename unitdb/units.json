@@ -63,7 +63,8 @@
         "vp": 40,
         "emblem": "Hero Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 1,
@@ -102,7 +103,8 @@
         "vp": 110,
         "emblem": "Knight Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 2,
@@ -132,7 +134,8 @@
         "vp": 200,
         "emblem": "Shogun Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 3,
@@ -162,7 +165,8 @@
         "vp": 70,
         "emblem": "Soldier Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 4,
@@ -192,7 +196,8 @@
         "vp": 200,
         "emblem": "Shogun Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 5,
@@ -222,7 +227,8 @@
         "vp": 300,
         "emblem": "Dragon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 6,
@@ -242,7 +248,8 @@
     "int": 29,
     "hit": 55,
     "ability": "Counter",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 7,
@@ -272,7 +279,8 @@
         "vp": 250,
         "emblem": "Champion Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 8,
@@ -302,7 +310,8 @@
         "vp": 300,
         "emblem": "Dragon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 9,
@@ -322,7 +331,8 @@
     "int": 33,
     "hit": 50,
     "ability": "Critical",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 10,
@@ -352,7 +362,8 @@
         "vp": 150,
         "emblem": "Victor Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 11,
@@ -391,7 +402,8 @@
         "vp": 350,
         "emblem": "Origin Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 12,
@@ -411,7 +423,8 @@
     "int": 23,
     "hit": 53,
     "ability": "Evade",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 13,
@@ -431,7 +444,8 @@
     "int": 25,
     "hit": 55,
     "ability": "Evade",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 14,
@@ -470,7 +484,8 @@
         "vp": 110,
         "emblem": "Knight Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 15,
@@ -500,7 +515,8 @@
         "vp": 200,
         "emblem": "Shogun Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 16,
@@ -539,7 +555,8 @@
         "vp": 300,
         "emblem": "Immortal Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 17,
@@ -559,7 +576,8 @@
     "int": 29,
     "hit": 60,
     "ability": "Restore",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 18,
@@ -579,7 +597,8 @@
     "int": 29,
     "hit": 48,
     "ability": "Death Touch",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 19,
@@ -609,7 +628,8 @@
         "vp": 150,
         "emblem": "Chain Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 20,
@@ -639,7 +659,8 @@
         "vp": 300,
         "emblem": "Dragon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 21,
@@ -659,7 +680,8 @@
     "int": 48,
     "hit": 50,
     "ability": "Spirit Banquet",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 22,
@@ -689,7 +711,8 @@
         "vp": 70,
         "emblem": "Soldier Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 23,
@@ -719,7 +742,8 @@
         "vp": 200,
         "emblem": "Shogun Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 24,
@@ -749,7 +773,8 @@
         "vp": 300,
         "emblem": "Dragon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 25,
@@ -769,7 +794,8 @@
     "int": 33,
     "hit": 55,
     "ability": "Flame Formation",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 26,
@@ -799,7 +825,8 @@
         "vp": 70,
         "emblem": "Soldier Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 27,
@@ -829,7 +856,8 @@
         "vp": 200,
         "emblem": "Shogun Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 28,
@@ -859,7 +887,8 @@
         "vp": 350,
         "emblem": "Origin Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 29,
@@ -879,7 +908,8 @@
     "int": 29,
     "hit": 58,
     "ability": "Antiaircraft",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 30,
@@ -927,7 +957,8 @@
         "vp": 40,
         "emblem": "Jackal Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 31,
@@ -957,7 +988,8 @@
         "vp": 110,
         "emblem": "Knight Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 32,
@@ -987,7 +1019,8 @@
         "vp": 250,
         "emblem": "Champion Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 33,
@@ -1017,7 +1050,8 @@
         "vp": 300,
         "emblem": "Dragon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 34,
@@ -1037,7 +1071,8 @@
     "int": 80,
     "hit": 42,
     "ability": "Meteor Strike",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 35,
@@ -1067,7 +1102,8 @@
         "vp": 110,
         "emblem": "Knight Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 36,
@@ -1097,7 +1133,8 @@
         "vp": 200,
         "emblem": "Shogun Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 37,
@@ -1127,7 +1164,8 @@
         "vp": 350,
         "emblem": "Origin Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 38,
@@ -1147,7 +1185,8 @@
     "int": 65,
     "hit": 45,
     "ability": "Restore",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 39,
@@ -1177,7 +1216,8 @@
         "vp": 110,
         "emblem": "Needle Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 40,
@@ -1207,7 +1247,8 @@
         "vp": 250,
         "emblem": "Moon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 41,
@@ -1237,7 +1278,8 @@
         "vp": 300,
         "emblem": "Immortal Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 42,
@@ -1257,7 +1299,8 @@
     "int": 96,
     "hit": 45,
     "ability": "Skull Summon",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 43,
@@ -1287,7 +1330,8 @@
         "vp": 10,
         "emblem": "Hound Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 44,
@@ -1317,7 +1361,8 @@
         "vp": 70,
         "emblem": "Bear Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 45,
@@ -1356,7 +1401,8 @@
         "vp": 150,
         "emblem": "Chimera Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 46,
@@ -1386,7 +1432,8 @@
         "vp": 250,
         "emblem": "Beast Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 47,
@@ -1416,7 +1463,8 @@
         "vp": 300,
         "emblem": "Dragon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 48,
@@ -1436,7 +1484,8 @@
     "int": 24,
     "hit": 38,
     "ability": "Dragon Breath",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 49,
@@ -1475,7 +1524,8 @@
         "vp": 250,
         "emblem": "Beast Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 50,
@@ -1505,7 +1555,8 @@
         "vp": 300,
         "emblem": "Dragon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 51,
@@ -1544,7 +1595,8 @@
         "vp": 300,
         "emblem": "Dragon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 52,
@@ -1564,7 +1616,8 @@
     "int": 14,
     "hit": 39,
     "ability": "Dragon Breath",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 53,
@@ -1584,7 +1637,8 @@
     "int": 13,
     "hit": 36,
     "ability": "Dragon Breath",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 54,
@@ -1604,7 +1658,8 @@
     "int": 14,
     "hit": 43,
     "ability": "Thunder Storm",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 55,
@@ -1661,7 +1716,8 @@
         "vp": 350,
         "emblem": "Darkness Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 56,
@@ -1691,7 +1747,8 @@
         "vp": 110,
         "emblem": "Needle Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 57,
@@ -1711,7 +1768,8 @@
     "int": 16,
     "hit": 31,
     "ability": "",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 58,
@@ -1731,7 +1789,8 @@
     "int": 25,
     "hit": 38,
     "ability": "",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 59,
@@ -1761,7 +1820,8 @@
         "vp": 70,
         "emblem": "Mist Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 60,
@@ -1791,7 +1851,8 @@
         "vp": 150,
         "emblem": "Chain Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 61,
@@ -1821,7 +1882,8 @@
         "vp": 250,
         "emblem": "Moon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 62,
@@ -1851,7 +1913,8 @@
         "vp": 110,
         "emblem": "Needle Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 63,
@@ -1881,7 +1944,8 @@
         "vp": 150,
         "emblem": "Chain Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 64,
@@ -1911,7 +1975,8 @@
         "vp": 350,
         "emblem": "Darkness Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 65,
@@ -1931,7 +1996,8 @@
     "int": 14,
     "hit": 36,
     "ability": "Lure of the Dead",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 66,
@@ -1970,7 +2036,8 @@
         "vp": 40,
         "emblem": "Jackal Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 67,
@@ -2000,7 +2067,8 @@
         "vp": 70,
         "emblem": "Soldier Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 68,
@@ -2030,7 +2098,8 @@
         "vp": 200,
         "emblem": "Shogun Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 69,
@@ -2060,7 +2129,8 @@
         "vp": 350,
         "emblem": "Origin Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 70,
@@ -2080,7 +2150,8 @@
     "int": 57,
     "hit": 77,
     "ability": "Turmoil",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 71,
@@ -2110,7 +2181,8 @@
         "vp": 150,
         "emblem": "Chimera Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 72,
@@ -2140,7 +2212,8 @@
         "vp": 250,
         "emblem": "Beast Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 73,
@@ -2170,7 +2243,8 @@
         "vp": 300,
         "emblem": "Dragon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 74,
@@ -2190,7 +2264,8 @@
     "int": 17,
     "hit": 64,
     "ability": "Angry Wind",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 75,
@@ -2229,7 +2304,8 @@
         "vp": 40,
         "emblem": "Hero Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 76,
@@ -2259,7 +2335,8 @@
         "vp": 110,
         "emblem": "Knight Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 77,
@@ -2289,7 +2366,8 @@
         "vp": 250,
         "emblem": "Champion Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 78,
@@ -2319,7 +2397,8 @@
         "vp": 300,
         "emblem": "Dragon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 79,
@@ -2339,7 +2418,8 @@
     "int": 57,
     "hit": 66,
     "ability": "Lost Soul",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 80,
@@ -2369,7 +2449,8 @@
         "vp": 70,
         "emblem": "Soldier Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 81,
@@ -2399,7 +2480,8 @@
         "vp": 200,
         "emblem": "Night Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 82,
@@ -2429,7 +2511,8 @@
         "vp": 250,
         "emblem": "Moon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 83,
@@ -2459,7 +2542,8 @@
         "vp": 300,
         "emblem": "Dragon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 84,
@@ -2516,7 +2600,8 @@
         "vp": 40,
         "emblem": "Jackal Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 85,
@@ -2546,7 +2631,8 @@
         "vp": 110,
         "emblem": "Knight Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 86,
@@ -2576,7 +2662,8 @@
         "vp": 200,
         "emblem": "Shogun Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 87,
@@ -2606,7 +2693,8 @@
         "vp": 300,
         "emblem": "Dragon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 88,
@@ -2626,7 +2714,8 @@
     "int": 72,
     "hit": 64,
     "ability": "Silence",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 89,
@@ -2656,7 +2745,8 @@
         "vp": 70,
         "emblem": "Soldier Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 90,
@@ -2686,7 +2776,8 @@
         "vp": 150,
         "emblem": "Victor Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 91,
@@ -2716,7 +2807,8 @@
         "vp": 350,
         "emblem": "Battleaxe Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 92,
@@ -2736,7 +2828,8 @@
     "int": 49,
     "hit": 53,
     "ability": "Automatic HP Restore",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 93,
@@ -2766,7 +2859,8 @@
         "vp": 70,
         "emblem": "Bear Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 94,
@@ -2796,7 +2890,8 @@
         "vp": 200,
         "emblem": "Griffon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 95,
@@ -2826,7 +2921,8 @@
         "vp": 300,
         "emblem": "Dragon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 96,
@@ -2846,7 +2942,8 @@
     "int": 43,
     "hit": 58,
     "ability": "Snarl",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 97,
@@ -2885,7 +2982,8 @@
         "vp": 40,
         "emblem": "Jackal Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 98,
@@ -2915,7 +3013,8 @@
         "vp": 110,
         "emblem": "Feather Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 99,
@@ -2945,7 +3044,8 @@
         "vp": 200,
         "emblem": "Sky Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 100,
@@ -2975,7 +3075,8 @@
         "vp": 300,
         "emblem": "Rapier Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 101,
@@ -2995,7 +3096,8 @@
     "int": 33,
     "hit": 47,
     "ability": "Magic Reflection",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 102,
@@ -3025,7 +3127,8 @@
         "vp": 150,
         "emblem": "Lightning Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 103,
@@ -3055,7 +3158,8 @@
         "vp": 250,
         "emblem": "Storm Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 104,
@@ -3085,7 +3189,8 @@
         "vp": 300,
         "emblem": "Rapier Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 105,
@@ -3105,7 +3210,8 @@
     "int": 48,
     "hit": 52,
     "ability": "Earthquake",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 106,
@@ -3153,7 +3259,8 @@
         "vp": 300,
         "emblem": "Dragon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 107,
@@ -3183,7 +3290,8 @@
         "vp": 110,
         "emblem": "Feather Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 108,
@@ -3213,7 +3321,8 @@
         "vp": 200,
         "emblem": "Sky Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 109,
@@ -3243,7 +3352,8 @@
         "vp": 300,
         "emblem": "Dragon Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 110,
@@ -3263,7 +3373,8 @@
     "int": 29,
     "hit": 60,
     "ability": "Tidal Wave",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 111,
@@ -3283,7 +3394,8 @@
     "int": 60,
     "hit": 55,
     "ability": "Earthquake",
-    "advances": []
+    "advances": [],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 112,
@@ -3313,7 +3425,8 @@
         "vp": 70,
         "emblem": "Wind Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 113,
@@ -3343,7 +3456,8 @@
         "vp": 150,
         "emblem": "Lightning Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   },
   {
     "id": 114,
@@ -3373,6 +3487,7 @@
         "vp": 250,
         "emblem": "Storm Emblem"
       }
-    ]
+    ],
+    "gist_reference": "Apihplays gist 636c34a342b070188780f7f0a417d290"
   }
 ]
